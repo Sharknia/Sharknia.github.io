@@ -2,7 +2,7 @@ title:              Sharknia Blog
 email:              zel@kakao.com
 description:        A Blog Theme by Start Bootstrap
 author:             Start Bootstrap
-baseurl:            "/startbootstrap-clean-blog-jekyll"
+baseurl:            "/"
 url:                "https://sharknia.github.io"
 
 # Social Profiles
