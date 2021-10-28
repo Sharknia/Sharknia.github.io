@@ -1,10 +1,10 @@
 # Setup
 title:               Sharknia Blog
-tagline:             'A Jekyll theme'
+tagline:             '-'
 description:         ''
 url:                 https://Sharknia.github.io
 baseurl:             ''
-paginate:            5
+paginate:            10
 permalink:           pretty
 
 # About/contact
