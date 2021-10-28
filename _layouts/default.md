@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  {% include head.html %}
+  {% include head.md %}
 
   <body>
 
-    {% include sidebar.html %}
+    {% include sidebar.md %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
