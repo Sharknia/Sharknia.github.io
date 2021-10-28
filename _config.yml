@@ -4,7 +4,7 @@ tagline:             '-'
 description:         ''
 url:                 https://Sharknia.github.io
 baseurl:             ''
-paginate:            10
+paginate:            5
 permalink:           pretty
 
 # About/contact
