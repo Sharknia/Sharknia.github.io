@@ -1,4 +1,155 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of hoodie]]></title><description><![CDATA[Hello :) I'm Hudi who developed gatsby-starter-hoodie theme.]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 28 Aug 2023 13:31:20 GMT</lastBuildDate><item><title><![CDATA[🤩 4. Other Tips]]></title><description><![CDATA[How to change the favicon? The favicon is located in . If you replace that image, the favicon will change. If you want to change the name of…]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie/other-tips/</link><guid isPermaLink="false">https://devhudi.github.io/gatsby-starter-hoodie/other-tips/</guid><pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;How to change the favicon?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of hoodie]]></title><description><![CDATA[Hello :) I'm Hudi who developed gatsby-starter-hoodie theme.]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 28 Aug 2023 13:37:08 GMT</lastBuildDate><item><title><![CDATA[화상상담을 위한 Janus 구성]]></title><description><![CDATA[화상상담을 위한 Janus 구성 환경구성 Ubuntu 18.04 bionic Python 3.7 설치 명령어 정리 파이썬 및 기본 소프트웨어 설치 Janus 설치 How to install Janus Gateway in Ubuntu Server 1…]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie/test/</link><guid isPermaLink="false">https://devhudi.github.io/gatsby-starter-hoodie/test/</guid><pubDate>Tue, 03 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;화상상담을 위한 Janus 구성&lt;/h1&gt;
+&lt;aside&gt;
+👨‍💻 Janus를 우분투에 설치하면서 사용한 명령어 정리
+Stun 서버와 Turn 서버를 위한 Coturn Server도 함께 설치
+&lt;/aside&gt;
+&lt;h2&gt;환경구성&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 18.04 bionic&lt;/li&gt;
+&lt;li&gt;Python 3.7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;설치 명령어 정리&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;파이썬 및 기본 소프트웨어 설치&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Janus 설치&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ourcodeworld.com/articles/read/1197/how-to-install-janus-gateway-in-ubuntu-server-18-04&quot;&gt;How to install Janus Gateway in Ubuntu Server 18.04&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Janus 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;packagelist&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; 
+libmicrohttpd-dev 
+libjansson-dev 
+libssl-dev 
+libsrtp-dev 
+libsofia-sip-ua-dev 
+libglib2.0-dev 
+libopus-dev 
+libogg-dev 
+libcurl4-openssl-dev 
+liblua5.3-dev 
+libconfig-dev 
+pkg-config 
+gengetopt 
+libtool 
+automake 
+gtk-doc-tools 
+cmake 
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${packagelist&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;@&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;libnice 설치&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;※ 최소 파이썬 3.7을 요구한다.&lt;/em&gt; &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pip3 &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;meson&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.61&lt;/span&gt;.5 
+&lt;span class=&quot;token function&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; /usr/local/bin/meson /usr/bin/ 
+&lt;span class=&quot;token function&quot;&gt;wget&lt;/span&gt; https://github.com/ninja-build/ninja/releases/download/v1.10.1/ninja-linux.zip 
+&lt;span class=&quot;token function&quot;&gt;unzip&lt;/span&gt; ninja-linux.zip 
+&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; ninja /usr/bin/ 
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://gitlab.freedesktop.org/libnice/libnice.git
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; libnice 
+meson &lt;span class=&quot;token parameter variable&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr build 
+ninja &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; build 
+ninja &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; build &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;libstrp 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;wget&lt;/span&gt; https://github.com/cisco/libsrtp/archive/v2.2.0.tar.gz 
+&lt;span class=&quot;token function&quot;&gt;tar&lt;/span&gt; xfv v2.2.0.tar.gz 
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; libsrtp-2.2.0 
+./configure —prefix&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr —enable-openssl 
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; shared_library &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;usrctp 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/sctplab/usrsctp 
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; usrsctp 
+./bootstrap 
+./configure &lt;span class=&quot;token parameter variable&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;libwebsockets 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/warmcat/libwebsockets.git 
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; libwebsockets 
+&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; build 
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; build 
+cmake &lt;span class=&quot;token parameter variable&quot;&gt;-DLWS_MAX_SMP&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-LWS_IPV6&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;ON &lt;span class=&quot;token parameter variable&quot;&gt;-DCMAKE_INSTALL_PREFIX:PATH&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token parameter variable&quot;&gt;-DCMAKE_C_FLAGS&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;-fpic&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt; 
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mqtt 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/eclipse/paho.mqtt.c.git 
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; paho.mqtt.c 
+&lt;span class=&quot;token assign-left variable&quot;&gt;prefix&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NanoMSG 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; libnanomsg-dev &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RabbitMQ C AMQP 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/alanxz/rabbitmq-c 
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; rabbitmq-c 
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; submodule init 
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; submodule update 
+&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; build &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; build 
+cmake &lt;span class=&quot;token parameter variable&quot;&gt;-DCMAKE_INSTALL_PREFIX&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;janus 컴파일링&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/meetecho/janus-gateway.git
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; janus-gateway
+&lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; autogen.sh
+./configure —prefix&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/opt/janus
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; configs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Janus 설정&lt;/p&gt;
+&lt;p&gt;설정 파일 위치 : /opt/janus/etc/janus&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;janus.jcfg&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;- log_to_file &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
+- admin_secret &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;PW&quot;&lt;/span&gt; 
+- rtp_port_range &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;20000-60000&quot;&lt;/span&gt; 
+- stun_server &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Stun Server Domain&quot;&lt;/span&gt; 
+- stun_port &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
+- nat_1_1_mapping &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Server IP&quot;&lt;/span&gt; 
+- turn_server &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Turn Server Domain&quot;&lt;/span&gt; 
+- turn_port &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
+- turn_type &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
+- turn_user &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Turn ID&quot;&lt;/span&gt; 
+- turn_pwd &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot; Turn PW&quot;&lt;/span&gt; 
+- ipv6 &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;janus.plugin.videoroom.jcfg&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;general&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
+admin_key &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;비밀번호&quot;&lt;/span&gt; 
+publishers &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 생성 값 &lt;span class=&quot;token string&quot;&gt;&quot;10&quot;&lt;/span&gt; 
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;janus.transport.http.jcfg&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;https &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt; 
+secure_port &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석 해제 
+admin_https &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석처리 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt; 
+cert_pem &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;crt.pem 위치&quot;&lt;/span&gt; 
+cert_key &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;key.pem 위치&quot;&lt;/span&gt; 
+cert_pwd &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;인증서 비밀번호&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Coturn 설치&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://john-home.iptime.org:8085/xe/index.php?mid=board_sKSz42&amp;#x26;document_srl=1546&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[🤩 4. Other Tips]]></title><description><![CDATA[How to change the favicon? The favicon is located in . If you replace that image, the favicon will change. If you want to change the name of…]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie/other-tips/</link><guid isPermaLink="false">https://devhudi.github.io/gatsby-starter-hoodie/other-tips/</guid><pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;How to change the favicon?&lt;/h2&gt;
 &lt;p&gt;The favicon is located in &lt;code class=&quot;language-text&quot;&gt;static/favicon.png&lt;/code&gt;. If you replace that image, the favicon will change.&lt;/p&gt;
 &lt;p&gt;If you want to change the name of the favicon, change the &lt;code class=&quot;language-text&quot;&gt;icon&lt;/code&gt; property of &lt;code class=&quot;language-text&quot;&gt;gatsby-plugin-manifest&lt;/code&gt; in &lt;code class=&quot;language-text&quot;&gt;gatsby-config.js&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Utterance is not working properly.&lt;/h2&gt;
@@ -260,172 +411,7 @@ series: &quot;gatsby-starter-hoodie 로 블로그 시작하기&quot;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;여러분이 연관된 여러개의 문서를 작성할 때 시리즈를 사용할 수 있습니다. Frontmatter 에 작성된 시리즈가 같은 문서끼리 묶여 문서 상단에 리스트로 표시됩니다. 시리즈는 일련의 순서가 있는 문서들을 작성할 때 유용하게 사용할 수 있습니다. 시리즈는 문서의 작성 날짜 순서대로 정렬됩니다.&lt;/p&gt;
-&lt;p&gt;현재 문서는 &lt;code class=&quot;language-text&quot;&gt;gatsby-starter-hoodie 로 블로그 시작하기&lt;/code&gt; 라는 시리즈로 설정되어 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[🤔 3. 작성 가이드]]></title><description><![CDATA[화상상담을 위한 Janus 구성 date: 2023년 1월 3일
-slug: 화상상담을-위한-Janus-구성
-author: Han-Kyeol Lee
-status: Public
-tags: WebRTC
-type: Post
-updatedAt: 2023년…]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie/test/</link><guid isPermaLink="false">https://devhudi.github.io/gatsby-starter-hoodie/test/</guid><pubDate>Sat, 03 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;화상상담을 위한 Janus 구성&lt;/h1&gt;
-&lt;p&gt;date: 2023년 1월 3일
-slug: 화상상담을-위한-Janus-구성
-author: Han-Kyeol Lee
-status: Public
-tags: WebRTC
-type: Post
-updatedAt: 2023년 8월 20일 오전 11:22
-category: BE&lt;/p&gt;
-&lt;aside&gt;
-👨‍💻 Janus를 우분투에 설치하면서 사용한 명령어 정리
-Stun 서버와 Turn 서버를 위한 Coturn Server도 함께 설치
-&lt;/aside&gt;
-&lt;h2&gt;환경구성&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Ubuntu 18.04 bionic&lt;/li&gt;
-&lt;li&gt;Python 3.7&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;설치 명령어 정리&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;파이썬 및 기본 소프트웨어 설치&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Janus 설치&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://ourcodeworld.com/articles/read/1197/how-to-install-janus-gateway-in-ubuntu-server-18-04&quot;&gt;How to install Janus Gateway in Ubuntu Server 18.04&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Janus 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;packagelist&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; 
-&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; 
-libmicrohttpd-dev 
-libjansson-dev 
-libssl-dev 
-libsrtp-dev 
-libsofia-sip-ua-dev 
-libglib2.0-dev 
-libopus-dev 
-libogg-dev 
-libcurl4-openssl-dev 
-liblua5.3-dev 
-libconfig-dev 
-pkg-config 
-gengetopt 
-libtool 
-automake 
-gtk-doc-tools 
-cmake 
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${packagelist&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;@&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;libnice 설치&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;※ 최소 파이썬 3.7을 요구한다.&lt;/em&gt; &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pip3 &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;meson&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.61&lt;/span&gt;.5 
-&lt;span class=&quot;token function&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; /usr/local/bin/meson /usr/bin/ 
-&lt;span class=&quot;token function&quot;&gt;wget&lt;/span&gt; https://github.com/ninja-build/ninja/releases/download/v1.10.1/ninja-linux.zip 
-&lt;span class=&quot;token function&quot;&gt;unzip&lt;/span&gt; ninja-linux.zip 
-&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; ninja /usr/bin/ 
-&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://gitlab.freedesktop.org/libnice/libnice.git
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; libnice 
-meson &lt;span class=&quot;token parameter variable&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr build 
-ninja &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; build 
-ninja &lt;span class=&quot;token parameter variable&quot;&gt;-C&lt;/span&gt; build &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;libstrp 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;wget&lt;/span&gt; https://github.com/cisco/libsrtp/archive/v2.2.0.tar.gz 
-&lt;span class=&quot;token function&quot;&gt;tar&lt;/span&gt; xfv v2.2.0.tar.gz 
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; libsrtp-2.2.0 
-./configure —prefix&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr —enable-openssl 
-&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; shared_library &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;usrctp 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/sctplab/usrsctp 
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; usrsctp 
-./bootstrap 
-./configure &lt;span class=&quot;token parameter variable&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;libwebsockets 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/warmcat/libwebsockets.git 
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; libwebsockets 
-&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; build 
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; build 
-cmake &lt;span class=&quot;token parameter variable&quot;&gt;-DLWS_MAX_SMP&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-LWS_IPV6&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;ON &lt;span class=&quot;token parameter variable&quot;&gt;-DCMAKE_INSTALL_PREFIX:PATH&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token parameter variable&quot;&gt;-DCMAKE_C_FLAGS&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;-fpic&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt; 
-&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;mqtt 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/eclipse/paho.mqtt.c.git 
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; paho.mqtt.c 
-&lt;span class=&quot;token assign-left variable&quot;&gt;prefix&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;NanoMSG 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; libnanomsg-dev &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;RabbitMQ C AMQP 설치&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/alanxz/rabbitmq-c 
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; rabbitmq-c 
-&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; submodule init 
-&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; submodule update 
-&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; build &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; build 
-cmake &lt;span class=&quot;token parameter variable&quot;&gt;-DCMAKE_INSTALL_PREFIX&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/usr &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;janus 컴파일링&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/meetecho/janus-gateway.git
-&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; janus-gateway
-&lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; autogen.sh
-./configure —prefix&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/opt/janus
-&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; configs&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Janus 설정&lt;/p&gt;
-&lt;p&gt;설정 파일 위치 : /opt/janus/etc/janus&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;janus.jcfg&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;- log_to_file &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
-- admin_secret &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;PW&quot;&lt;/span&gt; 
-- rtp_port_range &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;20000-60000&quot;&lt;/span&gt; 
-- stun_server &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Stun Server Domain&quot;&lt;/span&gt; 
-- stun_port &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
-- nat_1_1_mapping &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Server IP&quot;&lt;/span&gt; 
-- turn_server &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Turn Server Domain&quot;&lt;/span&gt; 
-- turn_port &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
-- turn_type &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 
-- turn_user &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;Turn ID&quot;&lt;/span&gt; 
-- turn_pwd &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot; Turn PW&quot;&lt;/span&gt; 
-- ipv6 &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;janus.plugin.videoroom.jcfg&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;general&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; 
-admin_key &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석해제 및 변경 &lt;span class=&quot;token string&quot;&gt;&quot;비밀번호&quot;&lt;/span&gt; 
-publishers &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 생성 값 &lt;span class=&quot;token string&quot;&gt;&quot;10&quot;&lt;/span&gt; 
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;janus.transport.http.jcfg&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;https &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt; 
-secure_port &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석 해제 
-admin_https &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 주석처리 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt; 
-cert_pem &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;crt.pem 위치&quot;&lt;/span&gt; 
-cert_key &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;key.pem 위치&quot;&lt;/span&gt; 
-cert_pwd &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; 값 변경 &lt;span class=&quot;token string&quot;&gt;&quot;인증서 비밀번호&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Coturn 설치&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://john-home.iptime.org:8085/xe/index.php?mid=board_sKSz42&amp;#x26;document_srl=1546&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[🚀 2. 빠르게 시작하기]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. 1. Gatsby 사이트 생성 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/</link><guid isPermaLink="false">https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/</guid><pubDate>Fri, 02 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
+&lt;p&gt;현재 문서는 &lt;code class=&quot;language-text&quot;&gt;gatsby-starter-hoodie 로 블로그 시작하기&lt;/code&gt; 라는 시리즈로 설정되어 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[🚀 2. 빠르게 시작하기]]></title><description><![CDATA[아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉. 1. Gatsby 사이트 생성 컴퓨터에 node.js 와 gatsby-cli 가 설치되어 있어야합니다. 2. 개발 서버 시작 이제 localhost:800…]]></description><link>https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/</link><guid isPermaLink="false">https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/</guid><pubDate>Fri, 02 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아래 단계를 따라서 여러분의 블로그를 시작하세요. 굉장히 쉬워요 😉.&lt;/p&gt;
 &lt;h2&gt;1. Gatsby 사이트 생성&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;컴퓨터에 &lt;strong&gt;node.js&lt;/strong&gt; 와 &lt;strong&gt;gatsby-cli&lt;/strong&gt; 가 설치되어 있어야합니다.&lt;/p&gt;
