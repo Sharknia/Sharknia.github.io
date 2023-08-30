@@ -1,25 +1,27 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
-on:
-  push:
-    branches:
+on: # 어떤 작업이 수행될 때 deploy.yml 작업이 수행된다. (트리거)
+  push: # push 작업이 수행될 때
+    branches: # 특정 브랜치를 대상으로
       - master
 
+permissions: # github action이 수행되는 환경에서 특정 권한을 준다
+  contents: write
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.17.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 18.17.1
+      - name: Install node packages
+        run: yarn
 
-    - name: Install dependencies
-      run: npm install
+      - name: Build
+        run: yarn build
 
-    - name: Run deploy script
-      run: npm run deploy-gh
+      - name: Deploy 🚀
+        run: npm run deploy-gh
