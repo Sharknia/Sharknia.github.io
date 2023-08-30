@@ -1,27 +1,16 @@
 ---
-title: "🤔 3. 작성 가이드"
+title: "화상상담을 위한 Janus 구성"
 description: "화상상담을 위한 Janus 구성"
-date: 2021-04-03
-update: 2021-04-03
+date: 2023-01-03
+update: 2023-08-20
 tags:
-  - hoodie
-  - writing-guide
+  - BE
 ---
 # 화상상담을 위한 Janus 구성
-
-date: 2023년 1월 3일
-slug: 화상상담을-위한-Janus-구성
-author: Han-Kyeol Lee
-status: Public
-tags: WebRTC
-type: Post
-updatedAt: 2023년 8월 20일 오전 11:22
-category: BE
 
 <aside>
 👨‍💻 Janus를 우분투에 설치하면서 사용한 명령어 정리
 Stun 서버와 Turn 서버를 위한 Coturn Server도 함께 설치
-
 </aside>
 
 ## 환경구성

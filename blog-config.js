@@ -1,17 +1,17 @@
 module.exports = {
-  title: "hoodie",
-  description: "Hello :) I'm Hudi who developed gatsby-starter-hoodie theme.",
-  author: "Hudi",
-  siteUrl: "https://devhudi.github.io/gatsby-starter-hoodie/",
+  title: "SharkniA",
+  description: "만 4살 백엔드 개발자",
+  author: "SharkniA",
+  siteUrl: "https://sharknia.github.io/",
   links: {
-    github: "https://github.com/devHudi",
-    linkedIn: "https://linkedin.com",
-    facebook: "https://www.facebook.com",
-    instagram: "https://www.instagram.com",
-    email: "mailto:devhudi@gmail.com",
+    github: "https://github.com/sharknia",
+    linkedIn: "https://www.linkedin.com/in/han-kyeol-lee-07a2b8287/",
+    facebook: "",
+    instagram: "",
+    email: "mailto:zel@kakao.com",
   },
   utterances: {
-    repo: "devHudi/gatsby-starter-hoodie",
+    repo: "Sharknia/utterances",
     type: "pathname",
   },
 }
