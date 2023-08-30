@@ -24,4 +24,6 @@ jobs:
         run: yarn build
 
       - name: Deploy 🚀
-        run: npm run deploy-gh
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public
