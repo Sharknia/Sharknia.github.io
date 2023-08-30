@@ -178,4 +178,4 @@ Stun 서버와 Turn 서버를 위한 Coturn Server도 함께 설치
         
 4. Coturn 설치
     
-    [](http://john-home.iptime.org:8085/xe/index.php?mid=board_sKSz42&document_srl=1546)
+    [Corturn](http://john-home.iptime.org:8085/xe/index.php?mid=board_sKSz42&document_srl=1546)
