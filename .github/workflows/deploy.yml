@@ -15,15 +15,29 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 18.17.1
+          node-version: 20.3.1
 
       - name: Install node packages
         run: yarn
-
+        
+      - name: Check lint
+        run: yarn check:lint
+        
+      - name: Check prettier
+        run: yarn check:prettier
+      
       - name: Build
         run: yarn build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: public
+      # - name: Install gh-pages CLI
+      #   run: npm install gh-pages --save-dev
+
+      - name: Set up GitHub token
+        env:
+          GITHUB_TOKEN: ${{ secrets.classicToken }}
+        run: git config --global user.email "zel@kakao.com" && git config --global user.name "Sharknia"
+
+      - name: Gatsby Build and Deploy to GitHub Pages
+        run: |
+          npm run gatsby build
+          npx gh-pages -d public
