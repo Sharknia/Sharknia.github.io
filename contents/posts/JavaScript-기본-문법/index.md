@@ -1,6 +1,6 @@
 ---
 title: "JavaScript 기본 문법"
-description: ""
+description: "JavaScript 기본 문법"
 date: 2023-01-06
 update: 2023-08-20
 tags:
