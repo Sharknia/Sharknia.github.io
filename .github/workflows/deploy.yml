@@ -31,16 +31,14 @@ jobs:
       
       - name: Build
         run: yarn build
-
-      # - name: Install gh-pages CLI
-      #   run: npm install gh-pages --save-dev
-
+        
       - name: Set up GitHub token
         env:
           GITHUB_TOKEN: ${{ secrets.classicToken }}
         run: git config --global user.email "zel@kakao.com" && git config --global user.name "Sharknia"
 
-      - name: Gatsby Build and Deploy to GitHub Pages
-        run: |
-          npx gatsby build
-          npx gh-pages -d public
+      - name: Set Git remote URL with token
+        run: git remote set-url origin https://${{ secrets.classicToken }}@github.com/Sharknia/Sharknia.github.io
+
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages -d public
