@@ -20,11 +20,7 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      © {title}, Built with Gatsby and{" "}
-      <a href="https://github.com/devHudi/gatsby-starter-hoodie" target="blank">
-        gatsby-starter-hoodie
-      </a>{" "}
-      theme.
+      © {title}, Built with Gatsby.
     </FooterWrapper>
   )
 }
