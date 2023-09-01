@@ -1,4 +1,411 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 01 Sep 2023 16:11:06 GMT</lastBuildDate><item><title><![CDATA[JavaScript 기본 문법]]></title><description><![CDATA[JavaScript 기본 문법 변수(Variable) 메모리상의 주소(위치)를 기억하는 저장소. 즉 메모리 주소에 접근하기 위해 사람이 이해할 수 있는 언어로 지정한 식별자 값 데이터 타입(Data Type…]]></description><link>https://sharknia.github.io/JavaScript-기본-문법/</link><guid isPermaLink="false">https://sharknia.github.io/JavaScript-기본-문법/</guid><pubDate>Fri, 06 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript 기본 문법&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 01 Sep 2023 16:24:06 GMT</lastBuildDate><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[Notion API(2) 무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notion API(2)&lt;/h1&gt;
+&lt;h1&gt;무엇을 하는가?&lt;/h1&gt;
+&lt;p&gt;Notion API를 이용해서 내가 쓴 글 들을 불러와 MD 파일로 만들려고 한다. 그 과정을 실시간으로 기록하려고 한다. 명확하게 가능한가? 는 사실 아직 알아보지 않았다. &lt;/p&gt;
+&lt;h1&gt;왜 하는가?&lt;/h1&gt;
+&lt;p&gt;너무나 너무나 귀찮기 때문이다.&lt;/p&gt;
+&lt;p&gt;블로그 포스팅을 위해서 마크다운 에디터로 노션을 쓰고 싶기 때문이다. 아니? 노션으로 쓴 것을 그대로 블로그에 커밋해버리고 싶기 때문이다. 그 과정을 자동화해버리고 싶기 때문이다. &lt;/p&gt;
+&lt;p&gt;즉, 노션에 글만 써두면 자동으로 마크다운으로 받아져서 깃허브에 커밋이 되고 깃허브 페이지에 배포가 되는 원대한 자동화를 원한다. &lt;/p&gt;
+&lt;h1&gt;어떻게 하는가?&lt;/h1&gt;
+&lt;h2&gt;환경&lt;/h2&gt;
+&lt;p&gt;Node.js 18.17.1 버전을 사용한다.&lt;/p&gt;
+&lt;p&gt;Node.js 프로젝트 시작&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;.env 생성&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token assign-left variable&quot;&gt;NOTION_KEY&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;노션키&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;NOTION_PAGE_ID&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;PageId&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;.gitignore에 .env 등록&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;.env&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;.env 안의 내용을 가져올 수 있도록 &lt;code class=&quot;language-text&quot;&gt;dotenv&lt;/code&gt; 패키지 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; dotenv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Notion API를 이용할 수 있도록 패키지 설치&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; @notionhq/client&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;API 확인&lt;/h2&gt;
+&lt;h3&gt;코드&lt;/h3&gt;
+&lt;p&gt;Notion API reference에 아주 친절하게 JavaScript 예제 코드까지 전부 붙어있다. Node.js를 선택한 이유이기도 하다. 예제 코드가 자바스크립트로 되어있어 그대로 갖다 붙이기 쉬워 보였기 때문이다. 일단 API의 결과물이 어떻게 날아오는지 확인하기 위해 있는 대로 갖다 붙였다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dotenv&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Client &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;@notionhq/client&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; pageId &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;NOTION_PAGE_ID&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; key &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;NOTION_KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; notion &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Client&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;auth&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; key &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; notion&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;databases&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;database_id&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; pageId &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// console.log(response);&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;//페이지들을 돌면서 id로 페이지를 읽어온다. &lt;/span&gt;
+        response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;results&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; pageId &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; page&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token comment&quot;&gt;//page properties&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; notion&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pages&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;retrieve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;page_id&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; pageId &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;----------Page Properties----------&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token comment&quot;&gt;//page contents&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; blockId &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pageId&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; notion&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;blocks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;retrieve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;token literal-property property&quot;&gt;block_id&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; blockId&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;----------Page Contents as Block----------&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; blockId &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pageId&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; notion&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;blocks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;children&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                        &lt;span class=&quot;token literal-property property&quot;&gt;block_id&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; blockId&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                        &lt;span class=&quot;token literal-property property&quot;&gt;page_size&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;----------Page Block List----------&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Error querying the database:&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;노션의 페이지 구성&lt;/h3&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/d66ebcb40149754ca4d4201abad4eef1/d5d41/Untitled.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 55.88235294117647%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAByUlEQVR42m1SS47TQBTMlViwQ4glB2A1XIEbIHGcsBgYic1sYDaAEIhFJkIiv0kcJ47tOLHbseNP4k9Rr6MwM7JbKnX369f1uutVJ0kS2LYNf7uF53kIlIIf+Ah8Igiw2WygVICHoz4eUVgW2kYnDBX6/R6m0zvcTUYY/LnFfDbFaDTEZDLGcPAXY64fM9aoXBceiy2XS1gkdxwHVVWhU/OwLEvIXDOQJzHKomhUlnO5oPOYX65WODLvcDhoHPlq/ULZ5HmugzqZQbkokEIyN8hJVMVx+5flkrAXTJL1w2/JyNMM41899L79xNfvP2D8/oxkbaFWYTuhkLmuQw1sjTAMNRSbUxwyTCwfb19e4PXTF3jy7DnevXqDZc8A1IYS1U1CeZliNel2lqVI0xNEBhlBUuDm0zW+fLxEt/seVx9uEO+o19bTefv9HjG//1/DOI50h8U2chBFkYasxQHRLkRK8iTLWCSj1lKIDVqvseUdl90WCLkm3POiOTdgLuaYc14sTD0btM5pv8BsyrUx0zZa0SLihpKErRrKVx0aW3Q8a2nTErZ9wjkuXxMkfEnJ1xamqR2hnVHfa9k5Bx75rIGqYey6xU4y/gEIVEU3/igYtAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;Untitled&apos; title=&apos;&apos; src=&apos;/static/d66ebcb40149754ca4d4201abad4eef1/ca1dc/Untitled.png&apos; srcset=&apos;/static/d66ebcb40149754ca4d4201abad4eef1/e7570/Untitled.png 170w,
+/static/d66ebcb40149754ca4d4201abad4eef1/f46e7/Untitled.png 340w,
+/static/d66ebcb40149754ca4d4201abad4eef1/ca1dc/Untitled.png 680w,
+/static/d66ebcb40149754ca4d4201abad4eef1/02d09/Untitled.png 1020w,
+/static/d66ebcb40149754ca4d4201abad4eef1/9d567/Untitled.png 1360w,
+/static/d66ebcb40149754ca4d4201abad4eef1/d5d41/Untitled.png 2238w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;Untitled&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;page properties는 정확하게 마크다운의 Front Matter에 사용하면 될 것 같다. &lt;/p&gt;
+&lt;p&gt;그리고, 마크다운의 콘텐츠에 page content가 들어가면 되겠다. &lt;/p&gt;
+&lt;p&gt;page properties를 얻기 위해서는 notion.pages.retrieve method를 이용하면 된다. &lt;/p&gt;
+&lt;h3&gt;코드 실행 결과문 분석&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;notion.pages.retrieve&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;page&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...id...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;created_time&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2023-08-23T13:32:00.000Z&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;last_edited_time&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2023-09-01T12:45:00.000Z&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;created_by&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...id...&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;last_edited_by&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...id...&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;cover&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token null keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token null keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;database_id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;database_id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...id...&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;archived&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;tags&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PHNF&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;multi_select&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;multi_select&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...id...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AWS&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;brown&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;...id...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;TAG2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;pink&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://www.notion.so/...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;public_url&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://name.notion.site/...&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;정확하게 페이지의 속성들을 가져오고 있다. Front Matter에 필요한 내용들을 속성으로 만들어두면 완벽할 것 같다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;notion.blocks.retrieve&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;notion.blocks.retrieve는 page ID를 넣으면 해당 페이지의 정보를 가져다 주는데 왜냐면 노션에서 모든 단위가 블록이기 때문이다. 해당 페이지의 블록으로서의 데이터를 주는 것이기 때문에 지금 내 상황에선 그다지 사용할 필요가 없어 보인다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;notion.blocks.children.list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;list&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;results&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;block&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;page_id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;page_id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;created_time&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2023-09-01T12:00:00.000Z&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;last_edited_time&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2023-09-01T12:12:00.000Z&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;created_by&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;last_edited_by&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;has_children&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;archived&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;heading_1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;heading_1&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;rich_text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;content&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;제목1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token null keyword&quot;&gt;null&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;annotations&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;bold&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;italic&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;strikethrough&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;underline&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;default&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;plain_text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;제목1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token null keyword&quot;&gt;null&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;is_toggleable&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;default&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	...
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;우리가 원하는 Page Content들의 내용이 드디어 보인다. 위의 결과에는 나타나지 않았지만, 들여쓰기가 된 경우에는 해당 들여쓰기가 된 block의 상위 요소에게 종속된다. 다시 말 내 다음 블록에 들여쓰기를 한 블록이 있다면 &lt;code class=&quot;language-text&quot;&gt;has_children&lt;/code&gt; 속성이 true가 된다. 그 안을 다시 파고 들어가면 될 것 같다. &lt;/p&gt;
+&lt;h1&gt;오늘의 결론&lt;/h1&gt;
+&lt;p&gt;이렇게 해서, API를 통해서 내 노션에 올려진 글들을 가져오는 데에 성공했다. 이제 다음 시간에는 이 JSON들을 가공해서 Markdown으로 변환하려고 한다. &lt;/p&gt;
+&lt;p&gt;방법은 세 가지 정도를 생각하고 있다. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;노션 내부 API 사용&lt;/p&gt;
+&lt;p&gt;실제 노션 페이지를 띄울 때 오고 가는 요청값 들을 확인해 이를 사용하여 마크다운 파일을 바로 만들 수 있는 것으로 보인다. 이는 만들기가 가장 쉬워 보이나, 언제 폭파 될지 모른다는 문제점을 갖고 있다.  만약 폭파된다면 귀찮게도 다시 만들어야 한다는 치명적인 문제 때문에 지금 당장은 고려하고 있지 않지만 실패할 가능성도 가장 적어 보이므로, 귀찮아지면 언제든지 이쪽으로 틀도록 하자. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;오픈 소스 사용&lt;/p&gt;
+&lt;p&gt;Notion 블록을 마크다운 형식으로 바꿔주는 오픈 소스가 있는 것으로 보인다. 아직 자세히 살펴보지는 않았다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;직접 구현&lt;/p&gt;
+&lt;p&gt;그냥.. 직접 만든다. 아마 많은 기능을 지원하지는 못하겠지만 노션을 쓰면서 느낀 건데 많은 기능을 딱히 사용하지 않는다. 정말 개인적인 용도라면 그냥 생각보다 쉽게 될 것 같기도 하다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;일단 코드를 막 짜고 있는데, 이번에는 변화에 닫힌, 확장에 열린 코드를 짜보려고 한다. 설계도 신경써서 하고 싶다. &lt;/p&gt;
+&lt;p&gt;또 여유가 허락된다면 타입스크립트도 써보고 싶다. &lt;/p&gt;
+&lt;h1&gt;참고문서&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.notion.com/reference&quot;&gt;Start building with the Notion API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.hwahae.co.kr/all/tech/10960&quot;&gt;Notion API와 함께 정적 페이지로의 여정 – 화해 블로그 | 기술 블로그&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[github.io 자동배포]]></title><description><![CDATA[github.io 자동배포 지난시간 github.io를 이용한 블로그 왜 하는가 나는 귀찮은게 너무 귀찮다.  커밋 한 이후에  를 해야 배포가 되는 것도 너무 귀찮았다.  무엇을 하는가 그래서, 이걸  을 이용해서 자동화를 했다.  에 임의의 yml…]]></description><link>https://sharknia.github.io/github.io-자동배포/</link><guid isPermaLink="false">https://sharknia.github.io/github.io-자동배포/</guid><pubDate>Wed, 30 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;github.io 자동배포&lt;/h1&gt;
+&lt;h3&gt;지난시간&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.vercel.app/github.io%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8&quot;&gt;github.io를 이용한 블로그&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;왜 하는가&lt;/h3&gt;
+&lt;p&gt;나는 귀찮은게 너무 귀찮다. &lt;/p&gt;
+&lt;p&gt;커밋 한 이후에 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run deploy-gh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;를 해야 배포가 되는 것도 너무 귀찮았다. &lt;/p&gt;
+&lt;h3&gt;무엇을 하는가&lt;/h3&gt;
+&lt;p&gt;그래서, 이걸 &lt;code class=&quot;language-text&quot;&gt;github action&lt;/code&gt; 을 이용해서 자동화를 했다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.gitbub/workflows&lt;/code&gt;에 임의의 yml 파일을 넣어주면 해당 작업을 github action에서 진행한다. &lt;/p&gt;
+&lt;h3&gt;어떻게 했는가&lt;/h3&gt;
+&lt;p&gt;yml 파일 내용은 다음과 같다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;name: Deploy
+
+on: &lt;span class=&quot;token comment&quot;&gt;# 어떤 작업이 수행될 때 deploy.yml 작업이 수행된다. (트리거)&lt;/span&gt;
+  push: &lt;span class=&quot;token comment&quot;&gt;# push 작업이 수행될 때&lt;/span&gt;
+    branches: &lt;span class=&quot;token comment&quot;&gt;# 특정 브랜치를 대상으로&lt;/span&gt;
+      - master
+
+permissions: &lt;span class=&quot;token comment&quot;&gt;# github action이 수행되는 환경에서 특정 권한을 준다&lt;/span&gt;
+  contents: &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: &lt;span class=&quot;token number&quot;&gt;20.3&lt;/span&gt;.1
+
+      - name: Install &lt;span class=&quot;token function&quot;&gt;node&lt;/span&gt; packages
+        run: &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt;
+        
+      - name: Check lint
+        run: &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; check:lint
+        
+      &lt;span class=&quot;token comment&quot;&gt;# 아래와 같은 오류가 남&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;# error Command failed with exit code 1.&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;# info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;# - name: Check prettier&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;#   run: yarn check:prettier&lt;/span&gt;
+      
+      - name: Build
+        run: &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; build
+        
+      - name: Set up GitHub token
+        env:
+          GITHUB_TOKEN: &lt;span class=&quot;token variable&quot;&gt;${{ secrets.Token}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        run: &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; config &lt;span class=&quot;token parameter variable&quot;&gt;--global&lt;/span&gt; user.email &lt;span class=&quot;token string&quot;&gt;&quot;email입력&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; config &lt;span class=&quot;token parameter variable&quot;&gt;--global&lt;/span&gt; user.name &lt;span class=&quot;token string&quot;&gt;&quot;name입력&quot;&lt;/span&gt;
+
+      - name: Set Git remote URL with token
+        run: &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote set-url origin https://&lt;span class=&quot;token variable&quot;&gt;${{ secrets.classicToken }&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;@github.com/Sharknia/Sharknia.github.io
+
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages &lt;span class=&quot;token parameter variable&quot;&gt;-d&lt;/span&gt; public&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;문제는 없었는가&lt;/h3&gt;
+&lt;p&gt;처음에는 npm install을 사용했었는데, 패키지가 없다던지 여러가지 문제가 났다. 해당 문제는 npx 명령을 사용하는 것으로 해결돼&lt;/p&gt;
+&lt;p&gt;Deploy 까지 자동으로 하기 위해서는 깃허브 설정 관련 명령어가 필요했다. &lt;/p&gt;
+&lt;p&gt;특히, 반드시 토큰을 발행하고 Github Action의 환경 변수에 추가를 해주어야 한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[github.io를 이용한 블로그]]></title><description><![CDATA[github.io를 이용한 블로그 🚀 2. 빠르게 시작하기 디자인이 마음에 들고, 필요로 하는 기능이 모두 들어가 있기 때문에 해당 테마를 선택했다. (시리즈 기능, 목차 기능, 댓글 기능) 5번까지는 무사히 테스트 했는데,…]]></description><link>https://sharknia.github.io/github.io를-이용한-블로그/</link><guid isPermaLink="false">https://sharknia.github.io/github.io를-이용한-블로그/</guid><pubDate>Mon, 28 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;github.io를 이용한 블로그&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/&quot;&gt;🚀 2. 빠르게 시작하기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;디자인이 마음에 들고, 필요로 하는 기능이 모두 들어가 있기 때문에 해당 테마를 선택했다. (시리즈 기능, 목차 기능, 댓글 기능)&lt;/p&gt;
+&lt;p&gt;5번까지는 무사히 테스트 했는데, &lt;/p&gt;
+&lt;p&gt;6번 특히 Netlify를 활용한 배포에서 막혔다. &lt;/p&gt;
+&lt;p&gt;Repository를 생성 후, 해당 저장소를 바로 Netlify에서 빌드하려고 하면 의존성 오류가 났다. &lt;/p&gt;
+&lt;p&gt;Netlify를 활용하려고 한 이유는 Github Pages를 통해 배포할 경우 마스터 브랜치와 별도의 브랜치가 생성되는것이 번잡스러웠기 때문이다. &lt;/p&gt;
+&lt;p&gt;조금 더 알아본 결과,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;를 실행하면, &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;/public&lt;/code&gt; 에 빌드 결과물이 생성되고 해당 폴더만 배포하면 될 것 같긴하다. 또는 &lt;code class=&quot;language-text&quot;&gt;github action&lt;/code&gt; 을 이용할 수도 있겠다. &lt;/p&gt;
+&lt;p&gt;조금 더 편하게 블로그를 하려는 길은 아직 멀고 험하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(1)]]></title><description><![CDATA[Notion API(1) Notion API를 사용해보려고 한다.  이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다.  간단한 소개 Start…]]></description><link>https://sharknia.github.io/Notion-Api-1/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-1/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notion API(1)&lt;/h1&gt;
+&lt;p&gt;Notion API를 사용해보려고 한다. &lt;/p&gt;
+&lt;p&gt;이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다. &lt;/p&gt;
+&lt;h3&gt;간단한 소개&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.notion.com/&quot;&gt;Start building with the Notion API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Notion의 공개 Rest API를 이용하여 Notion Workspace와 상호 작용 할 수 있다.&lt;/p&gt;
+&lt;p&gt;페이지, 데이터베이스, 사용자, 페이지 및 인라인 주석, Workspace의 포스팅에 대한 검색 등등.. &lt;/p&gt;
+&lt;p&gt;점점 지원 영역이 늘어나는 것 같다. change-log가 꽤 활발해보인다. &lt;/p&gt;
+&lt;h3&gt;API 생성 및 권한 부여&lt;/h3&gt;
+&lt;p&gt;일단 우선, API를 생성하고 권한 부여 작업을 해야 한다. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so/my-integrations&quot;&gt;Notion – The all-in-one workspace for your notes, tasks, wikis, and databases.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;올라와 있는 한글 블로그들과 현재의 API 권한 부여 방식이 달라지는 바람에  여기서 은근 헤맸다… 역시 공식 가이드를 우선적으로 봐야한다. &lt;/p&gt;
+&lt;p&gt;위 페이지에서 새 &lt;code class=&quot;language-text&quot;&gt;API 통합 만들기&lt;/code&gt; 를 선택한다. &lt;/p&gt;
+&lt;p&gt;API의 권한은 워크스페이스별로 관리되므로, &lt;code class=&quot;language-text&quot;&gt;연결된 워크스페이스&lt;/code&gt; 를 정확히 선택해준다. &lt;/p&gt;
+&lt;p&gt;필수 항목을 입력해주고 &lt;code class=&quot;language-text&quot;&gt;제출&lt;/code&gt; 을 눌러주자. &lt;/p&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/Untitled.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 37.64705882352941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAz0lEQVR42qWRywrCMBBF+/9f5EJciKALF4JbQbSKbaNR82yaxzWpBa248DFwuTCTOTNksuAdgrcIIbkDwn/Klos5ZrMpRsMBJpMxUqQBPwNPpEC+3WC3XWO/zxPuPyB6EdJ69yL8R4DwCrSmRqvGoDE6eg1nTeveNV/BWiA9EpwpBT1WKMtDK8YuoCcCrUS39Xugi0e01vUOminFISV7oy4v2MM7iSitOVYFw7riIFcBcuHwto7A1Pj0uNf8POClrrRAcZYwRoEriauQ8YsMbpcEcK3ihZd7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;Untitled&apos; title=&apos;&apos; src=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/Untitled.png&apos; srcset=&apos;/static/b4786f442a67ccd65a59902b3261a38c/e7570/Untitled.png 170w,
+/static/b4786f442a67ccd65a59902b3261a38c/f46e7/Untitled.png 340w,
+/static/b4786f442a67ccd65a59902b3261a38c/09261/Untitled.png 476w&apos; sizes=&apos;(max-width: 476px) 100vw, 476px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;Untitled&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;그럼 바로 위와 같은 화면으로 넘어온다. 표시를 눌러서 시크릿 키를 복사해서 보관해주자. &lt;/p&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 509px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/Untitled1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 112.94117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACWElEQVR42pWU2bLTMBBE8/9/xRu88wbcJN73fZWXoXvsa8glgOOqKcmy1ZrlaC7LNErftyKyPNr6YXy2vs6Pc9hlhmBV5jLPRiYzyoT3yQyyTPs7zIwDvm/rZuzVOOfeCd8mvK/LtAny5yyJpa4KKYtM4iiQKPQlS2OJw1DHFMZvbVNJU5dqXdfIMHS6RqO4Ci44eey3U43p9WOPnzl2LTb1nYzY+Cst625PwqcgF1qeCg97bDx+5vgxj/umf9mFsX/63opl2xL4roS+o14xpwvsPTdnDYKzBKWROImQr0hzlueJGkM/PD0vOMnnW68eeq4t1v0q99ubFoF5HfpGK/qSh05uIFBsHmaxNE25VRRGpLq2Fv53WvALPLxZlrgO7Q7xXLHYcDCnC7JVeaedYRGNcejVow2b+uDrvCDEqrJQWBeGdXC2/sHYKUGikcSBeAjVdWzJs1RRoWe856+io1VmuHEYSIJrV+SpdAi3LFLMM72ShlU+CzY9SMGgY9/Etu8SBp7MaAgD8kkbATnxebkoxIPe0Jq6UE+5Rh5fwoZiZgAidYXQUFF9fiuKLK9j89Xt4FWl91hbWByiOLGsL1T3QTCsJwXZ92yJUJgAwlHoHSHXdXGE/r/OA0EgIZMWgIXJs0R8dp3Axd2GMIrEA/QQHKZ9ERv/hpJ6yNDYBHzPAZOhjnHk65zdnPMYXTyK/O2+gwpehGeiyuEyI+SmluvbN0mSUBzrqt4SdL778M5DOhzrhk70Qw8kBU8F3yeEu1R0Sil3ZLTj4F3XmMsKOS0x7og9a2s/ASLGAUHcd7NBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;Untitled&apos; title=&apos;&apos; src=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/Untitled1.png&apos; srcset=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/e7570/Untitled1.png 170w,
+/static/ea5eeced68059fd25375b5fbb8290f34/f46e7/Untitled1.png 340w,
+/static/ea5eeced68059fd25375b5fbb8290f34/98235/Untitled1.png 509w&apos; sizes=&apos;(max-width: 509px) 100vw, 509px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;Untitled&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;기능도 커스텀 할 수 있는데, 일단 기본적인 기능을 넣어주었다. &lt;/p&gt;
+&lt;p&gt;배포는 당연히 공개로 해두지 않았다. &lt;/p&gt;
+&lt;p&gt;이후, 노션으로 돌아와 API와 연결된 워크스페이스를 선택하고 &lt;/p&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 264px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/Untitled2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 231.1764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAuCAYAAAAoaDnGAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFqElEQVR42pWW2VKjVRSFeQOrWhtIwpQ5JAQSkhAIM2EIczM10o1YhVZZljdeemPpvQ/hlWXpG/hYvEC26zv2Tv9JE1svVp3xX2ft4ezzj8Risafx8fFn4WsvX758Gh0d7Y1pY2o/HRt7uozHn87V3gktzY+Mx+OWTqdtbm7OstmsFQoFm52dtfn5eUskEmHu+PjYNjc3TcShrddqYa1zeGhfJZM2pf0lfX+juZHYi0+68Xi8OzU11Z2YmOiBsZSEfi6X64q4K5VdHRTGCa0tNBrdI61fJpPds3Sq+6i5kfjt9zadydmE2Kemp8PJIgntzMxMwOTkpOkAS0oNfTCtvXH2qN3S+HEmaRv5ko1M/PKXlWsN29neslarZa9evQom0q6srNjCwoLVZOLi4qJVq9XQZ9/y8rKtra2Ffm25aYV6wxLzdRtJ/PS7zVVrtrfbDpuur6+t3W7b7u5uIKxUKoHIATH7wIrIIGw2GlapLtp0qQLhH5afm7eUzJFveqZhKm0mkwmBAQSPcT6fD2A/yINiSYRVmfzzn5bOz9r62qoVSyU7ODgI6ra3t+3s7Cz0UdGQiv39fVtdXe07JIBxvmAz5do/hCkRtne2lTplOzo6CqSYfXl5Gfrr6+vWbDbDATs7O0FpH2E2Y5lc3mrtYxH++JvlSuUQraykexQB0QZEFBfgjlQq1TM5ilxh1pb2TuTDH3617GzJVhSpkkxGDdja2rKNjY1gOi1AZb+y90hLYWNXCuPlhqUzWTtU1hNFTOZj0gZiUgjz8R2+HEooPzZaG7opn70IPkEd0skzQLrU63UrFovBXEwFz5HxXUYcjeaKCHWXiVqn0wlJfHFxYaenpz1lbqanyHOEiKGtL7dEGIsFhZChplwuB1AsKBLMDTMzeggcDQhVjsLk+fl58CGpQr4B/Ig/MXVQHVZxKG6hMmUGCfGby/dS9n/Qp5AaeHt7G04jed+8eRPu7LAgOHAT+whg8GHznQ+Rz6InKQo5xCNI302mZT+gz1ovylGTHx4ebG9vL9xdVBJh8o78ZPz27dswh19RReDwOUJQyAENjzKE1DYW8CGb6eNsgGI+pl1aWgp9os/e9z6PEGIKyevliRbgQzfNzfQ9jmjUe4QMMIeTuHoEiMSm2FK2IMFPqMZEz1VMx4JeUKKJTYSR7yUfcj5w9ahkHVMdPmZvTyEliY8ICKfd3NyEawi4dlxDKo4nd9TcqNm9PCTsDHgjOImqgpk4HwX0UUpN5En4sLgOJPbY2FjIJRRBgA+pyqiiJlKxabmKpBQRHnwCuPM8A8GHmAUhH+BcTOe1Yx6VjDmAMfP4d1AlfuzzoQcFYkggoCjgBvokOOuQ4gIneNZkXyCx8SFVGrWkDSZeXV0FlRzAPP82uGYooacGwWAjPkIJeee/Il6xvf3gGR2sNmy6u7sL0cREUoe+P+peSIdV7D5C/OSpwweoIEX8+kUr87+hLyhMEEGIOQCTiSZ+9SfgPxO6Wa9fvw7X7uTkJDwH5CWBwa+e0FHVQ03GV9HiSXpAzDVEJS17/JeOXA0FdViUuSksevRQ5FWYisIt8BpJWoHngtMXFDZQvviQXOPlozJj/v39ffCrX4CPmuwbPQ+5CfT9+pHImOuV2R/1oYRekf3nksTGT/4LHP1zdd9+NCjR5I3WuFwE+Uhb4LV7h/xg2hAUNhbl/DxPp8gdGSEtJLmGQ5D0XHTCZfkpLSIqyr4KQ0XkFS2CGr5Vu6f2RDgeAHObWi/qm0k3OaFr1tbgAWjhS234Qv3Qanyt/pGwq/G+2ig46EJ4VMrtKwaLIcra+LUmz1UUpmX2gcpVR69dS5V6Q9W7KtWj2hOXeXGZFosg/g5pRf87ER4u6f+wrKAg/xvd2Y4+vOahUjTP5IZTkVyr/VabP9eeQ6Hj4J9SuEKh2otUUr/VLfsbDteB7KWNckEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;Untitled&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/Untitled2.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/Untitled2.png 170w,
+/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/Untitled2.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;Untitled&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;aside&gt;
+💡 **오른쪽 상단의 `…` 를 눌러서 `연결추가` 를 선택한 다음, 아까 만들어준 API의 이름을 검색해 해당 API와 연결을 해주면 된다.**
+&lt;/aside&gt;
+&lt;p&gt;이 부분이 UI가 달라진 부분이어서 공식 가이드를 보기 전까지 한참 헤맸던 부분이었다.&lt;/p&gt;
+&lt;p&gt;이제, API와 Notion Workspace가 연결되었다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[MORETHAN-LOG-설치]]></title><description><![CDATA[MORETHAN-LOG 수정 아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다.  Tags 정렬 등록한 태그들이 블로그 좌측에 나열되는데, 이를 이름 순서대로 나오게 정렬했다.  자동썸네일 기능 테스트 src…]]></description><link>https://sharknia.github.io/Morethan-log-수정/</link><guid isPermaLink="false">https://sharknia.github.io/Morethan-log-수정/</guid><pubDate>Sun, 20 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;MORETHAN-LOG 수정&lt;/h1&gt;
+&lt;p&gt;아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Tags 정렬&lt;/p&gt;
+&lt;p&gt;등록한 태그들이 블로그 좌측에 나열되는데, 이를 이름 순서대로 나오게 정렬했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// itemObj를 item name으로 정렬&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; sortedItemObj &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;itemObj&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;localeCompare&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;acc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; val&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      acc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; val
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; acc
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;itemName&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; sortedItemObj&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;자동썸네일 기능 테스트&lt;/p&gt;
+&lt;p&gt;src\routes\Detail\PostDetail\PostHeader.tsx 에서 썸네일을 가져오고 있고, &lt;/p&gt;
+&lt;p&gt;src\pages[slug].tsx 에서 ogImageGenerateURL을 이용한 부분이 있다. &lt;/p&gt;
+&lt;p&gt;다만 ogImageGenerateURL을 이용한 부분은 meta에만 적용되고 있고, 자동 썸네일 용 &lt;a href=&quot;https://og-image-korean.vercel.app/&quot;&gt;https://og-image-korean.vercel.app&lt;/a&gt; 는 만약 사용을 위해서라면 내 이미지를 활용한것으로 수정해야 할 것 같다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[MORETHAN-LOG-설치]]></title><description><![CDATA[MORETHAN-LOG 설치 개발자로서 어엿한 블로그 하나는 있어야 하지 않을까, 생각을 항상 하곤 했다.   하지만 블로그라는게 여간 귀찮은 일이 아니다.  공부한 내용을 노션에 적어두기 시작한지 좀 됐는데, 티스토리나 velog…]]></description><link>https://sharknia.github.io/Morethan-log-설치/</link><guid isPermaLink="false">https://sharknia.github.io/Morethan-log-설치/</guid><pubDate>Fri, 18 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;MORETHAN-LOG 설치&lt;/h1&gt;
+&lt;p&gt;개발자로서 어엿한 블로그 하나는 있어야 하지 않을까, 생각을 항상 하곤 했다.  &lt;/p&gt;
+&lt;p&gt;하지만 블로그라는게 여간 귀찮은 일이 아니다.  공부한 내용을 노션에 적어두기 시작한지 좀 됐는데, 티스토리나 velog나 여러 방법을 시도한적이 있었지만 노션에 적은 내용을 거기로 옮기는게 얼마나 귀찮은지, 시작은 해도 도무지 꾸준히 이어할 수가 없었다. &lt;/p&gt;
+&lt;p&gt;그냥 언젠가 노션에 쓰기만 하면 블로그가 되는게 없나 그냥 가끔 검색만 하는 정도였는데, 어느샌가 나온 것이다. 그런 천지개벽할 물건이. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/morethanmin/morethan-log&quot;&gt;https://github.com/morethanmin/morethan-log&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 569px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c03971264fd9083e9b65a4a3d1818362/7ca0c/Untitled.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 19.411764705882355%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAxUlEQVR42n2QzQ6CMBCEOfuPCigqxbYU2lIhYPT9n2zcrolHD5tvMk0ns5vMzwHGT2jcCOMGqC5AdwNsmJGXNRabI1a7/O8stxlznRZIpDa4yY5CHhDKoiItjWeerhL7/Io0uzD3xVcfioqZHkscyM/ONesYmpTCcFice+N/7e4U2ljSjxma2IUJ/fhC20/w4xvKBNpopD89WtqwvCmsqGlyrjSbqg1ERy0dh9faQ2jHjMGS3iM1UWgLIS15PTePZ4nrxvkAMH5tpwrH4yEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;Untitled&apos; title=&apos;&apos; src=&apos;/static/c03971264fd9083e9b65a4a3d1818362/7ca0c/Untitled.png&apos; srcset=&apos;/static/c03971264fd9083e9b65a4a3d1818362/e7570/Untitled.png 170w,
+/static/c03971264fd9083e9b65a4a3d1818362/f46e7/Untitled.png 340w,
+/static/c03971264fd9083e9b65a4a3d1818362/7ca0c/Untitled.png 569w&apos; sizes=&apos;(max-width: 569px) 100vw, 569px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;Untitled&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;커밋할 필요도, 포스트 할 필요도 없다. 단지 노션에 글을 적으면 바로 포스팅 된다. &lt;/p&gt;
+&lt;p&gt;게다가 Readme에 설치방법이 10단계로 스크린샷까지 동봉되어서 너무나 친절하게 나와있다. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/morethanmin/morethan-log#readme&quot;&gt;GitHub - morethanmin/morethan-log: 😎 A static blog using notion database&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;블로그로 대성하겠다, 이런 마음가짐은 없기 때문에 심플한 구성과 간단한 기능이 너무 마음에 들었다. 누구나 따라할 수 있을 만큼 쉽게 되어있기 때문에 그대로 그대로 따라하는데,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;Failed to compile&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;src&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;routes&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;Detail&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;PostDetail&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;CommentBox&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;Utterances&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tsx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;
+Type error&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Type &lt;span class=&quot;token string&quot;&gt;&apos;{ repo: string | undefined; &quot;issue-term&quot;: string; label: string; }&apos;&lt;/span&gt; is not assignable to type &lt;span class=&quot;token string&quot;&gt;&apos;{ [key: string]: string; }&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+  Property &lt;span class=&quot;token string&quot;&gt;&apos;repo&apos;&lt;/span&gt; is incompatible &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; index signature&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    Type &lt;span class=&quot;token string&quot;&gt;&apos;string | undefined&apos;&lt;/span&gt; is not assignable to type &lt;span class=&quot;token string&quot;&gt;&apos;string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+      Type &lt;span class=&quot;token string&quot;&gt;&apos;undefined&apos;&lt;/span&gt; is not assignable to type &lt;span class=&quot;token string&quot;&gt;&apos;string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+  &lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;     script&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;issue-term&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; issueTerm&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token number&quot;&gt;27&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;     script&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; theme&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;     &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token literal-property property&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; string&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; string &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;utterances&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;config
+     &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;           &lt;span class=&quot;token operator&quot;&gt;^&lt;/span&gt;
+  &lt;span class=&quot;token number&quot;&gt;29&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;     Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;config&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;       script&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; config&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token number&quot;&gt;31&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+error Command failed &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; exit code &lt;span class=&quot;token number&quot;&gt;1.&lt;/span&gt;
+info Visit https&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;yarnpkg&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;com&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;en&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;docs&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cli&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;run &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; documentation about &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt; command&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token literal-property property&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Command &lt;span class=&quot;token string&quot;&gt;&quot;yarn run build&quot;&lt;/span&gt; exited &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;글쎄 대체 나만 Deploy가 안되는것이다. &lt;/p&gt;
+&lt;p&gt;ISSUE에 나와 같은 오류를 겪은 외국인이 한 명 더 있었는데, 다른 플랫폼으로 갈아탄 모양인지 해결방법은 적혀있지 않았다. &lt;/p&gt;
+&lt;p&gt;타입스크립트, 리액트는 처음이었기 때문에 정확히 알 수 없었는데, site.config.js 의 utterances-config 의 값을 가져올 때 오류가 나는 것이라고 짐작을 할 수 있었기 때문에 해당 부분을 챗지피티의 도움을 받아 코드를 수정했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; config&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Object&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;CONFIG&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;utterances&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;config&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;_&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;acc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;acc&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;key&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; value &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하여, 무사히 deploy를 마치고 블로그 포스팅에 성공한것이다. &lt;/p&gt;
+&lt;p&gt;문제는 여기서 끝나지 않았는데 노션에 글을 써도 도무지 블로그에 새로운 글이 포스팅되지 않았다. &lt;/p&gt;
+&lt;p&gt;이것 때문에 잠도 못자고 설쳐가면서 새벽에 새로고침을 해보기도 했는데 자고 일어나도 되어있지 않았다. &lt;/p&gt;
+&lt;p&gt;결론부터 이야기하자면, 아무것도 오류는 아니었다. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://vercel.com/docs/functions/serverless-functions&quot;&gt;Serverless Functions Overview&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;vercel의 Serverless Functions 기능은 모든 plan에서 이용가능하며, 이 기능을 이용해서 Notion API를 활용해서 글 내용을 불러오도록 되어있었다. &lt;/p&gt;
+&lt;p&gt;site.config.js를 확인하면 revalidateTime 변수가 있는데 처음에는 이 값이 42시간(!)으로 설정되어있었으므로, 이를 임의로 1시간으로 수정해주었다. &lt;/p&gt;
+&lt;p&gt;성격이 급해서 1시간 단위로 갱신되게 해두었는데, 지금 와서 생각해보면 굳이 1시간일 필요도 없다는 생각이 든다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JavaScript 기본 문법]]></title><description><![CDATA[JavaScript 기본 문법 변수(Variable) 메모리상의 주소(위치)를 기억하는 저장소. 즉 메모리 주소에 접근하기 위해 사람이 이해할 수 있는 언어로 지정한 식별자 값 데이터 타입(Data Type…]]></description><link>https://sharknia.github.io/JavaScript-기본-문법/</link><guid isPermaLink="false">https://sharknia.github.io/JavaScript-기본-문법/</guid><pubDate>Fri, 06 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript 기본 문법&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;변수(Variable)&lt;/p&gt;
