@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 01 Sep 2023 16:24:06 GMT</lastBuildDate><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[Notion API(2) 무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notion API(2)&lt;/h1&gt;
-&lt;h1&gt;무엇을 하는가?&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 03 Sep 2023 10:41:38 GMT</lastBuildDate><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;무엇을 하는가?&lt;/h2&gt;
 &lt;p&gt;Notion API를 이용해서 내가 쓴 글 들을 불러와 MD 파일로 만들려고 한다. 그 과정을 실시간으로 기록하려고 한다. 명확하게 가능한가? 는 사실 아직 알아보지 않았다. &lt;/p&gt;
-&lt;h1&gt;왜 하는가?&lt;/h1&gt;
+&lt;h2&gt;왜 하는가?&lt;/h2&gt;
 &lt;p&gt;너무나 너무나 귀찮기 때문이다.&lt;/p&gt;
 &lt;p&gt;블로그 포스팅을 위해서 마크다운 에디터로 노션을 쓰고 싶기 때문이다. 아니? 노션으로 쓴 것을 그대로 블로그에 커밋해버리고 싶기 때문이다. 그 과정을 자동화해버리고 싶기 때문이다. &lt;/p&gt;
 &lt;p&gt;즉, 노션에 글만 써두면 자동으로 마크다운으로 받아져서 깃허브에 커밋이 되고 깃허브 페이지에 배포가 되는 원대한 자동화를 원한다. &lt;/p&gt;
-&lt;h1&gt;어떻게 하는가?&lt;/h1&gt;
-&lt;h2&gt;환경&lt;/h2&gt;
+&lt;h2&gt;어떻게 하는가?&lt;/h2&gt;
+&lt;h3&gt;환경&lt;/h3&gt;
 &lt;p&gt;Node.js 18.17.1 버전을 사용한다.&lt;/p&gt;
 &lt;p&gt;Node.js 프로젝트 시작&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -19,8 +18,8 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; dotenv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Notion API를 이용할 수 있도록 패키지 설치&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; @notionhq/client&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;API 확인&lt;/h2&gt;
-&lt;h3&gt;코드&lt;/h3&gt;
+&lt;h3&gt;API 확인&lt;/h3&gt;
+&lt;h4&gt;코드&lt;/h4&gt;
 &lt;p&gt;Notion API reference에 아주 친절하게 JavaScript 예제 코드까지 전부 붙어있다. Node.js를 선택한 이유이기도 하다. 예제 코드가 자바스크립트로 되어있어 그대로 갖다 붙이기 쉬워 보였기 때문이다. 일단 API의 결과물이 어떻게 날아오는지 확인하기 위해 있는 대로 갖다 붙였다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dotenv&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Client &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;@notionhq/client&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -66,7 +65,7 @@
         console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Error querying the database:&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;노션의 페이지 구성&lt;/h3&gt;
+&lt;h4&gt;노션의 페이지 구성&lt;/h4&gt;
 &lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; &apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/d66ebcb40149754ca4d4201abad4eef1/d5d41/Untitled.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
@@ -84,7 +83,7 @@
 &lt;p&gt;page properties는 정확하게 마크다운의 Front Matter에 사용하면 될 것 같다. &lt;/p&gt;
 &lt;p&gt;그리고, 마크다운의 콘텐츠에 page content가 들어가면 되겠다. &lt;/p&gt;
 &lt;p&gt;page properties를 얻기 위해서는 notion.pages.retrieve method를 이용하면 된다. &lt;/p&gt;
-&lt;h3&gt;코드 실행 결과문 분석&lt;/h3&gt;
+&lt;h4&gt;코드 실행 결과문 분석&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;notion.pages.retrieve&lt;/li&gt;
 &lt;/ul&gt;
@@ -187,7 +186,7 @@
 	...
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;우리가 원하는 Page Content들의 내용이 드디어 보인다. 위의 결과에는 나타나지 않았지만, 들여쓰기가 된 경우에는 해당 들여쓰기가 된 block의 상위 요소에게 종속된다. 다시 말 내 다음 블록에 들여쓰기를 한 블록이 있다면 &lt;code class=&quot;language-text&quot;&gt;has_children&lt;/code&gt; 속성이 true가 된다. 그 안을 다시 파고 들어가면 될 것 같다. &lt;/p&gt;
-&lt;h1&gt;오늘의 결론&lt;/h1&gt;
+&lt;h2&gt;오늘의 결론&lt;/h2&gt;
 &lt;p&gt;이렇게 해서, API를 통해서 내 노션에 올려진 글들을 가져오는 데에 성공했다. 이제 다음 시간에는 이 JSON들을 가공해서 Markdown으로 변환하려고 한다. &lt;/p&gt;
 &lt;p&gt;방법은 세 가지 정도를 생각하고 있다. &lt;/p&gt;
 &lt;ol&gt;
@@ -206,10 +205,9 @@
 &lt;/ol&gt;
 &lt;p&gt;일단 코드를 막 짜고 있는데, 이번에는 변화에 닫힌, 확장에 열린 코드를 짜보려고 한다. 설계도 신경써서 하고 싶다. &lt;/p&gt;
 &lt;p&gt;또 여유가 허락된다면 타입스크립트도 써보고 싶다. &lt;/p&gt;
-&lt;h1&gt;참고문서&lt;/h1&gt;
+&lt;h2&gt;참고문서&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://developers.notion.com/reference&quot;&gt;Start building with the Notion API&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.hwahae.co.kr/all/tech/10960&quot;&gt;Notion API와 함께 정적 페이지로의 여정 – 화해 블로그 | 기술 블로그&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[github.io 자동배포]]></title><description><![CDATA[github.io 자동배포 지난시간 github.io를 이용한 블로그 왜 하는가 나는 귀찮은게 너무 귀찮다.  커밋 한 이후에  를 해야 배포가 되는 것도 너무 귀찮았다.  무엇을 하는가 그래서, 이걸  을 이용해서 자동화를 했다.  에 임의의 yml…]]></description><link>https://sharknia.github.io/github.io-자동배포/</link><guid isPermaLink="false">https://sharknia.github.io/github.io-자동배포/</guid><pubDate>Wed, 30 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;github.io 자동배포&lt;/h1&gt;
-&lt;h3&gt;지난시간&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.hwahae.co.kr/all/tech/10960&quot;&gt;Notion API와 함께 정적 페이지로의 여정 – 화해 블로그 | 기술 블로그&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[github.io 자동배포]]></title><description><![CDATA[지난시간 github.io를 이용한 블로그 왜 하는가 나는 귀찮은게 너무 귀찮다.  커밋 한 이후에  를 해야 배포가 되는 것도 너무 귀찮았다.  무엇을 하는가 그래서, 이걸  을 이용해서 자동화를 했다.  에 임의의 yml…]]></description><link>https://sharknia.github.io/github.io-자동배포/</link><guid isPermaLink="false">https://sharknia.github.io/github.io-자동배포/</guid><pubDate>Wed, 30 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;지난시간&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.vercel.app/github.io%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8&quot;&gt;github.io를 이용한 블로그&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;왜 하는가&lt;/h3&gt;
 &lt;p&gt;나는 귀찮은게 너무 귀찮다. &lt;/p&gt;
@@ -268,8 +266,7 @@ jobs:
 &lt;h3&gt;문제는 없었는가&lt;/h3&gt;
 &lt;p&gt;처음에는 npm install을 사용했었는데, 패키지가 없다던지 여러가지 문제가 났다. 해당 문제는 npx 명령을 사용하는 것으로 해결돼&lt;/p&gt;
 &lt;p&gt;Deploy 까지 자동으로 하기 위해서는 깃허브 설정 관련 명령어가 필요했다. &lt;/p&gt;
-&lt;p&gt;특히, 반드시 토큰을 발행하고 Github Action의 환경 변수에 추가를 해주어야 한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[github.io를 이용한 블로그]]></title><description><![CDATA[github.io를 이용한 블로그 🚀 2. 빠르게 시작하기 디자인이 마음에 들고, 필요로 하는 기능이 모두 들어가 있기 때문에 해당 테마를 선택했다. (시리즈 기능, 목차 기능, 댓글 기능) 5번까지는 무사히 테스트 했는데,…]]></description><link>https://sharknia.github.io/github.io를-이용한-블로그/</link><guid isPermaLink="false">https://sharknia.github.io/github.io를-이용한-블로그/</guid><pubDate>Mon, 28 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;github.io를 이용한 블로그&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/&quot;&gt;🚀 2. 빠르게 시작하기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;특히, 반드시 토큰을 발행하고 Github Action의 환경 변수에 추가를 해주어야 한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[github.io를 이용한 블로그]]></title><description><![CDATA[🚀 2. 빠르게 시작하기 디자인이 마음에 들고, 필요로 하는 기능이 모두 들어가 있기 때문에 해당 테마를 선택했다. (시리즈 기능, 목차 기능, 댓글 기능) 5번까지는 무사히 테스트 했는데,  6번 특히 Netlify…]]></description><link>https://sharknia.github.io/github.io를-이용한-블로그/</link><guid isPermaLink="false">https://sharknia.github.io/github.io를-이용한-블로그/</guid><pubDate>Mon, 28 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a href=&quot;https://devhudi.github.io/gatsby-starter-hoodie/quick-start-kr/&quot;&gt;🚀 2. 빠르게 시작하기&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;디자인이 마음에 들고, 필요로 하는 기능이 모두 들어가 있기 때문에 해당 테마를 선택했다. (시리즈 기능, 목차 기능, 댓글 기능)&lt;/p&gt;
 &lt;p&gt;5번까지는 무사히 테스트 했는데, &lt;/p&gt;
 &lt;p&gt;6번 특히 Netlify를 활용한 배포에서 막혔다. &lt;/p&gt;
@@ -279,8 +276,7 @@ jobs:
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;를 실행하면, &lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;/public&lt;/code&gt; 에 빌드 결과물이 생성되고 해당 폴더만 배포하면 될 것 같긴하다. 또는 &lt;code class=&quot;language-text&quot;&gt;github action&lt;/code&gt; 을 이용할 수도 있겠다. &lt;/p&gt;
-&lt;p&gt;조금 더 편하게 블로그를 하려는 길은 아직 멀고 험하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(1)]]></title><description><![CDATA[Notion API(1) Notion API를 사용해보려고 한다.  이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다.  간단한 소개 Start…]]></description><link>https://sharknia.github.io/Notion-Api-1/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-1/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Notion API(1)&lt;/h1&gt;
-&lt;p&gt;Notion API를 사용해보려고 한다. &lt;/p&gt;
+&lt;p&gt;조금 더 편하게 블로그를 하려는 길은 아직 멀고 험하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(1)]]></title><description><![CDATA[Notion API를 사용해보려고 한다.  이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다.  간단한 소개 Start building with…]]></description><link>https://sharknia.github.io/Notion-Api-1/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-1/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Notion API를 사용해보려고 한다. &lt;/p&gt;
 &lt;p&gt;이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다. &lt;/p&gt;
 &lt;h3&gt;간단한 소개&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://developers.notion.com/&quot;&gt;Start building with the Notion API&lt;/a&gt;&lt;/p&gt;
@@ -334,8 +330,7 @@ jobs:
 💡 **오른쪽 상단의 `…` 를 눌러서 `연결추가` 를 선택한 다음, 아까 만들어준 API의 이름을 검색해 해당 API와 연결을 해주면 된다.**
 &lt;/aside&gt;
 &lt;p&gt;이 부분이 UI가 달라진 부분이어서 공식 가이드를 보기 전까지 한참 헤맸던 부분이었다.&lt;/p&gt;
-&lt;p&gt;이제, API와 Notion Workspace가 연결되었다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[MORETHAN-LOG-설치]]></title><description><![CDATA[MORETHAN-LOG 수정 아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다.  Tags 정렬 등록한 태그들이 블로그 좌측에 나열되는데, 이를 이름 순서대로 나오게 정렬했다.  자동썸네일 기능 테스트 src…]]></description><link>https://sharknia.github.io/Morethan-log-수정/</link><guid isPermaLink="false">https://sharknia.github.io/Morethan-log-수정/</guid><pubDate>Sun, 20 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;MORETHAN-LOG 수정&lt;/h1&gt;
-&lt;p&gt;아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다. &lt;/p&gt;
+&lt;p&gt;이제, API와 Notion Workspace가 연결되었다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[MORETHAN-LOG-수정]]></title><description><![CDATA[아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다.  Tags 정렬 등록한 태그들이 블로그 좌측에 나열되는데, 이를 이름 순서대로 나오게 정렬했다.  자동썸네일 기능 테스트 src\routes\Detail…]]></description><link>https://sharknia.github.io/Morethan-log-수정/</link><guid isPermaLink="false">https://sharknia.github.io/Morethan-log-수정/</guid><pubDate>Sun, 20 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Tags 정렬&lt;/p&gt;
@@ -405,8 +400,7 @@ info Visit https&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;s
 &lt;p&gt;&lt;a href=&quot;https://vercel.com/docs/functions/serverless-functions&quot;&gt;Serverless Functions Overview&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;vercel의 Serverless Functions 기능은 모든 plan에서 이용가능하며, 이 기능을 이용해서 Notion API를 활용해서 글 내용을 불러오도록 되어있었다. &lt;/p&gt;
 &lt;p&gt;site.config.js를 확인하면 revalidateTime 변수가 있는데 처음에는 이 값이 42시간(!)으로 설정되어있었으므로, 이를 임의로 1시간으로 수정해주었다. &lt;/p&gt;
-&lt;p&gt;성격이 급해서 1시간 단위로 갱신되게 해두었는데, 지금 와서 생각해보면 굳이 1시간일 필요도 없다는 생각이 든다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JavaScript 기본 문법]]></title><description><![CDATA[JavaScript 기본 문법 변수(Variable) 메모리상의 주소(위치)를 기억하는 저장소. 즉 메모리 주소에 접근하기 위해 사람이 이해할 수 있는 언어로 지정한 식별자 값 데이터 타입(Data Type…]]></description><link>https://sharknia.github.io/JavaScript-기본-문법/</link><guid isPermaLink="false">https://sharknia.github.io/JavaScript-기본-문법/</guid><pubDate>Fri, 06 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;JavaScript 기본 문법&lt;/h1&gt;
-&lt;ol&gt;
+&lt;p&gt;성격이 급해서 1시간 단위로 갱신되게 해두었는데, 지금 와서 생각해보면 굳이 1시간일 필요도 없다는 생각이 든다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JavaScript 기본 문법]]></title><description><![CDATA[변수(Variable) 메모리상의 주소(위치)를 기억하는 저장소. 즉 메모리 주소에 접근하기 위해 사람이 이해할 수 있는 언어로 지정한 식별자 값 데이터 타입(Data Type) 프로그래밍 언어에서 사용할 수 있는 값의 종료 변수(Variable…]]></description><link>https://sharknia.github.io/JavaScript-기본-문법/</link><guid isPermaLink="false">https://sharknia.github.io/JavaScript-기본-문법/</guid><pubDate>Fri, 06 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;변수(Variable)&lt;/p&gt;
 &lt;p&gt;메모리상의 주소(위치)를 기억하는 저장소. 즉 메모리 주소에 접근하기 위해 사람이 이해할 수 있는 언어로 지정한 식별자&lt;/p&gt;
