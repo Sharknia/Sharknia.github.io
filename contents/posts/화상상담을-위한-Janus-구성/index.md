@@ -6,8 +6,6 @@ update: 2023-08-20
 tags:
   - BE
 ---
-# 화상상담을 위한 Janus 구성
-
 <aside>
 👨‍💻 Janus를 우분투에 설치하면서 사용한 명령어 정리
 Stun 서버와 Turn 서버를 위한 Coturn Server도 함께 설치
