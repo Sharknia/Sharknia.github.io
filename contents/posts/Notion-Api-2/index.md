@@ -9,13 +9,11 @@ tags:
   - Node.js
 series: "GitHub Pages와 Notion API 연동"
 ---
-# Notion API(2)
-
-# 무엇을 하는가?
+## 무엇을 하는가?
 
 Notion API를 이용해서 내가 쓴 글 들을 불러와 MD 파일로 만들려고 한다. 그 과정을 실시간으로 기록하려고 한다. 명확하게 가능한가? 는 사실 아직 알아보지 않았다. 
 
-# 왜 하는가?
+## 왜 하는가?
 
 너무나 너무나 귀찮기 때문이다.
 
@@ -23,9 +21,9 @@ Notion API를 이용해서 내가 쓴 글 들을 불러와 MD 파일로 만들�
 
 즉, 노션에 글만 써두면 자동으로 마크다운으로 받아져서 깃허브에 커밋이 되고 깃허브 페이지에 배포가 되는 원대한 자동화를 원한다. 
 
-# 어떻게 하는가?
+## 어떻게 하는가?
 
-## 환경
+### 환경
 
 Node.js 18.17.1 버전을 사용한다.
 
@@ -60,9 +58,9 @@ Notion API를 이용할 수 있도록 패키지 설치
 $ npm install @notionhq/client
 ```
 
-## API 확인
+### API 확인
 
-### 코드
+#### 코드
 
 Notion API reference에 아주 친절하게 JavaScript 예제 코드까지 전부 붙어있다. Node.js를 선택한 이유이기도 하다. 예제 코드가 자바스크립트로 되어있어 그대로 갖다 붙이기 쉬워 보였기 때문이다. 일단 API의 결과물이 어떻게 날아오는지 확인하기 위해 있는 대로 갖다 붙였다. 
 
@@ -113,7 +111,7 @@ const notion = new Client({ auth: key });
 })();
 ```
 
-### 노션의 페이지 구성
+#### 노션의 페이지 구성
 
 ![Untitled](Untitled.png)
 
@@ -123,7 +121,7 @@ page properties는 정확하게 마크다운의 Front Matter에 사용하면 될
 
 page properties를 얻기 위해서는 notion.pages.retrieve method를 이용하면 된다. 
 
-### 코드 실행 결과문 분석
+#### 코드 실행 결과문 분석
 
 - notion.pages.retrieve
 
@@ -233,7 +231,7 @@ notion.blocks.retrieve는 page ID를 넣으면 해당 페이지의 정보를 가
 
 우리가 원하는 Page Content들의 내용이 드디어 보인다. 위의 결과에는 나타나지 않았지만, 들여쓰기가 된 경우에는 해당 들여쓰기가 된 block의 상위 요소에게 종속된다. 다시 말 내 다음 블록에 들여쓰기를 한 블록이 있다면 `has_children` 속성이 true가 된다. 그 안을 다시 파고 들어가면 될 것 같다. 
 
-# 오늘의 결론
+## 오늘의 결론
 
 이렇게 해서, API를 통해서 내 노션에 올려진 글들을 가져오는 데에 성공했다. 이제 다음 시간에는 이 JSON들을 가공해서 Markdown으로 변환하려고 한다. 
 
@@ -256,7 +254,7 @@ notion.blocks.retrieve는 page ID를 넣으면 해당 페이지의 정보를 가
 
 또 여유가 허락된다면 타입스크립트도 써보고 싶다. 
 
-# 참고문서
+## 참고문서
 
 [Start building with the Notion API](https://developers.notion.com/reference)
 

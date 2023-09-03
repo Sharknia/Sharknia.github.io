@@ -7,8 +7,6 @@ tags:
   - Blogging
 series: "GitHub Pages와 Notion API 연동"
 ---
-# github.io 자동배포
-
 ### 지난시간
 
 [github.io를 이용한 블로그](https://sharknia.vercel.app/github.io를-이용한-블로그)

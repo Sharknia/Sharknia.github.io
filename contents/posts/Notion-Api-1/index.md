@@ -8,8 +8,6 @@ tags:
   - Notion API
 series: "GitHub Pages와 Notion API 연동"
 ---
-# Notion API(1)
-
 Notion API를 사용해보려고 한다. 
 
 이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다. 

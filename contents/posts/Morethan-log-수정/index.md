@@ -1,13 +1,11 @@
 ---
-title: "MORETHAN-LOG-설치"
-description: "MORETHAN-LOG-설치"
+title: "MORETHAN-LOG-수정"
+description: "MORETHAN-LOG-수정"
 date: 2023-08-20
 update: 2023-08-20
 tags:
   - Blogging
 ---
-# MORETHAN-LOG 수정
-
 아주 마음에 드는 오픈소스로, 다만 내 취향에 맞게 짜잘짜잘 임의로 몇 가지 부분을 수정했다. 
 
 1. Tags 정렬
