@@ -1,7 +1,7 @@
 ---
 title: "NotionAPI를 활용한 자동 포스팅(3)"
 description: "프로젝트 복귀를 환영합니다. "
-date: 2024-01-27
+date: 2024-01-26
 update: 2024-01-28
 tags:
   - Blogging
