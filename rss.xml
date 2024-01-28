@@ -1,5 +1,206 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 14:01:25 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3)간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅4/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/NotionAPI%EB%A5%BC%ED%99%9C%EC%9A%A9%ED%95%9C%EC%9E%90%EB%8F%99%ED%8F%AC%EC%8A%A4%ED%8C%853&quot;&gt;NotionAPI를 활용한 자동 포스팅(3)&lt;/a&gt;간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다. &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 14:19:38 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
+&lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
+&lt;h2&gt;구현 내용&lt;/h2&gt;
+&lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
+&lt;h3&gt;콜아웃, 디바이더&lt;/h3&gt;
+&lt;p&gt;html로 구현했다. 인용문은 hr 태그로 처리했으며, 콜아웃은 div 태그를 사용했다. 다만 콜아웃은 스타일 처리가 필요하다. 지금은 대충 태그만 만들어놨다. 따라서 이건 미완성이나 다름없다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertCallout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;calloutBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; textContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; icon &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;icon &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;icon&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;emoji &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color
+            &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color
+            &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;gray_background&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+    &amp;lt;div class=&quot;callout &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;color&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;icon&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; &amp;lt;span&gt;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;textContent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;/span&gt;
+    &amp;lt;/div&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertDivider&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;hr style=&quot;border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;&quot; /&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;인용문&lt;/h3&gt;
+&lt;p&gt;인용문은 있을 줄 몰랐는데, 마크다운에서 지원을 해서 쉽게 구현했다. &lt;/p&gt;
+&lt;p&gt;무엇은 지원하고 무엇은 지원안하고, 기준을 명확히 모르겠긴하다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertQuote&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;quoteBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; quoteText &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; quoteBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&gt; &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;quoteText&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;번호 매기기, 글머리 기호&lt;/h3&gt;
+&lt;p&gt;둘은 구현이 상당히 비슷했다. 마치 세트와 같다. 이걸 구현할 때에, 들여쓰기를 하려면 계층 개념이 필요해서 전체적인 코드 수정이 한 번 이뤄졌다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;formatListItemContent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; listItemBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertNumberedList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; listItemContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatListItemContent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; indent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;indentLevel &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;indent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;1. &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;listItemContent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertBulletedList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; listItemContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatListItemContent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; indent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;indentLevel &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;indent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;- &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;listItemContent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;띄어쓰기 네 번으로 계층을 구분한다. &lt;/p&gt;
+&lt;h3&gt;코드&lt;/h3&gt;
+&lt;p&gt;코드도 쉬웠다. 마크다운에서 지원하는 것은 기본적으로 구현이 쉽다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertCode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;codeBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; codeText &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; codeBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; textElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;plain_text&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; language &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; codeBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;language &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\`\`\`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;language&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;codeText&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n\`\`\`\n\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;to_do&lt;/h3&gt;
+&lt;p&gt;to_do도 간단하게 구현했다. 마크다운에서는 체크박스인데, 노션에서는 할 일 목록이다.. 그래서 체크박스를 체크하면 스타일이 추가되는데.. 이것까진 따로 구현하지 않았다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertToDo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;toDoBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; quoteText &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; toDoBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;- [ ]&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;toDoBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;checked &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;- [x]&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;pre&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;quoteText&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;정리&lt;/h2&gt;
+&lt;h3&gt;작업 완료 블록&lt;/h3&gt;
+&lt;p&gt;일단 1차적으로 작업이 완료되었으며, 완료된 지원하는 블록 타입은 다음과 같다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;paragraph&lt;/li&gt;
+&lt;li&gt;heading&lt;em&gt;1, heading&lt;/em&gt;2, heading_3&lt;/li&gt;
+&lt;li&gt;bookmark&lt;/li&gt;
+&lt;li&gt;link&lt;em&gt;to&lt;/em&gt;page&lt;/li&gt;
+&lt;li&gt;image&lt;/li&gt;
+&lt;li&gt;callout&lt;/li&gt;
+&lt;li&gt;divider&lt;/li&gt;
+&lt;li&gt;quote&lt;/li&gt;
+&lt;li&gt;code&lt;/li&gt;
+&lt;li&gt;numbered&lt;em&gt;list&lt;/em&gt;item&lt;/li&gt;
+&lt;li&gt;bulleted&lt;em&gt;list&lt;/em&gt;item&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;to_do&lt;/p&gt;
+&lt;h3&gt;작업 예정 블록&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;table, table-row&lt;/h4&gt;
+&lt;p&gt;꼭 필요해보이지만, 구현을 위해서는 현재 구현된 블록의 재귀 호출 구조를 바꿔야 한다. 상대적으로 까다로워 오늘 작업하진 않겠다. &lt;/p&gt;
+&lt;h3&gt;작업 미정 블록&lt;/h3&gt;
+&lt;h4&gt;column (n개의 열로 구성된 블록 생성)&lt;/h4&gt;
+&lt;p&gt;가로로 여러 블록을 놓는 기능이다. 굳이 필요한가? 싶기도 하고 또 구현이 꽤나 까다로워 보인다. 다만 table, table-row를 작업할 때에 호출 구조를 잘 짜놓는다면 또 별 노력 없이 잘 될 것 같기도 한데, 마크다운에 원래 가로를 나누는 기능이 있는지는 또 모르겠다. 그래서 미정이다. &lt;/p&gt;
+&lt;h4&gt;미디어 관련 블록&lt;/h4&gt;
+&lt;p&gt;미디어 관련 기능도 지금보니 노션에 있다. 이건.. 할만하지 않을까? 고려해보겠다. 아직 자세히 살펴보지 못했다. &lt;/p&gt;
+&lt;h3&gt;미구현 확정 블록&lt;/h3&gt;
+&lt;h4&gt;토글&lt;/h4&gt;
+&lt;p&gt;토글은 미구현 확정이다. 토글은 마크다운에서 지원하지 않고, 만약 하려면 부트스트랩의 collapse 같은 기능을 직접 구현해야 할 것 같다. 이건 쉽지 않다. &lt;/p&gt;
+&lt;h4&gt;임베드 관련 블록&lt;/h4&gt;
+&lt;p&gt;기각이다. 블로그 글에 임베드는 쓰지 말자. &lt;/p&gt;
+&lt;h4&gt;고급 블록&lt;/h4&gt;
+&lt;p&gt;지금보니 토글도 고급에 들어있다. 마크다운 기본 기능이 아닌 것들은 기본적으로 구현에 한계가 있다. 다시 보니 column도 고급에 있다. &lt;/p&gt;
+&lt;p&gt;나중에 추후 시간이 되면 만들만한 것들은 한 번 고려해보겠다. &lt;/p&gt;
+&lt;h4&gt;데이터베이스 관련 블록&lt;/h4&gt;
+&lt;p&gt;웹사이트에 넣을 수 있는 기능이 (아마도) 아니다. 기각이다. &lt;/p&gt;
+&lt;h2&gt;다음 작업 예정은?&lt;/h2&gt;
+&lt;p&gt;이제 배포 자동화를 목표로 해야 한다. 자동화까지 해둬야, 이 프로젝트를 만든 목적 달성이 아닐까? 얼른 자동화도 하고 싶다..&lt;/p&gt;
+&lt;p&gt;자동화의 자세한 로직은 다음번에 설계 하도록 하겠다.. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Union Type]]></title><description><![CDATA[타입스크립트의 Union Type 타입스크립트에는 유니언 타입이라는게 있다. 쉽게 말해 값이 여러 타입을 or…]]></description><link>https://sharknia.github.io/UnionType/</link><guid isPermaLink="false">https://sharknia.github.io/UnionType/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;타입스크립트의 Union Type&lt;/h2&gt;
+&lt;p&gt;타입스크립트에는 유니언 타입이라는게 있다. 쉽게 말해 값이 여러 타입을 or 로 가질 수 있는 것이다. &lt;del&gt;*막나간다. *&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;두 개의 이상의 타입을 &lt;code class=&quot;language-text&quot;&gt;|&lt;/code&gt; 기호를 사용해 결합하면 유니언 타입이 된다. 이를 통해 변수가 함수 매개변수가 여러 타입 중 하나의 타입을 가질 수 있음을 나타낼 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;StringOrNumber&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; value&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; StringOrNumber&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Hello&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 유효함&lt;/span&gt;
+value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;token comment&quot;&gt;// 유효함&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;장점&lt;/h3&gt;
+&lt;h4&gt;유연성&lt;/h4&gt;
+&lt;p&gt;다양한 타입을 하나의 변수에 할당할 수 있어 다양한 시나리오에 대응할 수 있다. &lt;/p&gt;
+&lt;h4&gt;타입 안정성 보장&lt;/h4&gt;
+&lt;p&gt;유니언 타입을 사용하면 타입스크립트 컴파일러가 타입 안정성을 체크해준다. 즉, 할당된 값이 유니언 타입에 명시된 타입 중 하나와 일치하지 않으면 오류를 발생시킨다. &lt;/p&gt;
+&lt;h4&gt;코드 간결성&lt;/h4&gt;
+&lt;p&gt;복잡한 조건에 대한 타입을 간결하게 표현할 수 있다. &lt;/p&gt;
+&lt;h3&gt;유니언 타입 사용 시 고려할 사항&lt;/h3&gt;
+&lt;h4&gt;타입 가드&lt;/h4&gt;
+&lt;p&gt;유니언 타입은 여러 타입을 허용하기 때문에 실행 시점에 정확한 타입을 확인하기 위해 타입 가드를 사용해야 한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; StringOrNumber&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;typeof&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// value는 여기서 string 타입입니다.&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// value는 여기서 number 타입입니다.&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;공통 필드 사용&lt;/h4&gt;
+&lt;p&gt;유니언 타입의 모든 구성원이 공통으로 가진 필드나 메소드에만 접근할 수 있다. 공통되지 않은 필드에 접근하려면 타입 가드를 사용해야 한다. &lt;/p&gt;
+&lt;h4&gt;복잡한 유니언 타입&lt;/h4&gt;
+&lt;p&gt;유니언 타입이 복잡해질 수록 그 타입을 사용하는 코드는 더 복잡해질 수 있다. 따라서 타입을 너무 복잡하게 만들지 않도록 주의해야 한다. &lt;/p&gt;
+&lt;h2&gt;파이썬의 Union Type&lt;/h2&gt;
+&lt;p&gt;여기까지 알아보다가 파이썬에서도 왠지 비슷한게 있을 것 같다는 생각이 들어서 찾아봤고, 역시 있음을 알게 됐다. &lt;/p&gt;
+&lt;p&gt;파이썬은 타입스크립트와 다르게 동적 타이핑 언어이지만 3.5 이상에서는 타입 힌팅을 사용하여 비슷한 기능을 구현할 수 있고, 3.10 이상에서는 &lt;code class=&quot;language-text&quot;&gt;Union&lt;/code&gt; 대신 &lt;code class=&quot;language-text&quot;&gt;|&lt;/code&gt; 연산자를 이용하여 유니언 타입을 정의할 수 있다. &lt;/p&gt;
+&lt;h3&gt;파이썬 3.9 이전&lt;/h3&gt;
+&lt;p&gt;typing 모듈의 Union 을 사용하여 나타낼 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; typing &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Union
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Union&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;파이썬 3.10 이상&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;타입스크립트의 Union Type과 다른 점&lt;/h3&gt;
+&lt;p&gt;파이썬은 동적 타이핑 언어이므로 이 제약은 파이썬의 실행에 영향을 미치지 않는다. 즉 런타임에서 타입 안전을 강제하지 않는다. &lt;/p&gt;
+&lt;p&gt;단순히 개발자의 가독성 향상, IDE의 자동완성 지원, mypy등 정적 타입 체킹 도구를 위한 것이다. &lt;/p&gt;
+&lt;p&gt;저렇게 해두어도 런타임에서 다른 타입의 값이 할당될 수 있음을 주의해야 한다. &lt;/p&gt;
+&lt;h2&gt;사담&lt;/h2&gt;
+&lt;p&gt;노션 API를 활용한 블로그 쉽게 하는걸 만들다가 타입이 복잡하게 선언되어있는걸 보고 혹시나 해서 찾아봤더니 내 예상이 맞았다. &lt;/p&gt;
+&lt;p&gt;C로 개발을 시작했어서 그런지 처음에 자바스크립트를 접하고 아주 재미있고 자유도가 높다고 생각했는데, 갈 수록 나 자신에게 쇠사슬이 묶여있는게 오히려 편하다고 느낀다. &lt;/p&gt;
+&lt;p&gt;프로젝트 크기가 커질수록 더 그렇게 느끼는 것 같다. &lt;/p&gt;
+&lt;p&gt;물론 이런 기능을 잘 활용하면 더 편할때도 많긴 하다. 코드가 짧아지는 것도 맞고..&lt;/p&gt;
+&lt;p&gt;결국 내 자신이 잘하면 아무일도 안생길거라는 생각도 든다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[우분투 용량 관리]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/우분투용량관리/</link><guid isPermaLink="false">https://sharknia.github.io/우분투용량관리/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 나스를 하나 운영하고 있다. &lt;/p&gt;
+&lt;p&gt;이것저것 설정해서 쓰고 있는데, 어느 날 갑자기 토렌트 다운로드가 용량이 없다고 작동하지 않았다. &lt;/p&gt;
+&lt;p&gt;용량은 다음의 명령어를 통해 확인할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/HDD2/myHomePage$ &lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt;
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           200M   29M  171M  &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;% /run
+/dev/mmcblk1p2   15G   15G     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;% /
+tmpfs           996M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  996M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /dev/shm
+tmpfs           &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/lock
+/dev/mmcblk1p1  128M   14M  114M  &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;% /media/boot
+/dev/sdb1       &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.7T  656G  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.0T  &lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt;% /HDD2
+/dev/sda1        11T  &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.3T  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.1T  &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;% /HDD
+tmpfs           200M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  200M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/user/1000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;외장하든 왕 큰 놈을 달아서 사용하고 있는데, 오드로이드다보니 메인 OS가 깔리는 드라이브는 15gb짜리 작은 용량이다.. 그 드라이브가 100퍼센트 꽉 차 있었다. &lt;/p&gt;
+&lt;p&gt;다음의 명령어를 사용해 용량이 큰 디렉토리를 검색했다. 외장하드 경로는 제외하고 검색했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/$ &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt; / &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD2 &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-hr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
+du: cannot &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt; directory &lt;span class=&quot;token string&quot;&gt;&apos;/proc/sys/fs/binfmt_misc&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such device
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fd/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fdinfo/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fd/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fdinfo/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+15G     /
+11G     /home/furychick
+11G     /home
+&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.7G    /home/furychick/.forever
+&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.2G    /var
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.7G    /usr
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.6G    /var/log
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal/dc87f36fc06c441a85ff7269ba4d50fb
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.3G    /usr/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아~ 개인 홈페이지를 돌리는 로그가.. 몇 년 째 사이트를 그냥 켜둔채로 방치하다 보니 9기가에 달하게 크게 자라 내 서버를 억누르고 있었다. &lt;/p&gt;
+&lt;p&gt;당장 로그를 삭제해주었다. &lt;/p&gt;
+&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3) 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/NotionAPI%EB%A5%BC%ED%99%9C%EC%9A%A9%ED%95%9C%EC%9E%90%EB%8F%99%ED%8F%AC%EC%8A%A4%ED%8C%853&quot;&gt;NotionAPI를 활용한 자동 포스팅(3)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다. &lt;/p&gt;
 &lt;h2&gt;오늘의 작업&lt;/h2&gt;
 &lt;h3&gt;block.ts 나머지 작업&lt;/h3&gt;
 &lt;p&gt;지난번에 block.ts를 미완성 된 상태로 두었다. 타입 검사에서 걸린 상태로 일단 두었고,&lt;/p&gt;
@@ -19,7 +220,14 @@
 &lt;p&gt;paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단위이다. 텍스트를 입력할 때 기본적으로 생성되는 블록 유형이다. &lt;/p&gt;
 &lt;p&gt;이 블록 안에 들어있는 내용을 마크다운으로 바꿔주는 메소드를 완성했다. &lt;/p&gt;
 &lt;p&gt;원본 노션의 내용은 다음과 같다. 일부러 여러가지 케이스를 집어넣었다. &lt;/p&gt;
-&lt;p&gt;이 paragraph블록의 데이터 형태는 다음과 같다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 182px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c37e9a2ed8f76a7f64abfe844e3b2069/7d08f/image7.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 38.23529411764706%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABi0lEQVR42m2RW2/aQBCF+RsFX9bGxsYYYxMDruNQwFHrtlHjtCBVSi9cFKnKE///5evgJlIleDh7dnZnz8ycbem6jmEYnLjT6TQ4xZqm0W63z85eoZS6iFaSJHiex1WaslitWC6XRKMR8/mcuq7J85yiKIiiiMViQVmWTXwqcFFwJQ8/396yfXzkabvl+PxMfXdH/fDA8Xhkt9ux3++pqorD4cBWcjabDbZtXxasgoAfScz3OGYdDvjqupzOHOFAuC/wfb9Jdnu9hofDIY7jYJrmuaAhiy7QlIluKd5YFu2XS93QMQ0TTcYz5F6ZCktZdMRDQ8QsyT0TDAZ91tmUb7MJ9SRlPZ1QpWN0WxE5fZ5mXyjDjE/DG96HOR+jgpkfkwk+SJx7iRTUmkKNYBgG/Mzf8ivP+HNzzW/Z309TonHCyB+wiUtSL6LoX1EOMu5H74jdAdf9MdOefFScEYhVr+O3ul0bT/xyXUd8c+iKN47TbTxS1svokqyZhnShsKUT3fxnwYmVjP3/B/0FwLz0WbdFeN8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image7&apos; title=&apos;&apos; src=&apos;/static/c37e9a2ed8f76a7f64abfe844e3b2069/7d08f/image7.png&apos; srcset=&apos;/static/c37e9a2ed8f76a7f64abfe844e3b2069/e7570/image7.png 170w,
+/static/c37e9a2ed8f76a7f64abfe844e3b2069/7d08f/image7.png 182w&apos; sizes=&apos;(max-width: 182px) 100vw, 182px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+이 paragraph블록의 데이터 형태는 다음과 같다. &lt;/p&gt;
 &lt;h4&gt;&lt;u&gt;노&lt;/u&gt;&lt;u&gt;&lt;del&gt;션이&lt;/del&gt;&lt;/u&gt; &lt;strong&gt;좋습***&lt;/strong&gt;니다***..&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;&quot;rich_text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
@@ -250,6 +458,14 @@
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;노&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;/u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;~~션이~~&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;/u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; **좋습*****니다***&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;
 convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;정말로&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&quot;token assign-left variable&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;color: pink;&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;좋아합니다&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이를 vscode의 마크다운 편집 기능을 통해서 확인하면 다음과 같이 정상적으로 출력되는 것을 확인할 수 있다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 388px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/e2c499b18f033781be6c338bb4de1ad2/5bbd5/image8.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 17.64705882352941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAvElEQVR42j1QywqEMBDz///K23rV9abiCxUUpZa6tj6yzYAeQjqvTKaBcw77vmPbNlhrwZh8nieO45Aa4yd3XdfbxxljjMRk1oKu61CWJeq6Fs7zXLCuK8ZxRFEUqKpK8OTSNEWWZUiSBJ8oQuZ7ku9XFgTDMIhY0zRo21beHNZaY5qmdxlBF33fIwxDxHEM691De2dK414NYH4IuHVZFhGY51lEyM8ZfCulpIdnso+uKcwvgfOwDreHT+APdpIuAlwaOU4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image8&apos; title=&apos;&apos; src=&apos;/static/e2c499b18f033781be6c338bb4de1ad2/5bbd5/image8.png&apos; srcset=&apos;/static/e2c499b18f033781be6c338bb4de1ad2/e7570/image8.png 170w,
+/static/e2c499b18f033781be6c338bb4de1ad2/f46e7/image8.png 340w,
+/static/e2c499b18f033781be6c338bb4de1ad2/5bbd5/image8.png 388w&apos; sizes=&apos;(max-width: 388px) 100vw, 388px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h3&gt;마크다운 파일 저장 기능 추가&lt;/h3&gt;
 &lt;p&gt;page.ts에 block들로부터 받아온 마크다운 내용과 properties에 저장된 내용들을 합해 마크다운 파일로 저장하는 메소드를 완성했다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;printMarkDown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -298,14 +514,41 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;github.io의 블로그 형식에 맞춰서 properties를 바꿔주고, 블로그 형식에 맞는 위치에 일단 마크다운 파일을 저장하게끔 해주었다. 아마, 추후 배포 방식에 따라 해당 위치는 바뀔 수 있을 것이다. 아직 정확하게 어떤 방식으로 블로그를 배포할 것인지까지는 고려하지 않았다. &lt;/p&gt;
 &lt;p&gt;위 코드를 포함해서 실행하면, &lt;/p&gt;
-&lt;p&gt;이렇게 저장이 되고, &lt;/p&gt;
-&lt;p&gt;이렇게 깔끔하게 저장이 된다. 이제 앞으로는 각 블록 타입들에 대한 변환을 추가하면 된다!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 190px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/bd60ee265b49dce0e87e516a1d70d48a/08678/image9.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 62.35294117647059%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACAElEQVR42oVSy3LaQBDkGzCSVg/0RhICgZC0CBTAvKFsXK5UXDmmUpWbLz75mFvyP/nDzqyo+IKJD32Qdqanp3sacT9BlmWI0gK9u29IywrJYIis4Mg5xyjPUYxL9OnfIB1hOMrorUDc76Pb612gkaQZVsslomKO299/8PD9GdPqE7bHIza7PWGL9e4APqmw2h+w2++wWK6QEHkyTC/QME0TbQHDgO/aCLtx/e163hmuC8dx0QkCeJ4L07Lh+z5E33toyLIMy3YQRxHy8QQvP3/Bj3qYLRaYz2fI0hRx3ENVTZGNUnTJokk5hsoYFEW5QIPRg67r0DQNOqkMwoiKZVLlUIEMSZIghjLRwBRoqgqVagUhewdvhLpuQJFbMMIhbH6AR4SL2zWO5NlsPgUvp9isNvBodZmGqER8lVCoY1QgtW7QlBQwO6w9LfgYJa3HeY5hmqPMCti2fVZ8XaFSh2BZJsXex/p4B6tt1AEwGvTPbBGMrmtXid4IhZEiuYhWGdAJ/Xh5RRCEGAwSuH5AKjmKIqd75KimE9imAZl62P88FCsLwyWphWbzBkw368TqAFQGSZZq3/R2Gxr5rXxEaJBfAgo1WjH5NDkh7HRw//CIr09fcH86YLU94PPpEQGdl9RqfRzKORjxk6bTuQh1FgUgzsdxnfpWHbLmvM11D/8C58BWiDU8hLUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image9&apos; title=&apos;&apos; src=&apos;/static/bd60ee265b49dce0e87e516a1d70d48a/08678/image9.png&apos; srcset=&apos;/static/bd60ee265b49dce0e87e516a1d70d48a/e7570/image9.png 170w,
+/static/bd60ee265b49dce0e87e516a1d70d48a/08678/image9.png 190w&apos; sizes=&apos;(max-width: 190px) 100vw, 190px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+이렇게 저장이 되고, &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/0d515458e22973fa572822c3536f30db/86467/image10.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 37.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAq0lEQVR42q2PWwqDQAxFZyHWeSQ+Oo/N220orkBQtyFyOzOlIAVLCwYOST5yuBFU39E2LcgYKKkglYSUEmWaYy+KAsEHPLoO4zii73sMw3CKqFsLax2IDDhKTUQbAmkFJnoJQ8CyLEi17zu+lTDEIK7QVAxmjgkVVEQntM5C7z3mec4H27Zl6Rkiv1eWuEVST/ubJP474VHwyVG4rut1wuPLlwidc5im6SfhE9Elb1W+TBl+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image10&apos; title=&apos;&apos; src=&apos;/static/0d515458e22973fa572822c3536f30db/ca1dc/image10.png&apos; srcset=&apos;/static/0d515458e22973fa572822c3536f30db/e7570/image10.png 170w,
+/static/0d515458e22973fa572822c3536f30db/f46e7/image10.png 340w,
+/static/0d515458e22973fa572822c3536f30db/ca1dc/image10.png 680w,
+/static/0d515458e22973fa572822c3536f30db/02d09/image10.png 1020w,
+/static/0d515458e22973fa572822c3536f30db/9d567/image10.png 1360w,
+/static/0d515458e22973fa572822c3536f30db/86467/image10.png 2233w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+이렇게 깔끔하게 저장이 된다. 이제 앞으로는 각 블록 타입들에 대한 변환을 추가하면 된다!&lt;/p&gt;
 &lt;h3&gt;BlockObjectResponse 분석&lt;/h3&gt;
 &lt;p&gt;실질적으로 컨텐츠들은 BlockObjectResponse 타입들로 이루어져있다. BlockObjectResponse는 다음의 Union Type이다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;BlockObjectResponse&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ParagraphBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Heading1BlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Heading2BlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Heading3BlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BulletedListItemBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; NumberedListItemBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; QuoteBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ToDoBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ToggleBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TemplateBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; SyncedBlockBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ChildPageBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ChildDatabaseBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; EquationBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; CodeBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; CalloutBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; DividerBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BreadcrumbBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TableOfContentsBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ColumnListBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ColumnBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; LinkToPageBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TableBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TableRowBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; EmbedBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BookmarkBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ImageBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; VideoBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; PdfBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; FileBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; AudioBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; LinkPreviewBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; UnsupportedBlockObjectResponse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;del&gt;너무 많다&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;일단, 많이 쓸 것 같은 블록들을 예제 파일로 만들고 해당 노션 파일들을 불러와보고 어떤 타입들을 사용하는지 살펴보기로 했다. 나머지는 모르겠다 아직은 그냥 미지원이다. &lt;/p&gt;
-&lt;p&gt;이것들을 넘는것은 내가 아직은 노션에 쓸 것 같지가 않다. 따라서 위의 블록들을 중점적으로 먼저 변환하기로 하자. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/2af61caa2c35f58e15a78afe1588f244/f7121/image11.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 92.94117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAByklEQVR42qWUy27UMBSG/QoMI7GguTh2HDsTJ5P7NCO1IITUFRUS8A4seP/lzzmmQVUl0HSy+BM7Uj6fy38spmHAx/s7ZFmGJEmQpukmibnrcDfPyKTcDAvAZZqwjCOiKLoKIOUL4D1Ft/Q9ojgOKQddAJGU0U0UI6b/eB/FCa0TiPZ4xHJ7i6IooJSC1hqa6vk/IEM4o/FYoq4OuEkNWm9wKA2EyQ36rkff/9FI6XdlCa008jwPhxhjwprffPCb3VvIdzs8zg5f+gNOSuLXtxFfHyYIVVu0pwG196iqCnVdo24adNQsBnBEDGUX8Ju13+/g5R5H/R4fbIyfPx7w/fOCR5JQRsM6C2ddOL2wFgWBLK05qlCCJ63AXEv4A6WvMspEoT1/gqs7CqaC4J8aiogjW1NaZQn+LxWFg3MurI3OKAATDhX84I/h5KeavV76b1nEWjfu2kxT42nPFrra2Gt9mO4p5Yqjpf0mINvlRAYfyDLL+Ry6fe1cC34wlP3HYJ6AeEvK3Aiu4UQzPVAN5cZLQnCHx7bFTEDu1JboArCiMVtoStILLoWLgIUhY/sKJYHZ2M8n47XiDIWh0WsaT3VsyODPbpwrgb8BKZ0dd/NVeLkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image11&apos; title=&apos;&apos; src=&apos;/static/2af61caa2c35f58e15a78afe1588f244/ca1dc/image11.png&apos; srcset=&apos;/static/2af61caa2c35f58e15a78afe1588f244/e7570/image11.png 170w,
+/static/2af61caa2c35f58e15a78afe1588f244/f46e7/image11.png 340w,
+/static/2af61caa2c35f58e15a78afe1588f244/ca1dc/image11.png 680w,
+/static/2af61caa2c35f58e15a78afe1588f244/f7121/image11.png 899w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+이것들을 넘는것은 내가 아직은 노션에 쓸 것 같지가 않다. 따라서 위의 블록들을 중점적으로 먼저 변환하기로 하자. &lt;/p&gt;
 &lt;p&gt;다음의 녀석들이 그 녀석들이다. &lt;/p&gt;
 &lt;h4&gt;heading_ 시리즈&lt;/h4&gt;
 &lt;p&gt;제목1, 제목2, 제목3 들이다. heading&lt;em&gt;1부터 heading&lt;/em&gt;3까지를 노션에서는 사용할 수 있는데, 각각 h2, h3, h4로 변환하면 될 것 같다. 이건 쉬울 것 같은 예감이 든다. &lt;/p&gt;
@@ -559,123 +802,7 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
 &lt;h3&gt;남은 타입별 구현&lt;/h3&gt;
 &lt;p&gt;콜아웃, devider, quote는 html, css의 영역으로 생각된다. 이건 추후 따로 정적 파일에 html, css를 추가하거나 해야 할 것 같다. 자세한 방법은 나중에 생각해보려고 한다. 오늘 다섯시간? 정도를 쉬지 않고 했더니 집중력이 많이 떨어진 게 느껴진다. &lt;/p&gt;
 &lt;p&gt;토글도 의외로 까다로울지도? 뭐 초반엔 내가 그냥 토글을 노션에 안쓰면 되는거 아닐까? &lt;/p&gt;
-&lt;p&gt;까다로운 부분은 많이 구현된 것 같다. 빠르면 내일, 열심히 한다면 이번주 안에 직접 사용을 해볼 수 있을 것 같다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
-&lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
-&lt;h2&gt;구현 내용&lt;/h2&gt;
-&lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
-&lt;h3&gt;콜아웃, 디바이더&lt;/h3&gt;
-&lt;p&gt;html로 구현했다. 인용문은 hr 태그로 처리했으며, 콜아웃은 div 태그를 사용했다. 다만 콜아웃은 스타일 처리가 필요하다. 지금은 대충 태그만 만들어놨다. 따라서 이건 미완성이나 다름없다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertCallout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;calloutBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; textContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; icon &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;icon &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;icon&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;emoji &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color
-            &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; calloutBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;color
-            &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;gray_background&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
-    &amp;lt;div class=&quot;callout &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;color&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;icon&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; &amp;lt;span&gt;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;textContent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;/span&gt;
-    &amp;lt;/div&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertDivider&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;hr style=&quot;border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;&quot; /&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;인용문&lt;/h3&gt;
-&lt;p&gt;인용문은 있을 줄 몰랐는데, 마크다운에서 지원을 해서 쉽게 구현했다. &lt;/p&gt;
-&lt;p&gt;무엇은 지원하고 무엇은 지원안하고, 기준을 명확히 모르겠긴하다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertQuote&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;quoteBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; quoteText &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; quoteBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&gt; &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;quoteText&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;번호 매기기, 글머리 기호&lt;/h3&gt;
-&lt;p&gt;둘은 구현이 상당히 비슷했다. 마치 세트와 같다. 이걸 구현할 때에, 들여쓰기를 하려면 계층 개념이 필요해서 전체적인 코드 수정이 한 번 이뤄졌다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;formatListItemContent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; listItemBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertNumberedList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; listItemContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatListItemContent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; indent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;indentLevel &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;indent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;1. &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;listItemContent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertBulletedList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; listItemContent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatListItemContent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;listItemBlock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; indent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos; &apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;indentLevel &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;indent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;- &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;listItemContent&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;띄어쓰기 네 번으로 계층을 구분한다. &lt;/p&gt;
-&lt;h3&gt;코드&lt;/h3&gt;
-&lt;p&gt;코드도 쉬웠다. 마크다운에서 지원하는 것은 기본적으로 구현이 쉽다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertCode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;codeBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; codeText &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; codeBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; textElement&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;plain_text&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; language &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; codeBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;language &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\`\`\`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;language&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;codeText&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n\`\`\`\n\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;to_do&lt;/h3&gt;
-&lt;p&gt;to_do도 간단하게 구현했다. 마크다운에서는 체크박스인데, 노션에서는 할 일 목록이다.. 그래서 체크박스를 체크하면 스타일이 추가되는데.. 이것까진 따로 구현하지 않았다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;convertToDo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;toDoBlock&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; quoteText &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; toDoBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rich_text
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;formatTextElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;textElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;- [ ]&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;toDoBlock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;checked &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-            pre &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;- [x]&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;pre&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;quoteText&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;정리&lt;/h2&gt;
-&lt;h3&gt;작업 완료 블록&lt;/h3&gt;
-&lt;p&gt;일단 1차적으로 작업이 완료되었으며, 완료된 지원하는 블록 타입은 다음과 같다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;paragraph&lt;/li&gt;
-&lt;li&gt;heading&lt;em&gt;1, heading&lt;/em&gt;2, heading_3&lt;/li&gt;
-&lt;li&gt;bookmark&lt;/li&gt;
-&lt;li&gt;link&lt;em&gt;to&lt;/em&gt;page&lt;/li&gt;
-&lt;li&gt;image&lt;/li&gt;
-&lt;li&gt;callout&lt;/li&gt;
-&lt;li&gt;divider&lt;/li&gt;
-&lt;li&gt;quote&lt;/li&gt;
-&lt;li&gt;code&lt;/li&gt;
-&lt;li&gt;numbered&lt;em&gt;list&lt;/em&gt;item&lt;/li&gt;
-&lt;li&gt;bulleted&lt;em&gt;list&lt;/em&gt;item&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;to_do&lt;/p&gt;
-&lt;h3&gt;작업 예정 블록&lt;/h3&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;table, table-row&lt;/h4&gt;
-&lt;p&gt;꼭 필요해보이지만, 구현을 위해서는 현재 구현된 블록의 재귀 호출 구조를 바꿔야 한다. 상대적으로 까다로워 오늘 작업하진 않겠다. &lt;/p&gt;
-&lt;h3&gt;작업 미정 블록&lt;/h3&gt;
-&lt;h4&gt;column (n개의 열로 구성된 블록 생성)&lt;/h4&gt;
-&lt;p&gt;가로로 여러 블록을 놓는 기능이다. 굳이 필요한가? 싶기도 하고 또 구현이 꽤나 까다로워 보인다. 다만 table, table-row를 작업할 때에 호출 구조를 잘 짜놓는다면 또 별 노력 없이 잘 될 것 같기도 한데, 마크다운에 원래 가로를 나누는 기능이 있는지는 또 모르겠다. 그래서 미정이다. &lt;/p&gt;
-&lt;h4&gt;미디어 관련 블록&lt;/h4&gt;
-&lt;p&gt;미디어 관련 기능도 지금보니 노션에 있다. 이건.. 할만하지 않을까? 고려해보겠다. 아직 자세히 살펴보지 못했다. &lt;/p&gt;
-&lt;h3&gt;미구현 확정 블록&lt;/h3&gt;
-&lt;h4&gt;토글&lt;/h4&gt;
-&lt;p&gt;토글은 미구현 확정이다. 토글은 마크다운에서 지원하지 않고, 만약 하려면 부트스트랩의 collapse 같은 기능을 직접 구현해야 할 것 같다. 이건 쉽지 않다. &lt;/p&gt;
-&lt;h4&gt;임베드 관련 블록&lt;/h4&gt;
-&lt;p&gt;기각이다. 블로그 글에 임베드는 쓰지 말자. &lt;/p&gt;
-&lt;h4&gt;고급 블록&lt;/h4&gt;
-&lt;p&gt;지금보니 토글도 고급에 들어있다. 마크다운 기본 기능이 아닌 것들은 기본적으로 구현에 한계가 있다. 다시 보니 column도 고급에 있다. &lt;/p&gt;
-&lt;p&gt;나중에 추후 시간이 되면 만들만한 것들은 한 번 고려해보겠다. &lt;/p&gt;
-&lt;h4&gt;데이터베이스 관련 블록&lt;/h4&gt;
-&lt;p&gt;웹사이트에 넣을 수 있는 기능이 (아마도) 아니다. 기각이다. &lt;/p&gt;
-&lt;h2&gt;다음 작업 예정은?&lt;/h2&gt;
-&lt;p&gt;이제 배포 자동화를 목표로 해야 한다. 자동화까지 해둬야, 이 프로젝트를 만든 목적 달성이 아닐까? 얼른 자동화도 하고 싶다..&lt;/p&gt;
-&lt;p&gt;자동화의 자세한 로직은 다음번에 설계 하도록 하겠다.. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(3)]]></title><description><![CDATA[지난시간 https://sharknia.github.io/Notion-Api-2/ 문제점 아무것도.. 기억이 나지 않는다.. 지난날의 나는 무엇이었나?…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅3/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅3/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난시간&lt;/h2&gt;
+&lt;p&gt;까다로운 부분은 많이 구현된 것 같다. 빠르면 내일, 열심히 한다면 이번주 안에 직접 사용을 해볼 수 있을 것 같다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(3)]]></title><description><![CDATA[지난시간 https://sharknia.github.io/Notion-Api-2/ 문제점 아무것도.. 기억이 나지 않는다.. 지난날의 나는 무엇이었나?…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅3/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅3/</guid><pubDate>Fri, 26 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난시간&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/Notion-Api-2/&quot;&gt;https://sharknia.github.io/Notion-Api-2/&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;문제점&lt;/h2&gt;
 &lt;p&gt;아무것도.. 기억이 나지 않는다.. 지난날의 나는 무엇이었나? 5개월만의 복귀가 이렇게 어렵다. 이래서 사람은 꾸준해야 한다. &lt;/p&gt;
@@ -767,7 +894,205 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
 &lt;p&gt;완전히 지극히 초안 그 자체이다. 기초적인 형태만 잡았다. 아직 리턴값에 대한 이해가 충분하지 않아, 해당 부분에 대한 조정이 필요하다. (심지어 오류가 나는 상태이다)&lt;/p&gt;
 &lt;p&gt;블록의 타입이 모두 정의가 되어있으므로, 해당 타입에 따른 각 클래스를 따로 생성할 필요도 느낀다. 모두 여기에 집중된다면 코드가 너무 길어질 것 같다. &lt;/p&gt;
 &lt;h2&gt;결론&lt;/h2&gt;
-&lt;p&gt;결국 오늘은 한 일이 별로 없다.. 복귀에 의의를 두자. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;무엇을 하는가?&lt;/h2&gt;
+&lt;p&gt;결국 오늘은 한 일이 별로 없다.. 복귀에 의의를 두자. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[SqlAlchemy의 QueuePool]]></title><description><![CDATA[개발중인 서비스에서 Postgresql을 적용한지 이제 한달 조금 더 지났다.  아직 DB 마이그레이션 작업은 거의 되지 않았으므로, 실제로 Postgresql DB…]]></description><link>https://sharknia.github.io/SqlAlchemy의QueuePool/</link><guid isPermaLink="false">https://sharknia.github.io/SqlAlchemy의QueuePool/</guid><pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개발중인 서비스에서 Postgresql을 적용한지 이제 한달 조금 더 지났다. &lt;/p&gt;
+&lt;p&gt;아직 DB 마이그레이션 작업은 거의 되지 않았으므로, 실제로 Postgresql DB를 이용하는 서비스는 그다지 많지 않았다. &lt;/p&gt;
+&lt;p&gt;새로 업데이트 하는 기능들에 대해서는 적극적으로 Postgresql을 이용하기로 했고, 이번에 새로 퀴즈 기능을 개발하면서 이 기능은 전부 RDB 기반으로 만들어졌다. &lt;/p&gt;
+&lt;p&gt;퀴즈 기능의 개발은 유저의 접속률을 늘리기 위한 것으로, 모든 테스트를 마친 후 실서버에 배포가 되고 클라이언트까지 패치가 된 후 당당하게 퀴즈 풀러 오시라고 사용자들에게 푸시를 날렸다. &lt;/p&gt;
+&lt;p&gt;그리고 펑! 서버가 터졌다. &lt;/p&gt;
+&lt;h2&gt;현상&lt;/h2&gt;
+&lt;p&gt;실제 서비스가 엄청나게 느리거나 거의 작동하지 않았다. &lt;/p&gt;
+&lt;p&gt;Postgresql DB와 연결된 API들이 작동하지 않았다. &lt;/p&gt;
+&lt;p&gt;서버에서는 &lt;code class=&quot;language-text&quot;&gt;QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00&lt;/code&gt; 오류가 대량으로 발생했다. &lt;/p&gt;
+&lt;p&gt;서버 모니터링 결과 푸쉬 직후 대량의 트래픽이 집중적으로 발생했다. &lt;/p&gt;
+&lt;p&gt;Flarelane을 통해 확인한 결과, 2000명 정도가 동시 접속을 시도했다. &lt;/p&gt;
+&lt;p&gt;Supabase의 DB 커넥션이 순간적으로 크게 늘어났다. (풀러를 사용중인데도 불구하고)&lt;/p&gt;
+&lt;p&gt;시간이 지나면서 (약 10분이 안되는 짧은 시간) 트래픽이 줄어들고 자연스럽게 오류가 줄고, 서비스가 정상화되었다. &lt;/p&gt;
+&lt;h2&gt;원인 파악 및 해결&lt;/h2&gt;
+&lt;p&gt;Sqlalchemy의 QueuePool을 현재 지금 pool size 5, max overflow 10으로 맞춰놓았었는데, 트래픽이 증가하면서 QueuePool의 한도가 다 차고, 대다수 요청이 최대 대기 시간 30초를 꽉 채워 대기하다가 오류가 발생했다. &lt;/p&gt;
+&lt;p&gt;조사 결과, 대다수 많은 실제 서비스에서 해당 설정값은 대체적으로 너무 적어 값을 늘려서 사용한다고 한다. 정확한 값을 찾기 위해서는 여러번의 테스트가 필요하며, 점진적으로 늘려가면서 적당한 값을 찾아야 한다고 한다. &lt;/p&gt;
+&lt;p&gt;supabase 기반의 postgresql을 사용하고 있는데, 일단 postgresql의 connection 여유는 충분한 상황이었으므로 일단 설정값을 pool size 10, max overflow 20으로 각각 두배로 늘려주었다. &lt;/p&gt;
+&lt;p&gt;이벤트나, 푸쉬가 있을 경우 추가적인 모니터링이 필요할 것이다. &lt;/p&gt;
+&lt;h2&gt;Sqlalchemy의 QueuePool&lt;/h2&gt;
+&lt;p&gt;데이터베이스 Connection은 리소스가 많이 필요하다. QueuePool은 이런 Connection을 효율적으로 관리하여 성능을 향상시키기 위해 만들어졌다. Connection을 빠르게 재사용함으로써, 애플리케이션의 반응 시간을 단축 시키고 부하 상황에서도 안정적으로 동작하도록 한다. &lt;/p&gt;
+&lt;p&gt;Quepool은 내부적으로 Connection 객체들을 큐로 관리한다. 동시성을 고려하여 설계되어 여러 스레드 또는 프로세스에서 안전하게 사용될 수 있다. &lt;/p&gt;
+&lt;h3&gt;QueuePool의 생명주기&lt;/h3&gt;
+&lt;h4&gt;생성&lt;/h4&gt;
+&lt;p&gt;QueuePool은 Sqlalchemy 엔진이 생성될 때 함께 생성된다. 이 때 데이터베이스와의 Connection 설정이 정의된다. &lt;/p&gt;
+&lt;h4&gt;Connection 관리&lt;/h4&gt;
+&lt;p&gt;애플리케이션에서 데이터베이스 Connection이 필요할 때, QueuePool이 Connection을 제공한다. 사용 가능한 Connection이 없으면 새 Connection을 생성하거나 대기열에서 Connection을 기다린다. &lt;/p&gt;
+&lt;h4&gt;Connection 반환&lt;/h4&gt;
+&lt;p&gt;작업이 완료되면 Connection은 Pool에 반환되어 재사용된다. &lt;/p&gt;
+&lt;h4&gt;종료&lt;/h4&gt;
+&lt;p&gt;애플리케이션 종료와 함께 Pool에 있는 모든 Connection이 안전하게 종료된다. &lt;/p&gt;
+&lt;h3&gt;작동&lt;/h3&gt;
+&lt;p&gt;QueuePool은 기본적으로 미리 설정된 &lt;code class=&quot;language-text&quot;&gt;pool_size&lt;/code&gt; 내에서 Connection을 관리한다. 사용 가능한 Connection이 있다면 그 연결을 제공하고, 없으면 새로은 Connection을 생성한다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pool_size&lt;/code&gt;는 동시에 활성화 할 수 있는 최대 연결수이다. 만약 이 한계를 초과한다면, &lt;code class=&quot;language-text&quot;&gt;max_overflow&lt;/code&gt; 에 설정된 값에 따라 추가 Connection을 생성한다. &lt;code class=&quot;language-text&quot;&gt;max_overflow&lt;/code&gt; 는 &lt;code class=&quot;language-text&quot;&gt;pool_size&lt;/code&gt; 를 초과하여 생성할 수 있는 추가 연결의 최대 수이다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;max_overflow&lt;/code&gt; 까지 초과한다면 추가 Connection 연결 요청은 대기열에 들어가며 사용 가능한 Connection 이 생길때까지 대기한다. 이 때, 연결 대기 시간이 &lt;code class=&quot;language-text&quot;&gt;timeout&lt;/code&gt; 설정을 초과하면 연결 요청은 실패한다. &lt;/p&gt;
+&lt;h4&gt;pool_size&lt;/h4&gt;
+&lt;p&gt;이 설정은 가능한 최대 연결의 최대 수를 정의 하는 것이므로, 5로 설정했다고 해서 실제 연결이 5개가 유지되는 것은 아니다. 사용되지 않는 Connection은 pool에 반환되며, 유휴 상태로 남아있다가 &lt;code class=&quot;language-text&quot;&gt;recycle&lt;/code&gt; 설정 시간을 넘어서면 끊어진다. &lt;/p&gt;
+&lt;h4&gt;max_overflow&lt;/h4&gt;
+&lt;p&gt;pool&lt;em&gt;size를 초과하는 최대 개수를 정의한다. pool&lt;/em&gt;size 가 5이고, max&lt;em&gt;overflowrk 10이라면 동시에 최대 5+10 = 15개의 연결을 허용하는 것이다. max&lt;/em&gt;overflow에 해당되어 생성된 Connection이라 할지라도 사용 후에 풀에 반환된다(바로 끊어지는 것이 아니다). 다만, 해당 Connection은 pool_size의 기본 한계를 넘어선 것이므로 풀에서 더 높은 우선 순위로 종료될 수 있다. &lt;/p&gt;
+&lt;h3&gt;Sqlalchemy의 풀링 전략&lt;/h3&gt;
+&lt;p&gt;Sqlalchemy의 기본 풀링 전략은 Queuepool이지만, 이외에도 다른 전략들이 있다. &lt;/p&gt;
+&lt;h3&gt;StaticPool&lt;/h3&gt;
+&lt;p&gt;연결의 고정된 집합을 유지한다. 모든 Connection 요청은 이 고정된 집합에서 제공된다. 단일 사용자 또는 단일 프로세스 어플리케이션에 적합하다. &lt;/p&gt;
+&lt;h3&gt;NullPool&lt;/h3&gt;
+&lt;p&gt;Connection Pooling을 사용하지 않는다. 매 요청마다 새로운 DB Connection이 열리고 작업 종료 후 Connection이 닫힌다. &lt;/p&gt;
+&lt;p&gt;매우 드문 요청이 있는 어플리케이션에 적합하다. &lt;/p&gt;
+&lt;h3&gt;Singleton ThreadPool&lt;/h3&gt;
+&lt;p&gt;각 스레드에 대해 하나의 Connection을 유지한다. 스레드마다 고유한 Connection을 사용한다. &lt;/p&gt;
+&lt;p&gt;멀티 스레드 환경에서 각 스레드가 자체 Connection을 가질 필요가 있을 때 유용하다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy 비동기 엔진에서의 Postgresql Pooler]]></title><description><![CDATA[결론 supabase 기준, Sqlalchemy의 비동기 엔진에서 Postgresql pooler (supavisor)에 오류 없이 연결하기 위해서는  을 다음과 같이 구성해주면 된다.  statementcachesize…]]></description><link>https://sharknia.github.io/Sqlalchemy비동기엔진에서의PostgresqlPooler/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy비동기엔진에서의PostgresqlPooler/</guid><pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;결론&lt;/h2&gt;
+&lt;p&gt;supabase 기준, Sqlalchemy의 비동기 엔진에서 Postgresql pooler (supavisor)에 오류 없이 연결하기 위해서는 &lt;code class=&quot;language-text&quot;&gt;create_async_engine&lt;/code&gt; 을 다음과 같이 구성해주면 된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; uuid &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; uuid4
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; asyncpg &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Connection
+
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;생략&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CConnection&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Connection&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_get_unique_id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; prefix&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token triple-quoted-string string&quot;&gt;&quot;&quot;&quot;
+        캐싱을 만들 시에 캐싱 아이디가 중복으로 생성되어서 오류가 발생하는 경우가 있다.
+        statement_cache_size를 0으로 해도 일단 캐싱을 만들고 오류를 낸다.
+        따라서 캐싱을 사용하지 않을 것이므로, 아예 중복되지 않게 UUID로 생성해버린다.
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&apos;__asyncpg_&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;prefix&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;uuid4&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;__&apos;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;생략&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+DATABASE_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;postgresql+asyncpg://postgres.[Project ID]:[Password]@aws-0-[Region].pooler.supabase.com:6543/postgres?prepared_statement_cache_size=0&quot;&lt;/span&gt;&lt;/span&gt;
+    _db_connection &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; create_async_engine&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        DATABASE_URL&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        connect_args&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;statement_cache_size&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&apos;connection_class&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; CConnection&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;statement&lt;em&gt;cache&lt;/em&gt;size, prepared&lt;em&gt;statement&lt;/em&gt;cache_size를 둘 다 모두 0으로 줘야 한다.&lt;/p&gt;
+&lt;p&gt;그리고 왜 발생하는지 모르겠는 간헐적인 오류(캐싱 ID를 중복되게 생성하려고 시도함)를 해결하기 위해 Connection 클래스를 상속받아 &lt;em&gt;get&lt;/em&gt;unique&lt;em&gt;id 메소드를 오버라이딩 해주고, 해당 클래스를 connection&lt;/em&gt;class로 사용하도록 했다. 이렇게 하면 id 중복 생성 오류를 방지할 수 있다. &lt;/p&gt;
+&lt;p&gt;일반적인 글이라면 결론이 서두에 나온다면 너무나 시시하겠지만 기술 블로그이니 괜찮다. &lt;/p&gt;
+&lt;h2&gt;문제 해결에 관한 글&lt;/h2&gt;
+&lt;h3&gt;발단&lt;/h3&gt;
+&lt;p&gt;supabase에서 메일이 왔다. &lt;/p&gt;
+&lt;p&gt;여태 본 기억이 없었는데, Final reminder라도 되어있는걸 보니 이미 여러번 고지했던 모양이다. &lt;/p&gt;
+&lt;p&gt;읽어보니 Pgbouncer 지원이 종료된다는 내용이다. 지원이 종료되는건 알고 있었는데, 아예 Connection string을 죽여버리는 모양이다. 잔인하다는 생각이 들었지만 어차피 우리는 Pooler는 진작에 포기했으므로 상관이 없었다. &lt;/p&gt;
+&lt;p&gt;문제는 다음이었는데, DB Direct access에 대한 IPv4 주소 지원도 끝난다니 이건 좀 문제의 소지가 있었다. &lt;/p&gt;
+&lt;p&gt;마침 어제 지난번 DB 세팅에 대한 회고를 끝내서 다행이었다. &lt;/p&gt;
+&lt;h3&gt;전개&lt;/h3&gt;
+&lt;p&gt;선택지는 두가지이다. Supavisor 도입, 네트워크가 IPv6를 지원하도록 설정하고 Direct 연결 방법을 계속해서 사용. &lt;/p&gt;
+&lt;p&gt;개인적으로 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;네트워크 설정에 상대적으로 약함&lt;/li&gt;
+&lt;li&gt;WebRTC를 하던 때의 기억 때문에 IPv6에 안좋은 감정이 있음 &lt;/li&gt;
+&lt;li&gt;현재 백엔드의 네트워크 설정을 직접 진행하지 않았었음 &lt;/li&gt;
+&lt;li&gt;혼자 출근한 백엔드는 나 혼자임&lt;/li&gt;
+&lt;li&gt;Pooler와 씨름을 한 기억이 최근이고, 회고는 더더욱 최근임
+의 이유로 Supavisor 도입에 대해 다른 백엔드가 출근하기 전 잠깐 살펴보기로 했다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;그런데 왠걸? 직접 설치부터 해야 하나라고 막연히 생각을 했었는데(supabase의 공식 문서에는 아직 supavisor에 대한 내용이 적어도 찾기 쉬운 곳에 있지는 않다. ) 그렇지 않았다. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/orgs/supabase/discussions/17817&quot;&gt;https://github.com/orgs/supabase/discussions/17817&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;해당 링크를 보아하니 이미 꽤 지원이 진행된 상태였는지, connection string만 바꾸면 간단하게 Pgbouncer가 아니라 Supavisor를 사용하여 연결할 수 있다고 적혀 있었다. &lt;/p&gt;
+&lt;p&gt;그래서 해당 링크를 참조해 Connection string은 약간 수정을 해야 했지만, 어쨌든 Supavisor 연결에 간단하게 성공해버렸다. &lt;/p&gt;
+&lt;h3&gt;위기&lt;/h3&gt;
+&lt;p&gt;곧장 과거 겪었던 것과 같은 문제가 발생했다. Sqlalchemy 입장에서는 Pgbouncer와 Supavisor를 따로 구분하지 못하는지 Transaction 또는 Session 풀 모드에서는 캐싱이 지원되지 않는다는 에러 문구가 발생했다. &lt;/p&gt;
+&lt;p&gt;여기서 잠깐, 포기하고 얌전히 IPv6 설정을 보러 갈까 했는데, 아직 다른 백엔드가 아무도 출근하지 않았다. &lt;/p&gt;
+&lt;p&gt;일단 Pool mode를 바꿔야 다음 단계의 설정을 진행할 수 있었는데, Pgbouncer의 Pool mode는 supabase 콘솔에서 세팅을 지원하지만 supavisor는 어떻게 바꿔야 할지 의문이었다. &lt;/p&gt;
+&lt;p&gt;해당 의문은 말도 못하게 간단하게 풀렸다. 콘솔에 들어가보니 어느새 쥐도 새도 모르게 Pgbouncer 관련 섹션이 supavisor 관련 섹션으로 바뀌어있었다. &lt;/p&gt;
+&lt;p&gt;위 이슈에서 설명된 supavisor 관련 connection string은 &lt;code class=&quot;language-text&quot;&gt;user&lt;/code&gt; 로 시작하는 부분이 옳지 않아서 수정이 필요했는데, 콘솔의 pgbouncer 관련 연결 connection string 에는 제대로 적혀있었다. 아무래도 메일에 적어보낸 이슈이지만 따로 수정을 하지는 않은 모양이다.. &lt;/p&gt;
+&lt;p&gt;아무튼간 pool mode를 변경 후 테스트를 할 수 있었다. &lt;/p&gt;
+&lt;h3&gt;절정1&lt;/h3&gt;
+&lt;p&gt;Pool mode를 바꿨다고 해서 바로 연결이 가능하지는 않다. 서버 인스턴스를 실행하면 짜잔! 성공적인 DB 연결 대신 다음과 같은 문구를 볼 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) &amp;lt;class &apos;asyncpg.exceptions.InvalidSQLStatementNameError&apos;&gt;: prepared statement &quot;__asyncpg_stmt_b__&quot; does not exist
+HINT:  
+NOTE: pgbouncer with pool_mode set to &quot;transaction&quot; or
+&quot;statement&quot; does not support prepared statements properly.
+You have two options:
+* if you are using pgbouncer for connection pooling to a
+  single server, switch to the connection pool functionality
+  provided by asyncpg, it is a much better option for this
+  purpose;
+* if you have no option of avoiding the use of pgbouncer,
+  then you can set statement_cache_size to 0 when creating
+  the asyncpg connection object.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sqlalchemy를 사용중이기 때문에 첫번째 방법은 자연스럽게 더 고려할것도 없이 기각이며, statement&lt;em&gt;cache&lt;/em&gt;size를 0으로 수정하는 것이 현재 내 인프라에서 선택할 수 있는 방법이었다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.sqlalchemy.org/en/20/dialects/postgresql.html&quot;&gt;https://docs.sqlalchemy.org/en/20/dialects/postgresql.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;지난번 기나긴 고생 이후 공식 문서를 항상 참조하는 습관을 들이게 됐다. 아주 긍정적인 방향이라고 생각한다. &lt;/p&gt;
+&lt;p&gt;공식 문서를 참조하면,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;engine = create_async_engine(&quot;postgresql+asyncpg://user:pass@hostname/dbname?prepared_statement_cache_size=0&quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;의 방식으로 statement&lt;em&gt;cache&lt;/em&gt;size를 0으로 설정할 수 있는 것을 알 수 있다. &lt;/p&gt;
+&lt;p&gt;이 설정을 해준 후, 다시 서버 인스턴스를 실행하면 짜잔! DB 연결이 아주 잘 된다. 쿼리도 잘 날리고, 결과도 잘 받아온다.&lt;/p&gt;
+&lt;p&gt;이 와중에 Cache 생성 시에 같은 인덱스로 중복 생성되어서 오류가 발생하기도 했다. 그래서 SqlAlchemy의 Connection 클래스를 상속받아 캐시의 아이디를 생성하는 메소드를 수정해주었다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; asyncpg &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Connection
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; uuid &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; uuid4
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CConnection&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Connection&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_get_unique_id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; prefix&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token triple-quoted-string string&quot;&gt;&quot;&quot;&quot;
+        캐싱을 만들 시에 캐싱 아이디가 중복으로 생성되어서 오류가 발생하는 경우가 있다.
+        statement_cache_size를 0으로 해도 일단 캐싱을 만들고 오류를 낸다.
+        따라서 캐싱을 사용하지 않을 것이므로, 아예 중복되지 않게 UUID로 생성해버린다.
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&apos;__asyncpg_&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;prefix&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;uuid4&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;__&apos;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이후 DB 커넥션을 만들 때에 해당 클래스를 기본 Connection 클래스 대신 사용하도록 설정해주면 된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;DATABASE_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;postgresql+asyncpg://postgres.[Project ID]:[Password]@aws-0-[Region].pooler.supabase.com:6543/postgres?prepared_statement_cache_size=0&quot;&lt;/span&gt;&lt;/span&gt;
+    _db_connection &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; create_async_engine&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        DATABASE_URL&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        connect_args&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&apos;connection_class&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; CConnection&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기까지 작업을 해줘서 오류를 해결하고 같은 쿼리를 연속으로 날리면? &lt;/p&gt;
+&lt;p&gt;짜잔! 다음과 같은 오류를 볼 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) &amp;lt;class &apos;asyncpg.exceptions.InvalidSQLStatementNameError&apos;&gt;: prepared statement &quot;__asyncpg_stmt_9462b5fe-88dc-46f5-98fb-57981ea56de0__&quot; does not exist
+HINT:  
+NOTE: pgbouncer with pool_mode set to &quot;transaction&quot; or
+&quot;statement&quot; does not support prepared statements properly.
+You have two options:
+* if you are using pgbouncer for connection pooling to a
+  single server, switch to the connection pool functionality
+  provided by asyncpg, it is a much better option for this
+  purpose;
+* if you have no option of avoiding the use of pgbouncer,
+  then you can set statement_cache_size to 0 when creating
+  the asyncpg connection object.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그렇다, 오류는 반복된다. &lt;/p&gt;
+&lt;h3&gt;절정2&lt;/h3&gt;
+&lt;p&gt;이미 여기까지 시간을 꽤 쓴 상태였기 때문에 조금만 더 무언가를 해보기로 했다. &lt;/p&gt;
+&lt;p&gt;캐시 사용을 아무리 꺼도, 도대체가 캐시를 계속 만들고 거기서 오류를 내는 이 상황. &lt;/p&gt;
+&lt;p&gt;다행히 비슷한 오류를 겪는 사람들을 깃허브 이슈에서 찾을 수 있었다. &lt;/p&gt;
+&lt;p&gt;이미 나의 신뢰를 많이 잃어버린 챗지피티에게 이 문제를 상담하면 &lt;code class=&quot;language-text&quot;&gt;statement_cache_size&lt;/code&gt; 옵션을 0으로 설정해서 connect_args에 넣으라고 한다. PgBouncer로 붙이려고 애써봤었을 때에 해당 옵션을 넣어도 아무런 변화가 없이 그대로 오류가 발생했었고, 공식문서에는 존재하지 않는 옵션이어서 이번에는 무시하고 넘어갔었다. &lt;/p&gt;
+&lt;p&gt;근데 충격적이게도 한가지 옵션을 썼을 땐 되지 않고 두 옵션을 동시에 사용하면 된다고 한다.. 이게 무슨 일일까? 나는 왜 두 옵션을 동시에 쓸 생각을 못했을까?(이 생각을 어떻게 하나요?)&lt;/p&gt;
+&lt;p&gt;최종적으로 DB Connection String을 다음과 같이 설정해주었다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; uuid &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; uuid4
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; asyncpg &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Connection
+
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;생략&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CConnection&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Connection&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_get_unique_id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; prefix&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token triple-quoted-string string&quot;&gt;&quot;&quot;&quot;
+        캐싱을 만들 시에 캐싱 아이디가 중복으로 생성되어서 오류가 발생하는 경우가 있다.
+        statement_cache_size를 0으로 해도 일단 캐싱을 만들고 오류를 낸다.
+        따라서 캐싱을 사용하지 않을 것이므로, 아예 중복되지 않게 UUID로 생성해버린다.
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&apos;__asyncpg_&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;prefix&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;uuid4&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;__&apos;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;생략&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+
+DATABASE_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;postgresql+asyncpg://postgres.[Project ID]:[Password]@aws-0-[Region].pooler.supabase.com:6543/postgres?prepared_statement_cache_size=0&quot;&lt;/span&gt;&lt;/span&gt;
+    _db_connection &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; create_async_engine&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        DATABASE_URL&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        connect_args&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;statement_cache_size&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&apos;connection_class&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; CConnection&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;결말 &amp;#x26; 에필로그&lt;/h3&gt;
+&lt;p&gt;지난번 기나긴 고생과 삽질을 통해서 챗지피티에 대한 신뢰를 덜고 공식문서를 신뢰해야 한다는 사실을 깨달았다. &lt;/p&gt;
+&lt;p&gt;그리고 이번 짧은(반나절 정도) 삽질을 통해서 공식문서도 100% 정답은 아니라는 사실을 깨달았다. (나는 무엇을 믿어야 할까?)&lt;/p&gt;
+&lt;p&gt;생각해보면, Database url 에다가 옵션을 넣는다고 해서 내부적으로 뭔가 변경되는 것일리가 없다. 결국 엔진을 만들 때에 옵션값을 넣어줘야 내부적으로 뭔가 알고 다른 작동을 하지 않을까? 이 생각을 막바지에 와서 떠올렸다. &lt;/p&gt;
+&lt;p&gt;항상 시야를 넓게 하고, 의심하면서 만들어야 한다는 것을 다시 한 번 깨달았다. 남들이 시키는대로 해서는 되는것이 없는 것이다. &lt;/p&gt;
+&lt;p&gt;별개로, 내가 잘못을 한 것인지 뭔지 Sqlalchemy도 FastAPI도 Postgresql도 모두 유명한 것들인데 어째서 이렇게까지 불완전하게 작동하는지 의문이 든다. 역사가 길진 않지만 그래도 수년의 시간은 지난 것들인데, 가장 기본적인 부분이 이렇게 불안정할지는 예상을 못했다. FastAPI의 메모리 누수 문제도 뒤늦게 알게 되었는데, 메모리 누수 문제에 이어서 비동기 엔진에서의 DB Pooler 연결에 이렇게 문제가 있을 줄 알았다면 FastAPI와 SqlAlchemy를 절대 선택하지 않았을 것 같다. &lt;/p&gt;
+&lt;p&gt;고찰, 의심, 경험.. 등등이 중요하다고 다시 한 번 느꼈다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;무엇을 하는가?&lt;/h2&gt;
 &lt;p&gt;Notion API를 이용해서 내가 쓴 글 들을 불러와 MD 파일로 만들려고 한다. 그 과정을 실시간으로 기록하려고 한다. 명확하게 가능한가? 는 사실 아직 알아보지 않았다. &lt;/p&gt;
 &lt;h2&gt;왜 하는가?&lt;/h2&gt;
 &lt;p&gt;너무나 너무나 귀찮기 때문이다.&lt;/p&gt;
