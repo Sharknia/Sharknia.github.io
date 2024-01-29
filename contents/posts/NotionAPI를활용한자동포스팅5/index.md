@@ -1,13 +1,14 @@
 ---
-title: "NotionAPI를 활용한 자동 포스팅(5)"
-description: "1차 목표 달성"
-date: 2024-01-28
-update: 2024-01-28
 tags:
   - Blogging
   - Notion-API
   - Typescript
+description: "1차 목표 달성"
 series: "GitHub Pages와 Notion API 연동"
+update: "2024-01-29"
+date: "2024-01-28"
+상태: "POST"
+title: "NotionAPI를 활용한 자동 포스팅(5)"
 ---
 ## 열정
 
@@ -124,17 +125,29 @@ private convertToDo(toDoBlock: any): string {
 일단 1차적으로 작업이 완료되었으며, 완료된 지원하는 블록 타입은 다음과 같다. 
 
 - paragraph
+
 - heading_1, heading_2, heading_3
+
 - bookmark
+
 - link_to_page
+
 - image
+
 - callout
+
 - divider
+
 - quote
+
 - code
+
 - numbered_list_item
+
 - bulleted_list_item
+
 - to_do
+
 ### 작업 예정 블록
 
 #### table, table-row
