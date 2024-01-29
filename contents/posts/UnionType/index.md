@@ -1,12 +1,12 @@
 ---
-title: "Union Type"
-description: "타입스크립트와 파이썬의 유니온 타입 선언"
-date: 2024-01-28
-update: 2024-01-28
 tags:
   - Typescript
   - Python
-series: ""
+description: "타입스크립트와 파이썬의 유니온 타입 선언"
+update: "2024-01-29"
+date: "2024-01-28"
+상태: "POST"
+title: "Union Type"
 ---
 ## 타입스크립트의 Union Type
 

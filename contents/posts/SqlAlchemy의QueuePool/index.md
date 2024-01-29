@@ -1,13 +1,12 @@
 ---
-title: "SqlAlchemy의 QueuePool"
-description: ""
-date: 2024-01-18
-update: 2024-01-28
 tags:
   - SqlAlchemy
   - DataBase
   - Python
-series: ""
+update: "2024-01-29"
+date: "2024-01-18"
+상태: "POST"
+title: "SqlAlchemy의 QueuePool"
 ---
 개발중인 서비스에서 Postgresql을 적용한지 이제 한달 조금 더 지났다. 
 

@@ -1,13 +1,12 @@
 ---
-title: "Sqlalchemy 비동기 엔진에서의 Postgresql Pooler"
-description: ""
-date: 2024-01-09
-update: 2024-01-28
 tags:
   - DataBase
   - SqlAlchemy
   - Python
-series: ""
+update: "2024-01-29"
+date: "2024-01-09"
+상태: "POST"
+title: "Sqlalchemy 비동기 엔진에서의 Postgresql Pooler"
 ---
 ## 결론
 
@@ -54,6 +53,7 @@ statement_cache_size, prepared_statement_cache_size를 둘 다 모두 0으로 �
 
 supabase에서 메일이 왔다. 
 
+![](image1.png)
 여태 본 기억이 없었는데, Final reminder라도 되어있는걸 보니 이미 여러번 고지했던 모양이다. 
 
 읽어보니 Pgbouncer 지원이 종료된다는 내용이다. 지원이 종료되는건 알고 있었는데, 아예 Connection string을 죽여버리는 모양이다. 잔인하다는 생각이 들었지만 어차피 우리는 Pooler는 진작에 포기했으므로 상관이 없었다. 
@@ -93,6 +93,7 @@ supabase에서 메일이 왔다.
 
 해당 의문은 말도 못하게 간단하게 풀렸다. 콘솔에 들어가보니 어느새 쥐도 새도 모르게 Pgbouncer 관련 섹션이 supavisor 관련 섹션으로 바뀌어있었다. 
 
+![](image2.png)
 위 이슈에서 설명된 supavisor 관련 connection string은 `user` 로 시작하는 부분이 옳지 않아서 수정이 필요했는데, 콘솔의 pgbouncer 관련 연결 connection string 에는 제대로 적혀있었다. 아무래도 메일에 적어보낸 이슈이지만 따로 수정을 하지는 않은 모양이다.. 
 
 아무튼간 pool mode를 변경 후 테스트를 할 수 있었다. 

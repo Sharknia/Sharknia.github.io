@@ -1,11 +1,10 @@
 ---
-title: "우분투 용량 관리"
-description: ""
-date: 2024-01-28
-update: 2024-01-28
 tags:
   - Ubuntu
-series: ""
+update: "2024-01-29"
+date: "2024-01-28"
+상태: "POST"
+title: "우분투 용량 관리"
 ---
 개인적으로 나스를 하나 운영하고 있다. 
 
