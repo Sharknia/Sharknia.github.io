@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Jan 2024 00:59:01 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Jan 2024 01:09:28 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
 &lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
 &lt;h2&gt;구현 내용&lt;/h2&gt;
 &lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
@@ -90,11 +90,9 @@
 &lt;li&gt;code&lt;/li&gt;
 &lt;li&gt;numbered&lt;em&gt;list&lt;/em&gt;item&lt;/li&gt;
 &lt;li&gt;bulleted&lt;em&gt;list&lt;/em&gt;item&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;to_do&lt;/p&gt;
-&lt;h3&gt;작업 예정 블록&lt;/h3&gt;
-&lt;/li&gt;
+&lt;li&gt;to_do&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3&gt;작업 예정 블록&lt;/h3&gt;
 &lt;h4&gt;table, table-row&lt;/h4&gt;
 &lt;p&gt;꼭 필요해보이지만, 구현을 위해서는 현재 구현된 블록의 재귀 호출 구조를 바꿔야 한다. 상대적으로 까다로워 오늘 작업하진 않겠다. &lt;/p&gt;
 &lt;h3&gt;작업 미정 블록&lt;/h3&gt;
