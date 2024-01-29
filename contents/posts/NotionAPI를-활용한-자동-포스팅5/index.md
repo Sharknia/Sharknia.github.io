@@ -3,7 +3,10 @@ tags:
   - Blogging
   - Notion-API
   - Typescript
+<<<<<<< HEAD:contents/posts/NotionAPI를-활용한-자동-포스팅5/index.md
   - Hobby
+=======
+>>>>>>> 295c5d3c9b00adb30cd52245d0a80bf1f5b3a356:contents/posts/NotionAPI를활용한자동포스팅5/index.md
 description: "1차 목표 달성"
 series: "GitHub Pages와 Notion API 연동"
 update: "2024-01-29"
