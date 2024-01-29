@@ -1,13 +1,14 @@
 ---
-title: "NotionAPI를 활용한 자동 포스팅(4)"
-description: "쭉쭉 진행되는 작업"
-date: 2024-01-27
-update: 2024-01-28
 tags:
   - Blogging
   - Notion-API
   - Typescript
+description: "쭉쭉 진행되는 작업"
 series: "GitHub Pages와 Notion API 연동"
+update: "2024-01-29"
+date: "2024-01-27"
+상태: "POST"
+title: "NotionAPI를 활용한 자동 포스팅(4)"
 ---
 ## 지난 이야기
 
@@ -27,7 +28,9 @@ export type GetBlockResponse = PartialBlockObjectResponse | BlockObjectResponse;
 
 Union Type이라는 것이 있다는 것을 알게 되었다. 해당 내용에 대해서는 따로 정리 해두었다. 
 
-[https://sharknia.vercel.app/typescrypt-union-type](https://sharknia.vercel.app/typescrypt-union-type)
+[Union Type](https://sharknia.github.io/UnionType)
+
+ 
 
 ### 로그 강화
 
@@ -51,7 +54,7 @@ paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단�
 
 원본 노션의 내용은 다음과 같다. 일부러 여러가지 케이스를 집어넣었다. 
 
-![](image7.png)
+![](image3.png)
 이 paragraph블록의 데이터 형태는 다음과 같다. 
 
 #### <u>노</u><u>~~션이~~</u> **좋습*****니다***..
@@ -301,7 +304,7 @@ convertParagraph - markdown : `정말로`.. <span style="color: pink;">좋아합
 
 이를 vscode의 마크다운 편집 기능을 통해서 확인하면 다음과 같이 정상적으로 출력되는 것을 확인할 수 있다. 
 
-![](image8.png)
+![](image4.png)
 ### 마크다운 파일 저장 기능 추가 
 
 page.ts에 block들로부터 받아온 마크다운 내용과 properties에 저장된 내용들을 합해 마크다운 파일로 저장하는 메소드를 완성했다. 
@@ -357,10 +360,10 @@ github.io의 블로그 형식에 맞춰서 properties를 바꿔주고, 블로그
 
 위 코드를 포함해서 실행하면, 
 
-![](image9.png)
+![](image5.png)
 이렇게 저장이 되고, 
 
-![](image10.png)
+![](image6.png)
 이렇게 깔끔하게 저장이 된다. 이제 앞으로는 각 블록 타입들에 대한 변환을 추가하면 된다!
 
 ### BlockObjectResponse 분석
@@ -375,7 +378,7 @@ export type BlockObjectResponse = ParagraphBlockObjectResponse | Heading1BlockOb
 
 일단, 많이 쓸 것 같은 블록들을 예제 파일로 만들고 해당 노션 파일들을 불러와보고 어떤 타입들을 사용하는지 살펴보기로 했다. 나머지는 모르겠다 아직은 그냥 미지원이다. 
 
-![](image11.png)
+![](image7.png)
 이것들을 넘는것은 내가 아직은 노션에 쓸 것 같지가 않다. 따라서 위의 블록들을 중점적으로 먼저 변환하기로 하자. 
 
 다음의 녀석들이 그 녀석들이다. 
