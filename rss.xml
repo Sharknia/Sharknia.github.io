@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 28 Jan 2024 14:19:38 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 29 Jan 2024 00:59:01 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를활용한자동포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
 &lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
 &lt;h2&gt;구현 내용&lt;/h2&gt;
 &lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
@@ -973,7 +973,17 @@ DATABASE_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;h2&gt;문제 해결에 관한 글&lt;/h2&gt;
 &lt;h3&gt;발단&lt;/h3&gt;
 &lt;p&gt;supabase에서 메일이 왔다. &lt;/p&gt;
-&lt;p&gt;여태 본 기억이 없었는데, Final reminder라도 되어있는걸 보니 이미 여러번 고지했던 모양이다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/754811dd5daabc41fab8df2eb32a001e/af70e/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 128.82352941176472%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAABYlAAAWJQFJUiTwAAADAElEQVR42p1V23LiMAzN/38SD52h0z7yAJT7fdMkTkLuIeGu1ZETCrPp7lJmNJZtRT46OjaGaZo0mUxos9mITadTGo/HZFkWrddr6vV6sg9/sVjQfD6X+WAwoOFwKN9cr1eqfwYCWq0Wvb29UbvdppeXF7HX11d6f3+nTqcjhyBuNpsRACBZt9uVcblcPia0bVsQfXx8UL/fp9FoRKvVSoKBbr/f0zM/418BOP3evlu7Jcx3Ozqfz38ENQX/F8Lj6SQJYSf2Yfdrl8uFmmJOlX+/jtGI44Qs26FtEFIYxRSEIfsBRbyOeZKmpFyPIvaxFoSRxEZxTP42oJDncZKwH1KW5WTsioI/jOhwODTy1+Q3c12VjC4CBVAhMU6Jk1TQYD1JM0qSVHyNJhVE2MeY8j5QH49HnRBl2UpJWa7n02q9oS7LZzqb05DlNGAZTViHn5Yt+5ajyGQfNGFu89zzt+KDRyNlRFjAaUColMtBjnyQ8BpORhXn80XKRpO0Xb/mPNZKMfI8Jz/YCsllWRI4LTkB5IRESAh+i6KU8SBzPoT9stzLGpDdZONwuYPhmO+kKd1zXFcQO1yKw2iV61elOTIX4xibR9AAHxwWDASHGyAZnAChBHIiJFCeTlQnUZ4njchy3TSMaZbJiEZiD6ily1hESXXJxb6UklFSwWvYw7wu7bvrKCVDDigR5YpQIy1cXa4n5YjxGtDXlMCwjzgP3beVFra+KepWHoLQYfgYkcR2wJtHm18mmZ+W3pPkntCFOTQKCgwgQkJwVAcLEuU9CDvNtLjBFcRc8we5gZJbl8vqpoAjbCAIfsIfHCr1P/Xa4GPcFm2aL/j6wgfCJ64lKAFv/lYbZONXj4iLi8GjJAQiBKBUvDQwXDtoc7Fc0XDE/y/8qjc9EE3dNqCdLNvdShVeUq03UAG+4IucIB/2cT3xnDWWDA7vSU6q16QWsKyzHOTAfCeHoNs+l/mj/5Snm4ImQHufliOI7l+SR6PK/v5/w10upFtoiu5oyHyVP0b4G9LzywBICL9oAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/754811dd5daabc41fab8df2eb32a001e/ca1dc/image1.png&apos; srcset=&apos;/static/754811dd5daabc41fab8df2eb32a001e/e7570/image1.png 170w,
+/static/754811dd5daabc41fab8df2eb32a001e/f46e7/image1.png 340w,
+/static/754811dd5daabc41fab8df2eb32a001e/ca1dc/image1.png 680w,
+/static/754811dd5daabc41fab8df2eb32a001e/02d09/image1.png 1020w,
+/static/754811dd5daabc41fab8df2eb32a001e/af70e/image1.png 1184w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+여태 본 기억이 없었는데, Final reminder라도 되어있는걸 보니 이미 여러번 고지했던 모양이다. &lt;/p&gt;
 &lt;p&gt;읽어보니 Pgbouncer 지원이 종료된다는 내용이다. 지원이 종료되는건 알고 있었는데, 아예 Connection string을 죽여버리는 모양이다. 잔인하다는 생각이 들었지만 어차피 우리는 Pooler는 진작에 포기했으므로 상관이 없었다. &lt;/p&gt;
 &lt;p&gt;문제는 다음이었는데, DB Direct access에 대한 IPv4 주소 지원도 끝난다니 이건 좀 문제의 소지가 있었다. &lt;/p&gt;
 &lt;p&gt;마침 어제 지난번 DB 세팅에 대한 회고를 끝내서 다행이었다. &lt;/p&gt;
@@ -997,7 +1007,18 @@ DATABASE_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;p&gt;여기서 잠깐, 포기하고 얌전히 IPv6 설정을 보러 갈까 했는데, 아직 다른 백엔드가 아무도 출근하지 않았다. &lt;/p&gt;
 &lt;p&gt;일단 Pool mode를 바꿔야 다음 단계의 설정을 진행할 수 있었는데, Pgbouncer의 Pool mode는 supabase 콘솔에서 세팅을 지원하지만 supavisor는 어떻게 바꿔야 할지 의문이었다. &lt;/p&gt;
 &lt;p&gt;해당 의문은 말도 못하게 간단하게 풀렸다. 콘솔에 들어가보니 어느새 쥐도 새도 모르게 Pgbouncer 관련 섹션이 supavisor 관련 섹션으로 바뀌어있었다. &lt;/p&gt;
-&lt;p&gt;위 이슈에서 설명된 supavisor 관련 connection string은 &lt;code class=&quot;language-text&quot;&gt;user&lt;/code&gt; 로 시작하는 부분이 옳지 않아서 수정이 필요했는데, 콘솔의 pgbouncer 관련 연결 connection string 에는 제대로 적혀있었다. 아무래도 메일에 적어보낸 이슈이지만 따로 수정을 하지는 않은 모양이다.. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/7c5279045f32fb30cbeb9d1c39351ce2/98f2e/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 38.23529411764706%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAoUlEQVR42pWQbQ6EIAxEuQogn6Lc/3Q1rwmGqOvu/ngBtDOd1vTeZd93iTGKc06898p8/xU0Jucsy7LcftAghCDWWn1/4zRE+NRp2zYhfa1VKaXcWNdV4U4NWkMKuJqmlIT0Q3ydAviGlhM0IcVPKTGbk42kJGqtnclGUzxYj/m0fAoRzUacmLGO0WwkRKOGT+PCXPjGGJsmusO3wn9gIgwPE/TlErXrnBgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/7c5279045f32fb30cbeb9d1c39351ce2/ca1dc/image2.png&apos; srcset=&apos;/static/7c5279045f32fb30cbeb9d1c39351ce2/e7570/image2.png 170w,
+/static/7c5279045f32fb30cbeb9d1c39351ce2/f46e7/image2.png 340w,
+/static/7c5279045f32fb30cbeb9d1c39351ce2/ca1dc/image2.png 680w,
+/static/7c5279045f32fb30cbeb9d1c39351ce2/02d09/image2.png 1020w,
+/static/7c5279045f32fb30cbeb9d1c39351ce2/9d567/image2.png 1360w,
+/static/7c5279045f32fb30cbeb9d1c39351ce2/98f2e/image2.png 2012w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+위 이슈에서 설명된 supavisor 관련 connection string은 &lt;code class=&quot;language-text&quot;&gt;user&lt;/code&gt; 로 시작하는 부분이 옳지 않아서 수정이 필요했는데, 콘솔의 pgbouncer 관련 연결 connection string 에는 제대로 적혀있었다. 아무래도 메일에 적어보낸 이슈이지만 따로 수정을 하지는 않은 모양이다.. &lt;/p&gt;
 &lt;p&gt;아무튼간 pool mode를 변경 후 테스트를 할 수 있었다. &lt;/p&gt;
 &lt;h3&gt;절정1&lt;/h3&gt;
 &lt;p&gt;Pool mode를 바꿨다고 해서 바로 연결이 가능하지는 않다. 서버 인스턴스를 실행하면 짜잔! 성공적인 DB 연결 대신 다음과 같은 문구를 볼 수 있다. &lt;/p&gt;
@@ -1092,7 +1113,112 @@ DATABASE_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;p&gt;생각해보면, Database url 에다가 옵션을 넣는다고 해서 내부적으로 뭔가 변경되는 것일리가 없다. 결국 엔진을 만들 때에 옵션값을 넣어줘야 내부적으로 뭔가 알고 다른 작동을 하지 않을까? 이 생각을 막바지에 와서 떠올렸다. &lt;/p&gt;
 &lt;p&gt;항상 시야를 넓게 하고, 의심하면서 만들어야 한다는 것을 다시 한 번 깨달았다. 남들이 시키는대로 해서는 되는것이 없는 것이다. &lt;/p&gt;
 &lt;p&gt;별개로, 내가 잘못을 한 것인지 뭔지 Sqlalchemy도 FastAPI도 Postgresql도 모두 유명한 것들인데 어째서 이렇게까지 불완전하게 작동하는지 의문이 든다. 역사가 길진 않지만 그래도 수년의 시간은 지난 것들인데, 가장 기본적인 부분이 이렇게 불안정할지는 예상을 못했다. FastAPI의 메모리 누수 문제도 뒤늦게 알게 되었는데, 메모리 누수 문제에 이어서 비동기 엔진에서의 DB Pooler 연결에 이렇게 문제가 있을 줄 알았다면 FastAPI와 SqlAlchemy를 절대 선택하지 않았을 것 같다. &lt;/p&gt;
-&lt;p&gt;고찰, 의심, 경험.. 등등이 중요하다고 다시 한 번 느꼈다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;무엇을 하는가?&lt;/h2&gt;
+&lt;p&gt;고찰, 의심, 경험.. 등등이 중요하다고 다시 한 번 느꼈다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[단축어로 SLACK 프로필 변경하기]]></title><description><![CDATA[소개 애플 단축어를 활용해 간단하게 슬랙 상태를 원클릭으로 변경할 수 있습니다. 슬랙의 API를 이용합니다.  저는 개인적으로 raycast…]]></description><link>https://sharknia.github.io/단축어로SLACK프로필변경하기/</link><guid isPermaLink="false">https://sharknia.github.io/단축어로SLACK프로필변경하기/</guid><pubDate>Fri, 17 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;소개&lt;/h2&gt;
+&lt;p&gt;애플 단축어를 활용해 간단하게 슬랙 상태를 원클릭으로 변경할 수 있습니다. 슬랙의 API를 이용합니다. &lt;/p&gt;
+&lt;p&gt;저는 개인적으로 raycast의 뽀모도로 익스텐션과 함께 다음과 같이 사용하고 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/adb71f64d5a742c08b823d384bf9761f/f97d7/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 44.11764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/0lEQVR42oXPy06EMBQGYN7AqFwEWpBC6QVKKVBwhpgw48zOxJ1rNy6ML8JjW0eNJmYg+Vbn5O/5a83z/Piw2w/tpJuTduqNbtVu0NaG0y5Dd7Rqc9Yz2hHa4txMVqkktvLLC2pfHcd3QcYNLyWWxS2pQaAW1aHPnWuLu7bxnKVTnsok6xDakrSJgMkvkCbs2p/hwrXfGH1qhGL1wIpjW2uU1DBUETjHbAvP+b78SvIuoZrQKitEcHoehucoGEoQ/IZfKO4R1RirlEiw0vnLT9hzOn5/qBom9qIcD0q2MTTf/s/c1Em8JVj9rS0iJAEUAJYAmkoiuFlQhb7wPe7aH35KU9czxti3AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/adb71f64d5a742c08b823d384bf9761f/ca1dc/image3.png&apos; srcset=&apos;/static/adb71f64d5a742c08b823d384bf9761f/e7570/image3.png 170w,
+/static/adb71f64d5a742c08b823d384bf9761f/f46e7/image3.png 340w,
+/static/adb71f64d5a742c08b823d384bf9761f/ca1dc/image3.png 680w,
+/static/adb71f64d5a742c08b823d384bf9761f/02d09/image3.png 1020w,
+/static/adb71f64d5a742c08b823d384bf9761f/9d567/image3.png 1360w,
+/static/adb71f64d5a742c08b823d384bf9761f/f97d7/image3.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+집중을 시작할 때에 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;집중 모드 킴&lt;/li&gt;
+&lt;li&gt;음량 조절&lt;/li&gt;
+&lt;li&gt;노래 재생&lt;/li&gt;
+&lt;li&gt;슬랙 방해금지 상태 변경
+&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/e1c21d95548582669bcbdbcb01977ed2/f97d7/image4.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 27.058823529411764%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqklEQVR42o3OSw6CMBgEYHYuRRHQFqyALbY8+tNCI3EBXsC41Z2nIPH01gNgTL7MZjLJOO9pej0fYweDrsdWjZ2l/2K0o1ICBPVcGq6AMn1MdXbQqUXmfVsgkcM3K+YurnA7w50nWRPjBgc12kKE5ki8syn8tSMCj/uuIXTIhWQlZ6picOF5EyOYYbKk2eMi9L5j4S9lVvQnqGkpqKxo2ef0x7i1n2NUhN4HSRUw45IM1g4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image4&apos; title=&apos;&apos; src=&apos;/static/e1c21d95548582669bcbdbcb01977ed2/ca1dc/image4.png&apos; srcset=&apos;/static/e1c21d95548582669bcbdbcb01977ed2/e7570/image4.png 170w,
+/static/e1c21d95548582669bcbdbcb01977ed2/f46e7/image4.png 340w,
+/static/e1c21d95548582669bcbdbcb01977ed2/ca1dc/image4.png 680w,
+/static/e1c21d95548582669bcbdbcb01977ed2/02d09/image4.png 1020w,
+/static/e1c21d95548582669bcbdbcb01977ed2/9d567/image4.png 1360w,
+/static/e1c21d95548582669bcbdbcb01977ed2/f97d7/image4.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+집중을 끝낼 때에&lt;/li&gt;
+&lt;li&gt;집중 모드 끔&lt;/li&gt;
+&lt;li&gt;슬랙 방해금지 상태 해제&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;집중 모드에서는 다른 알림을 모두 꺼두고 슬랙 알림만 켜서 업무 흐름은 놓치지 않게 해두었습니다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/20ce3a7a0ec6e93c498938387b6e31e6/f97d7/image5.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 36.47058823529412%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABqUlEQVR42mNol+PpUJeol+ZrV5FYFeI71cFyjpt9taJMpZ52o7XVguKiPA2NYnOLRl//VC29bDPrZH3TWG3DZAv7CD1ThlUJKSsT05fFpc0Ni+3x82lwcay2sS00syywtiuwc64MDEs3s04xs023dUkwtUuxdU2wco4wtkmy925PrmJ4d+3/26t/v9z5f3DtuYbknpbUmWUZRcUpeVmRyRmhCan+0Rkh8RnB8emBMZnBcWmBMelBMakBUdnhyWtnbmV4f/v/u1t/vz78v2/d0Y7Yyb3RC+sLSysyc9PDotOCI1MCw5P9w5L8Q5P8QhIhyDckwScowSe4KCmT4dGjxw8fPnr24uWe9ZuDeluc5/SWpWflJySnhUUkh4QlBoTE+wfH+wXF+wJRYLxPYJx3QJyXP5BbW1DG8OLFy+fPX7z98GHfhs3u/Y2WC3rK0jOyYmJD3dyCXVwDHZwC7R0D7BwDbB0CbMDI2t7f2g4okpucyvD///9///4ByadPnmxYtmzdosUrFi2aM3Xq5J6eSd3dEzu7JnZ2TgCijs6JMDShvWNqb++KxYsBAPO+WPH/dMMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image5&apos; title=&apos;&apos; src=&apos;/static/20ce3a7a0ec6e93c498938387b6e31e6/ca1dc/image5.png&apos; srcset=&apos;/static/20ce3a7a0ec6e93c498938387b6e31e6/e7570/image5.png 170w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/f46e7/image5.png 340w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/ca1dc/image5.png 680w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/02d09/image5.png 1020w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/9d567/image5.png 1360w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/f97d7/image5.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+메뉴바에서 원클릭으로 설정할 수 있어 편리합니다. &lt;/p&gt;
+&lt;h2&gt;설정법&lt;/h2&gt;
+&lt;h3&gt;슬랙의 API App 생성&lt;/h3&gt;
+&lt;p&gt;먼저 슬랙의 API App을 만들어야 합니다. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://api.slack.com/&quot;&gt;https://api.slack.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;해당 페이지로 이동 후, 우측 상단의 Your apps으로 이동합니다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Create New App&lt;/code&gt; 을 클릭합니다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;From an app manifest&lt;/code&gt; 를 선택 후, workspace를 고르고 Next 합니다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;YAML&lt;/code&gt;을 고르고, 다음의 내용을 입력합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;display_information&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Apple 상태변경 단축어
+&lt;span class=&quot;token key atrule&quot;&gt;oauth_config&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;scopes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; users.profile&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;write
+&lt;span class=&quot;token key atrule&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;org_deploy_enabled&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;socket_mode_enabled&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;token_rotation_enabled&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;권한을 더 원한다면 더 많이 입력해주셔도 됩니다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Create&lt;/code&gt;를 눌러 앱을 생성합니다. &lt;/p&gt;
+&lt;p&gt;그 후 바로 그 화면에서 &lt;code class=&quot;language-text&quot;&gt;Install to Workspace&lt;/code&gt;를 클릭해 앱을 인스톨합니다. &lt;/p&gt;
+&lt;p&gt;그리고, 좌측 메뉴에서 &lt;code class=&quot;language-text&quot;&gt;OAuth &amp;amp; Permissions&lt;/code&gt; 메뉴로 이동합니다. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OAuth Token&lt;/strong&gt; 값을 복사해줍니다. 슬랙 페이지에서 할 일은 여기까지입니다. &lt;/p&gt;
+&lt;h3&gt;단축어 설정&lt;/h3&gt;
+&lt;p&gt;단축어 앱을 열고 새로운 단축어를 추가합니다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;URL 콘텐츠 가져오기&lt;/code&gt; 를 검색해서 다음과 같이 설정합니다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image6.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 40.588235294117645%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVR42kWQjU6rMBTH9wY6p4yxMT4LK7SUwoCWj4IwZBoWE030JvcFfP8nsLs30eSX5qQ5v/Z/zmJI/D+czk3W5klFYgnHWMRRn0YNhpKWhA2CAgdtFPZZcm6by/A4Vvyp5gu8XgW3NzhSaQpTj+SIlgmvSfKIvMLWC2vXBiA3tWh9h+5v2AFMreiyozimp6pakM2KqHfpTq09K7c24mA9FwmDQaqrUmbOvsMH7hpEXeGHZYWd96n5bMtLHp8QWMhbSbJVhhhNGRWh3yFfQKdDh8q3S8/iwMoMjWzu0cNth+Hf+fwxiNe6GGl4lWWkdLfuoHum4Yj9uTgOGA6hKzyzAYY8r7JsU5bcNV9r9pLFYxxIfmWZrXD0Ewmeq5oBh9l6CUyJDP8jM9ecy+zC0ylBJwJ/ZRGA2rNL16iBUTr7kaKXnPbY584+M7eyDSnLHjhfl/lz7CaKJP9mXq/oVmGmVto6N7Urhva/YMZG1vLp68KUZePZbzWT3/bIG7D/DQP6VaAwkXntAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image6&apos; title=&apos;&apos; src=&apos;/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image6.png&apos; srcset=&apos;/static/c5bf66afaf9308636696df7659cbc53d/e7570/image6.png 170w,
+/static/c5bf66afaf9308636696df7659cbc53d/f46e7/image6.png 340w,
+/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image6.png 680w,
+/static/c5bf66afaf9308636696df7659cbc53d/02d09/image6.png 1020w,
+/static/c5bf66afaf9308636696df7659cbc53d/9d567/image6.png 1360w,
+/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image6.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+입력해야 하는 값은 다음과 같습니다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;헤더
+키 : Authorization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;값 : Bearer xoxp-xxxxx-xxxx…&lt;/p&gt;
+&lt;p&gt;키 : Content-Type&lt;/p&gt;
+&lt;p&gt;값 : application/json; charset=UTF-8&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;바디
+키 : profile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;값 : &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token property&quot;&gt;&quot;status_text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;방해금지&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;token property&quot;&gt;&quot;status_emoji&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:no_entry_sign:&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;원하는 이모지와 텍스트를 넣어주시면 됩니다. &lt;/p&gt;
+&lt;p&gt;이렇게 하면 단축어가 완성됩니다. &lt;/p&gt;
+&lt;h2&gt;참고&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://api.slack.com/apps?deleted=1&quot;&gt;https://api.slack.com/apps?deleted=1&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(2)]]></title><description><![CDATA[무엇을 하는가? Notion API를 이용해서 내가 쓴 글 들을 불러와 MD…]]></description><link>https://sharknia.github.io/Notion-Api-2/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-Api-2/</guid><pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;무엇을 하는가?&lt;/h2&gt;
 &lt;p&gt;Notion API를 이용해서 내가 쓴 글 들을 불러와 MD 파일로 만들려고 한다. 그 과정을 실시간으로 기록하려고 한다. 명확하게 가능한가? 는 사실 아직 알아보지 않았다. &lt;/p&gt;
 &lt;h2&gt;왜 하는가?&lt;/h2&gt;
 &lt;p&gt;너무나 너무나 귀찮기 때문이다.&lt;/p&gt;
