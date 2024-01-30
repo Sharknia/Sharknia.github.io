@@ -250,43 +250,51 @@ data-styled.g45[id="Footer__HiddenWrapper-sc-zqxmks-9"]{content:"yzdKT,ivqWaF,"}
 <li>TypeScript 설정 파일 생성</li>
 </ol>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">tsc <span class="token parameter variable">--init</span></code></pre></div>
-<p><code class="language-text">**tsconfig.json**</code> 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">`tsconfig.json` 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.</code></pre></div>
 <ol>
-<li>필요한 TypeScript 타입 정의 설치</li>
-</ol>
+<li>
+<p>필요한 TypeScript 타입 정의 설치</p>
 <p>Node.js와 TypeScript를 함 사용하기 위해 해당 타입 정의를 설치한다. </p>
+</li>
+</ol>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">--save</span> @types/node</code></pre></div>
 <ol>
-<li>첫 TypeScript 파일 작성</li>
-</ol>
+<li>
+<p>첫 TypeScript 파일 작성</p>
 <p><code class="language-text">index.ts</code> 파일에 다음과 같은 내용을 작성해보자. </p>
+</li>
+</ol>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> greet <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">greet</span><span class="token punctuation">(</span><span class="token string">"TypeScript"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <ol>
-<li>컴파일 및 실행</li>
-</ol>
+<li>
+<p>컴파일 및 실행</p>
 <p>아래 명령어로 컴파일 할 수 있다. </p>
+</li>
+</ol>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">tsc index.ts</code></pre></div>
-<p>index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. </p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. </code></pre></div>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">node</span> index.js</code></pre></div>
 <ol>
-<li>자동 컴파일 설정(선택사항)</li>
+<li>
+<p>자동 컴파일 설정(선택사항)</p>
+<p><code class="language-text">ts-node</code> 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.</p>
+</li>
 </ol>
-<p><code class="language-text">**ts-node**</code> 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> ts-node</code></pre></div>
-<p>설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.</code></pre></div>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">ts-node index.ts</code></pre></div>
 <h2>TypeScript 설정 파일(<strong>tsconfig.json)</strong></h2>
 <p><code class="language-text">tsconfig.json</code> 은 타입스크립트 프로젝트의 루트 디렉토리에 위치하는 설정 파일이다. 타입스크립트 컴파일러에 대한 구성 옵션을 정의한다. 이 파일을 통해 타입스크립트 코드가 자바스크립트 코드로 변환되는지, 어떤 파일들이 포함되거나 제외되는지 등을 정의할 수 있다. </p>
 <p>주요 옵션들은 다음과 같다. </p>
 <ul>
 <li><strong>files</strong>: 컴파일에 포함할 파일의 목록이다. 이 옵션을 사용하면 특정 파일만 명시적으로 포함시킬 수 있다.</li>
-<li><strong>include</strong>: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: <code class="language-text">**["src/**/*.ts"]**</code></li>
-<li><strong>exclude</strong>: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: <code class="language-text">**["node_modules"]**</code></li>
-<li><strong>extends</strong>: 다른 <code class="language-text">**tsconfig.json**</code> 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.</li>
+<li><strong>include</strong>: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: <code class="language-text">["src/**/*.ts"]</code></li>
+<li><strong>exclude</strong>: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: <code class="language-text">["node\_modules"]</code></li>
+<li><strong>extends</strong>: 다른 <code class="language-text">tsconfig.json</code> 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.</li>
 <li><strong>compilerOptions</strong>: 컴파일러에 대한 다양한 설정을 제공하는 핵심 옵션이다.</li>
 <li><strong>typeRoots와 types</strong>: 사용자 정의 타입 선언의 위치와 포함될 타입 선언 패키지를 지정한다.</li>
 </ul>

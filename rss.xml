@@ -1,4 +1,218 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 30 Jan 2024 01:00:48 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 30 Jan 2024 14:16:33 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
+&lt;h2&gt;돌아보기&lt;/h2&gt;
+&lt;p&gt;어제 상당수의 디버깅을 진행하고 기존 블로그에서 새 블로그로 글을 이전했다. 깃허브 블로그에 업로드까지 마치고, 오늘 다시 보니 짜잘짜잘한 오류가 다시 또(!!) 발견되었다. &lt;/p&gt;
+&lt;h2&gt;유지보수&lt;/h2&gt;
+&lt;h3&gt;Callout 수정&lt;/h3&gt;
+&lt;p&gt;내가 선택한 블로그의 기능인지, 원래 마크다운 기능인지 모르겠다. 굳이 태그를 넣을 필요가 없어서, 태그를 제거해주었다. &lt;/p&gt;
+&lt;h3&gt;이미지 캡션 수정&lt;/h3&gt;
+&lt;p&gt;이미지 캡션도 마찬가지였다. 혹시 하는 노파심에 따로 p태그를 넣어주고 있었는데, 아무 문제 없이 정상 작동 되었다. 아무래도 깃허브 블로그도 마크다운 기반으로 움직이다보니 마크다운에서 좀 잘 나오면 잘 이쁘게 지원하는 것 같다. &lt;/p&gt;
+&lt;h3&gt;넘버링 숫자 안올라감 &amp;#x26; 들여쓰기 문제&lt;/h3&gt;
+&lt;p&gt;넘버링이 모두 1로 나오고, 글머리 기호와 넘버링 리스트를 제외한 나머지 부분에 들여쓰기를 넣지 않았다는 사실을 깨달았다. &lt;/p&gt;
+&lt;p&gt;넘버링부터 고치려다가 문득 들여쓰기가 제대로 되면 숫자가 제대로 나오지 않을까? 해서 들여쓰기부터 수정했는데, 정답이었다. &lt;/p&gt;
+&lt;p&gt;들여쓰기를 고치고 나서 마크다운에 1. 이라고 숫자가 고정되어 있어도 제대로 숫자가 증가되면서 출력된다. &lt;/p&gt;
+&lt;h3&gt;일부 부분 [objcet Promise] 출력&lt;/h3&gt;
+&lt;p&gt;이건 await을 까먹은거다. 추가해주었다. &lt;/p&gt;
+&lt;h3&gt;이미지 깨짐&lt;/h3&gt;
+&lt;p&gt;어제 디버깅을 하면서 이미지 카운터를 static에서 인스턴스로 변경해주었는데, 어제 내가 멍청하다고 썼는데 사실은 오늘의 내가 멍청한 것이었다. &lt;/p&gt;
+&lt;p&gt;이미지 카운터를 컨버터에 넣어놓을거면 거기서 인스턴스 변수로 선언하면 안됐다. 이미지가 거의 모든 경우에 항상 1번으로 저장된다.. &lt;/p&gt;
+&lt;p&gt;페이지에 이미지 카운터 변수를 심고 블록-컨버터까지 내려줄 생각을 하니 아득해졌는데 생각해보니 그냥 컨버터 클래스에 넣어놓고 static 변수로 변경한 다음 페이지를 새로 만들 때마다 해당 값을 초기화 해주면 되지 않나 싶어서 그렇게 구현 해보려고 한다. &lt;/p&gt;
+&lt;h3&gt;언더바 또는 *가 포함된 경우 스타일 깨짐&lt;/h3&gt;
+&lt;p&gt;예를 들어 &lt;em&gt;db\&lt;/em&gt;connection_serializable 라고 입력된 텍스트가 &lt;em&gt;db&lt;/em&gt;connection&lt;em&gt;serializable&lt;/em&gt; 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 언더스코어 이스케이프 처리 함수&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;escapeMarkdownUnderscores&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;text&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;(\w)_(\w)&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-flags&quot;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;$1\\_$2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;해당 메소드를 사용해 언더바 앞에 백슬래시를 붙여주었다. &lt;/p&gt;
+&lt;p&gt;잘 될지는 배포 후 테스트를 해봐야 한다. &lt;/p&gt;
+&lt;h2&gt;신규 기능&lt;/h2&gt;
+&lt;h3&gt;테이블 지원&lt;/h3&gt;
+&lt;p&gt;이제 테이블을 지원한다.. 지금 고치느라 기록할 시간이 없는데 많은 것을 고쳤다.. &lt;/p&gt;
+&lt;p&gt;근본적인 설계가 아쉽다. 굳이 block을 별도의 클래스로 뺄 필요도 없었을 것 같고, MarkdownConverter 클래스가 굳이 인스턴스 메소드가 이렇게 많아야 할 이유도 모르겠다. &lt;/p&gt;
+&lt;p&gt;여유가 된다면 전체적으로 코드 리팩토링을 (다시 만드는 수준으로) 진행해야 할 것 같다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[PostgreSQL Advisory Locks 트랜잭션 레벨에서 구현]]></title><description><![CDATA[서론 동시성 제어 문제를 해결하기 위한 여러가지 방법을 고민 끝에 PostgreSQL Advisory Locks를 사용한 방법으로 구현하기로 했다.  구현을 하면서 겪은 과정을 여기에 기록한다.  구현 목표 현재 회사에서는 FastAPI…]]></description><link>https://sharknia.github.io/PostgreSQL-Advisory-Locks-트랜잭션-레벨에서-구현/</link><guid isPermaLink="false">https://sharknia.github.io/PostgreSQL-Advisory-Locks-트랜잭션-레벨에서-구현/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A0%9C%EC%96%B4%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot;&gt;동시성 제어 문제를 해결하기 위한 여러가지 방법을 고민&lt;/a&gt; 끝에 PostgreSQL Advisory Locks를 사용한 방법으로 구현하기로 했다. &lt;/p&gt;
+&lt;p&gt;구현을 하면서 겪은 과정을 여기에 기록한다. &lt;/p&gt;
+&lt;h2&gt;구현 목표&lt;/h2&gt;
+&lt;p&gt;현재 회사에서는 FastAPI와 SqlAlchemy 2.0, PostgreSQL을 사용하고 있다. 아주 짧은 텀으로 중복으로 온 API 요청에 대해 중복 구매가 되지 않도록 동시성 제어를 하려고 한다. &lt;/p&gt;
+&lt;p&gt;유저의 아이디 값 또는 API 고유의 값 + 유저의 아이디 값을 사용해 트랜잭션 레벨에서 PostgreSQL Advisory Locks를 생성하고, 동일한 유저가 PostgreSQL Advisory Locks에 걸린 경우에는 중복 요청이라고 판단하고 두번째 요청은 중단 하거나, 또는 반드시 유효성 검사를 하도록 해 중복 구매가 되는 일이 없게 사전에 차단하려고 한다. &lt;/p&gt;
+&lt;h2&gt;구현 사전단계&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.postgresql.org/docs/9.1/functions-admin.html&quot;&gt;공식문서&lt;/a&gt;를 살펴보니 트랜잭션 레벨에서의 락을 위해 내가 사용할 수 있는 함수는 두 가지가 있었다. 트랜잭션 레벨의 락은 공통적으로 명시적인 언락이 불가능하다. &lt;/p&gt;
+&lt;p&gt;아래의 두가지 함수는 모두 트랜잭션 레벨의 함수로 Advisory Lock을 획득할 수 있다는 점은 같지만, Advisory Lock을 바로 획득하지 못했을 때의 반응이 다르다. &lt;/p&gt;
+&lt;h3&gt;pg_advisory_xact_lock&lt;/h3&gt;
+&lt;p&gt;지정된 키에 대한 Advisory Lock을 획득할 때까지 호출을 블로킹(대기)한다. 만약 다른 세션이 이미 해당 키에 대한 Advisory Lock을 갖고 있다면 그 Advisory Lock이 해제될 때까지 현재 세션에서의 처리가 중단된다. &lt;/p&gt;
+&lt;p&gt;Advisory Lock을 반드시 획득해야 해서 대기해야 할 경우에 적합하다.&lt;/p&gt;
+&lt;h3&gt;pg_try_advisory_xact_lock&lt;/h3&gt;
+&lt;p&gt;이 함수는 즉시 Advisory Lock을 시도하고 성공하면 True, 실패하면 False를 반환한다. 이 함수는 잠금 획득을 위해 대기하지 않으며, 잠금이 이미 다른 세션에 의해 보유되고 있는 경우 즉시 실패한다.&lt;/p&gt;
+&lt;p&gt;Advisory Lock을 반드시 획득할 필요가 없고 대기하지 않고 다른 작업을 수행해야 할 경우에 적합하다. &lt;/p&gt;
+&lt;h3&gt;결정&lt;/h3&gt;
+&lt;p&gt;우리의 경우에는 쿠폰 중복 발급을 막으려고 하는 것이므로 만약 이미 잠금이 걸린 경우에는 굳이 나머지 DB 작업을 실행할 필요가 없다. 따라서 pg_try_advisory_xact_lock를 사용하는 것이 적절해보인다. &lt;/p&gt;
+&lt;h2&gt;구현&lt;/h2&gt;
+&lt;p&gt;따라서, 서비스 로직의 시작 지점에 다음의 코드를 넣어 락을 얻거나, 락을 얻지 못한 경우 해당 요청은 실행을 중단하려고 한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Advisory Lock 획득&lt;/span&gt;
+    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_try_advisory_xact_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Advisory Lock을 획득하지 못한 경우에는 이미 선제 작업이 있는 것이므로 DB 작업을 계속할 필요가 없으므로&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# 바로 중단한다.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;scalar&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; Exception&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to acquire lock&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;SQL 인젝션과 같은 보안 문제를 줄이고 쿼리 구성과 관련된 오류를 예방하기 위해 다음과 같이 코드를 수정했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Advisory Lock 획득&lt;/span&gt;
+    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pg_try_advisory_xact_lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Advisory Lock을 획득하지 못한 경우에는 이미 선제 작업이 있는 것이므로 DB 작업을 계속할 필요가 없으므로&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# 바로 중단한다.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;scalar&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; Exception&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to acquire lock&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;잠금 해제 지점은 어떻게 될까?&lt;/h2&gt;
+&lt;p&gt;막연히 트랜잭션이 커밋되거나 롤백될 때라고 알아둬도 충분할 것 같다(세션 주입 방식을 통해 에러가 발생하거나 요청이 정상정이 끝나지 않는 경우에 세션을 롤백하며, 정상적으로 요청이 정리된 경우에는 세션을 커밋하는 과정이 포함되어 있을 것이므로 충분할 것이다).&lt;/p&gt;
+&lt;p&gt;다만, 트랜잭션 레벨에서의 락은 명시적으로 언락이 불가능하므로 정확한 언락 지점을 알아둬야 할 필요성이 있다고 느꼈다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;트랜잭션 커밋 또는 롤백&lt;/p&gt;
+&lt;p&gt;함수 내부에서 명시적으로 await db.commit() 또는 await db.rollback()이 호출되는 경우에 같은 세션이라고 하더라도 언락된다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;비동기 세션 컨텍스트 종료&lt;/p&gt;
+&lt;p&gt;AsyncSession 인스턴스가 컨텍스트 매니저(async with) 내에서 사용되고, 해당 컨텍스트 블록이 종료되는 경우&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;예외 발생&lt;/p&gt;
+&lt;p&gt;함수 실행 중 예외가 발생하여 처리 흐름이 중단되는 경우. SQLAlchemy의 세션 관리는 트랜잭션이 커밋되지 않으면 자동으로 롤백을 수행하므로 사실상 트랜잭션이 롤백되는 시점과 일치한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
+&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
+&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
+&lt;h2&gt;func의 특징&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;함수 생성기&lt;/p&gt;
+&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;동적 생성&lt;/p&gt;
+&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
+&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다양한 함수 지원&lt;/p&gt;
+&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;_\_getattr\__&lt;/code&gt; method&lt;/h2&gt;
+&lt;p&gt;func 객체의 &lt;em&gt;\&lt;/em&gt;getattr__ 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
+&lt;p&gt;예를 들어, func.pg_try_advisory_lock에 접근하면 pg_try_advisory_lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
+&lt;h2&gt;사용방법&lt;/h2&gt;
+&lt;h3&gt;기본 사용&lt;/h3&gt;
+&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;em&gt;\&lt;/em&gt;getattr__ 메소드로 연결된다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
+
+&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
+&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
+&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+&lt;p&gt;가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.01초 미만의 간격으로 두 번씩 들어오는 경우가 있다. 사실상 요청이 동시에 들어오는 것과 같다. 대부분의 경우에는 문제가 되지 않지만, 쿠폰 구매 같은 민감한 요청에 대해서는 회사의 손해 또는 사용자의 불편과 예민하게 직결되므로 문제가 커질 수 있다. &lt;/p&gt;
+&lt;p&gt;따라서 해당 문제를 완벽히 해결하고자 한다. &lt;/p&gt;
+&lt;p&gt;현재 별다른 조치가 없는 상황에서 발생하는 문제 상황은 다음과 같다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;1번 요청과 2번 요청이 0.005초 차이이고(사실상 동시),
+
+1번 요청 - 트랜잭션 시작
+2번 요청 - 트랜잭션 시작
+1번 요청 - 트랜잭션 완료, 커밋. 새로운 구매 내역이 테이블에 추가됨.
+2번 요청 - 트랜잭션 완료, 커밋. 새로운 구매 내역이 테이블에 추가됨. 
+
+따라서 동일한 유저가 두 번 쿠폰을 구매한 것 처럼 처리되었다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;제약조건 확인&lt;/h3&gt;
+&lt;p&gt;현재 테이블의 키값이 user_id가 아니며, 난수 발생을 통해 생성된 값을 키 값으로 하고 있다. 또한 Redis와 같은 외부 라이브러리를 도입할 여유는 없다. 따라서 가능한 한 현재 시스템(Sqlalchemy, Postgresql)내에서 해결책을 찾고자 한다. &lt;/p&gt;
+&lt;h2&gt;해결방안 고민&lt;/h2&gt;
+&lt;h3&gt;최근 구매 내역 확인(기각)&lt;/h3&gt;
+&lt;p&gt;가장 쉽게 생각할 수 있는 방법은 쿠폰 구매 로직에서 이 유저의 최근 구매 로직을 확인하는 것이다. 하지만 현재 이 상황에서는 사실상 요청이 동시에 들어오고 있으므로, 2번 요청이 시작됐을 때에는 해당 유저의 구매 내역이 아직 DB에 없을 것이므로, 이 방법은 사용할 수 없다. &lt;/p&gt;
+&lt;h3&gt;Database-Level Optimistic Locking(기각)&lt;/h3&gt;
+&lt;p&gt;각 트랜잭션에 버전 번호를 추가하고 트랜잭션이 커밋되기 전에 해당 버전 번호가 여전히 유효한지 확인한다. 하지만 이 방법도 여전히 2번 요청이 1번 요청의 결과를 감지하지 못할 수 있다. &lt;/p&gt;
+&lt;h3&gt;Application-Level Locking(기각)&lt;/h3&gt;
+&lt;p&gt;코드 내에서 직접 잠금 로직을 구현하는 방법이다. 데이터베이스가 아닌 애플리케이션의 메모리 내에서 잠금을 관리한다. 주로 멀티스레드 환경에서 특정 자원에 대한 동시 접근을 제어하는데 사용된다. 현재 FastAPI를 사용하고 있고, FastAPI는 기본적으로 비동기 방식으로 단일 스레드 환경에서 실행된다는 점을 고려하면 전통적인 스레드 기반의 잠금 매커니즘보다 async 라이브러리에 들어있는 비동기 프로그래밍에 적합한 잠금 메커니즘인 asyncio.Lock을 사용하는 것이 이상적이다.&lt;/p&gt;
+&lt;h4&gt;FastAPI에서의 Application-Level Locking&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; asyncio
+
+locks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;purchase_coupon&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    lock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; locks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setdefault&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# 여기에 쿠폰 구매 로직을 구현합니다.&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# 이 블록 내의 코드는 동시에 하나의 요청만 처리합니다.&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# FastAPI 엔드포인트에서 이 함수를 호출합니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 코드는 user_id에 대해 별도의 asyncio.Lock을 생성하고 관리한다. 해당 user_id에 대한 작업이 진행중인 경우 다른 요청들은 해당 블록이 해제될 때까지 대기한다. &lt;/p&gt;
+&lt;p&gt;예를 들어 다음 코드를 가정하자. 예를 들기 위해 아주 러프하게 작성했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;test_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    lock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; locks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setdefault&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 코드는 다음과 같이 호출된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;test_function(1, 2) 호출 -&gt; a 값이 1인 잠금 획득 -&gt; 처리 시작
+test_function(1, 2) 호출 -&gt; a 값이 1인 동일한 잠금으로 인해 대기
+test_function(2, 2) 호출 -&gt; a 값이 2인 새로운 잠금 획득 -&gt; 처리 시작
+test_function(2, 2) 처리 완료 -&gt; a 값이 2인 잠금 해제
+test_function(1, 2)의 첫 번째 호출 처리 완료 -&gt; a 값이 1인 잠금 해제
+test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처리 시작
+
+따라서 print는 1, 2, 1의 순서가 된다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다만, 비동기 프로그래밍, 특히 Python의 &lt;a href=&quot;https://sharknia.github.io/FastAPI%EC%99%80-asyncio&quot;&gt;asyncio&lt;/a&gt;를 사용할 때 코드의 실행순서는 이벤트 루프에 의해 관리된다. 작업의 일시 중단과 다른 작업의 실행이 이벤트 루프에 의해 어떻게 스케줄링 될지는 여러 요인에 따라 달라질 수 있다. &lt;/p&gt;
+&lt;h3&gt;PostgreSQL Advisory Locks(당장 채용)&lt;/h3&gt;
+&lt;p&gt;Advisory Locks는 애플리케이션에서 데이터베이스 레벨의 잠금을 관리할 수 있도록 해준다. 이를 통해 특정 user_id 에 대한 동시 요청을 제어할 수 있다. &lt;/p&gt;
+&lt;p&gt;Advisory Locks는 테이블이나 행에 대한 접근을 잠그는 개념이 아니다. 특정 값 (정수)에 대한 잠금을 제공한다. 즉, 작업 자체에 1번이라는 이름을 붙이고 1번을 잠근다면, 다시 요청되는 1번 작업은 잠금이 된다. &lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Advisory Locks의 작동 방식&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;잠금 설정 : 애플리케이션이 pg_advisory_lock(key) 함수를 호출하여 특정 키에 대한 잠금을 요청한다.&lt;/li&gt;
+&lt;li&gt;동일 키 사용 시 대기 : 같은 키를 사용하는 다른 데이터베이스 작업이 잠금을 보유하고 있다면, 새로운 잠금 요청은 해당 잠금이 해제될 때까지 대기한다. &lt;/li&gt;
+&lt;li&gt;잠금 해제 : 원래의 작업이 완료되면 pg_advisory_unlock(key) 함수를 호출하여 잠금을 해제한다. 이후 대기 중이던 다른 작업이 잠금을 획득하고 진행될 수 있다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Advisory Locks의 잠금 레벨&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Advisory Locks는 두 가지 레벨에서 사용할 수 있다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;세션 레벨 : 이 잠금은 데이터베이스 세션과 연결되어있다. 세션이 종료되면 자동으로 해제된다. 세션 레벨 잠금은 장시간 유지되어야 하는 경우에 유용하다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;use_session_level_lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; AsyncSession&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock_key&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# 세션 레벨 잠금 획득&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_advisory_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock_key&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 데이터베이스 작업 수행&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 필요한 경우, 명시적으로 잠금 해제&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# await db.execute(f&quot;SELECT pg_advisory_unlock({lock_key})&quot;)&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 세션 종료 시 잠금이 자동으로 해제됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;트랜잭션 레벨 잠금 : 트랜잭션 레벨 잠금은 현재 트랜잭션과 연결되어 있으며 트랜잭션이 커밋되거나 롤백 될 때 자동으로 해제된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ext&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asyncio &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; AsyncSession
+
+&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;use_transaction_level_lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; AsyncSession&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock_key&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;begin&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# 트랜잭션 레벨 잠금 획득&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_advisory_xact_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock_key&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;token comment&quot;&gt;# 데이터베이스 작업 수행&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 트랜잭션이 종료되면 잠금이 자동으로 해제됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;쿠폰 구매 서비스 로직에서 트랜잭션 시작 전에  user_id를 기반으로 Advisory Lock을 요청하면 1번 요청이 처리되는 동안 동일한 user_id 에 대한 다른 요청은 대기하게 된다. 쿠폰 구매 처리가 완료되면, Advisory Lock을 해제하면 된다. &lt;/p&gt;
+&lt;h2&gt;결론 - PostgreSQL Advisory Locks 채용&lt;/h2&gt;
+&lt;p&gt;이 방법을 사용하면 매우 짧은 간격의 요청도 효과적으로 처리할 수 있다. 특히 트랜잭션 레벨의 잠금은 각 트랜잭션이 커밋되거나 롤백될 때까지만 유지되므로 0.005초와 같은 짧은 간격의 요청을 동기화하는데 매우 적합하다. &lt;/p&gt;
+&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
 &lt;h2&gt;유지보수 내역&lt;/h2&gt;
 &lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
 &lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
@@ -399,8 +613,8 @@ du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/f
 &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.3G    /usr/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;아~ 개인 홈페이지를 돌리는 로그가.. 몇 년 째 사이트를 그냥 켜둔채로 방치하다 보니 9기가에 달하게 크게 자라 내 서버를 억누르고 있었다. &lt;/p&gt;
 &lt;p&gt;당장 로그를 삭제해주었다. &lt;/p&gt;
-&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 object Promise 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts를 미완성 된 상태로 두었다. 타입 검사에서 걸린 상태로 일단 두었고, Union…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
-&lt;p&gt;[object Promise]&lt;/p&gt;
+&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3) 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/NotionAPI%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%8F%AC%EC%8A%A4%ED%8C%853&quot;&gt;NotionAPI를 활용한 자동 포스팅(3)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다. &lt;/p&gt;
 &lt;h2&gt;오늘의 작업&lt;/h2&gt;
 &lt;h3&gt;block.ts 나머지 작업&lt;/h3&gt;
@@ -421,7 +635,13 @@ du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/f
 &lt;p&gt;paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단위이다. 텍스트를 입력할 때 기본적으로 생성되는 블록 유형이다. &lt;/p&gt;
 &lt;p&gt;이 블록 안에 들어있는 내용을 마크다운으로 바꿔주는 메소드를 완성했다. &lt;/p&gt;
 &lt;p&gt;원본 노션의 내용은 다음과 같다. 일부러 여러가지 케이스를 집어넣었다. &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;image1.png&quot;&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 182px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c37e9a2ed8f76a7f64abfe844e3b2069/7d08f/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 38.23529411764706%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABi0lEQVR42m2RW2/aQBCF+RsFX9bGxsYYYxMDruNQwFHrtlHjtCBVSi9cFKnKE///5evgJlIleDh7dnZnz8ycbem6jmEYnLjT6TQ4xZqm0W63z85eoZS6iFaSJHiex1WaslitWC6XRKMR8/mcuq7J85yiKIiiiMViQVmWTXwqcFFwJQ8/396yfXzkabvl+PxMfXdH/fDA8Xhkt9ux3++pqorD4cBWcjabDbZtXxasgoAfScz3OGYdDvjqupzOHOFAuC/wfb9Jdnu9hofDIY7jYJrmuaAhiy7QlIluKd5YFu2XS93QMQ0TTcYz5F6ZCktZdMRDQ8QsyT0TDAZ91tmUb7MJ9SRlPZ1QpWN0WxE5fZ5mXyjDjE/DG96HOR+jgpkfkwk+SJx7iRTUmkKNYBgG/Mzf8ivP+HNzzW/Z309TonHCyB+wiUtSL6LoX1EOMu5H74jdAdf9MdOefFScEYhVr+O3ul0bT/xyXUd8c+iKN47TbTxS1svokqyZhnShsKUT3fxnwYmVjP3/B/0FwLz0WbdFeN8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c37e9a2ed8f76a7f64abfe844e3b2069/7d08f/image1.png&apos; srcset=&apos;/static/c37e9a2ed8f76a7f64abfe844e3b2069/e7570/image1.png 170w,
+/static/c37e9a2ed8f76a7f64abfe844e3b2069/7d08f/image1.png 182w&apos; sizes=&apos;(max-width: 182px) 100vw, 182px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
 이 paragraph블록의 데이터 형태는 다음과 같다. &lt;/p&gt;
 &lt;h4&gt;&lt;u&gt;노&lt;/u&gt;&lt;u&gt;&lt;del&gt;션이&lt;/del&gt;&lt;/u&gt;  &lt;strong&gt;좋습***&lt;/strong&gt;니다***..&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -653,7 +873,14 @@ du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/f
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;노&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;/u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;~~션이~~&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;/u&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; **좋습*****니다***&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;
 convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;정말로&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;span &lt;span class=&quot;token assign-left variable&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;color: pink;&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;좋아합니다&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;/span&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이를 vscode의 마크다운 편집 기능을 통해서 확인하면 다음과 같이 정상적으로 출력되는 것을 확인할 수 있다. &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;image1.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 388px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/e2c499b18f033781be6c338bb4de1ad2/5bbd5/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 17.64705882352941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAvElEQVR42j1QywqEMBDz///K23rV9abiCxUUpZa6tj6yzYAeQjqvTKaBcw77vmPbNlhrwZh8nieO45Aa4yd3XdfbxxljjMRk1oKu61CWJeq6Fs7zXLCuK8ZxRFEUqKpK8OTSNEWWZUiSBJ8oQuZ7ku9XFgTDMIhY0zRo21beHNZaY5qmdxlBF33fIwxDxHEM691De2dK414NYH4IuHVZFhGY51lEyM8ZfCulpIdnso+uKcwvgfOwDreHT+APdpIuAlwaOU4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/e2c499b18f033781be6c338bb4de1ad2/5bbd5/image2.png&apos; srcset=&apos;/static/e2c499b18f033781be6c338bb4de1ad2/e7570/image2.png 170w,
+/static/e2c499b18f033781be6c338bb4de1ad2/f46e7/image2.png 340w,
+/static/e2c499b18f033781be6c338bb4de1ad2/5bbd5/image2.png 388w&apos; sizes=&apos;(max-width: 388px) 100vw, 388px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h3&gt;마크다운 파일 저장 기능 추가&lt;/h3&gt;
 &lt;p&gt;page.ts에 block들로부터 받아온 마크다운 내용과 properties에 저장된 내용들을 합해 마크다운 파일로 저장하는 메소드를 완성했다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;printMarkDown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -702,29 +929,53 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;github.io의 블로그 형식에 맞춰서 properties를 바꿔주고, 블로그 형식에 맞는 위치에 일단 마크다운 파일을 저장하게끔 해주었다. 아마, 추후 배포 방식에 따라 해당 위치는 바뀔 수 있을 것이다. 아직 정확하게 어떤 방식으로 블로그를 배포할 것인지까지는 고려하지 않았다. &lt;/p&gt;
 &lt;p&gt;위 코드를 포함해서 실행하면, &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;image1.png&quot;&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 190px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/bd60ee265b49dce0e87e516a1d70d48a/08678/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 62.35294117647059%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACAElEQVR42oVSy3LaQBDkGzCSVg/0RhICgZC0CBTAvKFsXK5UXDmmUpWbLz75mFvyP/nDzqyo+IKJD32Qdqanp3sacT9BlmWI0gK9u29IywrJYIis4Mg5xyjPUYxL9OnfIB1hOMrorUDc76Pb612gkaQZVsslomKO299/8PD9GdPqE7bHIza7PWGL9e4APqmw2h+w2++wWK6QEHkyTC/QME0TbQHDgO/aCLtx/e163hmuC8dx0QkCeJ4L07Lh+z5E33toyLIMy3YQRxHy8QQvP3/Bj3qYLRaYz2fI0hRx3ENVTZGNUnTJokk5hsoYFEW5QIPRg67r0DQNOqkMwoiKZVLlUIEMSZIghjLRwBRoqgqVagUhewdvhLpuQJFbMMIhbH6AR4SL2zWO5NlsPgUvp9isNvBodZmGqER8lVCoY1QgtW7QlBQwO6w9LfgYJa3HeY5hmqPMCti2fVZ8XaFSh2BZJsXex/p4B6tt1AEwGvTPbBGMrmtXid4IhZEiuYhWGdAJ/Xh5RRCEGAwSuH5AKjmKIqd75KimE9imAZl62P88FCsLwyWphWbzBkw368TqAFQGSZZq3/R2Gxr5rXxEaJBfAgo1WjH5NDkh7HRw//CIr09fcH86YLU94PPpEQGdl9RqfRzKORjxk6bTuQh1FgUgzsdxnfpWHbLmvM11D/8C58BWiDU8hLUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/bd60ee265b49dce0e87e516a1d70d48a/08678/image3.png&apos; srcset=&apos;/static/bd60ee265b49dce0e87e516a1d70d48a/e7570/image3.png 170w,
+/static/bd60ee265b49dce0e87e516a1d70d48a/08678/image3.png 190w&apos; sizes=&apos;(max-width: 190px) 100vw, 190px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
 이렇게 저장이 되고, &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;image1.png&quot;&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/0d515458e22973fa572822c3536f30db/86467/image4.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 37.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAq0lEQVR42q2PWwqDQAxFZyHWeSQ+Oo/N220orkBQtyFyOzOlIAVLCwYOST5yuBFU39E2LcgYKKkglYSUEmWaYy+KAsEHPLoO4zii73sMw3CKqFsLax2IDDhKTUQbAmkFJnoJQ8CyLEi17zu+lTDEIK7QVAxmjgkVVEQntM5C7z3mec4H27Zl6Rkiv1eWuEVST/ubJP474VHwyVG4rut1wuPLlwidc5im6SfhE9Elb1W+TBl+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image4&apos; title=&apos;&apos; src=&apos;/static/0d515458e22973fa572822c3536f30db/ca1dc/image4.png&apos; srcset=&apos;/static/0d515458e22973fa572822c3536f30db/e7570/image4.png 170w,
+/static/0d515458e22973fa572822c3536f30db/f46e7/image4.png 340w,
+/static/0d515458e22973fa572822c3536f30db/ca1dc/image4.png 680w,
+/static/0d515458e22973fa572822c3536f30db/02d09/image4.png 1020w,
+/static/0d515458e22973fa572822c3536f30db/9d567/image4.png 1360w,
+/static/0d515458e22973fa572822c3536f30db/86467/image4.png 2233w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
 이렇게 깔끔하게 저장이 된다. 이제 앞으로는 각 블록 타입들에 대한 변환을 추가하면 된다!&lt;/p&gt;
 &lt;h3&gt;BlockObjectResponse 분석&lt;/h3&gt;
 &lt;p&gt;실질적으로 컨텐츠들은 BlockObjectResponse 타입들로 이루어져있다. BlockObjectResponse는 다음의 Union Type이다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;BlockObjectResponse&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; ParagraphBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Heading1BlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Heading2BlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; Heading3BlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BulletedListItemBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; NumberedListItemBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; QuoteBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ToDoBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ToggleBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TemplateBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; SyncedBlockBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ChildPageBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ChildDatabaseBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; EquationBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; CodeBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; CalloutBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; DividerBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BreadcrumbBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TableOfContentsBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ColumnListBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ColumnBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; LinkToPageBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TableBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; TableRowBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; EmbedBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; BookmarkBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; ImageBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; VideoBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; PdfBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; FileBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; AudioBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; LinkPreviewBlockObjectResponse &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; UnsupportedBlockObjectResponse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;del&gt;너무 많다&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;일단, 많이 쓸 것 같은 블록들을 예제 파일로 만들고 해당 노션 파일들을 불러와보고 어떤 타입들을 사용하는지 살펴보기로 했다. 나머지는 모르겠다 아직은 그냥 미지원이다. &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;image1.png&quot;&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/2af61caa2c35f58e15a78afe1588f244/f7121/image5.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 92.94117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAByklEQVR42qWUy27UMBSG/QoMI7GguTh2HDsTJ5P7NCO1IITUFRUS8A4seP/lzzmmQVUl0HSy+BM7Uj6fy38spmHAx/s7ZFmGJEmQpukmibnrcDfPyKTcDAvAZZqwjCOiKLoKIOUL4D1Ft/Q9ojgOKQddAJGU0U0UI6b/eB/FCa0TiPZ4xHJ7i6IooJSC1hqa6vk/IEM4o/FYoq4OuEkNWm9wKA2EyQ36rkff/9FI6XdlCa008jwPhxhjwprffPCb3VvIdzs8zg5f+gNOSuLXtxFfHyYIVVu0pwG196iqCnVdo24adNQsBnBEDGUX8Ju13+/g5R5H/R4fbIyfPx7w/fOCR5JQRsM6C2ddOL2wFgWBLK05qlCCJ63AXEv4A6WvMspEoT1/gqs7CqaC4J8aiogjW1NaZQn+LxWFg3MurI3OKAATDhX84I/h5KeavV76b1nEWjfu2kxT42nPFrra2Gt9mO4p5Yqjpf0mINvlRAYfyDLL+Ry6fe1cC34wlP3HYJ6AeEvK3Aiu4UQzPVAN5cZLQnCHx7bFTEDu1JboArCiMVtoStILLoWLgIUhY/sKJYHZ2M8n47XiDIWh0WsaT3VsyODPbpwrgb8BKZ0dd/NVeLkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image5&apos; title=&apos;&apos; src=&apos;/static/2af61caa2c35f58e15a78afe1588f244/ca1dc/image5.png&apos; srcset=&apos;/static/2af61caa2c35f58e15a78afe1588f244/e7570/image5.png 170w,
+/static/2af61caa2c35f58e15a78afe1588f244/f46e7/image5.png 340w,
+/static/2af61caa2c35f58e15a78afe1588f244/ca1dc/image5.png 680w,
+/static/2af61caa2c35f58e15a78afe1588f244/f7121/image5.png 899w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
 이것들을 넘는것은 내가 아직은 노션에 쓸 것 같지가 않다. 따라서 위의 블록들을 중점적으로 먼저 변환하기로 하자. &lt;/p&gt;
 &lt;p&gt;다음의 녀석들이 그 녀석들이다. &lt;/p&gt;
 &lt;h4&gt;heading_ 시리즈&lt;/h4&gt;
-&lt;p&gt;제목1, 제목2, 제목3 들이다. heading&lt;em&gt;1부터 heading&lt;/em&gt;3까지를 노션에서는 사용할 수 있는데, 각각 h2, h3, h4로 변환하면 될 것 같다. 이건 쉬울 것 같은 예감이 든다. &lt;/p&gt;
+&lt;p&gt;제목1, 제목2, 제목3 들이다. heading_1부터 heading_3까지를 노션에서는 사용할 수 있는데, 각각 h2, h3, h4로 변환하면 될 것 같다. 이건 쉬울 것 같은 예감이 든다. &lt;/p&gt;
 &lt;h4&gt;bookmark&lt;/h4&gt;
 &lt;p&gt;북마크는 간단할 것 같지만, 간단하지 않은 점이 있다. 노션에는 페이지 링크 기능이 있는데, 이것도 가능하면 (페이지 링크도 어차피 내 블로그 글 일테니까, 아니 사용자가 그렇게 사용해야 한다. ) 블로그 글의 링크로 변환하고 싶다. 이게 가능할까? 이건 쉽지 않을 수도 있을 것 같은 생각이 지금은 든다. 생성된 페이지 링크와 페이지 아이디가 다르다면 근본적으로 불가능한 일이다. &lt;/p&gt;
 &lt;h4&gt;code&lt;/h4&gt;
 &lt;p&gt;코드 블록이다. 이건 쉬울 것 같다. &lt;/p&gt;
 &lt;h4&gt;table, table_row&lt;/h4&gt;
 &lt;p&gt;마크다운은 표 그리기가 까다롭다. 그래도 어떻게든 할 수 있지 않을까? &lt;/p&gt;
-&lt;h4&gt;bulleted&lt;em&gt;list&lt;/em&gt;item&lt;/h4&gt;
+&lt;h4&gt;bulleted_list_item&lt;/h4&gt;
 &lt;p&gt;글머리 기호이다. 이건.. 이건 쉽지 않을까? &lt;/p&gt;
-&lt;h4&gt;numbered&lt;em&gt;list&lt;/em&gt;item&lt;/h4&gt;
+&lt;h4&gt;numbered_list_item&lt;/h4&gt;
 &lt;p&gt;번호 이것도 쉽지 않을까?? &lt;/p&gt;
 &lt;h4&gt;toggle&lt;/h4&gt;
 &lt;p&gt;토글도 어떻게든 되지 않을까? 다른것보단 복잡하겠지만 특별한 건 없을 것 같다. &lt;/p&gt;
@@ -830,7 +1081,7 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;convertLinkToPage 생성&lt;/h3&gt;
-&lt;p&gt;아까 북마크에 대해서 고려할 때, 페이지 링크가 어렵지 않을까? 고민했었는데 해당 문제는 해결이 가능했다. link&lt;em&gt;to&lt;/em&gt;page 타입에서 페이지 아이디를 제공하고 있었고, 페이지 아이디를 API를 통해서 호출을 하면 해당 데이터를 가져오는 것이 가능했다. 이 경우에는 마크다운 파일은 필요없고 URL만 필요하므로, Page 클래스에 간단한 정보만 가져오는 메소드를 만들고 해당 메소드를 활용해 북마크를 생성해주었다. 또, 설정 파일에 블로그의 주소를 설정하도록 했다. &lt;/p&gt;
+&lt;p&gt;아까 북마크에 대해서 고려할 때, 페이지 링크가 어렵지 않을까? 고민했었는데 해당 문제는 해결이 가능했다. link_to_page 타입에서 페이지 아이디를 제공하고 있었고, 페이지 아이디를 API를 통해서 호출을 하면 해당 데이터를 가져오는 것이 가능했다. 이 경우에는 마크다운 파일은 필요없고 URL만 필요하므로, Page 클래스에 간단한 정보만 가져오는 메소드를 만들고 해당 메소드를 활용해 북마크를 생성해주었다. 또, 설정 파일에 블로그의 주소를 설정하도록 했다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Page&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; pageId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; notion&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Client&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -1431,14 +1682,14 @@ Log Metadata
 &lt;p&gt;애플 단축어를 활용해 간단하게 슬랙 상태를 원클릭으로 변경할 수 있습니다. 슬랙의 API를 이용합니다. &lt;/p&gt;
 &lt;p&gt;저는 개인적으로 raycast의 뽀모도로 익스텐션과 함께 다음과 같이 사용하고 있습니다.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 40.588235294117645%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVR42kWQjU6rMBTH9wY6p4yxMT4LK7SUwoCWj4IwZBoWE030JvcFfP8nsLs30eSX5qQ5v/Z/zmJI/D+czk3W5klFYgnHWMRRn0YNhpKWhA2CAgdtFPZZcm6by/A4Vvyp5gu8XgW3NzhSaQpTj+SIlgmvSfKIvMLWC2vXBiA3tWh9h+5v2AFMreiyozimp6pakM2KqHfpTq09K7c24mA9FwmDQaqrUmbOvsMH7hpEXeGHZYWd96n5bMtLHp8QWMhbSbJVhhhNGRWh3yFfQKdDh8q3S8/iwMoMjWzu0cNth+Hf+fwxiNe6GGl4lWWkdLfuoHum4Yj9uTgOGA6hKzyzAYY8r7JsU5bcNV9r9pLFYxxIfmWZrXD0Ewmeq5oBh9l6CUyJDP8jM9ecy+zC0ylBJwJ/ZRGA2rNL16iBUTr7kaKXnPbY584+M7eyDSnLHjhfl/lz7CaKJP9mXq/oVmGmVto6N7Urhva/YMZG1vLp68KUZePZbzWT3/bIG7D/DQP6VaAwkXntAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png&apos; srcset=&apos;/static/c5bf66afaf9308636696df7659cbc53d/e7570/image1.png 170w,
-/static/c5bf66afaf9308636696df7659cbc53d/f46e7/image1.png 340w,
-/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png 680w,
-/static/c5bf66afaf9308636696df7659cbc53d/02d09/image1.png 1020w,
-/static/c5bf66afaf9308636696df7659cbc53d/9d567/image1.png 1360w,
-/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/adb71f64d5a742c08b823d384bf9761f/f97d7/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 44.11764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/0lEQVR42oXPy06EMBQGYN7AqFwEWpBC6QVKKVBwhpgw48zOxJ1rNy6ML8JjW0eNJmYg+Vbn5O/5a83z/Piw2w/tpJuTduqNbtVu0NaG0y5Dd7Rqc9Yz2hHa4txMVqkktvLLC2pfHcd3QcYNLyWWxS2pQaAW1aHPnWuLu7bxnKVTnsok6xDakrSJgMkvkCbs2p/hwrXfGH1qhGL1wIpjW2uU1DBUETjHbAvP+b78SvIuoZrQKitEcHoehucoGEoQ/IZfKO4R1RirlEiw0vnLT9hzOn5/qBom9qIcD0q2MTTf/s/c1Em8JVj9rS0iJAEUAJYAmkoiuFlQhb7wPe7aH35KU9czxti3AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/adb71f64d5a742c08b823d384bf9761f/ca1dc/image1.png&apos; srcset=&apos;/static/adb71f64d5a742c08b823d384bf9761f/e7570/image1.png 170w,
+/static/adb71f64d5a742c08b823d384bf9761f/f46e7/image1.png 340w,
+/static/adb71f64d5a742c08b823d384bf9761f/ca1dc/image1.png 680w,
+/static/adb71f64d5a742c08b823d384bf9761f/02d09/image1.png 1020w,
+/static/adb71f64d5a742c08b823d384bf9761f/9d567/image1.png 1360w,
+/static/adb71f64d5a742c08b823d384bf9761f/f97d7/image1.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 집중을 시작할 때에 &lt;/p&gt;
@@ -1449,14 +1700,14 @@ Log Metadata
 &lt;li&gt;슬랙 방해금지 상태 변경&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 40.588235294117645%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVR42kWQjU6rMBTH9wY6p4yxMT4LK7SUwoCWj4IwZBoWE030JvcFfP8nsLs30eSX5qQ5v/Z/zmJI/D+czk3W5klFYgnHWMRRn0YNhpKWhA2CAgdtFPZZcm6by/A4Vvyp5gu8XgW3NzhSaQpTj+SIlgmvSfKIvMLWC2vXBiA3tWh9h+5v2AFMreiyozimp6pakM2KqHfpTq09K7c24mA9FwmDQaqrUmbOvsMH7hpEXeGHZYWd96n5bMtLHp8QWMhbSbJVhhhNGRWh3yFfQKdDh8q3S8/iwMoMjWzu0cNth+Hf+fwxiNe6GGl4lWWkdLfuoHum4Yj9uTgOGA6hKzyzAYY8r7JsU5bcNV9r9pLFYxxIfmWZrXD0Ewmeq5oBh9l6CUyJDP8jM9ecy+zC0ylBJwJ/ZRGA2rNL16iBUTr7kaKXnPbY584+M7eyDSnLHjhfl/lz7CaKJP9mXq/oVmGmVto6N7Urhva/YMZG1vLp68KUZePZbzWT3/bIG7D/DQP6VaAwkXntAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png&apos; srcset=&apos;/static/c5bf66afaf9308636696df7659cbc53d/e7570/image1.png 170w,
-/static/c5bf66afaf9308636696df7659cbc53d/f46e7/image1.png 340w,
-/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png 680w,
-/static/c5bf66afaf9308636696df7659cbc53d/02d09/image1.png 1020w,
-/static/c5bf66afaf9308636696df7659cbc53d/9d567/image1.png 1360w,
-/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/e1c21d95548582669bcbdbcb01977ed2/f97d7/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 27.058823529411764%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqklEQVR42o3OSw6CMBgEYHYuRRHQFqyALbY8+tNCI3EBXsC41Z2nIPH01gNgTL7MZjLJOO9pej0fYweDrsdWjZ2l/2K0o1ICBPVcGq6AMn1MdXbQqUXmfVsgkcM3K+YurnA7w50nWRPjBgc12kKE5ki8syn8tSMCj/uuIXTIhWQlZ6picOF5EyOYYbKk2eMi9L5j4S9lVvQnqGkpqKxo2ef0x7i1n2NUhN4HSRUw45IM1g4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/e1c21d95548582669bcbdbcb01977ed2/ca1dc/image2.png&apos; srcset=&apos;/static/e1c21d95548582669bcbdbcb01977ed2/e7570/image2.png 170w,
+/static/e1c21d95548582669bcbdbcb01977ed2/f46e7/image2.png 340w,
+/static/e1c21d95548582669bcbdbcb01977ed2/ca1dc/image2.png 680w,
+/static/e1c21d95548582669bcbdbcb01977ed2/02d09/image2.png 1020w,
+/static/e1c21d95548582669bcbdbcb01977ed2/9d567/image2.png 1360w,
+/static/e1c21d95548582669bcbdbcb01977ed2/f97d7/image2.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 집중을 끝낼 때에&lt;/p&gt;
@@ -1466,14 +1717,14 @@ Log Metadata
 &lt;/ul&gt;
 &lt;p&gt;집중 모드에서는 다른 알림을 모두 꺼두고 슬랙 알림만 켜서 업무 흐름은 놓치지 않게 해두었습니다. &lt;/p&gt;
 &lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 40.588235294117645%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVR42kWQjU6rMBTH9wY6p4yxMT4LK7SUwoCWj4IwZBoWE030JvcFfP8nsLs30eSX5qQ5v/Z/zmJI/D+czk3W5klFYgnHWMRRn0YNhpKWhA2CAgdtFPZZcm6by/A4Vvyp5gu8XgW3NzhSaQpTj+SIlgmvSfKIvMLWC2vXBiA3tWh9h+5v2AFMreiyozimp6pakM2KqHfpTq09K7c24mA9FwmDQaqrUmbOvsMH7hpEXeGHZYWd96n5bMtLHp8QWMhbSbJVhhhNGRWh3yFfQKdDh8q3S8/iwMoMjWzu0cNth+Hf+fwxiNe6GGl4lWWkdLfuoHum4Yj9uTgOGA6hKzyzAYY8r7JsU5bcNV9r9pLFYxxIfmWZrXD0Ewmeq5oBh9l6CUyJDP8jM9ecy+zC0ylBJwJ/ZRGA2rNL16iBUTr7kaKXnPbY584+M7eyDSnLHjhfl/lz7CaKJP9mXq/oVmGmVto6N7Urhva/YMZG1vLp68KUZePZbzWT3/bIG7D/DQP6VaAwkXntAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png&apos; srcset=&apos;/static/c5bf66afaf9308636696df7659cbc53d/e7570/image1.png 170w,
-/static/c5bf66afaf9308636696df7659cbc53d/f46e7/image1.png 340w,
-/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png 680w,
-/static/c5bf66afaf9308636696df7659cbc53d/02d09/image1.png 1020w,
-/static/c5bf66afaf9308636696df7659cbc53d/9d567/image1.png 1360w,
-/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/20ce3a7a0ec6e93c498938387b6e31e6/f97d7/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 36.47058823529412%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABqUlEQVR42mNol+PpUJeol+ZrV5FYFeI71cFyjpt9taJMpZ52o7XVguKiPA2NYnOLRl//VC29bDPrZH3TWG3DZAv7CD1ThlUJKSsT05fFpc0Ni+3x82lwcay2sS00syywtiuwc64MDEs3s04xs023dUkwtUuxdU2wco4wtkmy925PrmJ4d+3/26t/v9z5f3DtuYbknpbUmWUZRcUpeVmRyRmhCan+0Rkh8RnB8emBMZnBcWmBMelBMakBUdnhyWtnbmV4f/v/u1t/vz78v2/d0Y7Yyb3RC+sLSysyc9PDotOCI1MCw5P9w5L8Q5P8QhIhyDckwScowSe4KCmT4dGjxw8fPnr24uWe9ZuDeluc5/SWpWflJySnhUUkh4QlBoTE+wfH+wXF+wJRYLxPYJx3QJyXP5BbW1DG8OLFy+fPX7z98GHfhs3u/Y2WC3rK0jOyYmJD3dyCXVwDHZwC7R0D7BwDbB0CbMDI2t7f2g4okpucyvD///9///4ByadPnmxYtmzdosUrFi2aM3Xq5J6eSd3dEzu7JnZ2TgCijs6JMDShvWNqb++KxYsBAPO+WPH/dMMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/20ce3a7a0ec6e93c498938387b6e31e6/ca1dc/image3.png&apos; srcset=&apos;/static/20ce3a7a0ec6e93c498938387b6e31e6/e7570/image3.png 170w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/f46e7/image3.png 340w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/ca1dc/image3.png 680w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/02d09/image3.png 1020w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/9d567/image3.png 1360w,
+/static/20ce3a7a0ec6e93c498938387b6e31e6/f97d7/image3.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 메뉴바에서 원클릭으로 설정할 수 있어 편리합니다. &lt;/p&gt;
@@ -1504,34 +1755,36 @@ Log Metadata
 &lt;p&gt;단축어 앱을 열고 새로운 단축어를 추가합니다. &lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;URL 콘텐츠 가져오기&lt;/code&gt; 를 검색해서 다음과 같이 설정합니다. &lt;/p&gt;
 &lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image4.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 40.588235294117645%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVR42kWQjU6rMBTH9wY6p4yxMT4LK7SUwoCWj4IwZBoWE030JvcFfP8nsLs30eSX5qQ5v/Z/zmJI/D+czk3W5klFYgnHWMRRn0YNhpKWhA2CAgdtFPZZcm6by/A4Vvyp5gu8XgW3NzhSaQpTj+SIlgmvSfKIvMLWC2vXBiA3tWh9h+5v2AFMreiyozimp6pakM2KqHfpTq09K7c24mA9FwmDQaqrUmbOvsMH7hpEXeGHZYWd96n5bMtLHp8QWMhbSbJVhhhNGRWh3yFfQKdDh8q3S8/iwMoMjWzu0cNth+Hf+fwxiNe6GGl4lWWkdLfuoHum4Yj9uTgOGA6hKzyzAYY8r7JsU5bcNV9r9pLFYxxIfmWZrXD0Ewmeq5oBh9l6CUyJDP8jM9ecy+zC0ylBJwJ/ZRGA2rNL16iBUTr7kaKXnPbY584+M7eyDSnLHjhfl/lz7CaKJP9mXq/oVmGmVto6N7Urhva/YMZG1vLp68KUZePZbzWT3/bIG7D/DQP6VaAwkXntAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png&apos; srcset=&apos;/static/c5bf66afaf9308636696df7659cbc53d/e7570/image1.png 170w,
-/static/c5bf66afaf9308636696df7659cbc53d/f46e7/image1.png 340w,
-/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image1.png 680w,
-/static/c5bf66afaf9308636696df7659cbc53d/02d09/image1.png 1020w,
-/static/c5bf66afaf9308636696df7659cbc53d/9d567/image1.png 1360w,
-/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image1.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image4&apos; title=&apos;&apos; src=&apos;/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image4.png&apos; srcset=&apos;/static/c5bf66afaf9308636696df7659cbc53d/e7570/image4.png 170w,
+/static/c5bf66afaf9308636696df7659cbc53d/f46e7/image4.png 340w,
+/static/c5bf66afaf9308636696df7659cbc53d/ca1dc/image4.png 680w,
+/static/c5bf66afaf9308636696df7659cbc53d/02d09/image4.png 1020w,
+/static/c5bf66afaf9308636696df7659cbc53d/9d567/image4.png 1360w,
+/static/c5bf66afaf9308636696df7659cbc53d/f97d7/image4.png 2000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 입력해야 하는 값은 다음과 같습니다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;헤더&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;헤더&lt;/p&gt;
 &lt;p&gt;키 : Authorization&lt;/p&gt;
 &lt;p&gt;값 : Bearer xoxp-xxxxx-xxxx…&lt;/p&gt;
 &lt;p&gt;키 : Content-Type&lt;/p&gt;
 &lt;p&gt;값 : application/json; charset=UTF-8&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;바디&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;바디&lt;/p&gt;
 &lt;p&gt;키 : profile&lt;/p&gt;
 &lt;p&gt;값 : &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;token property&quot;&gt;&quot;status_text&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;방해금지&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 		&lt;span class=&quot;token property&quot;&gt;&quot;status_emoji&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;:no_entry_sign:&quot;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;원하는 이모지와 텍스트를 넣어주시면 됩니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;원하는 이모지와 텍스트를 넣어주시면 됩니다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이렇게 하면 단축어가 완성됩니다. &lt;/p&gt;
 &lt;h2&gt;참고&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://api.slack.com/apps?deleted=1&quot;&gt;https://api.slack.com/apps?deleted=1&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[단축어로 SLACK 프로필 변경하기]]></title><description><![CDATA[소개 애플 단축어를 활용해 간단하게 슬랙 상태를 원클릭으로 변경할 수 있습니다. 슬랙의 API를 이용합니다.  저는 개인적으로 raycast…]]></description><link>https://sharknia.github.io/단축어로SLACK프로필변경하기/</link><guid isPermaLink="false">https://sharknia.github.io/단축어로SLACK프로필변경하기/</guid><pubDate>Fri, 17 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;소개&lt;/h2&gt;
@@ -1753,7 +2006,7 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
 asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;main&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;에러 핸들링&lt;/h2&gt;
 &lt;h4&gt;HTTP 응답 에러&lt;/h4&gt;
-&lt;p&gt;서버가 4XX 클라이언트 에러 또는 5XX 서버 에러를 반환하는 경우, &lt;code class=&quot;language-text&quot;&gt;ClientResponseError&lt;/code&gt; 가 발생할 수 있다. 이는 &lt;code class=&quot;language-text&quot;&gt;raise_for_status()&lt;/code&gt; 메서드를 사용하여 처리할 수 있다. &lt;/p&gt;
+&lt;p&gt;서버가 4XX 클라이언트 에러 또는 5XX 서버 에러를 반환하는 경우, &lt;code class=&quot;language-text&quot;&gt;ClientResponseError&lt;/code&gt; 가 발생할 수 있다. 이는 &lt;code class=&quot;language-text&quot;&gt;raise\_for\_status()&lt;/code&gt; 메서드를 사용하여 처리할 수 있다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; aiohttp
 &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; asyncio
 
@@ -1842,11 +2095,11 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
     &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; stream_response&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;http://httpbin.org/stream/20&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
 asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;main&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 예제에서는 &lt;code class=&quot;language-text&quot;&gt;response.content.iter_any()&lt;/code&gt; 를 사용하여 응답 스트림에서 데이터를 순차적으로 읽는다. &lt;/p&gt;
+&lt;p&gt;이 예제에서는 &lt;code class=&quot;language-text&quot;&gt;response.content.iter\_any()&lt;/code&gt; 를 사용하여 응답 스트림에서 데이터를 순차적으로 읽는다. &lt;/p&gt;
 &lt;p&gt;스트리밍 응답을 사용할 때는 데이터의 양이 많거나 응답을 받는 동안 다른 처리를 동시에 해야 하는 경우에 매우 효과적이다. 예를 들어 다운로드한 데이터를 파일에 쓰면서 동시에 다음 데이터 청크를 받거나 데이터를 받아서 실시간으로 사용자에게 전송하는 경우 등에 유용하다. &lt;/p&gt;
 &lt;p&gt;스트리밍을 사용할 때에는 네트워크 상황이나 서버의 응답 특성에 따라 데이터를 받는 속도가 일정하지 않을 수 있음을 인지하고 있어야 한다. 데이터를 처리하는 로직이 블로킹되지 않도록 주의해야 하며, 가능하면 각 청크를 처리하는데 시간이 너무 오래 걸리지 않도록 설계해야 한다.&lt;/p&gt;
 &lt;h2&gt;테스트&lt;/h2&gt;
-&lt;p&gt;aiohttp의 비동기적인 특성 때문에 전통적인 동기 테스트 방식을 그대로 사용할 수 없다. 대신 aiohttp는 비동기 테스트를 지원하기 위해 pytest와 함께 사용할 수 있는 &lt;code class=&quot;language-text&quot;&gt;aitohttp.test_utils&lt;/code&gt; 모듈을 제공한다. 이를 통해 웹서버와 클라이언트 코드를 테스트 할 수 있다. &lt;/p&gt;
+&lt;p&gt;aiohttp의 비동기적인 특성 때문에 전통적인 동기 테스트 방식을 그대로 사용할 수 없다. 대신 aiohttp는 비동기 테스트를 지원하기 위해 pytest와 함께 사용할 수 있는 &lt;code class=&quot;language-text&quot;&gt;aitohttp.test\_utils&lt;/code&gt; 모듈을 제공한다. 이를 통해 웹서버와 클라이언트 코드를 테스트 할 수 있다. &lt;/p&gt;
 &lt;h4&gt;클라이언트 코드 테스트&lt;/h4&gt;
 &lt;p&gt;클라이언트 코드를 테스트 하기 위해서는 일반적으로 pytest와 pytest-aiohttp 플러그인을 사용한다. 이를 통해 aiohttp 클라이언트 세션을 비동기적으로 테스트 할 수 있다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; aiohttp
@@ -1866,10 +2119,8 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
     text &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; resp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;assert&lt;/span&gt; text &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Hello, world&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;aiohttp_client는 pytest-aiohttp 플러그인에서 제공하는 fixture로, 테스트용 애플리케이션 서버와 상호작용하는 데 사용할 수 있는 aiohttp.ClientSession 객체를 생성한다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    &amp;lt;div class=&quot;callout gray_background&quot;&gt;
-        💡 &amp;lt;span&gt;fixture란?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;테스트를 실행하기 전에 필요한 준비 작업과 설정을 의미한다. 일반적으로 fixture는 테스트 환경을 설정하고 테스트가 실행되는 동안 필요한 리소스나 상태를 생성하며, 테스트가 완료된 후에 정리 작업을 수행한다. &lt;/span&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    fixture란?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;테스트를 실행하기 전에 필요한 준비 작업과 설정을 의미한다. 일반적으로 fixture는 테스트 환경을 설정하고 테스트가 실행되는 동안 필요한 리소스나 상태를 생성하며, 테스트가 완료된 후에 정리 작업을 수행한다. &lt;/p&gt;
 &lt;h4&gt;서버 코드 테스트&lt;/h4&gt;
 &lt;p&gt;aiohttp 웹서버를 테스트 할 때에는 aiohttp.test_utils.TestClient를 사용하여 요청을 보내고 응답을 검사한다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; aiohttp &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; web
@@ -1890,7 +2141,7 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
         &lt;span class=&quot;token keyword&quot;&gt;assert&lt;/span&gt; resp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;
         text &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; resp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;token keyword&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Hello, world&apos;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; text&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;AioHTTPTestCase는 aiohttp.test&lt;em&gt;utils에서 제공하는 기본 테스트 케이스 클래스이며, unittest&lt;/em&gt;run_loop 데코레이터는 테스트 코루틴을 이벤트 루프에서 실행할 수 있게 해준다.&lt;/p&gt;
+&lt;p&gt;AioHTTPTestCase는 aiohttp.test_utils에서 제공하는 기본 테스트 케이스 클래스이며, unittest_run_loop 데코레이터는 테스트 코루틴을 이벤트 루프에서 실행할 수 있게 해준다.&lt;/p&gt;
 &lt;p&gt;aiohttp를 테스트할 때 주의해야 할 점은 테스트 환경에서도 비동기 코드를 올바르게 실행하기 위해 적절한 테스트 실행기를 설정해야 한다는 것이다. pytest는 비동기 테스트를 위한 좋은 선택이며, pytest-asyncio 플러그인을 사용하면 pytest에서 async def 테스트 함수를 직접 사용할 수 있다.&lt;/p&gt;
 &lt;p&gt;또한, 실제 HTTP 호출을 모킹하기 위해 aiohttp의 pytest_plugin이 제공하는 aioresponses와 같은 도구를 사용할 수도 있다. 이를 통해 실제 외부 서비스와의 통신 없이 HTTP 요청과 응답을 시뮬레이션할 수 있어, 테스트의 견고성을 높이고 실행 시간을 단축시킬 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FastAPI에서 데코레이터와 Dependency]]></title><description><![CDATA[Dependency Injection…]]></description><link>https://sharknia.github.io/FastAPI에서-데코레이터와-Dependency/</link><guid isPermaLink="false">https://sharknia.github.io/FastAPI에서-데코레이터와-Dependency/</guid><pubDate>Tue, 07 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Dependency Injection 시스템과 데코레이터 시스템은 유사한 목적을 가질 수 있다. 하지만 구현과 사용법에서 몇 가지 차이점이 있다. &lt;/p&gt;
 &lt;h2&gt;공통점&lt;/h2&gt;
@@ -1995,10 +2246,8 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
 &lt;h3&gt;비동기 함수 사용 시 주의할 점&lt;/h3&gt;
 &lt;h4&gt;데드락&lt;/h4&gt;
 &lt;p&gt;비동기 프로그래밍은 데드락에 빠질 위험이 있으므로 올바른 &lt;code class=&quot;language-text&quot;&gt;await&lt;/code&gt; 사용과 태스크 관리가 필요하다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    &amp;lt;div class=&quot;callout gray_background&quot;&gt;
-        💡 &amp;lt;span&gt;데드락이란?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;두 개 이상의 프로세스나 스레드가 서로의 작업 완료를 무한히 기다리게 되는 상태&lt;/span&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    데드락이란?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;두 개 이상의 프로세스나 스레드가 서로의 작업 완료를 무한히 기다리게 되는 상태&lt;/p&gt;
 &lt;h4&gt;에러 핸들링&lt;/h4&gt;
 &lt;p&gt;비동기 코드에서는 예외 처리가 더 복잡해질 수 있으므로 주의가 필요하다. &lt;/p&gt;
 &lt;h4&gt;디버깅의 복잡성&lt;/h4&gt;
@@ -2018,7 +2267,7 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;fetch_data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
     data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; some_async_function&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; data&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;여기서 await는 some&lt;em&gt;async&lt;/em&gt;function이 완료될 때까지 fetch_data 코루틴의 실행을 중지시킨다. 완료되면 그 결과값을 data에 할당하고 실행을 계속한다. &lt;/p&gt;
+&lt;p&gt;여기서 await는 some_async_function이 완료될 때까지 fetch_data 코루틴의 실행을 중지시킨다. 완료되면 그 결과값을 data에 할당하고 실행을 계속한다. &lt;/p&gt;
 &lt;p&gt;이러한 비동기 프로그래밍 방식의 장점은 I/O 작업이 완료되기를 기다리는 동안 프로그램이 다른 작업을 계속할 수 있어 프로그램의 전반적인 실행 효율을 개선한다는 것이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FastAPI의 데코레이터]]></title><description><![CDATA[개요 FastAPI의 데코레이터는 파이썬 데코레이터 패턴을 활용하여 FastAPI 프레임워크에서 제공하는 여러 기능을 함수나 클래스에 적용하는 구문이다. 이 데코레이터들은 FastAPI…]]></description><link>https://sharknia.github.io/FastAPI의-데코레이터/</link><guid isPermaLink="false">https://sharknia.github.io/FastAPI의-데코레이터/</guid><pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;FastAPI의 데코레이터는 파이썬 데코레이터 패턴을 활용하여 FastAPI 프레임워크에서 제공하는 여러 기능을 함수나 클래스에 적용하는 구문이다. 이 데코레이터들은 FastAPI에서 매우 중요한 역할을 한다. &lt;/p&gt;
 &lt;p&gt;데코레이터는 &lt;code class=&quot;language-text&quot;&gt;@&lt;/code&gt; 기호를 사용하여 함수나 클래스의 위에 선언된다. 데코레이터는 그 아래에 정의된 함수에 추가적인 기능을 부여하거나 특정 작업을 수행하도록 지시한다. &lt;/p&gt;
@@ -2318,8 +2567,8 @@ app &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; FastAPI&lt;span 
 &lt;h3&gt;4. 자동 문서화&lt;/h3&gt;
 &lt;p&gt;FastAPI는 자동으로 API 문서를 생성해준다. 애플리케이션을 실행 후 브라우저에서 다음 URL을 방문하여 문서를 확인할 수 있다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Swagger UI: &lt;code class=&quot;language-text&quot;&gt;**http://127.0.0.1:8000/docs**&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;ReDoc: &lt;code class=&quot;language-text&quot;&gt;**http://127.0.0.1:8000/redoc**&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Swagger UI: &lt;code class=&quot;language-text&quot;&gt;http://127.0.0.1:8000/docs&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ReDoc: &lt;code class=&quot;language-text&quot;&gt;http://127.0.0.1:8000/redoc&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Pydantic 모델]]></title><description><![CDATA[은 파이썬의 타입 힌트 시스템을 기반으로 데이터 검증 및 설정 관리를 제공하는 라이브러리이다. 특히 FastAPI에서는 Pydantic…]]></description><link>https://sharknia.github.io/Pydantic-모델/</link><guid isPermaLink="false">https://sharknia.github.io/Pydantic-모델/</guid><pubDate>Thu, 02 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Pydantic&lt;/code&gt; 은 파이썬의 타입 힌트 시스템을 기반으로 데이터 검증 및 설정 관리를 제공하는 라이브러리이다. 특히 FastAPI에서는 Pydantic을 주로 요청 및 응답 객체의 데이터 검증, 직렬화 및 역직렬화에 사용한다. &lt;/p&gt;
 &lt;h2&gt;주요 특징&lt;/h2&gt;
 &lt;h3&gt;타입 힌트 기반&lt;/h3&gt;
@@ -2372,19 +2621,21 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h4&gt;일관성 (Consistency)&lt;/h4&gt;
 &lt;p&gt;데이터베이스의 모든 트랜잭션이 데이터를 올바른 상태에서 유지하도록 보장하는 속성이다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;강력한 일관성 (Strong Consistency)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;강력한 일관성 (Strong Consistency)&lt;/p&gt;
 &lt;p&gt;데이터베이스의 모든 노드가 항상 동일한 데이터를 보게 됨을 보장한다. &lt;/p&gt;
 &lt;p&gt;데이터베이스에 쓰기 작업이 수행된 후 모든 후속 읽기 작업이 그 쓰기 작업의 결과를 반영해야 한다. &lt;/p&gt;
 &lt;p&gt;실시간 시스템, 금융 시스템 또는 기타 높은 무결성이 필요한 시스템에서 중요하다. &lt;/p&gt;
 &lt;p&gt;일반적으로 높은 네트워크 지연과 함께 오며, 시스템의 전반적인 성능과 확장성에 영향을 미칠 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;최종 일관성 (Eventual Consistency)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;최종 일관성 (Eventual Consistency)&lt;/p&gt;
 &lt;p&gt;시간이 지나면서 데이터베이스의 모든 노드가 동일한 데이터를 볼 수 있게 됨을 보장한다. &lt;/p&gt;
 &lt;p&gt;쓰기 작업이 수행된 후 일정 시간이 지나면 모든 읽기 작업이 쓰기 작업의 결과를 반영한다. &lt;/p&gt;
 &lt;p&gt;일반적으로 높은 확장성과 낮은 지연 시간을 제공하며 분산 시스템에서 높은 성능을 달성하는데 유리하다. &lt;/p&gt;
 &lt;p&gt;일시적인 데이터 불일치를 허용하므로 애플리케이션의 로직이 이러한 불일치를 처리할 수 있도록 설계되어야 한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4&gt;분리성 (Isolation)&lt;/h4&gt;
 &lt;p&gt;각 트랜잭션이 독립적으로 실행되도록 보장하는 속성이다. 트랜잭션들 사이에 어떤 중간 상태도 다른 트랜잭션에게 보여져셔는 안된다. &lt;/p&gt;
 &lt;h4&gt;지속성 (Durability)&lt;/h4&gt;
@@ -2409,40 +2660,48 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h2&gt;RDB 와의 차이점&lt;/h2&gt;
 &lt;h3&gt;데이터 모델&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;RDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;RDB&lt;/p&gt;
 &lt;p&gt;관계형 데이터 모델을 사용하여 테이블, 행, 열의 데이터로 형태를 데이터 구조하화며, 테이블 간의 관계를 정의하여 데이터의 무결성을 유지한다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DynamoDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DynamoDB&lt;/p&gt;
 &lt;p&gt;NoSQL 데이터베이스로 키-값과 문서 데이터 모델을 사용한다. 데이터 무결성 보장을 위해 관계형 데이터베이스와 다른 매커니즘을 사용한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;동시성 제어&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;RDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;RDB&lt;/p&gt;
 &lt;p&gt;트랜잭션을 사용하여 동시성을 제어한다. 트랜잭션을 시작할 때 데이터에 잠금을 걸고, 트랜잭션이 완료될 때까지 잠음을 유지하여 다른 트랜잭션에 의한 동시 수정을 방지한다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DynamoDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DynamoDB&lt;/p&gt;
 &lt;p&gt;낙관적 잠금과 조건부 업데이트를 사용하여 동시성을 제어하거나 &lt;code class=&quot;language-text&quot;&gt;taransacWrite&lt;/code&gt; API를 사용하여 트랜잭션을 지원한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;일관성&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;RDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;RDB&lt;/p&gt;
 &lt;p&gt;보다 강력한 일관성(Strong Consistency)을 지원한다. 트랜잭션의 모든 변경이 즉시 모든 다른 트랜잭션에 표시된다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DynamoDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DynamoDB&lt;/p&gt;
 &lt;p&gt;기본적으로 최종 일관성(Eventual Consistency)을 제공한다. 필요한 경우 강력한 일관성(Strong Consistency)을 요청할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;분리성&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;RDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;RDB&lt;/p&gt;
 &lt;p&gt;트랜잭션의 분리성을 보장하여 각 트랜잭션이 독립적으로 실행되도록 한다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;DynamoDB&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DynamoDB&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;TransactWrite&lt;/code&gt; API를 통해 여러 항목에 대한 트랜잭션을 지원하여 분리성을 제공한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;지속성&lt;/h3&gt;
 &lt;p&gt;두 DB 모두 트랜잭션이 성공적으로 완료된 후에는 시스템의 어떤 실패에도 영향을 받지 않고 데이터베이셔 변경이 유지되도록 지속성을 보장한다. &lt;/p&gt;
 &lt;h2&gt;참고 문헌&lt;/h2&gt;
@@ -2511,7 +2770,7 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h3&gt;종속성 제거&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;poetry remove package-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;종속성 설치&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;**pyproject.toml**&lt;/code&gt;에 정의된 종속성을 설치하려면 다음 명령어를 실행한다. &lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt;에 정의된 종속성을 설치하려면 다음 명령어를 실행한다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;poetry &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;스크립트 실행&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;poetry run python your_script.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -2534,21 +2793,23 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;Blue-Green 배포 전략에서는 실제로 “배포” 하는 작업을 여러번 반복하지 않는다. 대신, 두 개의 독립적인 환경을 유지하고 트래픽을 이 두 환경 사이에서 스위칭한다. 이를 구체적으로 설명하면 다음과 같다. &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;초기 상태&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;초기 상태&lt;/p&gt;
 &lt;p&gt;Blue 환경이 라이브 상태이고 실제 사용자 트래픽을 처리하고 있다고 가정한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;새 버전 배포&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;새 버전 배포&lt;/p&gt;
 &lt;p&gt;Green 환경에 새로운 버전의 애플리케이션을 배포한다. 이 시점에서 아직 Blue가 여전히 실제 트래픽을 처리하고 있다. Green은 배포 및 테스트 준비 단계에 있다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;스위칭&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;스위칭&lt;/p&gt;
 &lt;p&gt;Green 환경에서의 테스트와 검증이 완료되면 트래픽을 Blue에서 Green으로 스위칭한다. 이제 Green이 라이브 상태가 되어 사용자 트래픽을 처리한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;다음 배포&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다음 배포&lt;/p&gt;
 &lt;p&gt;다음 번 배포 시, Blue 환경을 업데이트하고 검증한 후 트래픽을 다시 Blue로 스위칭한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2&gt;장점&lt;/h2&gt;
 &lt;h3&gt;빠른 롤백&lt;/h3&gt;
 &lt;p&gt;문제가 발생하면 즉시 이전 버전으로 롤백할 수 있다. &lt;/p&gt;
@@ -2653,39 +2914,43 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;p&gt;웹사이트에 대한 DDoS 공격과 같은 일부 보안 위협으로부터 보호할 수 있다. &lt;/p&gt;
 &lt;h2&gt;동작 플로우&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;배포 생성&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;배포 생성&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;사용자는 AWS Management Console, SDK, CLI 등을 사용하여 CloudFront 배포를 생성한다. 이 때, 오리진 서버(S3 버킷, EC2 인스턴스, HTTP 서버 등)와 다양한 배포 설정(예: 캐싱 동작, SSL 인증서, 액세스 제한 등)을 지정한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;DNS 등록&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;DNS 등록&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;CloudFront는 배포에 대해 고유한 도메인 이름을 제공한다. 사용자는 Route 53 같은 DNS 서비스를 사용해 이 도메인 이름을 웹 사이트나 애플리케이션에 연결할 수 있다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;사용자 요청&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;사용자 요청&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;사용자가 콘텐츠에 액세스 하기 위해 웹 브라우저나 애플리케이션으로 요청을 보내면 DNS 시스템은 해당 요청을 CloutFront 배포의 도메인 이름으로 Resolve 한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;엣지 로케이션 라우팅&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;엣지 로케이션 라우팅&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;요청은 사용자게에 가장 가까운 CloudFront 엣지 로케이션으로 라우팅된다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;캐시 확인&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;캐시 확인&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;해당 엣지 로케이션의 캐시에서 요청된 콘텐츠를 확인한다. &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;캐시에 콘텐츠가 있는 경우 (Cache Hit) : 캐시된 콘텐츠를 사용자에게 직접 반환한다. &lt;/li&gt;
 &lt;li&gt;캐시에 콘텐츠가 없는 경우 (Cache Miss) : CloudFront는 설정된 오리진 서버로 요청을 전달한다. &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;오리진에서 콘텐츠 가져오기&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;오리진에서 콘텐츠 가져오기&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;오리진 서버에서 요청된 콘텐츠를 가져온다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;콘텐츠 반환 및 캐싱&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;콘텐츠 반환 및 캐싱&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;가져온 콘텐츠를 사용자에게 반환하면서 동시에 해당 콘텐츠를 엣지 로케이션의 캐시에 저장한다. 이후 동일한 콘텐츠에 대한 요청이 들어오면 캐시에서 빠르게 제공할 수 있다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;캐시 만료&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;캐시 만료&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;캐싱 동작은 TTL(Time to Live) 설정에 따라 관리된다. TTL이 만료되면 콘텐츠는 자동으로 캐시에서 제거된다. 다음 요청이 들어오면 다시 오리진에서 콘텐츠를 가져온다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2&gt;동적 콘텐츠의 캐싱&lt;/h2&gt;
 &lt;p&gt;동적 콘텐츠는 사용자별로 또는 시간에 따라 달라지는 콘텐츠를 의미한다. 예를 들면 사용자 프로필 페이지, 실시간 주식 시세, 뉴스 피드 등이 있을 수 있다. CDN 서비스들은 동적 콘텐츠를 캐싱하기 위해 특별한 전략을 사용한다. &lt;/p&gt;
 &lt;p&gt;동적 콘텐츠 캐싱의 핵심 아이디어는 “모든 동적 콘텐츠가 항상 동적인 것은 아니다.”라는 점이다. 즉, 일부 동적 콘텐츠는 짧은 시간 동안에는 변하지 않을 수도 있다. &lt;/p&gt;
@@ -2730,87 +2995,89 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;p&gt;테스크는 작업 정의에 정의된 내용에 따라 실행된다. 예를 들면 웹 서버와 관련된 데이터베이스를 함께 실행하는 테스크를 생성할 수 있다. &lt;/p&gt;
 &lt;h2&gt;순서와 구조&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;컨테이너&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;컨테이너&lt;/p&gt;
 &lt;p&gt;독립적으로 실행 가능한 소프트웨어의 최소 단위. AWS ECS에서는 이 컨테이너를 EC2 인스턴스나 Fargate에서 실행할 수 있다.  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;테스크&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;테스크&lt;/p&gt;
 &lt;p&gt;ECS의 실행 단위, 하나 이상의 컨테이너로 구성됨&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;클러스터&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;클러스터&lt;/p&gt;
 &lt;p&gt;테스크와 서비스를 실행하고 관리하는 논리적 단위&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;네임스페이스&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;네임스페이스&lt;/p&gt;
 &lt;p&gt;서비스와 관련된 논리적 그룹을 형성&lt;/p&gt;
-&lt;ol&gt;
+&lt;/li&gt;
 &lt;li&gt;ECS&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;각 단계는 이전 단계의 구성 요소를 더 큰 단위로 그룹화하거나 관리하는 역할을 한다. &lt;/p&gt;
 &lt;h2&gt;웹 애플리케이션의 개발 후 ECS 배포&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;웹 애플리케이션 개발&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;웹 애플리케이션 개발&lt;/p&gt;
 &lt;p&gt;웹 애플리케이션을 개발한다. &lt;/p&gt;
 &lt;p&gt;로컬에서 테스트하여 작동을 확인한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Docker 이미지 생성&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Docker 이미지 생성&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Dockerfile&lt;/code&gt; 을 작성하여 웹애플리케이션을 컨테이너화 한다. &lt;/p&gt;
 &lt;p&gt;로컬에서 Docker를 사용하여 이미지를 빌드하고 테스트한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Docker 이미지를 ECR(Elastioc Container Registry)에 푸시&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Docker 이미지를 ECR(Elastioc Container Registry)에 푸시&lt;/p&gt;
 &lt;p&gt;AWS ECR에 저장소를 생성한다. &lt;/p&gt;
 &lt;p&gt;로컬에서 빌드한 Docker 이미지를 ECR 저장소에 PUSH 한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ECS 클러스터 및 작업 정의 설정&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ECS 클러스터 및 작업 정의 설정&lt;/p&gt;
 &lt;p&gt;ECS 클러스터를 생성한다. (Fargate 또는 EC2 인스턴스)&lt;/p&gt;
 &lt;p&gt;작업 정의(Task Definition)을 생성한다. 작업 정의에는 ECR에수 푸시한 Docker 이미지, 필요한 CPU와 메모리, 환경 변수, 포트 매핑 등을 지정한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;ECS 서비스 생성&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ECS 서비스 생성&lt;/p&gt;
 &lt;p&gt;ECS 클러스터 내에서 작업정의를 기반으로 서비스를 생성한다. 서비스를 사용하면 컨테이너의 실행 상태를 유지하거나 원하는 개수의 작업 인스턴스를 실행할 수 있다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;도메인 및 DNS 설정&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;도메인 및 DNS 설정&lt;/p&gt;
 &lt;p&gt;AWS Route 53을 사용하여 도메인을 설정하고 ALB(Application Load Balancer) 의 주소를 해당 도메인에 연결한다. &lt;/p&gt;
-&lt;ol&gt;
+&lt;/li&gt;
 &lt;li&gt;보안 그룹 및 네트워크 설정&lt;/li&gt;
 &lt;li&gt;모니터링 및 로깅&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;기존 서비스에서 ECS 기반 서비스로의 전환&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;ECS, Fargate 설정&lt;/li&gt;
-&lt;li&gt;ALB 설정&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;ALB 설정&lt;/p&gt;
 &lt;p&gt;Application Load Balancer를 생성한다. &lt;/p&gt;
 &lt;p&gt;리스너와 타겟 그룹을 설정하여 ECS 서비스의 작업에 트래픽을 라우팅 하도록 한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Route 53 업데이트&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Route 53 업데이트&lt;/p&gt;
 &lt;p&gt;현재 서비스에 연결된 Route53 레코드를 수정하여 ALB의 DNS 이름을 가리키도록 변경한다. &lt;/p&gt;
-&lt;ol&gt;
+&lt;/li&gt;
 &lt;li&gt;모니터링 및 튜닝&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;주의점&lt;/h3&gt;
 &lt;p&gt;기본적으로는 CES, Fargate, ALB를 설정한 후 마지막 단계로 Route 53의 레코드 설정만 변경하면 트래픽은 새로운 ECS-Fargate 기반의 서비스로 라우팅된다. &lt;/p&gt;
 &lt;p&gt;그러나 다음과 같은 주의 사항이 있다. &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;테스트 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;테스트 &lt;/p&gt;
 &lt;p&gt;ALB와 ECS가 올바르게 작동하는지 사전에 충분히 테스트 해야 한다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;DNS 전파 지연&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DNS 전파 지연&lt;/p&gt;
 &lt;p&gt;DNS 업데이트는 즉시 전파되지 않을 수 있다. 일부 사용자는 변경 전의 엔드포인트로 트래픽이 라우팅 될 수 있으므로 업데이트 후에도 기존 서비스를 적어도 몇 시간 동안 실행 상태로 유지하는 것이 좋다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;롤백 계획&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;문제가 발생할 경우를 대비하여 롤백 계획을 준비해야 한다. 예를 들어 새로운 서비스에 문제가 발생한 경우 Route 53 설정을 원래대로 돌릴 수 있어야 한다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[vercel 배포 자동화]]></title><description><![CDATA[어느 순간 morethan-log…]]></description><link>https://sharknia.github.io/vercel-배포-자동화/</link><guid isPermaLink="false">https://sharknia.github.io/vercel-배포-자동화/</guid><pubDate>Mon, 23 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;어느 순간 morethan-log에 노션 글 업로드가 잘 되지 않았다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;롤백 계획&lt;/p&gt;
+&lt;p&gt;문제가 발생할 경우를 대비하여 롤백 계획을 준비해야 한다. 예를 들어 새로운 서비스에 문제가 발생한 경우 Route 53 설정을 원래대로 돌릴 수 있어야 한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[vercel 배포 자동화]]></title><description><![CDATA[어느 순간 morethan-log…]]></description><link>https://sharknia.github.io/vercel-배포-자동화/</link><guid isPermaLink="false">https://sharknia.github.io/vercel-배포-자동화/</guid><pubDate>Mon, 23 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;어느 순간 morethan-log에 노션 글 업로드가 잘 되지 않았다. &lt;/p&gt;
 &lt;p&gt;글을 그 동안 마구 마구 써버리긴 했다.. 그래서 찔리는 점이 있었는데, 최근 이직 후 일을 하면서 조금 덜 쓰면서, 그리고 잠깐 옵시디언으로 한 눈을 팔면서 고칠 생각을 안하고 있었다. &lt;/p&gt;
 &lt;p&gt;그러면서 일도 쪼끔 익숙해지고 옵시디언도 아 별로다 라고 결론을 내고 다시 여기에 글을 썼는데, 업로드가 되지 않는걸 보니 결국은 고쳐야 할 때가 왔음을 알게 됐다. &lt;/p&gt;
 &lt;p&gt;morethan-log는 일정 시간마다 특정 api를 호출해서 노션에서 글을 긁어오는 함수를 실행한다. &lt;/p&gt;
@@ -2868,28 +3135,48 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h4&gt;domain 디렉토리&lt;/h4&gt;
 &lt;p&gt;DDD에서 가장 중요한 부분으로 복잡한 비즈니스 로직과 애플리케이션 핵심 기능을 표현하는 모델을 담고 있다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;entities&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;entities&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;비즈니스 도메인의 기본적인 데이터 단위로 고유한 식별자를 가지고 있다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;비즈니스 규칙을 캡슐화하고 FastAPI 애플리케이션에서 데이터베이스 레코드와 1:1로 매핑되는 경우가 많다. &lt;/li&gt;
 &lt;li&gt;FastAPI는 이러한 엔티티에 직접적으로 연관되지능 않지만 ORM 도구를 사용하여 엔티티 클래스를 데이터 모델로 변환하고 데이터베이스와 상호작용을 할 수 있다. &lt;/li&gt;
-&lt;li&gt;value_objects&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;value_objects&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;식별자를 가지지 않는 불변 객체로 엔티티의 속성을 표현한다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;FastAPI에서는 값 객체를 표현하기 위해 Pydantic의 기능을 활용할 수 있으며 요청 검증이나 응답 시리얼라이징에 유용하게 사용된다. &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;애플리케이션 레이어(presentation, service)&lt;/h3&gt;
 &lt;h4&gt;presentaion 디렉토리&lt;/h4&gt;
 &lt;p&gt;이 디렉토리는 사용자 인터페이스와 외부에 노출되는 API 엔드포인트의 정의를 담당한다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;DTO&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DTO&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;DTO는 클라이언트와 서버간에 데이터를 전달할 때 사용하는 객체이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;FastAPI에서는 Pydantic 모델을 이용해 DTO를 정의한다. 이 모델들은 본문, 쿼리 파라미터, 경로 파라미터, 그리고 응답 모델을 정의하는데 사용된다.&lt;/li&gt;
 &lt;li&gt;DTO는 엔드포인트가 받아들이고 반환하는 데이터의 구조와 유효성 검증 규칙을 명시한다.&lt;/li&gt;
-&lt;li&gt;REST&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;REST&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Restful 원칙을 따르는 API 엔드포인트를 정의한다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;FastAPI에서는 각 API 경로에 해당하는 함수를 작성하고 이를 HTTP 메서드에 매핑한다. &lt;/li&gt;
 &lt;li&gt;각 함수는 Pydantic DTO를 매개변수로 사용하여 요청 데이터의 유효성을 검사하고 이를 도메인 모델로 변환하거나 서비스 레이어로 전달한다. &lt;/li&gt;
-&lt;li&gt;Controllers&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Controllers&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;API 엔드포인트에 대한 요청을 처리하는 로직을 담당한다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;FastAPI에서는 주로 경로 작업 함수로 표현되며 경로 데코레이터를 사용하여 라우트를 설정한다. &lt;/li&gt;
 &lt;li&gt;컨트롤러는 요청을 받아 DTO로 파싱하고 필요한 비즈니스 로직을 수행한 후 적절한 HTTP 응답을 반환한다.&lt;/li&gt;
 &lt;/ul&gt;
@@ -2897,9 +3184,11 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h4&gt;service 디렉토리&lt;/h4&gt;
 &lt;p&gt;애플리케이션의 비즈니스 로직을 구현하는 부분을 담당한다. 컨트롤러와 데이터 액세스 계층 사이에서 중간 역할을 한다. 주요 목적은 비즈니스 규칙과 애플리케이션 로직을 캡슐화하여 재사용성을 높이고 애플리케이션의 다룬 부분과의 결합도를 낮추는 것이다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Service Implementations (impl)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;Service Implementations (impl)&lt;/p&gt;
 &lt;p&gt;실제 로직을 구현한다. 이 구현체는 데이터베이스 호출, 외부 서비스 호출, 비즈니스 규칙 처리 등을 담당한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;인프라 레이어(repository)&lt;/h3&gt;
 &lt;p&gt;도메인 레이어와 애플리케이션 레이어의 기술적 세부 사항을 추상화하는 역할을 한다. 주로 데이터베이스, 메시징 시스템, 파일 시스템와 같은 외부 자원과의 통신을 담당한다. 애플리케이션의 나머지 부분이 기술적인 세부사항에 직접적으로 의존하지 않도록 추상화를 제공한다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Unit Test(단위 테스트)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Unit-Test단위-테스트/</link><guid isPermaLink="false">https://sharknia.github.io/Unit-Test단위-테스트/</guid><pubDate>Tue, 17 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;단위 테스트는 소프트웨어 개발의 기본 구성 단위를 테스트하는 것을 말한다. 이 경우 기본 구성 단위는 보통 함수나 메소드, 작은 클래스 등이 될 수 있다. 단위 테스트의 주된 목적은 개별 구성 단위가 예상대로 동작하는지 확인하고, 코드의 특정 부분에 대한 논리적 오류를 식별하는 것이다. &lt;/p&gt;
 &lt;h3&gt;특징과 목적&lt;/h3&gt;
@@ -2956,66 +3245,74 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;h4&gt;Feature branching&lt;/h4&gt;
 &lt;p&gt;각 기능마다 별도의 브랜치를 만들어 개발한다. 기능이 완성되면 메인 브랜치에 병합한다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;장점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;장점&lt;/p&gt;
 &lt;p&gt;각 기능이 독립적으로 개발되므로 다양한 기능과 버그 수정을 동시에 진행할 수 있다. &lt;/p&gt;
 &lt;p&gt;충돌이 발생할 경우 해당 기능의 브랜치에서만 처리하면 되므로 메인 브랜치는 상대적으로 안정적이다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;단점&lt;/p&gt;
 &lt;p&gt;병합 시점에 복잡한 병합 충돌이 발생할 수 있다. &lt;/p&gt;
 &lt;p&gt;오랜 시간 분리된 브랜치에서 작업할 경우 메인 브랜치와의 동기화가 어려워질 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;적합한 상황&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;적합한 상황&lt;/p&gt;
 &lt;p&gt;개발자들이 독립적으로, 혹은 소규모 팀으로 작업을 진행하는 경우&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4&gt;Gitflow&lt;/h4&gt;
 &lt;p&gt;master, develop, feture/, hotfix/ 등 여러 브랜치를 사용하여 작업의 단계와 종류를 구분한다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;장점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;장점&lt;/p&gt;
 &lt;p&gt;명확한 브랜치 구조를 가지고 있어 프로젝트의 다양한 단계와 상태를 잘 구분한다. &lt;/p&gt;
 &lt;p&gt;핫픽스와 기능 개발을 동시에 진행할 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;단점&lt;/p&gt;
 &lt;p&gt;브랜치 관리가 복잡하다. &lt;/p&gt;
 &lt;p&gt;많은 규칙과 워크 플로우를 따라야 하므로 초보자에게는 진입 장벽이 될 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;적합한 상황&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;적합한 상황&lt;/p&gt;
 &lt;p&gt;큰 규모의 프로젝트나, 여러 단계의 배포 과정을 가진 프로젝트에서 사용&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4&gt;Github flow&lt;/h4&gt;
 &lt;p&gt;간단하게 master와 feature 브랜치만을 사용한다. 기능이 준비되면 master에 PR을 통해 병합 요청한다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;장점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;장점&lt;/p&gt;
 &lt;p&gt;브랜치 관리가 간단하다. &lt;/p&gt;
 &lt;p&gt;지속적인 통합 및 배포 환경에 적합하다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;단점&lt;/p&gt;
 &lt;p&gt;복잡한 프로젝트에서는 세부적인 브랜치 구분이 부족할 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;적합한 상황&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;적합한 상황&lt;/p&gt;
 &lt;p&gt;중소 규모의 프로젝트나 간단한 배포 과정을 가진 프로젝트에서 사용&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4&gt;Trunk Based Deveolpment(TBD)&lt;/h4&gt;
 &lt;p&gt;모든 개발자가 하나의 trunk 혹은 main 브랜치에서 직접 작업한다. 기능 토글등을 활용하여 미완성 기능을 숨긴다. &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;장점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;장점&lt;/p&gt;
 &lt;p&gt;브랜치 관리가 매우 간단하다. &lt;/p&gt;
 &lt;p&gt;지속적인 통합 및 배포 환경에 최적화되어 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단점&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;단점&lt;/p&gt;
 &lt;p&gt;안정적인 CI/CD 파이프라인 및 테스트 환경이 필요하다. &lt;/p&gt;
 &lt;p&gt;기능 토글 등 추가적인 관리 도두가 필요할 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;적합한 상황&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;빠른 개발 주기와 지속적인 배포를 원하는 프로젝트에서 사용&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TypeError: non-default argument 'content' follows default argument]]></title><description><![CDATA[이 오류는 Python…]]></description><link>https://sharknia.github.io/TypeError-non-default-argument-content-follows-default-argument/</link><guid isPermaLink="false">https://sharknia.github.io/TypeError-non-default-argument-content-follows-default-argument/</guid><pubDate>Tue, 10 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;TypeError: non-default argument &apos;content&apos; follows default argument&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;적합한 상황&lt;/p&gt;
+&lt;p&gt;빠른 개발 주기와 지속적인 배포를 원하는 프로젝트에서 사용&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[TypeError: non-default argument 'content' follows default argument]]></title><description><![CDATA[이 오류는 Python…]]></description><link>https://sharknia.github.io/TypeError-non-default-argument-content-follows-default-argument/</link><guid isPermaLink="false">https://sharknia.github.io/TypeError-non-default-argument-content-follows-default-argument/</guid><pubDate>Tue, 10 Oct 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;TypeError: non-default argument &apos;content&apos; follows default argument&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;이 오류는 Python 클래스 또는 함수에서 기본값이 설정된 인자 뒤에 기본값이 설정되지 않은 인자가 위치할 때 발생한다. 예를 들어, 나는 다음과 같았다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token decorator annotation punctuation&quot;&gt;@dataclass&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CsDetailQueryReturnDto&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
@@ -3260,7 +3557,7 @@ Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리
 &lt;li&gt;&lt;strong&gt;id&lt;/strong&gt; : idx&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;parent&lt;/strong&gt; : 부모 ID&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;hasChidren&lt;/strong&gt; : 자식 요소가 있는지 여부 (true, false)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;type&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;heading_1&lt;/code&gt; 등등 블록의 종류. 종류마다 마크다운 변환 전략이 달라야 하므로 중요하다. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;type&lt;/strong&gt; : &lt;code class=&quot;language-text&quot;&gt;heading\_1&lt;/code&gt; 등등 블록의 종류. 종류마다 마크다운 변환 전략이 달라야 하므로 중요하다. &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;is_toggleable&lt;/strong&gt; : **** 토글 여부&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -3369,7 +3666,7 @@ Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리
 &lt;h3&gt;고려사항&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;DataBase는 여러개일 필요가 없으므로, Singleton 패턴을 고려한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**DataBase**&lt;/code&gt; 클래스는 Notion과의 통신 뿐만 아니라, 환경 변수의 로딩 및 데이터베이스 ID 및 키의 유효성 검사까지 담당하고 있다. 이러한 기능들을 분리하여 각각의 책임을 명확히 하는 것이 좋다. &lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;DataBase&lt;/code&gt; 클래스는 Notion과의 통신 뿐만 아니라, 환경 변수의 로딩 및 데이터베이스 ID 및 키의 유효성 검사까지 담당하고 있다. 이러한 기능들을 분리하여 각각의 책임을 명확히 하는 것이 좋다. &lt;/li&gt;
 &lt;li&gt;Typings: 현재 코드에서는 TypeScript를 사용하고 있다. 가능한 한 모든 변수, 함수 매개변수 및 반환 타입에 타입 주석을 추가하는 것이 좋다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;완성코드&lt;/h2&gt;
@@ -3514,9 +3811,13 @@ Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리
 &lt;li&gt;이를 위해 구현에만 집중하지 않고 설계에 신경을 써서 진행해본다.&lt;/li&gt;
 &lt;li&gt;이를 위해 디자인 패턴을 가능한 한 적극적으로 활용해본다. &lt;/li&gt;
 &lt;li&gt;가능한 한 사용이 쉽도록 만들어본다.&lt;/li&gt;
-&lt;li&gt;명확한 명명 규칙을 사용한다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;명확한 명명 규칙을 사용한다.&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;PascalCase를 클래스 이름에 사용한다.&lt;/li&gt;
 &lt;li&gt;camelCase를 메소드 및 변수에 사용한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4&gt;개발 외적인 목표&lt;/h4&gt;
 &lt;ol&gt;
@@ -3670,43 +3971,51 @@ NotionToMarkdown&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&l
 &lt;li&gt;TypeScript 설정 파일 생성&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;tsc &lt;span class=&quot;token parameter variable&quot;&gt;--init&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;**tsconfig.json**&lt;/code&gt; 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;`tsconfig.json` 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
-&lt;li&gt;필요한 TypeScript 타입 정의 설치&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;필요한 TypeScript 타입 정의 설치&lt;/p&gt;
 &lt;p&gt;Node.js와 TypeScript를 함 사용하기 위해 해당 타입 정의를 설치한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--save&lt;/span&gt; @types/node&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
-&lt;li&gt;첫 TypeScript 파일 작성&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;첫 TypeScript 파일 작성&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;index.ts&lt;/code&gt; 파일에 다음과 같은 내용을 작성해보자. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; greet &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Hello, &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;name&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;greet&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;TypeScript&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
-&lt;li&gt;컴파일 및 실행&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;컴파일 및 실행&lt;/p&gt;
 &lt;p&gt;아래 명령어로 컴파일 할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;tsc index.ts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;node&lt;/span&gt; index.js&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
-&lt;li&gt;자동 컴파일 설정(선택사항)&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;자동 컴파일 설정(선택사항)&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ts-node&lt;/code&gt; 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;**ts-node**&lt;/code&gt; 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-g&lt;/span&gt; ts-node&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ts-node index.ts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;TypeScript 설정 파일(&lt;strong&gt;tsconfig.json)&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;tsconfig.json&lt;/code&gt; 은 타입스크립트 프로젝트의 루트 디렉토리에 위치하는 설정 파일이다. 타입스크립트 컴파일러에 대한 구성 옵션을 정의한다. 이 파일을 통해 타입스크립트 코드가 자바스크립트 코드로 변환되는지, 어떤 파일들이 포함되거나 제외되는지 등을 정의할 수 있다. &lt;/p&gt;
 &lt;p&gt;주요 옵션들은 다음과 같다. &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;files&lt;/strong&gt;: 컴파일에 포함할 파일의 목록이다. 이 옵션을 사용하면 특정 파일만 명시적으로 포함시킬 수 있다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;include&lt;/strong&gt;: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: &lt;code class=&quot;language-text&quot;&gt;**[&quot;src/**/*.ts&quot;]**&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;exclude&lt;/strong&gt;: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: &lt;code class=&quot;language-text&quot;&gt;**[&quot;node_modules&quot;]**&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;extends&lt;/strong&gt;: 다른 &lt;code class=&quot;language-text&quot;&gt;**tsconfig.json**&lt;/code&gt; 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;include&lt;/strong&gt;: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: &lt;code class=&quot;language-text&quot;&gt;[&quot;src/**/*.ts&quot;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;exclude&lt;/strong&gt;: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: &lt;code class=&quot;language-text&quot;&gt;[&quot;node\_modules&quot;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;extends&lt;/strong&gt;: 다른 &lt;code class=&quot;language-text&quot;&gt;tsconfig.json&lt;/code&gt; 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;compilerOptions&lt;/strong&gt;: 컴파일러에 대한 다양한 설정을 제공하는 핵심 옵션이다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;typeRoots와 types&lt;/strong&gt;: 사용자 정의 타입 선언의 위치와 포함될 타입 선언 패키지를 지정한다.&lt;/li&gt;
 &lt;/ul&gt;
@@ -3723,34 +4032,34 @@ NotionToMarkdown&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&l
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[gitignore]]></title><description><![CDATA[gitignore란?  는 Git에서 프로젝트에 특정 파일 또는 디렉터리를 추적하지 않도록 지시하는 파일이다.  파일에 나열된 패턴과 일치하는 파일/디렉터리는 Git에서 무시된다. 이는 민감한 데이터, 컴파일 된 바이너리, 로그 파일 등 Git…]]></description><link>https://sharknia.github.io/gitignore/</link><guid isPermaLink="false">https://sharknia.github.io/gitignore/</guid><pubDate>Sat, 02 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;gitignore란?&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 는 Git에서 프로젝트에 특정 파일 또는 디렉터리를 추적하지 않도록 지시하는 파일이다. &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일에 나열된 패턴과 일치하는 파일/디렉터리는 Git에서 무시된다. 이는 민감한 데이터, 컴파일 된 바이너리, 로그 파일 등 Git 저장소에 저장할 필요가 없거나 저장해서는 안되는 파일들을 제외하는 데에 유용하다. &lt;/p&gt;
 &lt;h2&gt;문법&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;**.gitignore**&lt;/code&gt; 파일에는 여러 패턴을 사용할 수 있는데, 이를 알고 있으면 파일과 디렉터리를 무시하는 데 더 유용하게 사용할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일에는 여러 패턴을 사용할 수 있는데, 이를 알고 있으면 파일과 디렉터리를 무시하는 데 더 유용하게 사용할 수 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;****&lt;/code&gt; : 어떤 문자든지 0개 이상을 의미한다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;**.log**&lt;/code&gt;는 모든 로그 파일을 무시한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**/**&lt;/code&gt; : 디렉터리 구분자로 사용된다. &lt;code class=&quot;language-text&quot;&gt;**/logs**&lt;/code&gt;는 logs라는 이름의 디렉터리만 무시하며, &lt;code class=&quot;language-text&quot;&gt;**logs/**&lt;/code&gt;는 logs로 시작하는 모든 디렉터리를 무시한다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**!**&lt;/code&gt; : 패턴을 부정한다. 예를 들면, &lt;code class=&quot;language-text&quot;&gt;**.log**&lt;/code&gt; 아래에 &lt;code class=&quot;language-text&quot;&gt;**!important.log**&lt;/code&gt;를 추가하면, 모든 로그 파일은 무시되지만 important.log 파일은 예외로 추적된다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**#**&lt;/code&gt; : 주석을 작성하는 데 사용된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt; : 어떤 문자든지 0개 이상을 의미한다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;.log&lt;/code&gt;는 모든 로그 파일을 무시한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/&lt;/code&gt; : 디렉터리 구분자로 사용된다. &lt;code class=&quot;language-text&quot;&gt;/logs&lt;/code&gt;는 logs라는 이름의 디렉터리만 무시하며, &lt;code class=&quot;language-text&quot;&gt;logs/&lt;/code&gt;는 logs로 시작하는 모든 디렉터리를 무시한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;!&lt;/code&gt; : 패턴을 부정한다. 예를 들면, &lt;code class=&quot;language-text&quot;&gt;.log&lt;/code&gt; 아래에 &lt;code class=&quot;language-text&quot;&gt;!important.log&lt;/code&gt;를 추가하면, 모든 로그 파일은 무시되지만 important.log 파일은 예외로 추적된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;#&lt;/code&gt; : 주석을 작성하는 데 사용된다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;전역 설정하기&lt;/h2&gt;
-&lt;p&gt;프로젝트마다 반복적으로 무시 해야하는 파일이나 디렉터리가 있다면, 전역 &lt;code class=&quot;language-text&quot;&gt;**.gitignore**&lt;/code&gt; 파일을 만들 수 있다.&lt;/p&gt;
+&lt;p&gt;프로젝트마다 반복적으로 무시 해야하는 파일이나 디렉터리가 있다면, 전역 &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일을 만들 수 있다.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;전역 &lt;code class=&quot;language-text&quot;&gt;**.gitignore**&lt;/code&gt; 파일 생성: &lt;code class=&quot;language-text&quot;&gt;**touch ~/.gitignore_global**&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Git 설정에 전역 &lt;code class=&quot;language-text&quot;&gt;**.gitignore**&lt;/code&gt; 파일 추가: &lt;code class=&quot;language-text&quot;&gt;**git config --global core.excludesFile ~/.gitignore_global**&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;전역 &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일 생성: &lt;code class=&quot;language-text&quot;&gt;touch ~/.gitignore\_global&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Git 설정에 전역 &lt;code class=&quot;language-text&quot;&gt;.gitignore&lt;/code&gt; 파일 추가: &lt;code class=&quot;language-text&quot;&gt;git config --global core.excludesFile ~/.gitignore\_global&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;TypeScript 프로젝트에서의 gitignore&lt;/h2&gt;
 &lt;p&gt;일반적으로 아래와 같지만, 프로젝트의 상황과 요구에 따라 추가/제외되는 항목이 당연히 있을 수 있다. &lt;/p&gt;
 &lt;h3&gt;포함하지 말아야 할 파일들&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**/node_modules/**&lt;/code&gt;: &lt;code class=&quot;language-text&quot;&gt;**npm install**&lt;/code&gt;이나 &lt;code class=&quot;language-text&quot;&gt;**yarn**&lt;/code&gt; 명령으로 설치한 패키지들이 이 디렉터리에 저장된다. 이는 대부분의 경우에 매우 크며, 이를 Git에 저장하는 것은 비효율적이다. 대신, &lt;code class=&quot;language-text&quot;&gt;**package.json**&lt;/code&gt;에 의존성이 기록되므로 다른 개발자들은 동일한 패키지를 쉽게 설치할 수 있다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**/dist/**&lt;/code&gt; &lt;strong&gt;또는&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;**/build/**&lt;/code&gt;: TypeScript를 JavaScript로 컴파일할 때 생성되는 출력 디렉터리이다. 이것은 원본 코드에서 파생된 것이므로 저장소에 포함할 필요가 없다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**.env**&lt;/code&gt;: 환경 변수가 포함된 파일이다. 이 파일은 민감한 정보 (API 키, 비밀번호 등)를 포함할 수 있으므로 공개 저장소에 저장되어서는 안된다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**.DS_Store**&lt;/code&gt;: macOS에서 파일 시스템이 생성하는 메타데이터 파일이다. 이는 프로젝트와 관련이 없으므로 무시해야 한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/node\_modules/&lt;/code&gt;: &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt;이나 &lt;code class=&quot;language-text&quot;&gt;yarn&lt;/code&gt; 명령으로 설치한 패키지들이 이 디렉터리에 저장된다. 이는 대부분의 경우에 매우 크며, 이를 Git에 저장하는 것은 비효율적이다. 대신, &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;에 의존성이 기록되므로 다른 개발자들은 동일한 패키지를 쉽게 설치할 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/dist/&lt;/code&gt; &lt;strong&gt;또는&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;/build/&lt;/code&gt;: TypeScript를 JavaScript로 컴파일할 때 생성되는 출력 디렉터리이다. 이것은 원본 코드에서 파생된 것이므로 저장소에 포함할 필요가 없다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt;: 환경 변수가 포함된 파일이다. 이 파일은 민감한 정보 (API 키, 비밀번호 등)를 포함할 수 있으므로 공개 저장소에 저장되어서는 안된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.DS\_Store&lt;/code&gt;: macOS에서 파일 시스템이 생성하는 메타데이터 파일이다. 이는 프로젝트와 관련이 없으므로 무시해야 한다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;포함되어야 할 파일들&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**.js**&lt;/code&gt;&lt;strong&gt;와&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;**.js.map**&lt;/code&gt;: TypeScript를 JavaScript로 컴파일하면, 일반적으로 &lt;code class=&quot;language-text&quot;&gt;**.js**&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;**.js.map**&lt;/code&gt; 파일이 생성된다. 이러한 파일은 &lt;code class=&quot;language-text&quot;&gt;**/dist/**&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;**/build/**&lt;/code&gt; 디렉터리에 포함될 수 있지만, 그렇지 않은 경우에도 이러한 파일을 무시하는 것이 좋다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**.tsbuildinfo**&lt;/code&gt;: TypeScript 3.4 이후로 컴파일러는 프로젝트 빌드 정보를 이 파일에 저장할 수 있다. 이것은 증분 빌드(incremental build)를 빠르게 만들기 위한 것이므로 저장소에 포함시키지 않아도 된다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;**/coverage/**&lt;/code&gt;: 테스트 코드의 코드 커버리지를 저장하는 디렉터리이다. 보통 이 디렉터리는 코드 커버리지 도구로 생성된다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;로그 파일&lt;/strong&gt;: 예를 들면, &lt;code class=&quot;language-text&quot;&gt;**.log**&lt;/code&gt; 확장자를 가진 파일들이다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt;&lt;strong&gt;와&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;.js.map&lt;/code&gt;: TypeScript를 JavaScript로 컴파일하면, 일반적으로 &lt;code class=&quot;language-text&quot;&gt;.js&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;.js.map&lt;/code&gt; 파일이 생성된다. 이러한 파일은 &lt;code class=&quot;language-text&quot;&gt;/dist/&lt;/code&gt;나 &lt;code class=&quot;language-text&quot;&gt;/build/&lt;/code&gt; 디렉터리에 포함될 수 있지만, 그렇지 않은 경우에도 이러한 파일을 무시하는 것이 좋다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.tsbuildinfo&lt;/code&gt;: TypeScript 3.4 이후로 컴파일러는 프로젝트 빌드 정보를 이 파일에 저장할 수 있다. 이것은 증분 빌드(incremental build)를 빠르게 만들기 위한 것이므로 저장소에 포함시키지 않아도 된다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;/coverage/&lt;/code&gt;: 테스트 코드의 코드 커버리지를 저장하는 디렉터리이다. 보통 이 디렉터리는 코드 커버리지 도구로 생성된다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;로그 파일&lt;/strong&gt;: 예를 들면, &lt;code class=&quot;language-text&quot;&gt;.log&lt;/code&gt; 확장자를 가진 파일들이다.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;정의되었는데, 추적되는 경우&lt;/h2&gt;
 &lt;p&gt;예를 들어 나의 경우에는 *.js를 정의했는데 특정 js 파일이 계속해서 추적당했다. 이는 몇가지 이유가 있을 수 있다. &lt;/p&gt;
@@ -3788,14 +4097,16 @@ NotionToMarkdown&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&l
 &lt;li&gt;짧게&lt;/li&gt;
 &lt;li&gt;소문자 사용 : 대소문자 구문을 위해 소문자로 통일하는 것이 좋다. &lt;/li&gt;
 &lt;li&gt;하이픈 사용 : 띄어쓰기가 안되므로 단어와 단어를 하이픈으로 구분한다. &lt;/li&gt;
-&lt;li&gt;카테고리/분류 사용 : 작업의 유형 또는 카테고리를 브랜치 이름의 접두사로 사용한다. 예시는 다음과 같다. &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;카테고리/분류 사용 : 작업의 유형 또는 카테고리를 브랜치 이름의 접두사로 사용한다. 예시는 다음과 같다. &lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;feat/&lt;/code&gt; 새로운 기능 추가&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;fix/&lt;/code&gt; 버그 수정&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;refactor/&lt;/code&gt; 코드 리팩토링&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;docs/&lt;/code&gt; 문서 관련 작업&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;p&gt;예) &lt;code class=&quot;language-text&quot;&gt;feat/user-authentication&lt;/code&gt;&lt;/p&gt;
-&lt;ol&gt;
+&lt;/li&gt;
 &lt;li&gt;티켓 번호 포함 : 이슈 트래커나 프로젝트 관리도구와 연계된 작업의 경우 해당 IDX를 브랜치 이름에 포함시키는기 유용할 수 있다. &lt;/li&gt;
 &lt;li&gt;명사보다 동사를 선호 &lt;/li&gt;
 &lt;li&gt;확장자 사용 주의 : 브랜치 이름에 txt, md 같은 확장자를 포함하지 않도록 주의한다. &lt;/li&gt;
@@ -3983,24 +4294,26 @@ page properties는 정확하게 마크다운의 Front Matter에 사용하면 될
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 	...
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;우리가 원하는 Page Content들의 내용이 드디어 보인다. 위의 결과에는 나타나지 않았지만, 들여쓰기가 된 경우에는 해당 들여쓰기가 된 block의 상위 요소에게 종속된다. 다시 말 내 다음 블록에 들여쓰기를 한 블록이 있다면 &lt;code class=&quot;language-text&quot;&gt;has_children&lt;/code&gt; 속성이 true가 된다. 그 안을 다시 파고 들어가면 될 것 같다. &lt;/p&gt;
+&lt;p&gt;우리가 원하는 Page Content들의 내용이 드디어 보인다. 위의 결과에는 나타나지 않았지만, 들여쓰기가 된 경우에는 해당 들여쓰기가 된 block의 상위 요소에게 종속된다. 다시 말 내 다음 블록에 들여쓰기를 한 블록이 있다면 &lt;code class=&quot;language-text&quot;&gt;has\_children&lt;/code&gt; 속성이 true가 된다. 그 안을 다시 파고 들어가면 될 것 같다. &lt;/p&gt;
 &lt;h2&gt;오늘의 결론&lt;/h2&gt;
 &lt;h4&gt;코드 기록&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/Sharknia/Notion-to-Markdown/tree/check-api-test-complete&quot;&gt;https://github.com/Sharknia/Notion-to-Markdown/tree/check-api-test-complete&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;이렇게 해서, API를 통해서 내 노션에 올려진 글들을 가져오는 데에 성공했다. 이제 다음 시간에는 이 JSON들을 가공해서 Markdown으로 변환하려고 한다. &lt;/p&gt;
 &lt;p&gt;방법은 세 가지 정도를 생각하고 있다. &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;노션 내부 API 사용&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;
+&lt;p&gt;노션 내부 API 사용&lt;/p&gt;
 &lt;p&gt;실제 노션 페이지를 띄울 때 오고 가는 요청값 들을 확인해 이를 사용하여 마크다운 파일을 바로 만들 수 있는 것으로 보인다. 이는 만들기가 가장 쉬워 보이나, 언제 폭파 될지 모른다는 문제점을 갖고 있다.  만약 폭파된다면 귀찮게도 다시 만들어야 한다는 치명적인 문제 때문에 지금 당장은 고려하고 있지 않지만 실패할 가능성도 가장 적어 보이므로, 귀찮아지면 언제든지 이쪽으로 틀도록 하자. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;오픈 소스 사용&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;오픈 소스 사용&lt;/p&gt;
 &lt;p&gt;Notion 블록을 마크다운 형식으로 바꿔주는 오픈 소스가 있는 것으로 보인다. 아직 자세히 살펴보지는 않았다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;직접 구현&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;직접 구현&lt;/p&gt;
 &lt;p&gt;그냥.. 직접 만든다. 아마 많은 기능을 지원하지는 못하겠지만 노션을 쓰면서 느낀 건데 많은 기능을 딱히 사용하지 않는다. 정말 개인적인 용도라면 그냥 생각보다 쉽게 될 것 같기도 하다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;일단 코드를 막 짜고 있는데, 이번에는 변화에 닫힌, 확장에 열린 코드를 짜보려고 한다. 설계도 신경써서 하고 싶다. &lt;/p&gt;
 &lt;p&gt;또 여유가 허락된다면 타입스크립트도 써보고 싶다. &lt;/p&gt;
 &lt;h2&gt;참고문서&lt;/h2&gt;
@@ -4126,29 +4439,31 @@ jobs:
 &lt;p&gt;위 페이지에서 새 &lt;code class=&quot;language-text&quot;&gt;API 통합 만들기&lt;/code&gt; 를 선택한다. &lt;/p&gt;
 &lt;p&gt;API의 권한은 워크스페이스별로 관리되므로, &lt;code class=&quot;language-text&quot;&gt;연결된 워크스페이스&lt;/code&gt; 를 정확히 선택해준다. &lt;/p&gt;
 &lt;p&gt;필수 항목을 입력해주고 &lt;code class=&quot;language-text&quot;&gt;제출&lt;/code&gt; 을 눌러주자. &lt;/p&gt;
-&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 264px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 231.1764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/image1.png 170w,
-/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 37.64705882352941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAz0lEQVR42qWRywrCMBBF+/9f5EJciKALF4JbQbSKbaNR82yaxzWpBa248DFwuTCTOTNksuAdgrcIIbkDwn/Klos5ZrMpRsMBJpMxUqQBPwNPpEC+3WC3XWO/zxPuPyB6EdJ69yL8R4DwCrSmRqvGoDE6eg1nTeveNV/BWiA9EpwpBT1WKMtDK8YuoCcCrUS39Xugi0e01vUOminFISV7oy4v2MM7iSitOVYFw7riIFcBcuHwto7A1Pj0uNf8POClrrRAcZYwRoEriauQ8YsMbpcEcK3ihZd7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png&apos; srcset=&apos;/static/b4786f442a67ccd65a59902b3261a38c/e7570/image1.png 170w,
+/static/b4786f442a67ccd65a59902b3261a38c/f46e7/image1.png 340w,
+/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png 476w&apos; sizes=&apos;(max-width: 476px) 100vw, 476px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 그럼 바로 위와 같은 화면으로 넘어온다. 표시를 눌러서 시크릿 키를 복사해서 보관해주자. &lt;/p&gt;
-&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 264px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 231.1764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/image1.png 170w,
-/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 509px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 112.94117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACWElEQVR42pWU2bLTMBBE8/9/xRu88wbcJN73fZWXoXvsa8glgOOqKcmy1ZrlaC7LNErftyKyPNr6YXy2vs6Pc9hlhmBV5jLPRiYzyoT3yQyyTPs7zIwDvm/rZuzVOOfeCd8mvK/LtAny5yyJpa4KKYtM4iiQKPQlS2OJw1DHFMZvbVNJU5dqXdfIMHS6RqO4Ci44eey3U43p9WOPnzl2LTb1nYzY+Cst625PwqcgF1qeCg97bDx+5vgxj/umf9mFsX/63opl2xL4roS+o14xpwvsPTdnDYKzBKWROImQr0hzlueJGkM/PD0vOMnnW68eeq4t1v0q99ubFoF5HfpGK/qSh05uIFBsHmaxNE25VRRGpLq2Fv53WvALPLxZlrgO7Q7xXLHYcDCnC7JVeaedYRGNcejVow2b+uDrvCDEqrJQWBeGdXC2/sHYKUGikcSBeAjVdWzJs1RRoWe856+io1VmuHEYSIJrV+SpdAi3LFLMM72ShlU+CzY9SMGgY9/Etu8SBp7MaAgD8kkbATnxebkoxIPe0Jq6UE+5Rh5fwoZiZgAidYXQUFF9fiuKLK9j89Xt4FWl91hbWByiOLGsL1T3QTCsJwXZ92yJUJgAwlHoHSHXdXGE/r/OA0EgIZMWgIXJs0R8dp3Axd2GMIrEA/QQHKZ9ERv/hpJ6yNDYBHzPAZOhjnHk65zdnPMYXTyK/O2+gwpehGeiyuEyI+SmluvbN0mSUBzrqt4SdL778M5DOhzrhk70Qw8kBU8F3yeEu1R0Sil3ZLTj4F3XmMsKOS0x7og9a2s/ASLGAUHcd7NBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png&apos; srcset=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/e7570/image2.png 170w,
+/static/ea5eeced68059fd25375b5fbb8290f34/f46e7/image2.png 340w,
+/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png 509w&apos; sizes=&apos;(max-width: 509px) 100vw, 509px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 기능도 커스텀 할 수 있는데, 일단 기본적인 기능을 넣어주었다. &lt;/p&gt;
 &lt;p&gt;배포는 당연히 공개로 해두지 않았다. &lt;/p&gt;
 &lt;p&gt;이후, 노션으로 돌아와 API와 연결된 워크스페이스를 선택하고 &lt;/p&gt;
 &lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 264px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 231.1764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/image1.png 170w,
-/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image1.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/image3.png 170w,
+/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
   &lt;/a&gt;
     &lt;/span&gt;
 오른쪽 상단의 … 를 눌러서 연결추가 를 선택한 다음, 아까 만들어준 API의 이름을 검색해 해당 API와 연결을 해주면 된다.&lt;/p&gt;
