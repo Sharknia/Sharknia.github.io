@@ -46,11 +46,11 @@ npm init -y
 tsc --init
 ```
 
-`**tsconfig.json**` 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.
+    `tsconfig.json` 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.
 
 1. 필요한 TypeScript 타입 정의 설치
 
-Node.js와 TypeScript를 함 사용하기 위해 해당 타입 정의를 설치한다. 
+    Node.js와 TypeScript를 함 사용하기 위해 해당 타입 정의를 설치한다. 
 
 ```bash
 npm install --save @types/node
@@ -58,7 +58,7 @@ npm install --save @types/node
 
 1. 첫 TypeScript 파일 작성
 
-`index.ts` 파일에 다음과 같은 내용을 작성해보자. 
+    `index.ts` 파일에 다음과 같은 내용을 작성해보자. 
 
 ```typescript
 const greet = (name: string): string => {
@@ -70,13 +70,13 @@ console.log(greet("TypeScript"));
 
 1. 컴파일 및 실행
 
-아래 명령어로 컴파일 할 수 있다. 
+    아래 명령어로 컴파일 할 수 있다. 
 
 ```bash
 tsc index.ts
 ```
 
-index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. 
+    index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. 
 
 ```bash
 node index.js
@@ -84,13 +84,13 @@ node index.js
 
 1. 자동 컴파일 설정(선택사항)
 
-`**ts-node**` 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.
+    `ts-node` 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.
 
 ```bash
 npm install -g ts-node
 ```
 
-설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.
+    설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.
 
 ```bash
 ts-node index.ts
@@ -104,11 +104,11 @@ ts-node index.ts
 
 - **files**: 컴파일에 포함할 파일의 목록이다. 이 옵션을 사용하면 특정 파일만 명시적으로 포함시킬 수 있다.
 
-- **include**: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: `**["src/**/*.ts"]**`
+- **include**: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: `["src/**/*.ts"]`
 
-- **exclude**: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: `**["node_modules"]**`
+- **exclude**: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: `["node\_modules"]`
 
-- **extends**: 다른 `**tsconfig.json**` 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.
+- **extends**: 다른 `tsconfig.json` 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.
 
 - **compilerOptions**: 컴파일러에 대한 다양한 설정을 제공하는 핵심 옵션이다.
 

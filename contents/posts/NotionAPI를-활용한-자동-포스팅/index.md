@@ -28,9 +28,9 @@ title: "NotionAPI를 활용한 자동 포스팅"
 
 1. 명확한 명명 규칙을 사용한다.
 
-  1. PascalCase를 클래스 이름에 사용한다.
+    1. PascalCase를 클래스 이름에 사용한다.
 
-  1. camelCase를 메소드 및 변수에 사용한다.
+    1. camelCase를 메소드 및 변수에 사용한다.
 
 #### 개발 외적인 목표
 

@@ -140,7 +140,7 @@ poetry remove package-name
 
 ### 종속성 설치
 
-`**pyproject.toml**`에 정의된 종속성을 설치하려면 다음 명령어를 실행한다. 
+`pyproject.toml`에 정의된 종속성을 설치하려면 다음 명령어를 실행한다. 
 
 ```bash
 poetry install

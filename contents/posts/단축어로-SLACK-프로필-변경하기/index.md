@@ -24,7 +24,7 @@ title: "단축어로 SLACK 프로필 변경하기"
 
 - 슬랙 방해금지 상태 변경
 
-![](image1.png)
+![](image2.png)
 집중을 끝낼 때에
 
 - 집중 모드 끔
@@ -35,7 +35,7 @@ title: "단축어로 SLACK 프로필 변경하기"
 
 집중 모드에서는 다른 알림을 모두 꺼두고 슬랙 알림만 켜서 업무 흐름은 놓치지 않게 해두었습니다. 
 
-![](image1.png)
+![](image3.png)
 메뉴바에서 원클릭으로 설정할 수 있어 편리합니다. 
 
 ## 설정법
@@ -87,26 +87,26 @@ settings:
 
 `URL 콘텐츠 가져오기` 를 검색해서 다음과 같이 설정합니다. 
 
-![](image1.png)
+![](image4.png)
 입력해야 하는 값은 다음과 같습니다. 
 
 - 헤더
 
-키 : Authorization
+    키 : Authorization
 
-값 : Bearer xoxp-xxxxx-xxxx…
+    값 : Bearer xoxp-xxxxx-xxxx…
 
+    
 
+    키 : Content-Type
 
-키 : Content-Type
-
-값 : application/json; charset=UTF-8
+    값 : application/json; charset=UTF-8
 
 - 바디
 
-키 : profile
+    키 : profile
 
-값 : 
+    값 : 
 
 ```json
 {
@@ -115,9 +115,9 @@ settings:
 }
 ```
 
-원하는 이모지와 텍스트를 넣어주시면 됩니다. 
+    원하는 이모지와 텍스트를 넣어주시면 됩니다. 
 
-
+    
 
 이렇게 하면 단축어가 완성됩니다. 
 
