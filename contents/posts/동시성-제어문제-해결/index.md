@@ -116,13 +116,13 @@ Advisory Locks는 두 가지 레벨에서 사용할 수 있다.
     async def use_session_level_lock(db: AsyncSession, lock_key: int):
         # 세션 레벨 잠금 획득
         await db.execute(f"SELECT pg_advisory_lock({lock_key})")
-
+    
         # 데이터베이스 작업 수행
         # ...
-
+    
         # 필요한 경우, 명시적으로 잠금 해제
         # await db.execute(f"SELECT pg_advisory_unlock({lock_key})")
-
+    
         # 세션 종료 시 잠금이 자동으로 해제됩니다.
     ```
 
@@ -130,7 +130,7 @@ Advisory Locks는 두 가지 레벨에서 사용할 수 있다.
 
     ```python
     from sqlalchemy.ext.asyncio import AsyncSession
-
+    
     async def use_transaction_level_lock(db: AsyncSession, lock_key: int):
         async with db.begin():
             # 트랜잭션 레벨 잠금 획득
@@ -138,7 +138,7 @@ Advisory Locks는 두 가지 레벨에서 사용할 수 있다.
             
             # 데이터베이스 작업 수행
             # ...
-
+    
         # 트랜잭션이 종료되면 잠금이 자동으로 해제됩니다.
     ```
 
