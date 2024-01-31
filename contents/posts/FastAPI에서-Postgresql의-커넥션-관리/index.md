@@ -61,9 +61,8 @@ Postgresql 설정에서 IDLE 상태로 들어간지 오래된 커넥션은 강�
 인스턴스가 재생성 될때마다 연결이 안끊긴다면? 애초에 연결을 많이 안만들면 되는게 아닌가? 라는 결론에 다다랐다. 따라서 자연스럽게 Pooler를 사용하기로 했다. Supabase에서도 공식적으로 Pooler를 (당연히) 지원하므로 이는 완벽한 해결책으로 생각됐다. 
 
 
-        <div class="callout gray_background">
-            💡 <span>Pooler란?</span>
-        </div>
+        Pooler란?
+
 데이터베이스 서버와 클라이언트 애플리케이션 간의 연결을 관리하는 소프트웨어이다. 이는 데이터베이스 서버에 대한 연결 요청을 효율적으로 처리하고 성능을 최적화하는 데 도움을 준다. 
 
 #### 연결 재사용
@@ -95,9 +94,8 @@ supabase의 pooler는 PgBouncer를 제공하며, 사용법이 매우 간단했�
 또 다시 곧장 문제가 발생했다. Supabase의 PgBouncer  Poolmode는 기본적으로 Transation 모드였는데, 해당 모드에서는 SqlAlchemy의 비동기 엔진의 캐싱 기능을 지원하지 않았다. 
 
 
-        <div class="callout gray_background">
-            💡 <span>Pgbouncer의 Pool Mode</span>
-        </div>
+        Pgbouncer의 Pool Mode
+
 #### Session
 
 가장 기본적인 풀링 모드로 클라이언트가 연결을 끊을 때까지 PgBouncer는 해당 클라이언트 연결을 데이터베이스 서버에 계속 연결 상태로 유지한다. 

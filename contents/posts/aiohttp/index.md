@@ -61,7 +61,7 @@ python 공식 홈페이지에서 HTML을 비동기적으로 가져오고 출력�
 
 ## 세션 관리
 
-**ClientSession 객체를 사용하여 HTTP 클라이언트 세션을 관리할 수 있다.** 
+ClientSession 객체를 사용하여 HTTP 클라이언트 세션을 관리할 수 있다. 
 
 #### 연결 재사용
 
@@ -176,7 +176,7 @@ asyncio.run(main())
 
 #### HTTP 응답 에러
 
-서버가 4XX 클라이언트 에러 또는 5XX 서버 에러를 반환하는 경우, `ClientResponseError` 가 발생할 수 있다. 이는 `raise\_for\_status()` 메서드를 사용하여 처리할 수 있다. 
+서버가 4XX 클라이언트 에러 또는 5XX 서버 에러를 반환하는 경우, `ClientResponseError` 가 발생할 수 있다. 이는 `raise_for_status()` 메서드를 사용하여 처리할 수 있다. 
 
 ```python
 import aiohttp
@@ -289,7 +289,7 @@ async def main():
 asyncio.run(main())
 ```
 
-이 예제에서는 `response.content.iter\_any()` 를 사용하여 응답 스트림에서 데이터를 순차적으로 읽는다. 
+이 예제에서는 `response.content.iter_any()` 를 사용하여 응답 스트림에서 데이터를 순차적으로 읽는다. 
 
 스트리밍 응답을 사용할 때는 데이터의 양이 많거나 응답을 받는 동안 다른 처리를 동시에 해야 하는 경우에 매우 효과적이다. 예를 들어 다운로드한 데이터를 파일에 쓰면서 동시에 다음 데이터 청크를 받거나 데이터를 받아서 실시간으로 사용자에게 전송하는 경우 등에 유용하다. 
 
@@ -297,7 +297,7 @@ asyncio.run(main())
 
 ## 테스트
 
-aiohttp의 비동기적인 특성 때문에 전통적인 동기 테스트 방식을 그대로 사용할 수 없다. 대신 aiohttp는 비동기 테스트를 지원하기 위해 pytest와 함께 사용할 수 있는 `aitohttp.test\_utils` 모듈을 제공한다. 이를 통해 웹서버와 클라이언트 코드를 테스트 할 수 있다. 
+aiohttp의 비동기적인 특성 때문에 전통적인 동기 테스트 방식을 그대로 사용할 수 없다. 대신 aiohttp는 비동기 테스트를 지원하기 위해 pytest와 함께 사용할 수 있는 `aitohttp.test_utils` 모듈을 제공한다. 이를 통해 웹서버와 클라이언트 코드를 테스트 할 수 있다. 
 
 #### 클라이언트 코드 테스트
 
@@ -322,7 +322,7 @@ async def test_example_client(aiohttp_client):
     assert text == "Hello, world"
 ```
 
-aiohttp\_client는 pytest-aiohttp 플러그인에서 제공하는 fixture로, 테스트용 애플리케이션 서버와 상호작용하는 데 사용할 수 있는 aiohttp.ClientSession 객체를 생성한다. 
+aiohttp_client는 pytest-aiohttp 플러그인에서 제공하는 fixture로, 테스트용 애플리케이션 서버와 상호작용하는 데 사용할 수 있는 aiohttp.ClientSession 객체를 생성한다. 
 
 
         fixture란?
@@ -330,7 +330,7 @@ aiohttp\_client는 pytest-aiohttp 플러그인에서 제공하는 fixture로, �
 
 #### 서버 코드 테스트
 
-aiohttp 웹서버를 테스트 할 때에는 aiohttp.test\_utils.TestClient를 사용하여 요청을 보내고 응답을 검사한다. 
+aiohttp 웹서버를 테스트 할 때에는 aiohttp.test_utils.TestClient를 사용하여 요청을 보내고 응답을 검사한다. 
 
 ```python
 from aiohttp import web
@@ -353,11 +353,11 @@ class MyAppTestCase(AioHTTPTestCase):
         assert 'Hello, world' in text
 ```
 
-AioHTTPTestCase는 aiohttp.test\_utils에서 제공하는 기본 테스트 케이스 클래스이며, unittest\_run\_loop 데코레이터는 테스트 코루틴을 이벤트 루프에서 실행할 수 있게 해준다.
+AioHTTPTestCase는 aiohttp.test_utils에서 제공하는 기본 테스트 케이스 클래스이며, unittest_run_loop 데코레이터는 테스트 코루틴을 이벤트 루프에서 실행할 수 있게 해준다.
 
 aiohttp를 테스트할 때 주의해야 할 점은 테스트 환경에서도 비동기 코드를 올바르게 실행하기 위해 적절한 테스트 실행기를 설정해야 한다는 것이다. pytest는 비동기 테스트를 위한 좋은 선택이며, pytest-asyncio 플러그인을 사용하면 pytest에서 async def 테스트 함수를 직접 사용할 수 있다.
 
-또한, 실제 HTTP 호출을 모킹하기 위해 aiohttp의 pytest\_plugin이 제공하는 aioresponses와 같은 도구를 사용할 수도 있다. 이를 통해 실제 외부 서비스와의 통신 없이 HTTP 요청과 응답을 시뮬레이션할 수 있어, 테스트의 견고성을 높이고 실행 시간을 단축시킬 수 있다.
+또한, 실제 HTTP 호출을 모킹하기 위해 aiohttp의 pytest_plugin이 제공하는 aioresponses와 같은 도구를 사용할 수도 있다. 이를 통해 실제 외부 서비스와의 통신 없이 HTTP 요청과 응답을 시뮬레이션할 수 있어, 테스트의 견고성을 높이고 실행 시간을 단축시킬 수 있다.
 
 
 

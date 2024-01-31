@@ -56,7 +56,7 @@ paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단�
 ![](image1.png)
 이 paragraph블록의 데이터 형태는 다음과 같다. 
 
-#### <u>노</u><u>~~션이~~</u>  **좋습*****니다***..
+#### 노션이  좋습니다..
 
 ```json
 {
@@ -168,7 +168,7 @@ paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단�
 }
 ```
 
-#### `정말로`.. <span style="color: pink;">좋아합니다</span>.. 
+#### `정말로`.. 좋아합니다.. 
 
 ```json
 {
@@ -373,7 +373,7 @@ github.io의 블로그 형식에 맞춰서 properties를 바꿔주고, 블로그
 export type BlockObjectResponse = ParagraphBlockObjectResponse | Heading1BlockObjectResponse | Heading2BlockObjectResponse | Heading3BlockObjectResponse | BulletedListItemBlockObjectResponse | NumberedListItemBlockObjectResponse | QuoteBlockObjectResponse | ToDoBlockObjectResponse | ToggleBlockObjectResponse | TemplateBlockObjectResponse | SyncedBlockBlockObjectResponse | ChildPageBlockObjectResponse | ChildDatabaseBlockObjectResponse | EquationBlockObjectResponse | CodeBlockObjectResponse | CalloutBlockObjectResponse | DividerBlockObjectResponse | BreadcrumbBlockObjectResponse | TableOfContentsBlockObjectResponse | ColumnListBlockObjectResponse | ColumnBlockObjectResponse | LinkToPageBlockObjectResponse | TableBlockObjectResponse | TableRowBlockObjectResponse | EmbedBlockObjectResponse | BookmarkBlockObjectResponse | ImageBlockObjectResponse | VideoBlockObjectResponse | PdfBlockObjectResponse | FileBlockObjectResponse | AudioBlockObjectResponse | LinkPreviewBlockObjectResponse | UnsupportedBlockObjectResponse;
 ```
 
-~~너무 많다~~
+너무 많다
 
 일단, 많이 쓸 것 같은 블록들을 예제 파일로 만들고 해당 노션 파일들을 불러와보고 어떤 타입들을 사용하는지 살펴보기로 했다. 나머지는 모르겠다 아직은 그냥 미지원이다. 
 
@@ -384,7 +384,7 @@ export type BlockObjectResponse = ParagraphBlockObjectResponse | Heading1BlockOb
 
 #### heading_ 시리즈
 
-제목1, 제목2, 제목3 들이다. heading\_1부터 heading\_3까지를 노션에서는 사용할 수 있는데, 각각 h2, h3, h4로 변환하면 될 것 같다. 이건 쉬울 것 같은 예감이 든다. 
+제목1, 제목2, 제목3 들이다. heading_1부터 heading_3까지를 노션에서는 사용할 수 있는데, 각각 h2, h3, h4로 변환하면 될 것 같다. 이건 쉬울 것 같은 예감이 든다. 
 
 #### bookmark
 
@@ -394,15 +394,15 @@ export type BlockObjectResponse = ParagraphBlockObjectResponse | Heading1BlockOb
 
 코드 블록이다. 이건 쉬울 것 같다. 
 
-#### table, table\_row
+#### table, table_row
 
 마크다운은 표 그리기가 까다롭다. 그래도 어떻게든 할 수 있지 않을까? 
 
-#### bulleted\_list\_item
+#### bulleted_list_item
 
 글머리 기호이다. 이건.. 이건 쉽지 않을까? 
 
-#### numbered\_list\_item
+#### numbered_list_item
 
 번호 이것도 쉽지 않을까?? 
 
@@ -524,7 +524,7 @@ export class MarkdownConverter {
 
 ### convertLinkToPage 생성
 
-아까 북마크에 대해서 고려할 때, 페이지 링크가 어렵지 않을까? 고민했었는데 해당 문제는 해결이 가능했다. link\_to\_page 타입에서 페이지 아이디를 제공하고 있었고, 페이지 아이디를 API를 통해서 호출을 하면 해당 데이터를 가져오는 것이 가능했다. 이 경우에는 마크다운 파일은 필요없고 URL만 필요하므로, Page 클래스에 간단한 정보만 가져오는 메소드를 만들고 해당 메소드를 활용해 북마크를 생성해주었다. 또, 설정 파일에 블로그의 주소를 설정하도록 했다. 
+아까 북마크에 대해서 고려할 때, 페이지 링크가 어렵지 않을까? 고민했었는데 해당 문제는 해결이 가능했다. link_to_page 타입에서 페이지 아이디를 제공하고 있었고, 페이지 아이디를 API를 통해서 호출을 하면 해당 데이터를 가져오는 것이 가능했다. 이 경우에는 마크다운 파일은 필요없고 URL만 필요하므로, Page 클래스에 간단한 정보만 가져오는 메소드를 만들고 해당 메소드를 활용해 북마크를 생성해주었다. 또, 설정 파일에 블로그의 주소를 설정하도록 했다. 
 
 ```typescript
 export class Page {

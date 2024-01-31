@@ -34,7 +34,7 @@ nest new <project-Name>
 
 npm run start 명령어로 구동할 수 있지만, 
 
-NestJS에는 내부적으로 내부적으로 [**webpack**](https://webpack.js.org/)과 함께 작동하는 [`**@nestjs/cli**`](https://docs.nestjs.com/cli/overview)를 제공한다. 
+NestJS에는 내부적으로 내부적으로 [webpack](https://webpack.js.org/)과 함께 작동하는 [`@nestjs/cli`](https://docs.nestjs.com/cli/overview)를 제공한다. 
 
 이 CLI 도구는 소스 코드의 변경을 감지하고 자동으로 애플리케이션을 재시작하는 기능을 포함하고 있다. 
 

@@ -28,23 +28,23 @@ TypeScript는 Microsoft에서 개발한 오픈 소스 프로그래밍 언어이�
 
 1. TypeScript 설치
 
-```bash
-npm install -g typescript
-```
+    ```bash
+    npm install -g typescript
+    ```
 
 1. 새 프로젝트 시작
 
-```bash
-mkdir my-ts-project
-cd my-ts-project
-npm init -y
-```
+    ```bash
+    mkdir my-ts-project
+    cd my-ts-project
+    npm init -y
+    ```
 
 1. TypeScript 설정 파일 생성
 
-```bash
-tsc --init
-```
+    ```bash
+    tsc --init
+    ```
 
     `tsconfig.json` 파일이 생성된다. 이 파일에서 TypeScript의 컴파일 옵션을 설정할 수 있다.
 
@@ -52,83 +52,83 @@ tsc --init
 
     Node.js와 TypeScript를 함 사용하기 위해 해당 타입 정의를 설치한다. 
 
-```bash
-npm install --save @types/node
-```
+    ```bash
+    npm install --save @types/node
+    ```
 
 1. 첫 TypeScript 파일 작성
 
     `index.ts` 파일에 다음과 같은 내용을 작성해보자. 
 
-```typescript
-const greet = (name: string): string => {
-    return `Hello, ${name}!`;
-}
-
-console.log(greet("TypeScript"));
-```
+    ```typescript
+    const greet = (name: string): string => {
+        return `Hello, ${name}!`;
+    }
+    
+    console.log(greet("TypeScript"));
+    ```
 
 1. 컴파일 및 실행
 
     아래 명령어로 컴파일 할 수 있다. 
 
-```bash
-tsc index.ts
-```
+    ```bash
+    tsc index.ts
+    ```
 
     index.js가 생성되었다. 이제 Node.js로 실행할 수 있다. 
 
-```bash
-node index.js
-```
+    ```bash
+    node index.js
+    ```
 
 1. 자동 컴파일 설정(선택사항)
 
     `ts-node` 라는 패키지를 설치하여 TypeScript 코드를 바로 실행할 수 있다.
 
-```bash
-npm install -g ts-node
-```
+    ```bash
+    npm install -g ts-node
+    ```
 
     설치 후, 아래 명령어로 TypeScript 코드를 바로 실행할 수 있다.
 
-```bash
-ts-node index.ts
-```
+    ```bash
+    ts-node index.ts
+    ```
 
-## TypeScript 설정 파일(**tsconfig.json)**
+## TypeScript 설정 파일(tsconfig.json)
 
 `tsconfig.json` 은 타입스크립트 프로젝트의 루트 디렉토리에 위치하는 설정 파일이다. 타입스크립트 컴파일러에 대한 구성 옵션을 정의한다. 이 파일을 통해 타입스크립트 코드가 자바스크립트 코드로 변환되는지, 어떤 파일들이 포함되거나 제외되는지 등을 정의할 수 있다. 
 
 주요 옵션들은 다음과 같다. 
 
-- **files**: 컴파일에 포함할 파일의 목록이다. 이 옵션을 사용하면 특정 파일만 명시적으로 포함시킬 수 있다.
+- files: 컴파일에 포함할 파일의 목록이다. 이 옵션을 사용하면 특정 파일만 명시적으로 포함시킬 수 있다.
 
-- **include**: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: `["src/**/*.ts"]`
+- include: 컴파일에 포함할 파일이나 디렉토리의 패턴 목록다. Glob 패턴을 사용할 수 있다. 예: `["src/**/*.ts"]`
 
-- **exclude**: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: `["node\_modules"]`
+- exclude: 컴파일에서 제외할 파일이나 디렉토리의 패턴 목록다. 예: `["node_modules"]`
 
-- **extends**: 다른 `tsconfig.json` 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.
+- extends: 다른 `tsconfig.json` 파일을 기반으로 현재 설정을 확장하려면 파일 경로를 지정한다.
 
-- **compilerOptions**: 컴파일러에 대한 다양한 설정을 제공하는 핵심 옵션이다.
+- compilerOptions: 컴파일러에 대한 다양한 설정을 제공하는 핵심 옵션이다.
 
-- **typeRoots와 types**: 사용자 정의 타입 선언의 위치와 포함될 타입 선언 패키지를 지정한다.
+- typeRoots와 types: 사용자 정의 타입 선언의 위치와 포함될 타입 선언 패키지를 지정한다.
 
 compilerOptions에 대해 좀 더 자세히 알아보면 다음과 같다. 
 
-- **target**: 컴파일된 JavaScript의 버전을 지정한다. 예: ES5, ES6 등
+- target: 컴파일된 JavaScript의 버전을 지정한다. 예: ES5, ES6 등
 
-- **module**: 모듈 시스템을 지정한다. 예: CommonJS, ESNext, UMD 등
+- module: 모듈 시스템을 지정한다. 예: CommonJS, ESNext, UMD 등
 
-- **outDir**: 컴파일된 JavaScript 파일이 저장될 디렉토리를 지정한다.
+- outDir: 컴파일된 JavaScript 파일이 저장될 디렉토리를 지정한다.
 
-- **rootDir**: 입력 파일의 루트 디렉토리를 지정한다.
+- rootDir: 입력 파일의 루트 디렉토리를 지정한다.
 
-- **strict**: 모든 엄격한 타입 검사 옵션을 활성화한다.
+- strict: 모든 엄격한 타입 검사 옵션을 활성화한다.
 
-- **noImplicitAny**: 암시적인 'any' 타입이 없는 경우 오류를 발생시킨다.
+- noImplicitAny: 암시적인 'any' 타입이 없는 경우 오류를 발생시킨다.
 
-- **esModuleInterop**: CommonJS와 ES 모듈 간의 상호 운용성을 위한 코드를 생성한다.
+- esModuleInterop: CommonJS와 ES 모듈 간의 상호 운용성을 위한 코드를 생성한다.
 
-- **skipLibCheck**: 선언 파일의 타입 검사를 건너뛴다.
+- skipLibCheck: 선언 파일의 타입 검사를 건너뛴다.
 

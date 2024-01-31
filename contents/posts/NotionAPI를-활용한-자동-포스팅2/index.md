@@ -44,15 +44,15 @@ title: "NotionAPI를 활용한 자동 포스팅(2)"
 
 - 일단 기본적으로 다음의 속성을 가진다. 
 
-    - **id** : idx
+    - id : idx
 
-    - **parent** : 부모 ID
+    - parent : 부모 ID
 
-    - **hasChidren** : 자식 요소가 있는지 여부 (true, false)
+    - hasChidren : 자식 요소가 있는지 여부 (true, false)
 
-    - **type** : `heading\_1` 등등 블록의 종류. 종류마다 마크다운 변환 전략이 달라야 하므로 중요하다. 
+    - type : `heading_1` 등등 블록의 종류. 종류마다 마크다운 변환 전략이 달라야 하므로 중요하다. 
 
-    - **is\_toggleable** : **** 토글 여부
+    - is_toggleable :  토글 여부
 
 ### Posting 클래스
 

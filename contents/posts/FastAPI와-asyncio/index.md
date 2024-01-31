@@ -201,7 +201,7 @@ async def fetch_data():
     return data
 ```
 
-여기서 await는 some\_async\_function이 완료될 때까지 fetch\_data 코루틴의 실행을 중지시킨다. 완료되면 그 결과값을 data에 할당하고 실행을 계속한다. 
+여기서 await는 some_async_function이 완료될 때까지 fetch_data 코루틴의 실행을 중지시킨다. 완료되면 그 결과값을 data에 할당하고 실행을 계속한다. 
 
 이러한 비동기 프로그래밍 방식의 장점은 I/O 작업이 완료되기를 기다리는 동안 프로그램이 다른 작업을 계속할 수 있어 프로그램의 전반적인 실행 효율을 개선한다는 것이다.
 

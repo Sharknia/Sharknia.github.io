@@ -79,7 +79,7 @@ settings:
 
 그리고, 좌측 메뉴에서 `OAuth & Permissions` 메뉴로 이동합니다. 
 
-**OAuth Token** 값을 복사해줍니다. 슬랙 페이지에서 할 일은 여기까지입니다. 
+OAuth Token 값을 복사해줍니다. 슬랙 페이지에서 할 일은 여기까지입니다. 
 
 ### 단축어 설정
 
@@ -108,12 +108,12 @@ settings:
 
     값 : 
 
-```json
-{
-		"status_text": "방해금지",
-		"status_emoji": ":no_entry_sign:"
-}
-```
+    ```json
+    {
+    		"status_text": "방해금지",
+    		"status_emoji": ":no_entry_sign:"
+    }
+    ```
 
     원하는 이모지와 텍스트를 넣어주시면 됩니다. 
 

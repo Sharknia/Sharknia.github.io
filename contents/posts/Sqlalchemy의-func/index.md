@@ -33,17 +33,17 @@ Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보�
 
     func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. 
 
-## `_\_getattr\__` method
+## `__getattr__` method
 
-func 객체의 _\_getattr\__ 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. 
+func 객체의 __getattr__ 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. 
 
-예를 들어, func.pg\_try\_advisory\_lock에 접근하면 pg\_try\_advisory\_lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. 
+예를 들어, func.pg_try_advisory_lock에 접근하면 pg_try_advisory_lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. 
 
 ## 사용방법
 
 ### 기본 사용
 
-함수 이름을 func 객체의 속성으로 접근하여 사용한다. (_\_getattr\__ 메소드로 연결된다.)
+함수 이름을 func 객체의 속성으로 접근하여 사용한다. (__getattr__ 메소드로 연결된다.)
 
 ```python
 from sqlalchemy import func

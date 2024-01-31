@@ -99,7 +99,7 @@ supabase에서 메일이 왔다.
 
 해당 의문은 말도 못하게 간단하게 풀렸다. 콘솔에 들어가보니 어느새 쥐도 새도 모르게 Pgbouncer 관련 섹션이 supavisor 관련 섹션으로 바뀌어있었다. 
 
-![](image1.png)
+![](image2.png)
 위 이슈에서 설명된 supavisor 관련 connection string은 `user` 로 시작하는 부분이 옳지 않아서 수정이 필요했는데, 콘솔의 pgbouncer 관련 연결 connection string 에는 제대로 적혀있었다. 아무래도 메일에 적어보낸 이슈이지만 따로 수정을 하지는 않은 모양이다.. 
 
 아무튼간 pool mode를 변경 후 테스트를 할 수 있었다. 
