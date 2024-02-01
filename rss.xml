@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Feb 2024 10:11:22 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(8)]]></title><description><![CDATA[목표 단계적으로 GitHub Action…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅8/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅8/</guid><pubDate>Thu, 01 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;목표&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Feb 2024 15:22:56 GMT</lastBuildDate><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(9)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅9/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅9/</guid><pubDate>Fri, 02 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난시간&lt;/h2&gt;
+&lt;p&gt;지난시간, 신나게 자동 배포를 만들었다. &lt;/p&gt;
+&lt;p&gt;이제 새로 생성된 문서들에 대해서 자동으로 한시간마다 배포가 되어 글이 포스팅된다. &lt;/p&gt;
+&lt;p&gt;근데, 이런 경우 글을 어떻게 삭제하지?&lt;/p&gt;
+&lt;p&gt;현재 타이틀이 키 값인데 타이틀 명이 바뀌면 내용은 똑같은데 제목만 다른 글이 두 개? &lt;/p&gt;
+&lt;p&gt;그렇다, 삭제 및 수정 기능이 구현되어야 하는 것이다. &lt;/p&gt;
+&lt;h2&gt;설계&lt;/h2&gt;
+&lt;p&gt;어떤걸 키 값으로 해야 하나 고민이 많았는데, 답은 간단했다. 노션에 ID를 추가하는 기능이 있었다. 이렇게 되면, 내 노션 블로그를 위한 필수 속성은 타이틀, 상태, ID 세 가지가 된다. 이런게 너무 많이 생기는걸 원하지 않지만 어쩔 수 없는 부분이라고 생각이 든다. &lt;/p&gt;
+&lt;p&gt;계획은 다음과 같다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;노션 글들에 ID 속성을 추가해 키값으로 삼는다. &lt;/li&gt;
+&lt;li&gt;상태값에 ToBeDeleted, Deleted를 추가한다. &lt;/li&gt;
+&lt;li&gt;키 값 - 저장된 디렉토리가 매핑된 메타데이터 json 파일을 생성한다. &lt;/li&gt;
+&lt;li&gt;ToBeDeleted를 쿼리해와서, 매핑 테이블을 참조해 데이터를 삭제 후 매핑 정보도 삭제하고 Deleted 상태로 바꿔준다. &lt;/li&gt;
+&lt;li&gt;Ready를 쿼리해와서 매핑 테이블을 참조해 기존 데이터를 삭제 후 매핑 정보를 갱신하고 마크다운을 다시 저장한다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이렇게 하면 수정과 삭제에 모두 대응이 가능해보인다!&lt;/p&gt;
+&lt;h2&gt;구현&lt;/h2&gt;
+&lt;p&gt;우선, 전역적으로 메타데이터를 읽어오고, 메모리에 데이터를 저장한 다음 프로그램 종료 직전에 메타 데이터를 한 번에 수정해주는 역할을 할 클래스를 생성했다. &lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;metadataManager.ts&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; promises &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; fs &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;fs&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;METADATA_FILE_PATH&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./pageMetadata.json&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PageMetadata&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    url&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Metadata&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;pageId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; PageMetadata&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;MetadataManager&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; instance&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; MetadataManager&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; metadata&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Metadata &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 인스턴스를 반환하는 메서드입니다.
+     * @returns {MetadataManager} MetadataManager 인스턴스
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; MetadataManager &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;instance&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;instance &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;MetadataManager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;instance&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 메타데이터를 로드합니다.
+     * @returns {Promise&amp;lt;void&gt;} Promise 객체
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loadMetadata&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; fs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;readFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;METADATA_FILE_PATH&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;utf8&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; Metadata&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;메타데이터 파일 읽기 오류:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 메타데이터를 반환합니다.
+     * @returns 메타데이터 객체 또는 null
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getMetadata&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Metadata &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 페이지 메타데이터를 업데이트합니다.
+     *
+     * @param pageId 페이지 식별자
+     * @param pageData 페이지 메타데이터
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;updatePageMetadata&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pageId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pageData&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; PageMetadata&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;pageId&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; pageData&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 페이지 메타데이터를 삭제합니다.
+     * @param pageId 삭제할 페이지의 ID
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;deletePageMetadata&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pageId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;pageId&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;pageId&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/**
+     * 메타데이터를 파일에 저장합니다.
+     * @returns 메타데이터가 성공적으로 저장될 때 해결되는 Promise입니다.
+     */&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;saveMetadata&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; fs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;writeFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                    &lt;span class=&quot;token constant&quot;&gt;METADATA_FILE_PATH&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;metadata&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token builtin&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;메타데이터 파일 저장 오류:&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;이 클래스는 프로그램 시작과 동시에 초기화되며, 끝날 때 메타데이터 파일을 갱신하는 역할을 할 것이다. &lt;/p&gt;
+&lt;p&gt;정확한 매개변수는 아직 정하지 않았으며, 초안만 짜뒀다. &lt;/p&gt;
+&lt;p&gt;이제 내일, 이 클래스를 명확히 정의하고 이 클래스를 사용해 수정/삭제를 구현하면 된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(8)]]></title><description><![CDATA[목표 단계적으로 GitHub Action…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅8/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅8/</guid><pubDate>Thu, 01 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;목표&lt;/h2&gt;
 &lt;p&gt;단계적으로 GitHub Action을 사용해 블로그 자동 배포를 하려고 한다. &lt;/p&gt;
 &lt;p&gt;일단, 구상한 깃허브 액션에서 실행할 플로우는 다음과 같다. &lt;/p&gt;
 &lt;h2&gt;구상&lt;/h2&gt;
@@ -213,46 +330,7 @@ Secrets는 로그에도 노출되지 않으며, variables는 로그에서 노출
     &lt;span class=&quot;token property&quot;&gt;&quot;strings&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;comments&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;other&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
-&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
-&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
-&lt;h2&gt;func의 특징&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;함수 생성기&lt;/p&gt;
-&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;동적 생성&lt;/p&gt;
-&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
-&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;다양한 함수 지원&lt;/p&gt;
-&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;__getattr__&lt;/code&gt; method&lt;/h2&gt;
-&lt;p&gt;func 객체의 &lt;strong&gt;getattr&lt;/strong&gt; 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
-&lt;p&gt;예를 들어, func.pg&lt;em&gt;try&lt;/em&gt;advisory&lt;em&gt;lock에 접근하면 pg&lt;/em&gt;try&lt;em&gt;advisory&lt;/em&gt;lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
-&lt;h2&gt;사용방법&lt;/h2&gt;
-&lt;h3&gt;기본 사용&lt;/h3&gt;
-&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;strong&gt;getattr&lt;/strong&gt; 메소드로 연결된다.)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
-
-&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
-&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
-&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
 &lt;h2&gt;돌아보기&lt;/h2&gt;
 &lt;p&gt;어제 상당수의 디버깅을 진행하고 기존 블로그에서 새 블로그로 글을 이전했다. 깃허브 블로그에 업로드까지 마치고, 오늘 다시 보니 짜잘짜잘한 오류가 다시 또(!!) 발견되었다. &lt;/p&gt;
 &lt;h2&gt;유지보수&lt;/h2&gt;
@@ -330,7 +408,46 @@ query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span
 &lt;p&gt;예외 발생&lt;/p&gt;
 &lt;p&gt;함수 실행 중 예외가 발생하여 처리 흐름이 중단되는 경우. SQLAlchemy의 세션 관리는 트랜잭션이 커밋되지 않으면 자동으로 롤백을 수행하므로 사실상 트랜잭션이 롤백되는 시점과 일치한다. &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
+&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
+&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
+&lt;h2&gt;func의 특징&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;함수 생성기&lt;/p&gt;
+&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;동적 생성&lt;/p&gt;
+&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
+&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다양한 함수 지원&lt;/p&gt;
+&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;__getattr__&lt;/code&gt; method&lt;/h2&gt;
+&lt;p&gt;func 객체의 &lt;strong&gt;getattr&lt;/strong&gt; 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
+&lt;p&gt;예를 들어, func.pg&lt;em&gt;try&lt;/em&gt;advisory&lt;em&gt;lock에 접근하면 pg&lt;/em&gt;try&lt;em&gt;advisory&lt;/em&gt;lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
+&lt;h2&gt;사용방법&lt;/h2&gt;
+&lt;h3&gt;기본 사용&lt;/h3&gt;
+&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;strong&gt;getattr&lt;/strong&gt; 메소드로 연결된다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
+
+&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
+&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
+&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
 &lt;p&gt;가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.01초 미만의 간격으로 두 번씩 들어오는 경우가 있다. 사실상 요청이 동시에 들어오는 것과 같다. 대부분의 경우에는 문제가 되지 않지만, 쿠폰 구매 같은 민감한 요청에 대해서는 회사의 손해 또는 사용자의 불편과 예민하게 직결되므로 문제가 커질 수 있다. &lt;/p&gt;
 &lt;p&gt;따라서 해당 문제를 완벽히 해결하고자 한다. &lt;/p&gt;
 &lt;p&gt;현재 별다른 조치가 없는 상황에서 발생하는 문제 상황은 다음과 같다. &lt;/p&gt;
@@ -427,7 +544,45 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
 &lt;p&gt;쿠폰 구매 서비스 로직에서 트랜잭션 시작 전에  user&lt;em&gt;id를 기반으로 Advisory Lock을 요청하면 1번 요청이 처리되는 동안 동일한 user&lt;/em&gt;id 에 대한 다른 요청은 대기하게 된다. 쿠폰 구매 처리가 완료되면, Advisory Lock을 해제하면 된다. &lt;/p&gt;
 &lt;h2&gt;결론 - PostgreSQL Advisory Locks 채용&lt;/h2&gt;
 &lt;p&gt;이 방법을 사용하면 매우 짧은 간격의 요청도 효과적으로 처리할 수 있다. 특히 트랜잭션 레벨의 잠금은 각 트랜잭션이 커밋되거나 롤백될 때까지만 유지되므로 0.005초와 같은 짧은 간격의 요청을 동기화하는데 매우 적합하다. &lt;/p&gt;
-&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy에서의 트랜잭션 격리 수준 구현]]></title><description><![CDATA[구현 목적 상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS…]]></description><link>https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구현 목적&lt;/h2&gt;
+&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
+&lt;h2&gt;유지보수 내역&lt;/h2&gt;
+&lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
+&lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
+&lt;p&gt;추가로, 프로퍼티가 고정값이 아니라 커스텀에 따라서 유연하게 대응해 Front Matter에 추가되도록 해주었다. &lt;/p&gt;
+&lt;h3&gt;줄바꿈 주의!&lt;/h3&gt;
+&lt;p&gt;마크다운은 기본적으로 엔터를 두 번씩 쳐야 줄바꿈이 되는 모양이다. 리스트 컨버터 일부에 줄바꿈이 하나만 들어가있던 것을 두 개가 들어가도록 수정해주었다. &lt;/p&gt;
+&lt;h3&gt;이미지 다운로드 안되는 현상&lt;/h3&gt;
+&lt;p&gt;분명 동기적으로 작동하게끔 짜놓았는데도 불구하고 이미지가 제대로 들어가지 않는 현상이 있었다.  axios 재시도 패키지를 설치하고, 재시도 로직을 추가하고 타임아웃 10초 설정도 해주었다. 뭐가 문제였는지는 정확히 파악이 안됐는데, (오류 로그조차 없었다) 일단 이 이후로는 이미지 다운로드에 실패하는 현상은 없다. &lt;/p&gt;
+&lt;p&gt;추가로, 이미지 다운로드 시에도 디렉토리가 없다면 만들도록 해주었다. &lt;/p&gt;
+&lt;h3&gt;스타일이 두 개 적용된 경우&lt;/h3&gt;
+&lt;p&gt;스타일이 두 개가 적용된 경우는 더 띄어쓰기에 민감했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;*~~안녕하세요 ~~*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;처럼 애매하게 띄어쓰기가 들어가면 하나만 적용된다. &lt;/p&gt;
+&lt;p&gt;그래서 스타일이 있는 경우에는 공백을 제거 한 후에, 스타일을 붙이고 다시 스타일 뒤로 공백을 붙여서 자연스럽게 포맷이 유지되도록 수정해주었다. &lt;/p&gt;
+&lt;h3&gt;ImageCounter 변수 수정&lt;/h3&gt;
+&lt;p&gt;이미지가 디렉토리가 변경되어도 숫자가 계속 늘어나는 현상을 겪었는데… 멍청하게 내가 이미지 카운터를 static 변수로 선언해서 모든 인스턴스가 값을 공유하고 있는 것 뿐이었다. 바로 인스턴스 변수로 변경 해주었다. &lt;/p&gt;
+&lt;h3&gt;멘션 링크 이후 줄바꿈 문제 해결&lt;/h3&gt;
+&lt;p&gt;멘션 링크를 북마크로 바꿔주는 메소드에 줄바꿈이 고정되어있어서, paragraph 안에 들어가 있는 멘션의 경우에도 줄바꿈이 들어가버렸다. 번거롭지만, 메소드를 수정해서 리스트로 처리되는 경우에만 줄바꿈이 들어가도록 수정해주었다. &lt;/p&gt;
+&lt;h3&gt;notion url만 주어지는 경우&lt;/h3&gt;
+&lt;p&gt;노션의 페이지 링크를 따온 다음에, 아무 글자 또는 문장을 드래그 하고 붙여넣기 하면 해당 글자 또는 문장에 페이지 링크로 연결되는 북마크가 생성된다. &lt;/p&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 382px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 10.588235294117647%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAVElEQVR42k2NSw4AIQhDvYZr/KGB+9+OySPRzKJpSwuUOWe4e5hZnHOS996x1koPA1VNTxfdWksPuDHGiFprFBHJISWCyyyge+9v4f/k5ngyehz8AHh4OntOXZx1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &apos; title=&apos;&apos; src=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; srcset=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/e7570/image1.png 170w,
+/static/0981c6ff94ee6b99478b05d66508c51e/f46e7/image1.png 340w,
+/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png 382w&apos; sizes=&apos;(max-width: 382px) 100vw, 382px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &lt;/figcaption&gt;
+  &lt;/figure&gt;
+근데 애석하게도 이 링크는 단순히 32자리 문자열만 가지고 있다. (페이지의 아이디가 아니다). 따라서 해당 경우에는 북마크를 연결할 수가 없었다… &lt;/p&gt;
+&lt;p&gt;인 줄 알았는데, 32자리인게 이상해서 혹시나 해서 UUID 형식으로 변환해봤더니 그게 내부 페이지의 아이디였다. 그러니까, 각 블록의 아이디가 UUID로 주어지는데 거기에서 하이픈만 제외하고 내부 URL로 사용중이었던 것이다. &lt;/p&gt;
+&lt;p&gt;얼씨구나~ 하고 바로 해당 케이스도 북마크 기능으로 연결해주었다. &lt;/p&gt;
+&lt;h3&gt;URL 형식 변경&lt;/h3&gt;
+&lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;노션 소개 페이지&lt;/code&gt; 라는 타이틀을 &lt;code class=&quot;language-text&quot;&gt;노션소개페이지&lt;/code&gt; 로 변환해서 URL로 사용하고 있었는데, 공백을 완전히 제거하는 대신 하이픈을 넣도록 수정해주었다. &lt;/p&gt;
+&lt;h2&gt;다음 단계는?&lt;/h2&gt;
+&lt;p&gt;이제 다음 단계는 자동화가 목적이다. 어느정도 기능 구현은 90프로 이상 됐다고 생각하고, 당장 내가 블로그 글을 쓰는데 큰 문제가 없어보인다. 이제 github.io와 합쳐서 실질적인 사용이 가능하도록 해보려고 한다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy에서의 트랜잭션 격리 수준 구현]]></title><description><![CDATA[구현 목적 상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS…]]></description><link>https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구현 목적&lt;/h2&gt;
 &lt;p&gt;상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS로 옮긴 김에 해당 문제를 완벽하게 해결하기 위해 다각도로 방법을 고민했다. &lt;/p&gt;
 &lt;p&gt;그 방안 중 하나가 &lt;a href=&quot;https://sharknia.github.io/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80Transaction-Isolation-Level&quot;&gt;트랜잭션 격리 수준(Transaction Isolation Level)&lt;/a&gt; 을 이용한 것이다. &lt;/p&gt;
 &lt;p&gt;SqlAlchemy - Postgresql을 사용하고 있는데, 이 라이브러리에서 트랜잭션 격리 수준을 어떻게 구현했는지 기록한다. &lt;/p&gt;
@@ -516,45 +671,7 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
     &lt;span class=&quot;token keyword&quot;&gt;finally&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; session&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; session&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;close&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이제 엔드포인트에서 기존 get&lt;em&gt;db&lt;/em&gt;session 대신 이 메소드를 사용하면 다른 옵션의 격리 레벨을 사용할 수 있다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
-&lt;h2&gt;유지보수 내역&lt;/h2&gt;
-&lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
-&lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
-&lt;p&gt;추가로, 프로퍼티가 고정값이 아니라 커스텀에 따라서 유연하게 대응해 Front Matter에 추가되도록 해주었다. &lt;/p&gt;
-&lt;h3&gt;줄바꿈 주의!&lt;/h3&gt;
-&lt;p&gt;마크다운은 기본적으로 엔터를 두 번씩 쳐야 줄바꿈이 되는 모양이다. 리스트 컨버터 일부에 줄바꿈이 하나만 들어가있던 것을 두 개가 들어가도록 수정해주었다. &lt;/p&gt;
-&lt;h3&gt;이미지 다운로드 안되는 현상&lt;/h3&gt;
-&lt;p&gt;분명 동기적으로 작동하게끔 짜놓았는데도 불구하고 이미지가 제대로 들어가지 않는 현상이 있었다.  axios 재시도 패키지를 설치하고, 재시도 로직을 추가하고 타임아웃 10초 설정도 해주었다. 뭐가 문제였는지는 정확히 파악이 안됐는데, (오류 로그조차 없었다) 일단 이 이후로는 이미지 다운로드에 실패하는 현상은 없다. &lt;/p&gt;
-&lt;p&gt;추가로, 이미지 다운로드 시에도 디렉토리가 없다면 만들도록 해주었다. &lt;/p&gt;
-&lt;h3&gt;스타일이 두 개 적용된 경우&lt;/h3&gt;
-&lt;p&gt;스타일이 두 개가 적용된 경우는 더 띄어쓰기에 민감했다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;*~~안녕하세요 ~~*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;처럼 애매하게 띄어쓰기가 들어가면 하나만 적용된다. &lt;/p&gt;
-&lt;p&gt;그래서 스타일이 있는 경우에는 공백을 제거 한 후에, 스타일을 붙이고 다시 스타일 뒤로 공백을 붙여서 자연스럽게 포맷이 유지되도록 수정해주었다. &lt;/p&gt;
-&lt;h3&gt;ImageCounter 변수 수정&lt;/h3&gt;
-&lt;p&gt;이미지가 디렉토리가 변경되어도 숫자가 계속 늘어나는 현상을 겪었는데… 멍청하게 내가 이미지 카운터를 static 변수로 선언해서 모든 인스턴스가 값을 공유하고 있는 것 뿐이었다. 바로 인스턴스 변수로 변경 해주었다. &lt;/p&gt;
-&lt;h3&gt;멘션 링크 이후 줄바꿈 문제 해결&lt;/h3&gt;
-&lt;p&gt;멘션 링크를 북마크로 바꿔주는 메소드에 줄바꿈이 고정되어있어서, paragraph 안에 들어가 있는 멘션의 경우에도 줄바꿈이 들어가버렸다. 번거롭지만, 메소드를 수정해서 리스트로 처리되는 경우에만 줄바꿈이 들어가도록 수정해주었다. &lt;/p&gt;
-&lt;h3&gt;notion url만 주어지는 경우&lt;/h3&gt;
-&lt;p&gt;노션의 페이지 링크를 따온 다음에, 아무 글자 또는 문장을 드래그 하고 붙여넣기 하면 해당 글자 또는 문장에 페이지 링크로 연결되는 북마크가 생성된다. &lt;/p&gt;
-&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 382px; &apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 10.588235294117647%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAVElEQVR42k2NSw4AIQhDvYZr/KGB+9+OySPRzKJpSwuUOWe4e5hZnHOS996x1koPA1VNTxfdWksPuDHGiFprFBHJISWCyyyge+9v4f/k5ngyehz8AHh4OntOXZx1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &apos; title=&apos;&apos; src=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; srcset=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/e7570/image1.png 170w,
-/static/0981c6ff94ee6b99478b05d66508c51e/f46e7/image1.png 340w,
-/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png 382w&apos; sizes=&apos;(max-width: 382px) 100vw, 382px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
-    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &lt;/figcaption&gt;
-  &lt;/figure&gt;
-근데 애석하게도 이 링크는 단순히 32자리 문자열만 가지고 있다. (페이지의 아이디가 아니다). 따라서 해당 경우에는 북마크를 연결할 수가 없었다… &lt;/p&gt;
-&lt;p&gt;인 줄 알았는데, 32자리인게 이상해서 혹시나 해서 UUID 형식으로 변환해봤더니 그게 내부 페이지의 아이디였다. 그러니까, 각 블록의 아이디가 UUID로 주어지는데 거기에서 하이픈만 제외하고 내부 URL로 사용중이었던 것이다. &lt;/p&gt;
-&lt;p&gt;얼씨구나~ 하고 바로 해당 케이스도 북마크 기능으로 연결해주었다. &lt;/p&gt;
-&lt;h3&gt;URL 형식 변경&lt;/h3&gt;
-&lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;노션 소개 페이지&lt;/code&gt; 라는 타이틀을 &lt;code class=&quot;language-text&quot;&gt;노션소개페이지&lt;/code&gt; 로 변환해서 URL로 사용하고 있었는데, 공백을 완전히 제거하는 대신 하이픈을 넣도록 수정해주었다. &lt;/p&gt;
-&lt;h2&gt;다음 단계는?&lt;/h2&gt;
-&lt;p&gt;이제 다음 단계는 자동화가 목적이다. 어느정도 기능 구현은 90프로 이상 됐다고 생각하고, 당장 내가 블로그 글을 쓰는데 큰 문제가 없어보인다. 이제 github.io와 합쳐서 실질적인 사용이 가능하도록 해보려고 한다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level)]]></title><description><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level…]]></description><link>https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</link><guid isPermaLink="false">https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;트랜잭션 격리 수준(Transaction Isolation Level)이란?&lt;/h2&gt;
+&lt;p&gt;이제 엔드포인트에서 기존 get&lt;em&gt;db&lt;/em&gt;session 대신 이 메소드를 사용하면 다른 옵션의 격리 레벨을 사용할 수 있다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level)]]></title><description><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level…]]></description><link>https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</link><guid isPermaLink="false">https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;트랜잭션 격리 수준(Transaction Isolation Level)이란?&lt;/h2&gt;
 &lt;p&gt;트랜잭션 격리 수준은 데이터베이스 시스템에서 동시에 여러 트랜잭션이 실행될 때, 트랜잭션 간에 데이터를 어떻게 고립시킬지를 결정하는 설정이다. 이 설정은 트랜잭션이 다른 트랜잭션의 작업에 영향을 받지 않도록 보장하는 동시에 여러 트랜잭션이 데이터베이스의 동일한 데이터에 접근할 때 발생하는 문제들을 관리하는데 중요한 역할을 한다. &lt;/p&gt;
 &lt;p&gt;격리 수준이 높을 수록 트랜잭션 간의 고립 정도가 증가하지만, 그만큼 데이터베이스의 처리량(throughput)과 동시성(concurrency)이 감소할 수 있다. 반대로 격리 수준이 낮으면 처리량과 동시성은 증가하지만 데이터 무결성 문제가 발생할 위험이 높아진다. 따라서 적절한 격리 수준을 선택해야 한다. &lt;/p&gt;
 &lt;p&gt;데이터베이스의 동일한 데이터에 접근할 때 발생할 수 있는 문제들은 다음과 같다. &lt;/p&gt;
