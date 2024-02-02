@@ -1,9 +1,10 @@
 ---
+IDX: "NUM-45"
 tags:
   - Blogging
   - Hobby
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-08-30"
 상태: "Ready"
 title: "github.io 자동배포"

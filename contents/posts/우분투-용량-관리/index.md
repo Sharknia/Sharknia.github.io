@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-11"
 tags:
   - Ubuntu
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-28"
 상태: "Ready"
 title: "우분투 용량 관리"

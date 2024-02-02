@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-75"
 tags:
   - FastAPI
   - Python
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-11-02"
 상태: "Ready"
 title: "FastAPI"

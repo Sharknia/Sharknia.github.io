@@ -1,10 +1,11 @@
 ---
+IDX: "NUM-18"
 tags:
   - SqlAlchemy
   - DataBase
   - Python
   - Work
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-29"
 상태: "Ready"
 title: "Sqlalchemy에서의 트랜잭션 격리 수준 구현"

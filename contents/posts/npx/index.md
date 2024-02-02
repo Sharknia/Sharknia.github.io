@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-46"
 tags:
   - Node.js
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-08-31"
 상태: "Ready"
 title: "npx"

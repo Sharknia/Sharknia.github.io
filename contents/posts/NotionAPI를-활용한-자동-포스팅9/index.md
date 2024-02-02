@@ -1,4 +1,5 @@
 ---
+IDX: "NUM-110"
 tags:
   - Blogging
   - Typescript
@@ -6,7 +7,7 @@ tags:
   - Notion-API
 description: "삭제/수정 기능 구현"
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-02-02"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(9)"
@@ -19,9 +20,9 @@ title: "NotionAPI를 활용한 자동 포스팅(9)"
 
 
 
-근데, 이런 경우 글을 어떻게 삭제하지?
+**근데, 이런 경우 글을 어떻게 삭제하지?**
 
-현재 타이틀이 키 값인데 타이틀 명이 바뀌면 내용은 똑같은데 제목만 다른 글이 두 개? 
+**현재 타이틀이 키 값인데 타이틀 명이 바뀌면 내용은 똑같은데 제목만 다른 글이 두 개?** 
 
 
 

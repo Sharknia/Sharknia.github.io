@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-28"
 tags:
   - Blogging
   - Hobby
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-08-18"
 상태: "Ready"
 title: "MORETHAN-LOG 설치"

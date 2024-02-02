@@ -1,9 +1,10 @@
 ---
+IDX: "NUM-113"
 tags:
   - Work
   - Python
 description: "커스텀된 Base Pydantic Model class 생성 - 네이밍 컨벤션 문제 해결"
-update: "2024-02-02"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-26"
 상태: "Ready"
 title: "Pydantic Model의 응용"

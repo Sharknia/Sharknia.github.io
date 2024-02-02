@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-36"
 tags:
   - ASP.Net
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-08-22"
 상태: "Ready"
 title: "Nuget 패키지 dll 추출"

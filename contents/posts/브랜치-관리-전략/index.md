@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-63"
 tags:
   - GitHub
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-10-16"
 상태: "Ready"
 title: "브랜치 관리 전략"

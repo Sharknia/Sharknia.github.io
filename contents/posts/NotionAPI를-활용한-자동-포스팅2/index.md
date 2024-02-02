@@ -1,11 +1,12 @@
 ---
+IDX: "NUM-55"
 tags:
   - Notion-API
   - Blogging
   - Hobby
   - Typescript
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-09-04"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(2)"
@@ -44,15 +45,15 @@ title: "NotionAPI를 활용한 자동 포스팅(2)"
 
 - 일단 기본적으로 다음의 속성을 가진다. 
 
-    - id : idx
+    - **id** : idx
 
-    - parent : 부모 ID
+    - **parent** : 부모 ID
 
-    - hasChidren : 자식 요소가 있는지 여부 (true, false)
+    - **hasChidren** : 자식 요소가 있는지 여부 (true, false)
 
-    - type : `heading_1` 등등 블록의 종류. 종류마다 마크다운 변환 전략이 달라야 하므로 중요하다. 
+    - **type** : `heading_1` 등등 블록의 종류. 종류마다 마크다운 변환 전략이 달라야 하므로 중요하다. 
 
-    - is_toggleable :  토글 여부
+    - **is_toggleable** : **** 토글 여부
 
 ### Posting 클래스
 

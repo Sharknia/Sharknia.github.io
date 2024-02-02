@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-76"
 tags:
   - FastAPI
   - Python
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-11-03"
 상태: "Ready"
 title: "FastAPI의 데코레이터"
@@ -48,7 +49,7 @@ async def custom_middleware(request: Request, call_next):
 
 따라서 미들웨어는 가벼운 로직을 수행하는 것이 좋으며, 무거운 작업은 미들웨어에서 피해야 한다. 또한 각 미들웨어는 만드시 `await call_next(request)` 를 호출하여 체인을 계속 진행할 수 있도록 해야 한다. 
 
-### `@app.get`, `@app.post`, `@app.put`, `@app.delete`, `@app.options`, `@app.head`
+### `@app.get`**,** `@app.post`**,** `@app.put`**,** `@app.delete`**,** `@app.options`**,** `@app.head`
 
 HTTP 메소드에 맞게 라우트를 설정하는 데코레이터이다. 
 
@@ -180,11 +181,11 @@ FastAPI에서 해당 데코레이터를 사용해 정의된 함수는 생성기(
 
 즉 finally 블록은 http 요청 처리가 완전히 끝나고 응답이 클라이언트에게 전송된 후에 실행된다. 이는 DBSession 객체의 리소스를 안전하게 정리할 수 있게 해준다. yield를 사용하는 이 패턴은 파이썬의 컨텍스트 매니저와 유사한 방식으로 자원의 정리를 보장한다. 
 
-### `@Query`, `@Path`, `@Header`, `@Cookie`, `@Body`, `@Form`
+### `@Query`**,** `@Path`**,** `@Header`**,** `@Cookie`**,** `@Body`**,** `@Form`
 
 엔드포인트의 각 파라미터를 특정 데이터 위치(쿼리 파라미터, 경로 파라미터, 헤더, 쿠키, 요청 본문, 폼 데이터)에 연결한다. 
 
-### `@Response`, `@JSONResponse`, `@HTMLResponse`, `@FileResponse`
+### `@Response`**,** `@JSONResponse`**,** `@HTMLResponse`**,** `@FileResponse`
 
 특정 응답 클래스를 사용하여 응답을 반환한다. 예를 들어 `@JSONResponse`는 JSON 형식의 응답을 반환할 때 사용된다. 
 

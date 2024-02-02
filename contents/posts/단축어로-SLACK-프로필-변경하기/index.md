@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-16"
 tags:
   - ETC
   - Work
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-11-17"
 상태: "Ready"
 title: "단축어로 SLACK 프로필 변경하기"
@@ -79,7 +80,7 @@ settings:
 
 그리고, 좌측 메뉴에서 `OAuth & Permissions` 메뉴로 이동합니다. 
 
-OAuth Token 값을 복사해줍니다. 슬랙 페이지에서 할 일은 여기까지입니다. 
+**OAuth Token** 값을 복사해줍니다. 슬랙 페이지에서 할 일은 여기까지입니다. 
 
 ### 단축어 설정
 

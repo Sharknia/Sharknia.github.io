@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-24"
 tags:
   - Javascript
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-01-10"
 상태: "Ready"
 title: "JavaScript의 타입 변환과 단축 평가"

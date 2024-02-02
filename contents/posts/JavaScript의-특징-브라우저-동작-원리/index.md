@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-22"
 tags:
   - Javascript
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-01-05"
 상태: "Ready"
 title: "JavaScript의 특징, 브라우저 동작 원리"

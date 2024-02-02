@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-71"
 tags:
   - ETC
   - BackEnd
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-10-30"
 상태: "Ready"
 title: "Blue Green Deploy 전략"

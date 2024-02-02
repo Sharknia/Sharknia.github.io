@@ -1,11 +1,12 @@
 ---
+IDX: "NUM-52"
 tags:
   - Hobby
   - Blogging
   - Notion-API
   - DesignPattern
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-09-03"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅"

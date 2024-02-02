@@ -1,4 +1,5 @@
 ---
+IDX: "NUM-9"
 tags:
   - Blogging
   - Notion-API
@@ -6,7 +7,7 @@ tags:
   - Hobby
 description: "쭉쭉 진행되는 작업"
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-27"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(4)"
@@ -56,7 +57,7 @@ paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단�
 ![](image1.png)
 이 paragraph블록의 데이터 형태는 다음과 같다. 
 
-#### 노션이  좋습니다..
+#### <u>노</u><u>~~션이~~</u>  **좋습*****니다***..
 
 ```json
 {
@@ -168,7 +169,7 @@ paragraph는 노션 블록 타입 주으이 하나로, 텍스트의 기본 단�
 }
 ```
 
-#### `정말로`.. 좋아합니다.. 
+#### `정말로`.. <span style="color: pink;">좋아합니다</span>.. 
 
 ```json
 {
@@ -373,7 +374,7 @@ github.io의 블로그 형식에 맞춰서 properties를 바꿔주고, 블로그
 export type BlockObjectResponse = ParagraphBlockObjectResponse | Heading1BlockObjectResponse | Heading2BlockObjectResponse | Heading3BlockObjectResponse | BulletedListItemBlockObjectResponse | NumberedListItemBlockObjectResponse | QuoteBlockObjectResponse | ToDoBlockObjectResponse | ToggleBlockObjectResponse | TemplateBlockObjectResponse | SyncedBlockBlockObjectResponse | ChildPageBlockObjectResponse | ChildDatabaseBlockObjectResponse | EquationBlockObjectResponse | CodeBlockObjectResponse | CalloutBlockObjectResponse | DividerBlockObjectResponse | BreadcrumbBlockObjectResponse | TableOfContentsBlockObjectResponse | ColumnListBlockObjectResponse | ColumnBlockObjectResponse | LinkToPageBlockObjectResponse | TableBlockObjectResponse | TableRowBlockObjectResponse | EmbedBlockObjectResponse | BookmarkBlockObjectResponse | ImageBlockObjectResponse | VideoBlockObjectResponse | PdfBlockObjectResponse | FileBlockObjectResponse | AudioBlockObjectResponse | LinkPreviewBlockObjectResponse | UnsupportedBlockObjectResponse;
 ```
 
-너무 많다
+~~너무 많다~~
 
 일단, 많이 쓸 것 같은 블록들을 예제 파일로 만들고 해당 노션 파일들을 불러와보고 어떤 타입들을 사용하는지 살펴보기로 했다. 나머지는 모르겠다 아직은 그냥 미지원이다. 
 

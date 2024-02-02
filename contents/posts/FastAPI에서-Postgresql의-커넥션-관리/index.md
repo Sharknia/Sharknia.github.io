@@ -1,11 +1,12 @@
 ---
+IDX: "NUM-15"
 tags:
   - Python
   - FastAPI
   - DataBase
   - Work
   - Postgresql
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-12-15"
 상태: "Ready"
 title: "FastAPI에서 Postgresql의 커넥션 관리"

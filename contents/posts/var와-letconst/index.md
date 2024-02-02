@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-31"
 tags:
   - Javascript
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-08-19"
 상태: "Ready"
 title: "var와 let,const"

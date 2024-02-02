@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-67"
 tags:
   - FastAPI
   - ETC
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-10-20"
 상태: "Ready"
 title: "FastAPI와 DDD"
@@ -13,13 +14,13 @@ DDD는 복잡한 애플리케이션과 시스템의 개발에 있어서 비즈�
 
 ## 핵심 요소
 
-1. Ubiquitous Language (모든 곳에서 사용되는 언어): 개발팀과 비즈니스 팀 간에 공통적으로 사용되는 언어. 이를 통해 불필요한 혼동을 줄이고, 의사소통의 효율을 높입니다.
+1. **Ubiquitous Language (모든 곳에서 사용되는 언어)**: 개발팀과 비즈니스 팀 간에 공통적으로 사용되는 언어. 이를 통해 불필요한 혼동을 줄이고, 의사소통의 효율을 높입니다.
 
-1. Bounded Context (경계가 정의된 맥락): 특정한 맥락 내에서만 유효한 모델을 정의. 다른 맥락에서는 같은 용어도 다른 의미를 가질 수 있습니다.
+1. **Bounded Context (경계가 정의된 맥락)**: 특정한 맥락 내에서만 유효한 모델을 정의. 다른 맥락에서는 같은 용어도 다른 의미를 가질 수 있습니다.
 
-1. Entities, Value Objects, Aggregates, Repositories: 도메인 모델을 구성하는 주요 요소들입니다.
+1. **Entities, Value Objects, Aggregates, Repositories**: 도메인 모델을 구성하는 주요 요소들입니다.
 
-1. Domain Events: 도메인 내에서 중요한 비즈니스 이벤트를 나타냅니다.
+1. **Domain Events**: 도메인 내에서 중요한 비즈니스 이벤트를 나타냅니다.
 
 ## FastAPI에서 DDD의 기본 구조
 

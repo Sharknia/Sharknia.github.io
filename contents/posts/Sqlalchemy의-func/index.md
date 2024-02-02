@@ -1,10 +1,11 @@
 ---
+IDX: "NUM-94"
 tags:
   - SqlAlchemy
   - Python
   - DataBase
 description: "Sqlalchemy의 func 사용법"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-30"
 상태: "Ready"
 title: "Sqlalchemy의 func"

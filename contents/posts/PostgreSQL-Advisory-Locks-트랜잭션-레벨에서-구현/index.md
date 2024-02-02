@@ -1,4 +1,5 @@
 ---
+IDX: "NUM-85"
 tags:
   - Postgresql
   - SqlAlchemy
@@ -6,7 +7,7 @@ tags:
   - DataBase
   - Work
 description: "Sqlalchemy 2.0에서 PostgreSQL Advisory Locks을 트랜잭션 레벨에서 구현해 동시성 제어를 하자. "
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-30"
 상태: "Ready"
 title: "PostgreSQL Advisory Locks 트랜잭션 레벨에서 구현"

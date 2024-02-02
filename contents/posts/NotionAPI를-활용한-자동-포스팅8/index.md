@@ -1,4 +1,5 @@
 ---
+IDX: "NUM-106"
 tags:
   - Notion-API
   - Blogging
@@ -7,7 +8,7 @@ tags:
   - Typescript
 description: "Github Action을 활용한 자동화"
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-02-01"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(8)"
@@ -219,7 +220,7 @@ on:
 
 이 방법으로는 삭제가 되지 않는다는 사실을 깨달았다. 
 
-당분간은 수동삭제를 ㅠㅠ 하기로 하고 삭제를 어떻게 할 것인지에 대해서는 구상을 해두었다. 
+당분간은 수동삭제를 ~~ㅠㅠ~~ 하기로 하고 삭제를 어떻게 할 것인지에 대해서는 구상을 해두었다. 
 
 다음 시간은 삭제의 구현이다. 
 

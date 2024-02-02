@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-47"
 tags:
   - GitHub
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-09-01"
 상태: "Ready"
 title: "Branch"

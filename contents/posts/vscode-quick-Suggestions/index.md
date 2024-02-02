@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-98"
 tags:
   - VSCode
 description: "editor.quickSuggestions 설정에 대해 기록"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-31"
 상태: "Ready"
 title: "vscode-quick Suggestions"

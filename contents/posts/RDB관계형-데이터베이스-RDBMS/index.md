@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-30"
 tags:
   - DataBase
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-08-18"
 상태: "Ready"
 title: "RDB(관계형 데이터베이스) + RDBMS"

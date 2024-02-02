@@ -1,7 +1,8 @@
 ---
+IDX: "NUM-62"
 tags:
   - Python
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-10-10"
 상태: "Ready"
 title: "TypeError: non-default argument 'content' follows default argument"

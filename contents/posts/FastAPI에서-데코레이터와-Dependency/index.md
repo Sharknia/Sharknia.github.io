@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-79"
 tags:
   - FastAPI
   - Python
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-11-07"
 상태: "Ready"
 title: "FastAPI에서 데코레이터와 Dependency"

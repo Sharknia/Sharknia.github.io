@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-17"
 tags:
   - DataBase
   - Postgresql
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-29"
 상태: "Ready"
 title: "트랜잭션 격리 수준(Transaction Isolation Level)"

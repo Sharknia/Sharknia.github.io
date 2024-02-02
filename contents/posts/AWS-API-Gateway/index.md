@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-57"
 tags:
   - BackEnd
   - AWS
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-09-19"
 상태: "Ready"
 title: "AWS API Gateway"

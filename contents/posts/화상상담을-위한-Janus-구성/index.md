@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-21"
 tags:
   - WebRTC
   - Work
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-01-03"
 상태: "Ready"
 title: "화상상담을 위한 Janus 구성"
@@ -53,7 +54,7 @@ Stun 서버와 Turn 서버를 위한 Coturn Server도 함께 설치
 
     - libnice 설치
 
-        ※ 최소 파이썬 3.7을 요구한다. 
+        *※ 최소 파이썬 3.7을 요구한다.* 
 
         ```bash
         pip3 install meson==0.61.5 

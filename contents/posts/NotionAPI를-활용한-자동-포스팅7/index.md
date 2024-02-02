@@ -1,4 +1,5 @@
 ---
+IDX: "NUM-95"
 tags:
   - Notion-API
   - Blogging
@@ -6,7 +7,7 @@ tags:
   - Typescript
 description: "유지보수 내역서 "
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-30"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(7)"
@@ -49,7 +50,7 @@ title: "NotionAPI를 활용한 자동 포스팅(7)"
 
 ### 언더바 또는 *가 포함된 경우 스타일 깨짐
 
-예를 들어 _db_connection_serializable 라고 입력된 텍스트가 dbconnectionserializable 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 
+예를 들어 _db_connection_serializable 라고 입력된 텍스트가 *db*connection*serializable* 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 
 
 ```typescript
 // 언더스코어 이스케이프 처리 함수

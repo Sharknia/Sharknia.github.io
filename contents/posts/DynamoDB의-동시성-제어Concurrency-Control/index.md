@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-73"
 tags:
   - AWS
   - DataBase
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-11-01"
 상태: "Ready"
 title: "DynamoDB의 동시성 제어(Concurrency Control)"

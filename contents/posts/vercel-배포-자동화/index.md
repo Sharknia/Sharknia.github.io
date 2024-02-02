@@ -1,8 +1,9 @@
 ---
+IDX: "NUM-68"
 tags:
   - Hobby
   - Blogging
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-10-23"
 상태: "Ready"
 title: "vercel 배포 자동화"

@@ -1,10 +1,11 @@
 ---
+IDX: "NUM-48"
 tags:
   - Hobby
   - Blogging
   - Notion-API
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-09-01"
 상태: "Ready"
 title: "Notion API(2)"

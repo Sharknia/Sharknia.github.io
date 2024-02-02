@@ -1,10 +1,11 @@
 ---
+IDX: "NUM-81"
 tags:
   - DataBase
   - AWS
   - Python
   - Work
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2023-12-08"
 상태: "Ready"
 title: "PynamoDB와 boto3, PynamoDB의 커넥션"

@@ -1,10 +1,11 @@
 ---
+IDX: "NUM-14"
 tags:
   - DataBase
   - SqlAlchemy
   - Python
   - Work
-update: "2024-02-01"
+update: "2024-02-02T16:32:00.000Z"
 date: "2024-01-09"
 상태: "Ready"
 title: "Sqlalchemy 비동기 엔진에서의 Postgresql Pooler"
