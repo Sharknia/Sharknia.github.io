@@ -2,7 +2,7 @@
 IDX: "NUM-25"
 tags:
   - Javascript
-update: "2024-02-02T16:32:00.000Z"
+update: "2024-02-02T17:35:00.000Z"
 date: "2023-01-07"
 상태: "Ready"
 title: "JavaScript의 변수"
