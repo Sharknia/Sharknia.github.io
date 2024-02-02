@@ -245,16 +245,16 @@ data-styled.g45[id="Footer__HiddenWrapper-sc-zqxmks-9"]{content:"yzdKT,ivqWaF,"}
 <h3>포함하지 말아야 할 파일들</h3>
 <ol>
 <li><code class="language-text">/node_modules/</code>: <code class="language-text">npm install</code>이나 <code class="language-text">yarn</code> 명령으로 설치한 패키지들이 이 디렉터리에 저장된다. 이는 대부분의 경우에 매우 크며, 이를 Git에 저장하는 것은 비효율적이다. 대신, <code class="language-text">package.json</code>에 의존성이 기록되므로 다른 개발자들은 동일한 패키지를 쉽게 설치할 수 있다.</li>
-<li><code class="language-text">/dist/</code> 또는 <code class="language-text">/build/</code>: TypeScript를 JavaScript로 컴파일할 때 생성되는 출력 디렉터리이다. 이것은 원본 코드에서 파생된 것이므로 저장소에 포함할 필요가 없다.</li>
+<li><code class="language-text">/dist/</code> <strong>또는</strong> <code class="language-text">/build/</code>: TypeScript를 JavaScript로 컴파일할 때 생성되는 출력 디렉터리이다. 이것은 원본 코드에서 파생된 것이므로 저장소에 포함할 필요가 없다.</li>
 <li><code class="language-text">.env</code>: 환경 변수가 포함된 파일이다. 이 파일은 민감한 정보 (API 키, 비밀번호 등)를 포함할 수 있으므로 공개 저장소에 저장되어서는 안된다.</li>
 <li><code class="language-text">.DS_Store</code>: macOS에서 파일 시스템이 생성하는 메타데이터 파일이다. 이는 프로젝트와 관련이 없으므로 무시해야 한다.</li>
 </ol>
 <h3>포함되어야 할 파일들</h3>
 <ol>
-<li><code class="language-text">.js</code>와 <code class="language-text">.js.map</code>: TypeScript를 JavaScript로 컴파일하면, 일반적으로 <code class="language-text">.js</code>와 <code class="language-text">.js.map</code> 파일이 생성된다. 이러한 파일은 <code class="language-text">/dist/</code>나 <code class="language-text">/build/</code> 디렉터리에 포함될 수 있지만, 그렇지 않은 경우에도 이러한 파일을 무시하는 것이 좋다.</li>
+<li><code class="language-text">.js</code><strong>와</strong> <code class="language-text">.js.map</code>: TypeScript를 JavaScript로 컴파일하면, 일반적으로 <code class="language-text">.js</code>와 <code class="language-text">.js.map</code> 파일이 생성된다. 이러한 파일은 <code class="language-text">/dist/</code>나 <code class="language-text">/build/</code> 디렉터리에 포함될 수 있지만, 그렇지 않은 경우에도 이러한 파일을 무시하는 것이 좋다.</li>
 <li><code class="language-text">.tsbuildinfo</code>: TypeScript 3.4 이후로 컴파일러는 프로젝트 빌드 정보를 이 파일에 저장할 수 있다. 이것은 증분 빌드(incremental build)를 빠르게 만들기 위한 것이므로 저장소에 포함시키지 않아도 된다.</li>
 <li><code class="language-text">/coverage/</code>: 테스트 코드의 코드 커버리지를 저장하는 디렉터리이다. 보통 이 디렉터리는 코드 커버리지 도구로 생성된다.</li>
-<li>로그 파일: 예를 들면, <code class="language-text">.log</code> 확장자를 가진 파일들이다.</li>
+<li><strong>로그 파일</strong>: 예를 들면, <code class="language-text">.log</code> 확장자를 가진 파일들이다.</li>
 </ol>
 <h2>정의되었는데, 추적되는 경우</h2>
 <p>예를 들어 나의 경우에는 *.js를 정의했는데 특정 js 파일이 계속해서 추적당했다. 이는 몇가지 이유가 있을 수 있다. </p>

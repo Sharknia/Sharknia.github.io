@@ -264,7 +264,7 @@ data-styled.g45[id="Footer__HiddenWrapper-sc-zqxmks-9"]{content:"yzdKT,ivqWaF,"}
 <p>이미지 카운터를 컨버터에 넣어놓을거면 거기서 인스턴스 변수로 선언하면 안됐다. 이미지가 거의 모든 경우에 항상 1번으로 저장된다.. </p>
 <p>페이지에 이미지 카운터 변수를 심고 블록-컨버터까지 내려줄 생각을 하니 아득해졌는데 생각해보니 그냥 컨버터 클래스에 넣어놓고 static 변수로 변경한 다음 페이지를 새로 만들 때마다 해당 값을 초기화 해주면 되지 않나 싶어서 그렇게 구현 해보려고 한다. </p>
 <h3>언더바 또는 *가 포함된 경우 스타일 깨짐</h3>
-<p>예를 들어 <em>db</em>connection_serializable 라고 입력된 텍스트가 dbconnectionserializable 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 </p>
+<p>예를 들어 <em>db</em>connection_serializable 라고 입력된 텍스트가 <em>db</em>connection<em>serializable</em> 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 </p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token comment">// 언더스코어 이스케이프 처리 함수</span>
     <span class="token keyword">private</span> <span class="token function">escapeMarkdownUnderscores</span><span class="token punctuation">(</span>text<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> text<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(\w)_(\w)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'$1\\_$2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

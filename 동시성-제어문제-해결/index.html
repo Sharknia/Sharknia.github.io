@@ -280,13 +280,13 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -> 처리
 <h3>PostgreSQL Advisory Locks(당장 채용)</h3>
 <p>Advisory Locks는 애플리케이션에서 데이터베이스 레벨의 잠금을 관리할 수 있도록 해준다. 이를 통해 특정 user_id 에 대한 동시 요청을 제어할 수 있다. </p>
 <p>Advisory Locks는 테이블이나 행에 대한 접근을 잠그는 개념이 아니다. 특정 값 (정수)에 대한 잠금을 제공한다. 즉, 작업 자체에 1번이라는 이름을 붙이고 1번을 잠근다면, 다시 요청되는 1번 작업은 잠금이 된다. </p>
-<h4>Advisory Locks의 작동 방식</h4>
+<h4><strong>Advisory Locks의 작동 방식</strong></h4>
 <ul>
 <li>잠금 설정 : 애플리케이션이 pg<em>advisory</em>lock(key) 함수를 호출하여 특정 키에 대한 잠금을 요청한다.</li>
 <li>동일 키 사용 시 대기 : 같은 키를 사용하는 다른 데이터베이스 작업이 잠금을 보유하고 있다면, 새로운 잠금 요청은 해당 잠금이 해제될 때까지 대기한다. </li>
 <li>잠금 해제 : 원래의 작업이 완료되면 pg<em>advisory</em>unlock(key) 함수를 호출하여 잠금을 해제한다. 이후 대기 중이던 다른 작업이 잠금을 획득하고 진행될 수 있다. </li>
 </ul>
-<h4>Advisory Locks의 잠금 레벨</h4>
+<h4><strong>Advisory Locks의 잠금 레벨</strong></h4>
 <p>Advisory Locks는 두 가지 레벨에서 사용할 수 있다. </p>
 <ul>
 <li>
