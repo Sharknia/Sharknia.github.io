@@ -6,7 +6,7 @@ tags:
   - Hobby
   - Typescript
 description: "삭제/수정 기능 구현 2"
-update: "2024-02-04T09:17:00.000Z"
+update: "2024-02-04T09:19:00.000Z"
 date: "2024-02-02"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(10)"
