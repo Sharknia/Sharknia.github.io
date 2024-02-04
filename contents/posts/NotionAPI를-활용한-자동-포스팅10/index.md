@@ -7,8 +7,8 @@ tags:
   - Typescript
 description: "삭제/수정 기능 구현 2"
 series: "GitHub Pages와 Notion API 연동"
-update: "2024-02-04T10:54:00.000Z"
-date: "2024-02-02"
+update: "2024-02-04T11:17:00.000Z"
+date: "2024-02-03"
 상태: "Ready"
 title: "NotionAPI를 활용한 자동 포스팅(10)"
 ---
