@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 06 Feb 2024 05:18:14 GMT</lastBuildDate><item><title><![CDATA[Github Action Output]]></title><description><![CDATA[목적 깃허브 액션에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job…]]></description><link>https://sharknia.github.io/Github-Action-Output/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Action-Output/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;목적&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 06 Feb 2024 06:37:42 GMT</lastBuildDate><item><title><![CDATA[Github Action Output]]></title><description><![CDATA[목적 깃허브 액션에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job…]]></description><link>https://sharknia.github.io/Github-Action-Output/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Action-Output/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;목적&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/Github-Actions&quot;&gt;깃허브 액션&lt;/a&gt;에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job끼리 변수를 공유해야 하는 상황이 있을 수 있습니다. &lt;/p&gt;
 &lt;p&gt;이때 사용하는 것이 Output 입니다. &lt;/p&gt;
 &lt;h2&gt;선언하기&lt;/h2&gt;
@@ -2220,7 +2220,7 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
 &lt;/details&gt;
 &lt;h3&gt;Pagination Class 구현&lt;/h3&gt;
 &lt;p&gt;pagination은 static 메소드로 만들어서 필요한 값을 넣으면 바로 PaginationReturn을 받을 수 있게 만들었다. static method로 만든것은 FastAPI의 Pagination 라이브러리를 본딴것이다. 이 방법이 가장 사용하기 편해보이기도 했다. &lt;/p&gt;
-&lt;h4&gt;get&lt;em&gt;paginated&lt;/em&gt;list&lt;/h4&gt;
+&lt;h4&gt;&lt;code class=&quot;language-text&quot;&gt;get_paginated_list&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;처음 구현한 메소드이다. 모델을 파라미터로 받아 페이징을 한다. 따로 select문을 만들 필요 없이 모델과 where절만 만들어서 넣어줘도 정의된 응답값 데이터 모델에 리스트를 담아 반환해준다. &lt;/p&gt;
 &lt;details&gt;
 &lt;summary&gt;전체 코드&lt;/summary&gt;
@@ -2391,8 +2391,8 @@ convertParagraph - markdown &lt;span class=&quot;token builtin class-name&quot;&
     &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; pydantic_model&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;모델의 컬럼값으로 동적으로 pydantic model을 생성하는 sqlalchemy&lt;em&gt;to&lt;/em&gt;pydantic 메소드를 생성하고 해당 메소드를 활용해 응답값에 담도록 해주었다. &lt;/p&gt;
 &lt;/details&gt;
-&lt;h4&gt;get&lt;em&gt;paginated&lt;/em&gt;list&lt;em&gt;by&lt;/em&gt;query&lt;/h4&gt;
-&lt;p&gt;처음에 신나서 만들었는데, 기존  get&lt;em&gt;paginated&lt;/em&gt;list 메소드는 치명적인 문제가 있다. 쿼리가 복잡한 경우를 전혀 생각하지 않았다. 말 그대로 단일 테이블에서만 값을 가져올 수 있는 것이다. 그래서 이 점을 개선해야했다. 그래서 개발자가 조금 더 귀찮아지지만 쿼리문은 이 메소드를 이용할 작업자가 직접 구현을 하고, 그 쿼리문을 넣으면 리스트를 담아서 돌려주는 형식으로 다시 만들기로 했다. &lt;/p&gt;
+&lt;h4&gt;&lt;code class=&quot;language-text&quot;&gt;get_paginated_list_by_query&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;처음에 신나서 만들었는데, 기존  &lt;code class=&quot;language-text&quot;&gt;get_paginated_list&lt;/code&gt; 메소드는 치명적인 문제가 있다. 쿼리가 복잡한 경우를 전혀 생각하지 않았다. 말 그대로 단일 테이블에서만 값을 가져올 수 있는 것이다. 그래서 이 점을 개선해야했다. 그래서 개발자가 조금 더 귀찮아지지만 쿼리문은 이 메소드를 이용할 작업자가 직접 구현을 하고, 그 쿼리문을 넣으면 리스트를 담아서 돌려주는 형식으로 다시 만들기로 했다. &lt;/p&gt;
 &lt;p&gt;기존 메소드에서는 모델만을 조회하는 것이므로 모델을 기반으로 Pydantic model을 생성하면 문제가 없었는데, 이번에는 모델에서 컬럼값을 추출해서 사용할 수 없으므로 키 값을 동적으로 정의하는 코드를 따로 작성해주었다. &lt;/p&gt;
 &lt;p&gt;쿼리된 내용에서 컬럼값을 조회해서 사용하였으며, 쿼리된 내용에는 시스템에서 사용하는 속성값도 존재하는데 해당 속성값들은 &lt;code class=&quot;language-text&quot;&gt;_&lt;/code&gt;로 시작하므로 해당 내용은 제거하고 동적으로 Pydantic model에 추가해주었다. relationship도 대응할 수 있게 별도의 예외처리를 추가해주었다. relationship 속성은 Select 객체의 컬럼에는 포함이 되지 않는데 조회된 결과물의 속성에는 들어있으므로 해당 값이 relationship 속성이라고 가정하고 따로 예외처리를 해주었다. &lt;/p&gt;
 &lt;details&gt;
