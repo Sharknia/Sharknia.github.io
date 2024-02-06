@@ -6,7 +6,7 @@ tags:
   - SqlAlchemy
   - Python
 description: "Sqlalchemy 2.0 비동기 엔진과 페이지네이션 라이브러리 직접 구현"
-update: "2024-02-06T04:39:00.000Z"
+update: "2024-02-06T06:34:00.000Z"
 date: "2024-01-17"
 상태: "Ready"
 title: "FastAPI의 Pagenation"
@@ -88,7 +88,7 @@ class PaginationReturn(BaseModel, Generic[T]):
 
 pagination은 static 메소드로 만들어서 필요한 값을 넣으면 바로 PaginationReturn을 받을 수 있게 만들었다. static method로 만든것은 FastAPI의 Pagination 라이브러리를 본딴것이다. 이 방법이 가장 사용하기 편해보이기도 했다. 
 
-#### get_paginated_list
+#### `get_paginated_list`
 
 처음 구현한 메소드이다. 모델을 파라미터로 받아 페이징을 한다. 따로 select문을 만들 필요 없이 모델과 where절만 만들어서 넣어줘도 정의된 응답값 데이터 모델에 리스트를 담아 반환해준다. 
 
@@ -276,9 +276,9 @@ def sqlalchemy_to_pydantic(db_model: Type[DeclarativeMeta]) -> Type[BaseModel]:
 
 </details>
 
-#### get_paginated_list_by_query
+#### `get_paginated_list_by_query`
 
-처음에 신나서 만들었는데, 기존  get_paginated_list 메소드는 치명적인 문제가 있다. 쿼리가 복잡한 경우를 전혀 생각하지 않았다. 말 그대로 단일 테이블에서만 값을 가져올 수 있는 것이다. 그래서 이 점을 개선해야했다. 그래서 개발자가 조금 더 귀찮아지지만 쿼리문은 이 메소드를 이용할 작업자가 직접 구현을 하고, 그 쿼리문을 넣으면 리스트를 담아서 돌려주는 형식으로 다시 만들기로 했다. 
+처음에 신나서 만들었는데, 기존  `get_paginated_list` 메소드는 치명적인 문제가 있다. 쿼리가 복잡한 경우를 전혀 생각하지 않았다. 말 그대로 단일 테이블에서만 값을 가져올 수 있는 것이다. 그래서 이 점을 개선해야했다. 그래서 개발자가 조금 더 귀찮아지지만 쿼리문은 이 메소드를 이용할 작업자가 직접 구현을 하고, 그 쿼리문을 넣으면 리스트를 담아서 돌려주는 형식으로 다시 만들기로 했다. 
 
 기존 메소드에서는 모델만을 조회하는 것이므로 모델을 기반으로 Pydantic model을 생성하면 문제가 없었는데, 이번에는 모델에서 컬럼값을 추출해서 사용할 수 없으므로 키 값을 동적으로 정의하는 코드를 따로 작성해주었다. 
 
