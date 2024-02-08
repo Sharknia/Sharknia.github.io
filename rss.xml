@@ -1,4 +1,132 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 07 Feb 2024 01:49:36 GMT</lastBuildDate><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 08 Feb 2024 06:45:05 GMT</lastBuildDate><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
+&lt;h3&gt;소개&lt;/h3&gt;
+&lt;p&gt;많은 개발자들이 한 번쯤은 &quot;나만의 블로그를 운영해야지&quot;라고 생각해본 적이 있을 겁니다. 하지만 실제로 블로그를 시작하고 유지하는 일은 상당한 도전과제입니다. 공부하고 개발하는 것만으로도 바쁜데, 여기에 글을 쓰고 관리하는 일은 때때로, 아니 항상 부담스러운 일입니다.&lt;/p&gt;
+&lt;p&gt;노션으로 공부를 하는 개발자가 있습니다. 일을 하면서일수도 있고, 따로 짬을 내어 공부를 하면서일수도 있습니다. 그러다가 한 번 쯤은 생각하게 됩니다. 노션으로 한 공부나 작업 기록이 블로그에 자동으로 업로드된다면 좋을텐데!&lt;/p&gt;
+&lt;p&gt;저 역시 마찬가지입니다. 저는 귀찮은 일이 너무 귀찮습니다. 공부나 블로그나 어차피 한 번에 할 수 있는거 아닌가? 공부만 하면 포스팅이 되면 안되나? 왜 똑같은 일을 두 번 세 번 해야 하는걸까?&lt;/p&gt;
+&lt;h4&gt;그래서 만들었습니다.&lt;/h4&gt;
+&lt;p&gt;nolog는 노션에 집중해서 작업하거나 공부해서 기록하는 것만으로도 그 내용이 자동으로 마크다운으로 변환되어 GitHub 기반의 블로그에 포스팅될 수 있도록 해주는 프로그램입니다. 취업 준비, 지식 공유, 개인 브랜딩 등 여러 목적으로 블로그를 운영하고자 하는 분들에게 nolog는 시간과 노력을 크게 절약해 줄 것입니다.&lt;/p&gt;
+&lt;h3&gt;시작하기&lt;/h3&gt;
+&lt;h4&gt;Notion 준비&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;노션 계정을 준비합니다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so/248d5b9bf2a644b4b25485c828d5b04f&quot;&gt;Base Template&lt;/a&gt;을 내 노션으로 복제합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/24e5695c45a4177fd1ef50b659afa096/23039/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 71.17647058823529%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABwElEQVR42p1S2bKaQBDlEwICgrLNsFwqqHDdReOWpVKpVJ7ymP//jZPpLiFg9D7ch0Mv0930OTPaerFAURSYzWaYTqcoJhOUZYkgCOA4DlzX/Q9xHGOi6jzPQ57n3FdVFfuar5J0YFk2LNuGfYNpmj0MBgNVY7GlobQExePxmPt932eruaMRdN3Aj6+f8fPLFfPlEtvtBrvdjrFQDMiu12usViss1Tn5p9NJ+SseOBwOWzbaSA00TQvHwx6f9ntcr1ecz2fUdY29ig+HAzabDS6XC+bzOftUQzgej7xZVxqNPpQIwhBZlip9JMeGYbRUyeq6zj7ldWOAD4bK3ejTUr2BtHKWvWA6qyBkgljGLHyWZUiSBGma8ibUOFbwQgkvLuDJXF2ez7Sbwe2GUgr8+VXj9/clN3VvlQoJVNfQe/YC2oF0Q+XHBC+x/7Q4VLIIIdqnE0VRW0s/pPifhurdRSJRWgo+aLZq0DQRva7tgnJadwNnaMF17J7IDWizR/mHlN0b5Wr7DXlZc3xf2AzrangvDcUtZbrFfPKKQKRvaiilZJ/svYZ03hsoohBRGDzVkDRqtCNG9zr2NHw04D0a/gW1OHxLHQSjowAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/24e5695c45a4177fd1ef50b659afa096/ca1dc/image1.png&apos; srcset=&apos;/static/24e5695c45a4177fd1ef50b659afa096/e7570/image1.png 170w,
+/static/24e5695c45a4177fd1ef50b659afa096/f46e7/image1.png 340w,
+/static/24e5695c45a4177fd1ef50b659afa096/ca1dc/image1.png 680w,
+/static/24e5695c45a4177fd1ef50b659afa096/02d09/image1.png 1020w,
+/static/24e5695c45a4177fd1ef50b659afa096/9d567/image1.png 1360w,
+/static/24e5695c45a4177fd1ef50b659afa096/23039/image1.png 1402w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;복제된 페이지에서 공유 - 링크 복사를 눌러 페이지의 주소를 얻습니다. 해당 주소는 &lt;code class=&quot;language-text&quot;&gt;username.notion.site/NOTION_PAGE_ID&lt;/code&gt; 꼴입니다. &lt;code class=&quot;language-text&quot;&gt;NOTION_PAGE_ID&lt;/code&gt;를 기록합니다.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.notion.so/my-integrations&quot;&gt;Notion API 관리 페이지&lt;/a&gt;에서 &lt;code class=&quot;language-text&quot;&gt;새 API 통합 만들기&lt;/code&gt; 를 선택해 API를 생성해줍니다. 워크스페이스별로 권한을 관리하므로, 정확한 워크스페이스를 선택하여 진행합니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;프라이빗 API 통합 시크릿키&lt;/code&gt;를 기록합니다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;콘텐츠 기능은 읽기/업데이트/입력을 필수로 선택해야 합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/49440d05852802e113be20a06a93089b/e0a8c/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 114.70588235294117%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbklEQVR42pVV2XLbQAzT//9Vnzr5gb60iQ+dtqz7tCQLBWjLOZp65MxwdiXvQiABMs409mjqEpgvAP4X8+33D6veL3e0zpOFc5kGVEWOoe8wErzvGpy5H4aea2vRdS2m8cx9c31u6+v5M8/rzO13Axx5MUtOqMsCRZ4hjiPExwjpKcYpPiBLT0hOR5RljroqCNZYRj1BBgK2TYWeHxgHAuLGcGGiA31Xo22vh3T5fCaTG9v5nu6DlPWgrzd1ZQDvF1Sv+VMt58t4v7jE13fOOI348drBdV3sd28Ifc9SEivFdyCPwtGFsBiQponVKk1iW4siM4Hme1orAScy/LnpEAQ+XDIMfBfbzSvyLGH9Wiu6VMe8jqlzuTEsaR2pKoY1UxaQomJ9Wwq0NnVj+LLr4ZOht98gDDwDFYiAzV/PpGwbXpAAMqxs0jW1hRguhn0KsKJhFRM9effYJ789AShjx4cQhyiA7+5MDL0TM4X2z1jHbDMxXQmi+qnVGrLVKvCS9lFfr2XqTCMZHkOEoUdRtga8tNrAei6th7Uqi+GsOtIeSXJEniecPpkpLXZiqc5ZbRtNiKGv0FDRa2of/y5PC0OGE34FLSoOB6Wu2ilSsn2fIv9OlYed4uWjMYwoypGK+2w/tWCRp0w7tXJo39KbK3zI2mC0QeB7e5w4XCWMAA+RT+VdG7h6lr3UQY9K4MwEVNoa7/KixIgIFFH1VNOHk1vvYvtQdJ9Imt7fCWUqK+22KbF9ezWgwN9j8/YbgRgTRMzl0d3mD1xay3O3yDnuvgVcNvJcSjFkFa2yUFVmrF1yt48stfyPUU3NFV8A/wLUTwBa4khmwAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/49440d05852802e113be20a06a93089b/ca1dc/image2.png&apos; srcset=&apos;/static/49440d05852802e113be20a06a93089b/e7570/image2.png 170w,
+/static/49440d05852802e113be20a06a93089b/f46e7/image2.png 340w,
+/static/49440d05852802e113be20a06a93089b/ca1dc/image2.png 680w,
+/static/49440d05852802e113be20a06a93089b/e0a8c/image2.png 998w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;노션에서 연결된 워크스페이스를 선택하고, 위에서 만든 통합 API를 연결해줍니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 522px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/d7b9e107ca18b8a921c19ab9fec59ce1/d15a3/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 230.58823529411768%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAuCAYAAAAoaDnGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFhUlEQVR42o2XSVIzRxCFdQJvHIDEKDUaAM0S8wxinn4xGQMhO/DG4aUX3jrslTc+gg9gh2/gy6XfVyj1twDxs8ioUnXV65eZL7NLiVQqZaOjozY2NtYbsfHx8fCb58wnJyctmUzaxMREmKc0H9J6W3uOR0asNTxsV9qbSCZTFkUZq1Qqls1mbXZ2Nhi/OTg1NWWfPn2y4+NjG9ah9fV129nZsVEd3js9tZ9KJSsVCjaxvGw3ekEiNTxkgI512bjBDkYYwLAGMIqiYDDMzszYcjpt32nvxeSU/awxMfbjHxbNzFkmPWXR9LSltWFaoxus43PAMplM+J0W+0nNm9ORXenZ9lxVgH/+Z+VG006Ojmx9Y8Pu7++Di9fX18G1arVqzWbTGo1GMOa4vba2Zhvav7W1ZUurq1aan7fx2qIlRn/7x0q1hm1qU1OLZ2dnYSOHlpaWrFarWb1e7xsXFxd7tqTYLSwsWEPPokpTDH//1/JzpeByLp8PGSURuM7o7uVyuV788tqHsYYxn1E80+XGM2BWMdzcWLdisRgYnpyc2OHhoV1eXgb3cQsWZHp7e9sKyqqDxS2qzMtlAeZmi7a1uWlFSYC4cQiX9/f3bW9vz1YVI+LHbyzOzg0vqpv7Avz17wAYZdKW1QMkEjcPAa776C7HDQXUAuAvf1m2MGtLiwuBIQnZFFuYMB4cHPQYw3SQu4HhRkuVUmzoDYUQn3q9EUZAz8/PbWVlJcTzSJICDKkACJt+wPwzYFOySQ59HTaUxA7qLg1Kj7jNzc0FNz3Db7Hzl1RFKJFUmbEIE8AQNNk9v7iwU2V8WTpj81uJwHiGOngeAKlb6LKIwchHbFDMXH+fYxgJsEm3SYa3oDe0Bjvi2Gq17Pb2NiTGxfwWM0qxrtDkgstdQDYTL9+E6t9iMchl9oSkADii5ggAbKhNKuXx8TGwjZfZSwOMREKEJBYKeavUGs8MeUhXobGymdjxkngbAzw+OjP25cmyMwSQDZ1OJ5QZIj5VJ3ZhswZr2hpz1ycvhVm5XA7qyOWy/Ulh87zaF5sYCTZzdwlh+0g48AYwYo5me4Cprg75+CBg2pZ/S7x2vVPjiYvcO3m8o9casSxTqwQZubTb7eAmrsPGqwEmzsqZcYb45/O5z8LmLXRnNgAAOBnHPQ7CmpcCxh7i53PGPkDaEwwAYQONlZ5IgwB0d3c3NFhvCIxxN3tuR91KIbgscIhsxdsVbOkwGPH0OL4W+AthswgjNIXr4aOj7DLSHGCO+8gFFwd3GwFykIWrq6sAQLchGbgK27u7u1DnzKlx2Mb74atu4xXBIu67YD2DLl6vHvYwvmyyvRiSFB6SCGJIhcCK2kY+T09PgTH9kt8kDdH3d6BYDIlZoKvU82bc9wuTfys8s69b/xtJ4VLERmoVmRCrh4eHEE+qIh6rDwESJ1gRK1gx93g5wKAW9uoz2ugCehvisLvtbcznHwbEZYBubm5ClyH4SAiJUM+4Tum9H8eYy8SNNwCGdEiS36wAwwPWGQd/uGKALhtKi0X051ojrozIyXskhfBahzFAf8ghgDhENdCtKbvnG0W91xe/WMu8kR9cNziIwIkdQMyREy+IX5LeBRwaGuoLtruFi34tYc0/D8/fj3cAcSuefkKAuRYZvcZJhstoICDfjzwtCAGLJeOMDhS69hENsp+zVXQYykpWkUTKaE4M0tqQ0ThNn/vSzUE2JYZpPlIw5OZf0mJbcvlGsduTiA8koVONbY3favxenWWQdWSXAqtrLAL4lf4d3SqDPwjwWMAdxfRe1qZqNK6QBG4J3bC8tFnZtrzoCKPFVaSiynjUjxN9QyK1sF2V3qluYKv6rrTUeRYFWhSDcte9vuscN39qWAnr6Dp3W6nZ/+X+f1mfKcLWAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/d7b9e107ca18b8a921c19ab9fec59ce1/d15a3/image3.png&apos; srcset=&apos;/static/d7b9e107ca18b8a921c19ab9fec59ce1/e7570/image3.png 170w,
+/static/d7b9e107ca18b8a921c19ab9fec59ce1/f46e7/image3.png 340w,
+/static/d7b9e107ca18b8a921c19ab9fec59ce1/d15a3/image3.png 522w&apos; sizes=&apos;(max-width: 522px) 100vw, 522px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h4&gt;프로젝트 준비&lt;/h4&gt;
+&lt;/li&gt;
+&lt;li&gt;이 저장소의 별표를 누르고 여러분의 프로필로 포크합니다. 그 후 로컬로 클론합니다.&lt;/li&gt;
+&lt;li&gt;(Optional) &lt;a href=&quot;http://github.io/&quot;&gt;github.io&lt;/a&gt; 기반의 블로그 저장소를 준비합니다.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.env.example&lt;/code&gt; 파일의 이름을 &lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt;로 변경하고 설정값들을 세팅합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NOTION-KEY : 프라이빗 API 통합 시크릿키를 입력합니다.&lt;/li&gt;
+&lt;li&gt;NOTION&lt;em&gt;DATABASE&lt;/em&gt;ID : NOTION&lt;em&gt;PAGE&lt;/em&gt;ID를 입력합니다.&lt;/li&gt;
+&lt;li&gt;BLOG_URL : 깃허브 블로그의 URL을 입력합니다. 노션 페이지 링크를 실제 블로그 링크로 변경하는데 사용됩니다.&lt;/li&gt;
+&lt;li&gt;SAVE_DIR : 콘텐츠들이 저장될 디렉토리입니다. &lt;a href=&quot;http://github.io/&quot;&gt;github.io&lt;/a&gt; 블로그의 저장소에서 포스팅될 마크다운들이 저장될 디렉토리입니다.&lt;/li&gt;
+&lt;li&gt;SAVE&lt;em&gt;SUB&lt;/em&gt;DIR (Optional) : 포스트들이 저장될 하위 디렉토리입니다. 노션 페이지의 프로퍼티들로 정의합니다. 예를 들어 date/tag/로 입력한 경우, date와 tag가 노션 페이지의 속성에 존재해야 합니다.&lt;/li&gt;
+&lt;li&gt;BLOG_REPO : 블로그 레포지토리의 경로입니다.&lt;/li&gt;
+&lt;li&gt;GIT&lt;em&gt;USER&lt;/em&gt;NAME : 깃허브 User Name 입니다.&lt;/li&gt;
+&lt;li&gt;GIT&lt;em&gt;USER&lt;/em&gt;EMAIL : 깃허브 User Email 입니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;저장소를 내려 받은 곳에서 다음의 명령어를 사용합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;nvm use&lt;/li&gt;
+&lt;li&gt;npm install&lt;/li&gt;
+&lt;li&gt;npm install -g ts-node
+여기까지 세팅 후 ts-node index.ts를 실행합니다. 메타데이터 파일이 초기화됩니다. 초기화된 메타데이터를 저장소에 커밋/푸쉬합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;사용법&lt;/h3&gt;
+&lt;h4&gt;노션 페이지 마크다운 변환&lt;/h4&gt;
+&lt;p&gt;변환은 상태값을 기준으로 작동합니다. 상태값의 정의는 다음과 같습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Writting : 작성중인 글입니다. 블로그에 반영되지 않습니다.&lt;/li&gt;
+&lt;li&gt;Ready : Ready 상태의 글은 프로그램이 실행되면 마크다운으로 변환됩니다. 변환 된 후, updated 상태로 바뀝니다.&lt;/li&gt;
+&lt;li&gt;Updated : 마크다운 변환이 완료된 글입니다.&lt;/li&gt;
+&lt;li&gt;ToBeDeleted : 삭제할 글입니다. 타겟 디렉토리 안의 해당하는 마크다운 파일을 삭제합니다.&lt;/li&gt;
+&lt;li&gt;Deleted : 삭제된 글입니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;노션에 원하는대로 글을 작성하고, 적당한 상태값을 설정한 뒤 &lt;code class=&quot;language-text&quot;&gt;ts-node index.ts&lt;/code&gt;로 프로그램을 실행하면 지정한 디렉토리에 마크다운 파일이 저장됩니다.&lt;/p&gt;
+&lt;h4&gt;호환 노션 블록&lt;/h4&gt;
+&lt;p&gt;노션의 다양한 기본 블록을 모두 지원합니다.
+또한, &lt;code class=&quot;language-text&quot;&gt;미디어 - 이미지&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;미디어 - 코드&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;미디어 - 북마크&lt;/code&gt; 블록들을 지원합니다.&lt;/p&gt;
+&lt;h4&gt;페이지 링크 기능&lt;/h4&gt;
+&lt;p&gt;같은 데이터베이스(블로그 데이터베이스)에 속한 노션 페이지라면 해당 페이지 링크를 걸면 그 페이지에 해당하는 블로그 주소로 링크로 변환되는 기능을 제공합니다.&lt;/p&gt;
+&lt;h3&gt;[Optional] 블로그 자동 배포&lt;/h3&gt;
+&lt;p&gt;로컬에서만 사용해도 노션 글을 마크다운으로 바꿔주는 기능을 갖고 있지만, &lt;a href=&quot;http://github.io/&quot;&gt;github.io&lt;/a&gt; 기반의 블로그 자동 배포도 가능합니다. 이를 위해서 깃허브 액션을 사용합니다.&lt;/p&gt;
+&lt;h4&gt;Git Token 발행&lt;/h4&gt;
+&lt;p&gt;깃허브의  &lt;code class=&quot;language-text&quot;&gt;Settings&lt;/code&gt; - &lt;code class=&quot;language-text&quot;&gt;Developer Settings&lt;/code&gt; - &lt;code class=&quot;language-text&quot;&gt;Personal Access Token&lt;/code&gt; 메뉴에서 토큰을 발행해야 합니다.&lt;/p&gt;
+&lt;h4&gt;변수 설정&lt;/h4&gt;
+&lt;p&gt;레포지토리에 Secrets와 Variables를 설정해줘야 합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/fc6c8449bc5f9741ee6642a2df626c95/d6043/image4.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 62.35294117647059%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABxUlEQVR42nVT7XKbQAz07zjxJ1/mODg4jCEmTpuJnZk8SPv+T7LVil5KMs2PHR0naaXVicVyHWO1y7BPLZbrSHGvdynyqoUpPYrKwzraFncPe/FHWEkM45YfNtLz4mGbYpcUqNpHxLlTct5t4wLD5RXt+YaqFwxXuP6K0o9oTqPGu+MZ7fCMuhtRy3kbGyHcJNhEOcqmR+UHPd/L3T4t0I43lP0biv4dxv9A7gZYL0RCZuuT5tAWAlMdsd4fsGAymQvXqWwWYId0MtjWnfhalGKnc4e8bFUViwdQGbkWUzelViVRAAmZnBUNElPrfJaraU46N8mbI+QpIauRMMilI4zB/pXFbxZhJ3PMm/hE2JyecLBeqwdn6OpOwLi86iTuorGuPWuR/xJydo281FaI5+3PEWad5LXAIcrKybcR3ypR8PzxKJwVgxg8rY1BP77A9xdZlUHkfpaokjcZ4s5h+HXD8PsN2csxSLboHn/CixQSM5hyKpGVyjd3cicqvoKKUtvAngbErsbuUAjhWghTqXK5aifskCPgXDnTXPZL1+mbMbBwZhqxZtpDUza6e1xMkoRHYZfcN64O77++7r8/ymhhWpL/AXYtNKhRVx2pAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image4&apos; title=&apos;&apos; src=&apos;/static/fc6c8449bc5f9741ee6642a2df626c95/ca1dc/image4.png&apos; srcset=&apos;/static/fc6c8449bc5f9741ee6642a2df626c95/e7570/image4.png 170w,
+/static/fc6c8449bc5f9741ee6642a2df626c95/f46e7/image4.png 340w,
+/static/fc6c8449bc5f9741ee6642a2df626c95/ca1dc/image4.png 680w,
+/static/fc6c8449bc5f9741ee6642a2df626c95/02d09/image4.png 1020w,
+/static/fc6c8449bc5f9741ee6642a2df626c95/9d567/image4.png 1360w,
+/static/fc6c8449bc5f9741ee6642a2df626c95/d6043/image4.png 2432w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+저장소의 &lt;code class=&quot;language-text&quot;&gt;Settings&lt;/code&gt; - &lt;code class=&quot;language-text&quot;&gt;Secrets and varaibles&lt;/code&gt; - &lt;code class=&quot;language-text&quot;&gt;Actions&lt;/code&gt;에서 깃허브 액션에 필요한 환경변수를 설정할 수 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Secrtes
+GITTOKEN, NOTION&lt;em&gt;DATABASE&lt;/em&gt;ID, NOTION_KEY를 생성 해줍니다. GITTOKEN은 방금 발행한 Git Token 값이며, 나머지는 환경변수에 입력한 것과 동일한 값입니다.&lt;/li&gt;
+&lt;li&gt;Varaiables
+BLOG&lt;em&gt;REPO, BLOG&lt;/em&gt;URL, GIT&lt;em&gt;USER&lt;/em&gt;EMAIL, GIT&lt;em&gt;USER&lt;/em&gt;NAME, SAVE_DIR를 생성합니다. 환경변수 입력과 동일한 값입니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;워크플로우 설정&lt;/h4&gt;
+&lt;p&gt;깃허브 기반의 블로그 배포는 사용하는 테마에 따라 방법이 완전히 다릅니다. 따라서 깃허브 액션 워크플로우를 자동 배포까지 하는 경우, 자동 배포는 별도로 구성하여 블로그 저장소에 커밋/푸쉬까지만 하면 되는 케이스별로 구분해두었습니다.&lt;/p&gt;
+&lt;p&gt;포크를 한 경우에는 기본적으로 워크플로우가 비활성화 되어있습니다. 원하는 워크플로우 고른 후 활성화 해주면 됩니다.&lt;/p&gt;
+&lt;h4&gt;블로그 저장소에 커밋/푸쉬까지만 자동화하는 워크플로우&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;workflow_2.yml.disabled&lt;/code&gt; 워크플로우를 사용하면 됩니다. 파일 이름에서 .disabled를 제거해야 합니다.
+노션에서 글을 가져와 깃허브 블로그 레포지토리에 마크다운 파일을 집어넣고 커밋/푸쉬 하는 것까지 자동화 되어있습니다.&lt;/p&gt;
+&lt;h4&gt;블로그 배포까지 자동화하는 워크플로우&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;main.yml&lt;/code&gt; 파일의 &lt;code class=&quot;language-text&quot;&gt;blog-deploy&lt;/code&gt; Job을 참조해서 워크플로우를 각자 블로그 배포 형식에 맞게 수정하면 됩니다. 해당 파일은 제가 실제로 배포에 사용하는 파일입니다.&lt;/p&gt;
+&lt;h3&gt;개발과정&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;개발과정 몰아보기&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;문의&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;파이썬에서 잠깐 테스트코드를 맛본적이 있습니다. 문법 자체는 조금 복잡했지만(익숙하지 않았지만) 설치 자체는 그다지 어렵지 않았던 것으로 기억합니다. &lt;/p&gt;
 &lt;p&gt;그래서 타입스크립트에서도 그럴 줄 알았습니다. &lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
