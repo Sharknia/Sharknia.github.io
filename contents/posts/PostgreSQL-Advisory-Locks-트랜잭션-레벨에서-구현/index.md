@@ -7,7 +7,7 @@ tags:
   - DataBase
   - Work
 description: "Sqlalchemy 2.0에서 PostgreSQL Advisory Locks을 트랜잭션 레벨에서 구현해 동시성 제어를 하자. "
-update: "2024-02-02T16:32:00.000Z"
+update: "2024-02-14T00:35:00.000Z"
 date: "2024-01-30"
 상태: "Ready"
 title: "PostgreSQL Advisory Locks 트랜잭션 레벨에서 구현"
@@ -30,13 +30,13 @@ title: "PostgreSQL Advisory Locks 트랜잭션 레벨에서 구현"
 
 아래의 두가지 함수는 모두 트랜잭션 레벨의 함수로 Advisory Lock을 획득할 수 있다는 점은 같지만, Advisory Lock을 바로 획득하지 못했을 때의 반응이 다르다. 
 
-### pg_advisory_xact_lock
+### pg\_advisory\_xact\_lock
 
 지정된 키에 대한 Advisory Lock을 획득할 때까지 호출을 블로킹(대기)한다. 만약 다른 세션이 이미 해당 키에 대한 Advisory Lock을 갖고 있다면 그 Advisory Lock이 해제될 때까지 현재 세션에서의 처리가 중단된다. 
 
 Advisory Lock을 반드시 획득해야 해서 대기해야 할 경우에 적합하다.
 
-### pg_try_advisory_xact_lock
+### pg\_try\_advisory\_xact\_lock
 
 이 함수는 즉시 Advisory Lock을 시도하고 성공하면 True, 실패하면 False를 반환한다. 이 함수는 잠금 획득을 위해 대기하지 않으며, 잠금이 이미 다른 세션에 의해 보유되고 있는 경우 즉시 실패한다.
 
@@ -44,7 +44,7 @@ Advisory Lock을 반드시 획득할 필요가 없고 대기하지 않고 다른
 
 ### 결정
 
-우리의 경우에는 쿠폰 중복 발급을 막으려고 하는 것이므로 만약 이미 잠금이 걸린 경우에는 굳이 나머지 DB 작업을 실행할 필요가 없다. 따라서 pg_try_advisory_xact_lock를 사용하는 것이 적절해보인다. 
+우리의 경우에는 쿠폰 중복 발급을 막으려고 하는 것이므로 만약 이미 잠금이 걸린 경우에는 굳이 나머지 DB 작업을 실행할 필요가 없다. 따라서 pg\_try\_advisory\_xact\_lock를 사용하는 것이 적절해보인다. 
 
 ## 구현
 
