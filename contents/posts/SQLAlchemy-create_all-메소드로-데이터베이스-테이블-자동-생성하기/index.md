@@ -7,11 +7,12 @@ tags:
   - DataBase
   - FastAPI
 description: "Sqlalchemy의 create_all()를 활용한 테이블 생성"
-update: "2024-02-14T01:53:00.000Z"
+update: "2024-02-14T02:59:00.000Z"
 date: "2024-02-12"
 상태: "Ready"
 title: "SQLAlchemy create_all() 메소드로 데이터베이스 테이블 자동 생성하기"
 ---
+![](image1.png)
 ## 서론
 
 현재 회사에서는 Alembic 같은 데이터마이그레이션 도구를 사용하고 있지 않습니다. 따라서 스키마 버전 관리등은 별도로 하고 있지 않으며, 다만 SqlAlchemy의 create\_all() 메소드를 이용해 프로덕션 환경이나 dev 환경에서의 테이블의 누락은 안생기게끔만 간단하게 관리하고 있습니다. 

@@ -3,16 +3,17 @@ IDX: "NUM-130"
 tags:
   - SqlAlchemy
 description: "Sqlalchemy에서 index 선언하기"
-update: "2024-02-13T13:19:00.000Z"
+update: "2024-02-14T02:58:00.000Z"
 date: "2024-02-13"
 상태: "Ready"
 title: "Sqlalchemy의 index"
 ---
+![](image1.png)
 ## 서론
 
 DB 설계를 하다보면 index를 정의해야 하는 경우가 많습니다.
 
-만약 Sqlalchemy의 [create\_all()](https://sharknia.github.io/Sqlalchemy의-create_all) 메소드를 사용해 테이블을 생성하고 있다면 Sqlalchemy에서 동시에 index를 정의할 수 있습니다. 
+만약 Sqlalchemy의 [create\_all()](https://sharknia.github.io/SQLAlchemy-create_all-메소드로-데이터베이스-테이블-자동-생성하기) 메소드를 사용해 테이블을 생성하고 있다면 Sqlalchemy에서 동시에 index를 정의할 수 있습니다. 
 
 ## Sqlalchemy에서의 인덱스 정의
 
