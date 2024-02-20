@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Feb 2024 12:51:19 GMT</lastBuildDate><item><title><![CDATA[식별 관계와 비식별 관계, 그리고 CASCADE 옵션의 이해]]></title><description><![CDATA[서론 새로 개발할 서비스의 DB 설계 작업이 시작되었습니다. DB…]]></description><link>https://sharknia.github.io/식별-관계와-비식별-관계-그리고-CASCADE-옵션의-이해/</link><guid isPermaLink="false">https://sharknia.github.io/식별-관계와-비식별-관계-그리고-CASCADE-옵션의-이해/</guid><pubDate>Sun, 18 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 20 Feb 2024 15:17:36 GMT</lastBuildDate><item><title><![CDATA[식별 관계와 비식별 관계, 그리고 CASCADE 옵션의 이해]]></title><description><![CDATA[서론 새로 개발할 서비스의 DB 설계 작업이 시작되었습니다. DB…]]></description><link>https://sharknia.github.io/식별-관계와-비식별-관계-그리고-CASCADE-옵션의-이해/</link><guid isPermaLink="false">https://sharknia.github.io/식별-관계와-비식별-관계-그리고-CASCADE-옵션의-이해/</guid><pubDate>Sun, 18 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/bc310b8110b7cbc64aace68596c6da79/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJUlEQVR42n2P62vTYBSH85eJf4Ef/ey8CyrIpBOFsQmOqgwcCILVDzKmbnWTzrHWzW00SLPVtUvn0rVNr0ma3nJ/m+RNmryv6TL96OHhcDj8Hg6H8DAO8PF5IYTwf8s/I7SIEcYh/l+zWBPexVOfN8kvW5nVberrj/3YSjKZzo5NhP7lAwgH4wB3DII+0qGXKZSibxbXvpNNXqzUWsub5AaZe/tpQwN24LsIued5TECMA4K1ibCg2NlSG1jwZ55piv1kgT/sOsVmm+U6Yk+udoHujsPhvWAgrND0se6gMq9kS4ICrJbYW03tXbwxE/lIpU8afE8qN9tNyRJ1D/jjfAhh+djyMHCRbHrFlnRQ5AcaMCx75dv2pWuTU6/j5HFN1ozTOs+psK15KkQ2woFl+5gwR3joBq/6fcP9Xe9RDNcUpRzDLq6lLly+feVpLJDpcn3v4FgErqB5kuWbHrZGYwjDQQZEqul1VZtmOxTT6sja++X13X06laF3DhkyzyR2KLrU4DXIKe5g6AEHhxC6jTTLk4HblkC+0k6k8ye1lgmdo9Mq3xmUG0KhVFOM4a9io9ob1vtmH4wM6J+BCM0cqaYjGVCUQIHl41vU1cjcxOTs/en5O09e3JuefzC7EHkeW9qkcmy3LCgScHTL120v6IQyhDKAkmH3NYvrKoUKt7S+e+tRdOLhs+tT0ZuPX96dWXj1IUEesTQrcF1VNqBqusE91XT+AKS9QWOnbG7oAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/bc310b8110b7cbc64aace68596c6da79/ca1dc/image1.png&apos; srcset=&apos;/static/bc310b8110b7cbc64aace68596c6da79/e7570/image1.png 170w,
@@ -5264,7 +5264,27 @@ NoSQL 데이터베이스는 스키마가 유연하므로 같은 강도의 무결
 &lt;ul&gt;
 &lt;li&gt;JSON, XML등 다양한 미디어 타입을 사용하여 데이터를 표현한다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Accept&lt;/code&gt; 헤더를 통해 클라이언트가 원하는 미디어 타입을 서버에게 알릴 수 있다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[AWS API Gateway]]></title><description><![CDATA[AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.…]]></description><link>https://sharknia.github.io/AWS-API-Gateway/</link><guid isPermaLink="false">https://sharknia.github.io/AWS-API-Gateway/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[ColdStart]]></title><description><![CDATA[먼저 ColdStart를 이해하기 위해서는 Serverless의 동작방식을 이해할 필요가 있다. 간단히 알아보자.
+Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리하는 함수(Function…]]></description><link>https://sharknia.github.io/ColdStart/</link><guid isPermaLink="false">https://sharknia.github.io/ColdStart/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;먼저&lt;/h2&gt;
+&lt;p&gt;ColdStart를 이해하기 위해서는 Serverless의 동작방식을 이해할 필요가 있다. 간단히 알아보자.
+Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리하는 함수(Function)가 실행된다. 이 함수는 이벤트에 응답하여 실행되는데, 이 함수는 항상 실행 상태를 유지하고 있지 않다. 대신에 요청이 들어오면 새롭게 시작되거나 재사용된다.&lt;/p&gt;
+&lt;p&gt;이제 콜드 스타트의 개념에 대해서 알아볼 수 있다.&lt;/p&gt;
+&lt;h2&gt;콜드 스타트와 웜 스타트&lt;/h2&gt;
+&lt;h3&gt;콜드 스타트&lt;/h3&gt;
+&lt;p&gt;함수가 처음 호출될 때, 아직 사용 가능한 인스턴스가 없거나 지나치게 오래된 인스턴스에 대한 요청이 들어왔을 때 함수 인스턴스가 새롭게 생성된다. 이런 상태에서 함수가 실행될 때를 &apos;콜드 스타트&apos; 라고 한다.
+콜드 스타트는 초기화에 필요한 시간과 리소스를 요구하기 때문에 함수의 실행 시작까지의 대기 시간이 길어질 수 있다. 이로 인한 지연은 사용자 경험에 영향을 줄 수 있다.&lt;/p&gt;
+&lt;h3&gt;웜 스타트&lt;/h3&gt;
+&lt;p&gt;이미 실행된 함수 인스턴스가 재사용될 때 발생한다. 초기화 시간이 필요 없기 때문에 대기 시간이 짧다.&lt;/p&gt;
+&lt;h2&gt;지연 최소화를 위한 전략&lt;/h2&gt;
+&lt;h3&gt;최적의 함수 크기 할당&lt;/h3&gt;
+&lt;p&gt;메모리와 CPU를 적절히 할당하여 함수의 시작 시간을 줄일 수 있다.&lt;/p&gt;
+&lt;h3&gt;초기화 코드 최적화&lt;/h3&gt;
+&lt;p&gt;함수 내에서 필요한 라이브러리나 자원을 로드하는 초기화 코드를 최적화 하여 실행 시간을 줄인다.&lt;/p&gt;
+&lt;h3&gt;외부 연결 최소화&lt;/h3&gt;
+&lt;p&gt;외부 시스템이나 데이터베이스에 대한 연결을 미리 확립하거나 재사용하는 방식을 고려한다.&lt;/p&gt;
+&lt;h3&gt;함수 미리 실행&lt;/h3&gt;
+&lt;p&gt;일정 주리고 함수를 호출하여 웜 상태를 유지한다.&lt;/p&gt;
+&lt;p&gt;서버리스 제공 업체에 따라 콜드 스타트의 영향도와 대응 전략이 다를 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AWS API Gateway]]></title><description><![CDATA[AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.…]]></description><link>https://sharknia.github.io/AWS-API-Gateway/</link><guid isPermaLink="false">https://sharknia.github.io/AWS-API-Gateway/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.&lt;/p&gt;
 &lt;h2&gt;1. 주요 기능&lt;/h2&gt;
 &lt;h3&gt;API 생성 및 배포&lt;/h3&gt;
 &lt;p&gt;빠르게 API를 생성하고 배포할 수 있다.&lt;/p&gt;
@@ -5298,27 +5318,7 @@ NoSQL 데이터베이스는 스키마가 유연하므로 같은 강도의 무결
 &lt;h3&gt;모바일 및 웹 애플리케이션&lt;/h3&gt;
 &lt;p&gt;다양한 클라이언트에서 사용될 RESTful API를 제공한다.&lt;/p&gt;
 &lt;h3&gt;웹사이트의 서드파티 애플리케이션 통합&lt;/h3&gt;
-&lt;p&gt;다른 웹 서비스나 데이터 소스와의 통합을 위한 API를 제공한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ColdStart]]></title><description><![CDATA[먼저 ColdStart를 이해하기 위해서는 Serverless의 동작방식을 이해할 필요가 있다. 간단히 알아보자.
-Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리하는 함수(Function…]]></description><link>https://sharknia.github.io/ColdStart/</link><guid isPermaLink="false">https://sharknia.github.io/ColdStart/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;먼저&lt;/h2&gt;
-&lt;p&gt;ColdStart를 이해하기 위해서는 Serverless의 동작방식을 이해할 필요가 있다. 간단히 알아보자.
-Serverless 컴퓨팅에서 사용자의 요청이 오면 해당 요청을 처리하는 함수(Function)가 실행된다. 이 함수는 이벤트에 응답하여 실행되는데, 이 함수는 항상 실행 상태를 유지하고 있지 않다. 대신에 요청이 들어오면 새롭게 시작되거나 재사용된다.&lt;/p&gt;
-&lt;p&gt;이제 콜드 스타트의 개념에 대해서 알아볼 수 있다.&lt;/p&gt;
-&lt;h2&gt;콜드 스타트와 웜 스타트&lt;/h2&gt;
-&lt;h3&gt;콜드 스타트&lt;/h3&gt;
-&lt;p&gt;함수가 처음 호출될 때, 아직 사용 가능한 인스턴스가 없거나 지나치게 오래된 인스턴스에 대한 요청이 들어왔을 때 함수 인스턴스가 새롭게 생성된다. 이런 상태에서 함수가 실행될 때를 &apos;콜드 스타트&apos; 라고 한다.
-콜드 스타트는 초기화에 필요한 시간과 리소스를 요구하기 때문에 함수의 실행 시작까지의 대기 시간이 길어질 수 있다. 이로 인한 지연은 사용자 경험에 영향을 줄 수 있다.&lt;/p&gt;
-&lt;h3&gt;웜 스타트&lt;/h3&gt;
-&lt;p&gt;이미 실행된 함수 인스턴스가 재사용될 때 발생한다. 초기화 시간이 필요 없기 때문에 대기 시간이 짧다.&lt;/p&gt;
-&lt;h2&gt;지연 최소화를 위한 전략&lt;/h2&gt;
-&lt;h3&gt;최적의 함수 크기 할당&lt;/h3&gt;
-&lt;p&gt;메모리와 CPU를 적절히 할당하여 함수의 시작 시간을 줄일 수 있다.&lt;/p&gt;
-&lt;h3&gt;초기화 코드 최적화&lt;/h3&gt;
-&lt;p&gt;함수 내에서 필요한 라이브러리나 자원을 로드하는 초기화 코드를 최적화 하여 실행 시간을 줄인다.&lt;/p&gt;
-&lt;h3&gt;외부 연결 최소화&lt;/h3&gt;
-&lt;p&gt;외부 시스템이나 데이터베이스에 대한 연결을 미리 확립하거나 재사용하는 방식을 고려한다.&lt;/p&gt;
-&lt;h3&gt;함수 미리 실행&lt;/h3&gt;
-&lt;p&gt;일정 주리고 함수를 호출하여 웜 상태를 유지한다.&lt;/p&gt;
-&lt;p&gt;서버리스 제공 업체에 따라 콜드 스타트의 영향도와 대응 전략이 다를 수 있다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Serverless]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Serverless/</link><guid isPermaLink="false">https://sharknia.github.io/Serverless/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;서버가 &quot;없는&quot; 것이 아니다.
+&lt;p&gt;다른 웹 서비스나 데이터 소스와의 통합을 위한 API를 제공한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Serverless]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Serverless/</link><guid isPermaLink="false">https://sharknia.github.io/Serverless/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;서버가 &quot;없는&quot; 것이 아니다.
 서버리스는 개발자 또는 운영 팀이 서버의 운영, 관리, 확장 등에 대한 걱정 없이 어플리케이션 코드에만 집중할 수 있게 해주는 컴퓨팅 모델을 의미한다.&lt;/p&gt;
 &lt;h2&gt;특징&lt;/h2&gt;
 &lt;h3&gt;자동확장&lt;/h3&gt;
