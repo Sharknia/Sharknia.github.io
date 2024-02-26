@@ -5,7 +5,7 @@ tags:
   - Homebrew
   - Pyenv
 description: "pyenv를 통한 python 개발환경 설정"
-update: "2024-02-26T05:51:00.000Z"
+update: "2024-02-26T06:33:00.000Z"
 date: "2024-02-26"
 상태: "Ready"
 title: "Apple Silicon과 pyenv"
