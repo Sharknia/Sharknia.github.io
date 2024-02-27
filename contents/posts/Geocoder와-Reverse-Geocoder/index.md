@@ -4,7 +4,7 @@ tags:
   - ETC
   - Python
 description: "Geocoder에 대한 조사"
-update: "2024-02-27T05:52:00.000Z"
+update: "2024-02-27T07:52:00.000Z"
 date: "2024-02-27"
 상태: "Ready"
 title: "Geocoder와 Reverse Geocoder"
@@ -113,6 +113,10 @@ reerse method에 language를 함께 넣어주면 한글 주소를 얻을 수 있
 
 - 10만회 이하 : 1000회당 5달러
 
+- 10만회 ~ 50만회 : 1000회당 4달러
+
+- 50만회 이상 : 협의
+
 - 
 
 - [월간 200달러의 무료 크레딧을 제공합니다.](https://mapsplatform.google.com/pricing/?hl=ko) 
@@ -120,10 +124,6 @@ reerse method에 language를 함께 넣어주면 한글 주소를 얻을 수 있
 [https://mapsplatform.google.com/pricing/?hl=ko](https://mapsplatform.google.com/pricing/?hl=ko)
 
 [https://developers.google.com/maps/documentation/geocoding/usage-and-billing?hl=ko](https://developers.google.com/maps/documentation/geocoding/usage-and-billing?hl=ko)
-
-10만회 ~ 50만회 : 1000회당 4달러
-
-50만회 이상 : 협의
 
 
 
