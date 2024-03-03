@@ -5,7 +5,7 @@ tags:
   - Homebrew
   - Pyenv
 description: "pyenv를 통한 python 개발환경 설정"
-update: "2024-02-27T05:34:00.000Z"
+update: "2024-03-03T09:34:00.000Z"
 date: "2024-02-26"
 상태: "Ready"
 title: "Apple Silicon과 pyenv"
@@ -32,7 +32,7 @@ pyenv install --list | grep 3.9
 이 명령어를 사용하면 현재 설치 가능한 파이썬 3.9버전의 리스트를 확인할 수 있습니다. 현재 3.9의 최신 버전은 3.9.18로 보입니다. 해당 버전을 설치해줍니다. 
 
 ```bash
-pyenv install python 3.9.18
+pyenv install 3.9.18
 ```
 
 간단하게 파이썬이 설치.. 되지 않았습니다! 오류가 납니다. 
@@ -105,7 +105,7 @@ No analytics data has been sent yet (nor will any be during this install run).
 
 ```
 
-Next steps를 보니, 다음의 명령어를 실행하라고 합니다. 두 줄의 명령어를 실행하고 `which brew` 를 다시 실행해보면
+Next steps를 보니, 다음의 명령어를 실행하라고 합니다. 위는 제 예시로, 터미널의 명령어를 복사하면 됩니다. 줄의 명령어를 실행하고 `which brew` 를 다시 실행해보면
 
 ```bash
 /opt/homebrew/bin/brew
