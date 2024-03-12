@@ -5,11 +5,12 @@ tags:
   - Postgresql
   - Edge-Function
 description: "Edge Function 개발을 위한 Supabase Local Dev 환경 만들기"
-update: "2024-03-12T02:00:00.000Z"
-date: "2024-03-12"
+update: "2024-03-12T02:50:00.000Z"
+date: "2024-03-11"
 상태: "Ready"
 title: "Supabase Local Dev 환경 꾸미기"
 ---
+![](image1.png)
 ## Supabase CLI 설치
 
 우선 supabase CLI를 설치해야 합니다. 
