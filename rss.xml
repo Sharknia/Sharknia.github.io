@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Mar 2024 02:23:01 GMT</lastBuildDate><item><title><![CDATA[Supabase Local Dev 환경 꾸미기]]></title><description><![CDATA[Supabase CLI 설치 우선 supabase CLI를 설치해야 합니다.  제대로 설치가 되면 다음의 명령어를 통해 설치가 된 것을 확인합니다.  login…]]></description><link>https://sharknia.github.io/Supabase-Local-Dev-환경-꾸미기/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-Local-Dev-환경-꾸미기/</guid><pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Supabase CLI 설치&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 12 Mar 2024 03:22:54 GMT</lastBuildDate><item><title><![CDATA[Supabase와 Row-Level Security (RLS) ]]></title><description><![CDATA[Row-Level Security (RLS) 란? Row-Level Security (RLS)는 데이터베이스 시스템에서 제공하는 보안 기능 중 하나로, 데이터베이스의 각 행(row)에 대한 접근을 제어하는 세밀한 방법을 제공합니다. RLS…]]></description><link>https://sharknia.github.io/Supabase와-Row-Level-Security-RLS/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase와-Row-Level-Security-RLS/</guid><pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/723a1b2259ca35d62aed131c5ab01ec9/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9AA1BcQ5Aag4+ZQ48YBA8Xww3VRA7XCJYiS1qqC1rrC1srCtnoyFUgw44Vww0UQ44Vg44Vg46XA8+YRBAaQAkWYYiVn8iVHsjVHkfUHMpXohAgLwzdLEnYpMgWIQjWoUmYJEzc7A7ercmWH4eS2kgTm8hT3EkU3YmVnsAPnOgOW6YOGuTNGaOOm+aTIzGOHGeK15+LV58N2V8NGN7L2B8KFt7NW6cSIjANmeNMmCDNmWJOWmNPm+WAF+VxleLuFCDrkx+qluXzkaArEFzkkZ2j0VzhTZnfThofkdziER1jT1uikR9q1aRxUd2mkx9o1OFrF2RvACDvPJ0rN5nnMlons5modJTh6lXiKNYhJZKd4g1Z343Z35PeopVgJFRf5dLfJxjncxilb9hk7ltos+At+kAtev/mc/8grjngbnocqjQZ5ixY5KlZI6cNmiBJlt6Jlp4QHCFZ5CcX4yfXYykbqTJe7Hdea3XjsT0ruL/ANv//7nt/5fM95LI8Xuv0HOhtHWeq3ScpCNVcgI1XQE1XDVlfnefp3ScqG6aq3eqyIvC6Y/E7q7j/9X9/wDz///S/f+q4Pye0/eMvtiBrbiErLKKsLIsVW0JMFAKMVFCanyMs7SBqrB+qrSLvtWZz/Cj2PnJ+P/t//8AzfT/uez+pdryndDlksPQhbG5gay0g6yzJ0lfDCpDDChCPmBzha2zf6mvgq2zk8POmsvdoNTrsej8yPP/AFSZzlaTv1ySsWCSqF6Nn12Kl1qFkVV+ikpueUNmb0FlcElwfFR8iVmCi1qFjl6KllyMnlaLpVGMs06SwwAUWJMXWIwbWoceWoQiW4AmXXspXXgrXXYtX3YuYHYuYHYtX3UqXHQnW3UkWncgV3gcVXoaVHwWVH8TVIYQ9UGsZqHSMgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/723a1b2259ca35d62aed131c5ab01ec9/ca1dc/image1.png&apos; srcset=&apos;/static/723a1b2259ca35d62aed131c5ab01ec9/e7570/image1.png 170w,
+/static/723a1b2259ca35d62aed131c5ab01ec9/f46e7/image1.png 340w,
+/static/723a1b2259ca35d62aed131c5ab01ec9/ca1dc/image1.png 680w,
+/static/723a1b2259ca35d62aed131c5ab01ec9/02d09/image1.png 1020w,
+/static/723a1b2259ca35d62aed131c5ab01ec9/9d567/image1.png 1360w,
+/static/723a1b2259ca35d62aed131c5ab01ec9/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Row-Level Security (RLS) 란?&lt;/h2&gt;
+&lt;p&gt;Row-Level Security (RLS)는 데이터베이스 시스템에서 제공하는 보안 기능 중 하나로, 데이터베이스의 각 행(row)에 대한 접근을 제어하는 세밀한 방법을 제공합니다. RLS를 사용하면 데이터베이스 사용자나 응용 프로그램이 특정 조건을 만족하는 행에만 접근하거나 그러한 행을 변경할 수 있도록 정책을 설정할 수 있습니다. 이는 사용자별 데이터 접근 제한, 다중 사용자 환경에서의 데이터 격리, 그리고 민감한 정보의 보호와 같은 목적을 위해 중요합니다.&lt;/p&gt;
+&lt;h3&gt;특징&lt;/h3&gt;
+&lt;h4&gt;세밀한 접근 제어&lt;/h4&gt;
+&lt;p&gt;RLS는 사용자 또는 사용자 그룹별로 데이터베이스 행에 대한 접근 권한을 설정할 수 있게 해줍니다. 이를 통해 특정 데이터에 대한 접근을 정밀하게 제한할 수 있습니다.&lt;/p&gt;
+&lt;h4&gt;정책 기반 보안&lt;/h4&gt;
+&lt;p&gt;RLS는 데이터베이스 레벨에서 정책(policy)을 정의하여 작동합니다. 이 정책들은 데이터에 대한 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;INSERT&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;UPDATE&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;DELETE&lt;/code&gt;와 같은 작업 수행 시 적용되어, 해당 작업이 정책에 정의된 규칙을 충족시킬 때만 수행될 수 있습니다.&lt;/p&gt;
+&lt;h4&gt;투명성&lt;/h4&gt;
+&lt;p&gt;RLS는 데이터베이스 시스템 내에서 자동으로 적용되므로, 응용 프로그램 코드를 변경하지 않고도 데이터 접근 제어를 강화할 수 있습니다. 사용자는 자신이 접근 권한을 가진 데이터만 볼 수 있으며, RLS 정책에 의해 접근이 제한된 데이터는 &lt;em&gt;존재하지 않는 것처럼&lt;/em&gt; 처리됩니다.&lt;/p&gt;
+&lt;h2&gt;예제 파헤쳐보기&lt;/h2&gt;
+&lt;p&gt;먼저 RLS를 하나 설정해보고, 이 구문이 뭘 의미하는지 한 번 살펴보겠습니다. &lt;/p&gt;
+&lt;p&gt;우선, 특정 테이블에 대해 RLS를 활성화 해줍니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; my_table &lt;span class=&quot;token keyword&quot;&gt;ENABLE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;ROW&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;LEVEL&lt;/span&gt; SECURITY&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;특정 조건에 따라 데이터 접근을 제어하는 정책을 추가합니다. 예를 들어, 사용자가 자신의 데이터에만 접근할 수 있도록 하는 정책을 추가할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; POLICY my_policy &lt;span class=&quot;token keyword&quot;&gt;ON&lt;/span&gt; my_table &lt;span class=&quot;token keyword&quot;&gt;FOR&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;USING&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; current_user_id&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이러한 방식으로 RLS를 구성함으로써, 데이터베이스 관리자는 데이터의 보안과 무결성을 유지하면서도 필요한 사용자에게 필요한 데이터에 대한 접근을 허용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이는 모든 쿼리에 WHERE 절을 추가하는 것으로 생각하면 좀 더 쉽습니다. 예를 들어 위 정책의 경우, &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; my_table
+&lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; current_user_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;-- Policy is implicitly added.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 정책이 where 절에 암묵적으로 추가된다고 생각하면 이해하기 쉽습니다. &lt;/p&gt;
+&lt;h3&gt;Supabase에서의 RLS&lt;/h3&gt;
+&lt;p&gt;좀 더 복잡하고, Supabase에 특화된 예제를 보면 다음과 같습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;create policy &lt;span class=&quot;token string&quot;&gt;&quot;Allow authenticated uploads&quot;&lt;/span&gt;
+on storage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;objects
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; insert
+to authenticated
+&lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; check &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;storage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;foldername&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;uid&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;text
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 설정한 정책은 &quot;Allow authenticated uploads&quot;라는 이름으로, &lt;code class=&quot;language-text&quot;&gt;storage.objects&lt;/code&gt; 테이블에 대한 &lt;code class=&quot;language-text&quot;&gt;insert&lt;/code&gt; 작업에 적용됩니다. 이 정책은 다음과 같은 조건을 충족시키는 경우에만 삽입 작업을 허용합니다:&lt;/p&gt;
+&lt;p&gt;객체의 이름에서 파생된 폴더 이름 (&lt;code class=&quot;language-text&quot;&gt;storage.foldername(name)&lt;/code&gt; 함수를 통해 추출)의 첫 번째 요소가 현재 인증된 사용자의 ID (&lt;code class=&quot;language-text&quot;&gt;auth.uid()&lt;/code&gt;)와 일치해야 합니다. 이는 사용자가 자신의 고유 폴더에만 파일을 업로드할 수 있도록 제한하는 조건입니다.&lt;/p&gt;
+&lt;p&gt;요약하자면, 이 RLS 정책은 인증된 사용자가 &apos;profile_images&apos; 버킷 내에 자신의 사용자 ID에 해당하는 폴더에만 파일을 업로드할 수 있게 합니다.&lt;/p&gt;
+&lt;h2&gt;Using과 Check&lt;/h2&gt;
+&lt;p&gt;위의 두 예제를 살펴보면 각각 Using과 Check를 사용한 것을 볼 수 있습니다. &lt;/p&gt;
+&lt;p&gt;PostgreSQL의 행 수준 보안(Row-Level Security, RLS) 정책을 사용할 때, &lt;code class=&quot;language-text&quot;&gt;WITH CHECK&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;USING&lt;/code&gt; 절은 서로 다른 목적으로 사용됩니다. 이들의 주요 차이점은 정책이 적용되는 시점과 데이터 조작 작업(DML) 유형에 따라 달라집니다.&lt;/p&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;WITH CHECK&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;WITH CHECK&lt;/code&gt; 절은 &lt;code class=&quot;language-text&quot;&gt;INSERT&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;UPDATE&lt;/code&gt; 작업에 대해 사용됩니다.&lt;/li&gt;
+&lt;li&gt;이 절은 새로운 데이터가 삽입되거나 기존 데이터가 업데이트될 때 적용되어야 하는 조건을 정의합니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;WITH CHECK&lt;/code&gt;은 해당 작업이 실행된 후 최종적으로 데이터가 정책에 정의된 조건을 만족하는지 검증합니다. 만약 조건을 만족하지 않는다면, 작업은 거부됩니다.&lt;/li&gt;
+&lt;li&gt;예를 들어, 사용자가 자신의 폴더에만 파일을 삽입하거나 업데이트할 수 있도록 제한하는 정책을 설정할 때 사용됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;USING&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;USING&lt;/code&gt; 절은 &lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;DELETE&lt;/code&gt; 작업에 대해 사용됩니다.&lt;/li&gt;
+&lt;li&gt;이 절은 해당 작업을 수행할 때 접근이 허용되는 행을 결정하는 조건을 정의합니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;SELECT&lt;/code&gt; 작업에 대해, &lt;code class=&quot;language-text&quot;&gt;USING&lt;/code&gt; 조건을 만족하는 행만 조회될 수 있습니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;DELETE&lt;/code&gt; 작업에 대해, &lt;code class=&quot;language-text&quot;&gt;USING&lt;/code&gt; 조건을 만족하는 행만 삭제될 수 있습니다.&lt;/li&gt;
+&lt;li&gt;예를 들어, 사용자가 자신의 폴더에 있는 파일만 조회하거나 삭제할 수 있도록 제한하는 정책을 설정할 때 사용됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;예시&lt;/h3&gt;
+&lt;p&gt;결론적으로, &lt;code class=&quot;language-text&quot;&gt;WITH CHECK&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;USING&lt;/code&gt;의 차이는 적용되는 데이터 조작 작업의 유형과 해당 조건이 검증되는 시점에 있습니다.&lt;/p&gt;
+&lt;h2&gt;Roles&lt;/h2&gt;
+&lt;h3&gt;to authenticated&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;to authenticated&lt;/code&gt; 구문은 해당 정책이 인증된 사용자, 즉 로그인한 사용자에게만 적용됨을 의미합니다. Supabase 및 PostgreSQL의 Row-Level Security (RLS) 정책에서는, 특정 데이터베이스 작업(예: 삽입, 조회, 수정, 삭제)에 대한 접근 권한을 세밀하게 제어할 수 있습니다. 여기서 &lt;code class=&quot;language-text&quot;&gt;to authenticated&lt;/code&gt;는 인증 과정을 성공적으로 마친 사용자, 즉 시스템이 식별하고 인증한 사용자에게만 해당 작업을 허용한다는 것을 명시합니다.&lt;/p&gt;
+&lt;h3&gt;to anon&lt;/h3&gt;
+&lt;p&gt;이와 반대되는 개념으로는 &lt;code class=&quot;language-text&quot;&gt;to anon&lt;/code&gt;이 있습니다. Supabase Auth는 모든 요청을 &lt;code class=&quot;language-text&quot;&gt;authenticated&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;anon&lt;/code&gt; 에 매핑합니다. &lt;code class=&quot;language-text&quot;&gt;authenticated&lt;/code&gt; 이 로그인한 유저라면, anon은 로그인 하지 않은 유저를 의미합니다. &lt;/p&gt;
+&lt;h3&gt;예제&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; policy &lt;span class=&quot;token string&quot;&gt;&quot;Profiles are viewable by everyone&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; profiles &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;to&lt;/span&gt; authenticated&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; anon
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- OR&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; policy &lt;span class=&quot;token string&quot;&gt;&quot;Public profiles are viewable only by authenticated users&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; profiles &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;to&lt;/span&gt; authenticated
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;“Profiles are viewable by everyone” 정책은 인증된 유저와 인증되지 않은 유저 모두에게 읽기를 허용하며, &quot;Public profiles are viewable only by authenticated users&quot; 정책은 오직 인증된 유저에게만 읽기를 허용합니다. &lt;/p&gt;
+&lt;h3&gt;service_role&lt;/h3&gt;
+&lt;p&gt;Supabase는 &lt;code class=&quot;language-text&quot;&gt;service_role&lt;/code&gt; 같은 특별한 &quot;서비스&quot; 키를 제공하는데, 이는 RLS를 우회할 수 있어 관리 작업에 유용하나, 클라이언트 사이드나 고객에게 노출되어서는 안 됩니다. 이는 반드시 백엔드 단에서만 사용해야 합니다. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Supbase는 클라이언트 라이브러리가 Service Key로 초기화된 경우에도 서명한 사용자의 RLS 정책을 준수합니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;auth 모듈&lt;/h2&gt;
+&lt;h3&gt;auth.uid()&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;auth.uid()&lt;/code&gt;는 현재 인증된 사용자의 고유 식별자(ID)를 반환하는 함수입니다. Supabase는 내부적으로 사용자 인증 시스템을 갖추고 있으며, 사용자가 로그인할 때 각 사용자에게 고유한 ID를 할당합니다. 이 ID는 사용자의 세션 및 인증 정보와 연결되어 있으며, &lt;code class=&quot;language-text&quot;&gt;auth.uid()&lt;/code&gt;를 통해 현재 세션의 사용자 ID를 쉽게 조회할 수 있습니다. 이를 통해 데이터베이스 내에서 사용자별 데이터 접근을 제어하거나 사용자 식별 정보를 기반으로 한 작업을 수행할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;예를 들어, 사용자가 파일을 업로드할 때, &lt;code class=&quot;language-text&quot;&gt;auth.uid()&lt;/code&gt;를 사용하여 해당 파일이 특정 사용자에게 속함을 식별하거나, 사용자별로 데이터를 격리하여 보안을 강화하는 데 활용할 수 있습니다. 사용자가 로그인 상태가 아니라면, &lt;code class=&quot;language-text&quot;&gt;auth.uid()&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;null&lt;/code&gt;이나 유효하지 않은 값을 반환할 수 있으므로, &lt;code class=&quot;language-text&quot;&gt;to authenticated&lt;/code&gt; 구문과 함께 사용하여 인증된 사용자에게만 특정 작업을 허용하는 방식으로 보안을 관리합니다.&lt;/p&gt;
+&lt;h3&gt;auth.jwt()&lt;/h3&gt;
+&lt;p&gt;현재 요청을 하는 사용자의 JWT(Json Web Token)를 반환합니다. JWT 내에는 사용자의 &lt;code class=&quot;language-text&quot;&gt;app_metadata&lt;/code&gt; 및 &lt;code class=&quot;language-text&quot;&gt;user_metadata&lt;/code&gt; 컬럼에 저장된 정보가 포함될 수 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;user_metadata&lt;/code&gt;: 사용자가 &lt;code class=&quot;language-text&quot;&gt;supabase.auth.update()&lt;/code&gt; 함수를 통해 업데이트할 수 있는 메타데이터입니다. 사용자 관련 정보(예: 선호 설정)를 저장하는 데 적합하지만, 인증 데이터를 저장하기에는 적합하지 않습니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;app_metadata&lt;/code&gt;: 사용자가 업데이트할 수 없기 때문에 인증 데이터를 저장하는 데 적합한 메타데이터입니다. 예를 들어, 사용자가 특정 팀에 속해 있는지 여부를 판단하는 데 사용할 수 있는 팀 데이터를 여기에 저장할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;create&lt;/span&gt; policy &lt;span class=&quot;token string&quot;&gt;&quot;User is in team&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt; my_table
+&lt;span class=&quot;token keyword&quot;&gt;to&lt;/span&gt; authenticated
+&lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; team_id &lt;span class=&quot;token operator&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;jwt&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;app_metadata&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;teams&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;예를 들어, 사용자가 어떤 팀에 속해 있는지 확인하는 데 &lt;code class=&quot;language-text&quot;&gt;app_metadata&lt;/code&gt; 내에 저장된 팀 데이터(팀 ID 배열 등)를 사용할 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;결론&lt;/h2&gt;
+&lt;p&gt;Supabase에서는 항상 RLS를 사용할 것을 권장하고 있습니다. 만약 모두의 접근이 필요한 경우에도, RLS를 활성화하고 인증된 유저와 인증되지 않은 유저에게 권한을 부여하는 방식을 사용할 것을 권장합니다. &lt;/p&gt;
+&lt;h2&gt;참고&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://supabase.com/docs/guides/database/postgres/row-level-security&quot;&gt;https://supabase.com/docs/guides/database/postgres/row-level-security&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Supabase Local Dev 환경 꾸미기]]></title><description><![CDATA[Supabase CLI 설치 우선 supabase CLI를 설치해야 합니다.  제대로 설치가 되면 다음의 명령어를 통해 설치가 된 것을 확인합니다.  login…]]></description><link>https://sharknia.github.io/Supabase-Local-Dev-환경-꾸미기/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-Local-Dev-환경-꾸미기/</guid><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/e3c0c47432605f545dff1780b1f37d46/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9ABAfICJJVRVGXBhEVzg4RxsyPRYoLBMaGgkZIBEpMhUxPBAtNBEzQRdSbxdggyplfCRmiAg9aQwnOQwTEgAZKCk6ZWsnY28nXW5FOT8tSlcuREQiND0oVGUjTVkbSFgufqEVSmIgW3IhXHI1anQpXG4NPF0NMEQQHR4AJSYkbX95V3VrX3pzYFtWhXBrcWFaTU5bX5+4RpGrQ4WYT6CuMm58OFNOHS4jNlFKP15WMUtQKEZMOEQ9ACQkH4F7ZXl7YpJ8W7qEZfHIo92ZjpWFpF2qyjSStUSMqkhrZF9/cFJrVENhS12Jhm+cmGN+cGd3bFRLOAAbFhBCMR9aRS1/Si+xQiHzq4TPn7Ffd52G5flez+grrdsve5hZZ1F+fllcZk1jhnxTeXBJUz5kVjhIQjIAHxsTUT4pRCoTYiAPkC4I6LCQmlpXHzRGabvTXb7aP6jQVo2ke1NHLz8zLT81XGpnOEtJHT0+MUxPEyQkACAeFVQ/JDEoDUw4C8S4geGtkEIHABgeJkhhc198jVN0gjNCPVMvHTIrHSNFPittfB5ndS1TXD1mchAlKQAWHRIuPBg/TyWdp4Tjqo2oSCgjFQwNGyEhKjVuPi82LSEFEQ8TMTAYOzsNJCkgaXcsoLVOhY1QU04LHR8AExYLMzoddn9qkYh2bks3UlZKQkk6Li0bOjknSEMrJiccAwgFM11gN36OFE5nMX2dMoeoIWeCFT1KDhQSABYoKDpTT1FyckVoa2mLl5V8e35IMk41KzFBPzM6MyQnHgoOChszMx5Xaw5FaBNQdyRymhZbgg01Sw0UEwAIJ0ELJzUSLjQcTFs+a4aAeI13RE8lOkoZSFgNJzEMGh4LFRgKERIIGCAFFyYGMVQVVHgMMUgIGycLFxrLIcbrH8e15QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/e3c0c47432605f545dff1780b1f37d46/ca1dc/image1.png&apos; srcset=&apos;/static/e3c0c47432605f545dff1780b1f37d46/e7570/image1.png 170w,
+/static/e3c0c47432605f545dff1780b1f37d46/f46e7/image1.png 340w,
+/static/e3c0c47432605f545dff1780b1f37d46/ca1dc/image1.png 680w,
+/static/e3c0c47432605f545dff1780b1f37d46/02d09/image1.png 1020w,
+/static/e3c0c47432605f545dff1780b1f37d46/9d567/image1.png 1360w,
+/static/e3c0c47432605f545dff1780b1f37d46/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Supabase CLI 설치&lt;/h2&gt;
 &lt;p&gt;우선 supabase CLI를 설치해야 합니다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; supabase/tap/supabase&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;제대로 설치가 되면 다음의 명령어를 통해 설치가 된 것을 확인합니다. &lt;/p&gt;
