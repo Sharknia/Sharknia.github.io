@@ -3,11 +3,12 @@ IDX: "NUM-158"
 tags:
   - Supabase
 description: "테스트를 위한 supabase local 개발 환경 db 세팅"
-update: "2024-03-13T09:11:00.000Z"
+update: "2024-03-14T01:06:00.000Z"
 date: "2024-03-13"
 상태: "Ready"
 title: "Supabase Local 개발 환경 꾸미기 - DB 세팅"
 ---
+![](image1.png)
 ## 개요
 
 [지난 시간](https://sharknia.github.io/Supabase-Local-Dev-환경-꾸미기)에 Egde Function을 만들어서 배포하는 것까지 진행해봤습니다. 하지만 저기서 끝낸다면 로컬에 DB가 없으므로 DB에 접근을 필요로 하는 Edge Function은 로컬에서의 정상적인 테스트가 불가능합니다. 
@@ -31,6 +32,8 @@ supabase db pull --linked
 이렇게 하면 supbase/migrations 디렉토리 안에 `<timestamp>_remote_schema.sql` 꼴의 쿼리문 파일이 생성됩니다. 해당 쿼리문은 자동으로 실행되지는 않으며, 직접 쿼리문을 실행해줘야 합니다. 
 
 초기 설정 이후에는 `supabase db pull --linked`를 실행하면 변경된 사항만 자동으로 쿼리문을 생성합니다. 스키마를 지정해 특정 스키마만 pull 할 수도 있습니다. 
+
+로컬에서 DB가 돌게 되므로, 대시보드는 없지만 pgAdmin등을 통해 로컬 DB에도 연결할 수 있습니다. 연결 정보가 생각나지 않는다면 `supabase status` 명령어를 통해 다시 확인할 수 있습니다. 
 
 ### supabase migration
 
