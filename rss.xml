@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Mar 2024 02:24:49 GMT</lastBuildDate><item><title><![CDATA[Postgresql Function, Trigger 생성 쿼리문 확인하기]]></title><description><![CDATA[서론 어떤 함수를 만들었었는지, 어떤 트리거를 만들었었는지가 관리하기가 어렵다고 느낍니다. 현재 개발 상황 상 따로 백엔드 서버도 없는 상황이어서 쿼리문을 관리하려고 합니다.  Supabase Dashboard…]]></description><link>https://sharknia.github.io/Postgresql-Function-Trigger-생성-쿼리문-확인하기/</link><guid isPermaLink="false">https://sharknia.github.io/Postgresql-Function-Trigger-생성-쿼리문-확인하기/</guid><pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Mar 2024 10:20:27 GMT</lastBuildDate><item><title><![CDATA[postgresql의 pg_jsonschema]]></title><description><![CDATA[JSON 데이터와 스키마 유효성 검사의 필요성 데이터베이스에서 데이터 무결성을 보장하기 위해서는 데이터에 대한 제약조건을 정의하고 검사하는 것이 필수적입니다. 관계형 데이터베이스에서는 테이블 스키마를 정의하여 열 데이터 타입, NOT NULL…]]></description><link>https://sharknia.github.io/postgresql의-pg_jsonschema/</link><guid isPermaLink="false">https://sharknia.github.io/postgresql의-pg_jsonschema/</guid><pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/bffffa9208b950a61b0ee80fec1390d7/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACm0lEQVR42g2RyW8SARSH5/8wetWkUS+eNOnFGE2PRmPixSZ68GIbq1ZjY7eU9oBdaGmlCEwFBso6LKXDPgxD2QsMw1IGZhiWwrC3VROPzuFdXn4v733fA9bANYlJoXXZj0KhQCZ7SleZfp/7c8X2u8N/f4kKRdCV5uWI6fVipbI3nrQEUA1i2TVIBeAqsKnZBm2HfMufJlI0yw768WJOabehifgKePBhc+uH1erAMb0frY9G/LwnkYRRH2jTbUIiYOdQokGszmgsekaVOhzTacF+75ddiQ3HjyPReI5MZjNGr2deoUyWS4VWCyfzjpOwFrGJdRJgzyAz+lxoOpuusu3fl99Eoql1Uapc1mCR5HkzUaf1maInX3ZGw6fUGdPr8FzeZMroc+8bQWDfdMDfHMoXC612Y9QX63TSI6fedXx7TvYqdj5fG9yX+YWQYQNULCmUrauLbKPBq7FiAZkFAviyBYPhQonqdulOGw6dhPO5j4LFW48nFiC70I4+nZp5+3V2CdQsw+7zi0Gu2cKInBXD5BYNIDX/4jfjuWKxzTUGXakTRdLkzMrCtfGH74SiDZXyxeLqs+npWJ6kahW63yHrDZ7RjPqkZiXP/NPgRfwpIlOrs4OeO4xDXq9QsgfcGBtf3vvkcN59vzA5O4tEw1osyPZ7yQrjTpzqPYjEKAdEWjGEwEgkEilSJY7LMHSoUIySxJPJ1zdfvnm+tT7xec7kdmVZJkZTFMed5M9422oE3uFtC5XrMovK5PPwDlNMtTYc1gddpsv5ssmxRw+u37tjCwebF0N20K0NB3yAj5n9HrlF/V21AQjkAv5jKofJGkDRNJGpsimWwfNZSygg1qq3ITWMBzAyk6CpVJXFCNIWxKBjWKzbF8gF/wFXtdlwDUI0dQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/bffffa9208b950a61b0ee80fec1390d7/ca1dc/image1.png&apos; srcset=&apos;/static/bffffa9208b950a61b0ee80fec1390d7/e7570/image1.png 170w,
+/static/bffffa9208b950a61b0ee80fec1390d7/f46e7/image1.png 340w,
+/static/bffffa9208b950a61b0ee80fec1390d7/ca1dc/image1.png 680w,
+/static/bffffa9208b950a61b0ee80fec1390d7/02d09/image1.png 1020w,
+/static/bffffa9208b950a61b0ee80fec1390d7/9d567/image1.png 1360w,
+/static/bffffa9208b950a61b0ee80fec1390d7/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;JSON 데이터와 스키마 유효성 검사의 필요성&lt;/h2&gt;
+&lt;p&gt;데이터베이스에서 데이터 무결성을 보장하기 위해서는 데이터에 대한 제약조건을 정의하고 검사하는 것이 필수적입니다. 관계형 데이터베이스에서는 테이블 스키마를 정의하여 열 데이터 타입, NOT NULL 제약조건 등을 설정할 수 있습니다. 하지만 JSON 데이터 타입의 경우, 스키마가 존재하지 않기 때문에 유연성은 높지만 데이터 무결성 보장이 어렵습니다.&lt;/p&gt;
+&lt;p&gt;따라서 JSON 데이터에 대해서도 스키마를 정의하고 유효성 검사를 수행할 수 있다면, 데이터 무결성을 높이고 애플리케이션의 안정성을 향상시킬 수 있습니다. 여기에서 JSON 스키마와 pg_jsonschema 확장 기능이 등장합니다.&lt;/p&gt;
+&lt;h2&gt;JSON 스키마란?&lt;/h2&gt;
+&lt;p&gt;JSON 스키마는 JSON 데이터의 구조와 형식을 정의하는 스키마입니다. 키-값 쌍의 데이터 타입, 필수 필드, 허용되는 값의 범위 등을 지정할 수 있습니다. JSON 스키마는 JSON 데이터 포맷으로 작성되며, 다양한 규칙과 제약조건을 정의할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;예를 들어, 다음과 같은 JSON 스키마를 정의할 수 있습니다:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;minimum&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 스키마는 JSON 객체여야 하며, name 필드는 문자열이어야 하고 필수 필드이며, age 필드는 0 이상의 숫자여야 함을 정의합니다.&lt;/p&gt;
+&lt;h2&gt;pg_jsonschema 소개&lt;/h2&gt;
+&lt;p&gt;pg_jsonschema는 PostgreSQL에서 JSON 데이터에 대한 스키마 유효성 검사를 지원하는 확장 기능입니다. 이 확장 기능을 사용하면 JSON 스키마를 정의하고, 해당 스키마에 따라 JSON 데이터의 유효성을 검사할 수 있습니다. pg_jsonschema는 오픈 소스 프로젝트로, Supabase에서 개발 및 유지보수하고 있습니다.&lt;/p&gt;
+&lt;h2&gt;pg_jsonschema의 설치&lt;/h2&gt;
+&lt;h3&gt;Supabase의 경우&lt;/h3&gt;
+&lt;p&gt;만약 supabase를 사용하고 있다면, 다음의 명령어만으로 간단하게 확장을 활성화 할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; EXTENSION pg_jsonschema&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;만약 supabase가 아니라면 설치가 필요합니다. &lt;/p&gt;
+&lt;h3&gt;Supabase가 아닌 경우&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;사전 요구사항&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PostgreSQL 12 이상 버전&lt;/li&gt;
+&lt;li&gt;PostgreSQL 데이터베이스 관리자 권한&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;소스 코드를 다운로드 합니다. pg_jsonschema 소스 코드는 GitHub 저장소에서 다운로드할 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/supabase/pg_jsonschema.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;빌드 및 설치 소스 코드 디렉터리로 이동한 후, 다음 명령어를 실행하여 확장 기능을 빌드하고 설치합니다.이 명령은 pg_jsonschema 확장 기능을 PostgreSQL 데이터베이스에 설치합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; pg_jsonschema
+&lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;확장 기능 활성화 PostgreSQL 데이터베이스에 접속한 후, 다음 SQL 문을 실행하여 pg_jsonschema 확장 기능을 활성화합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; EXTENSION pg_jsonschema&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;성공적으로 활성화되면 다음과 같은 메시지가 표시됩니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;CREATE EXTENSION&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이제 pg_jsonschema 확장 기능을 사용할 수 있게 되었습니다.&lt;/p&gt;
+&lt;h2&gt;pg_jsonschema 기능 및 활용&lt;/h2&gt;
+&lt;p&gt;pg_jsonschema는 다음과 같은 두 가지 주요 함수를 제공합니다:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;json_matches_schema(schema json, instance json)&lt;/code&gt;: JSON 데이터와 JSON 스키마를 입력받아, 해당 데이터가 스키마를 만족하는지 여부를 반환합니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;jsonb_matches_schema(schema json, instance jsonb)&lt;/code&gt;: JSONB 데이터와 JSON 스키마를 입력받아, 해당 데이터가 스키마를 만족하는지 여부를 반환합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 함수들을 사용하여 PostgreSQL 테이블의 CHECK 제약조건을 정의할 수 있습니다. 예를 들어, 다음과 같이 제약조건을 추가할 수 있습니다:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; users &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    id &lt;span class=&quot;token keyword&quot;&gt;SERIAL&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt; JSONB &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;CHECK&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jsonb_matches_schema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;schema&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;{
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+                &quot;name&quot;: { &quot;type&quot;: &quot;string&quot; },
+                &quot;age&quot;: { &quot;type&quot;: &quot;number&quot;, &quot;minimum&quot;: 0 }
+            },
+            &quot;required&quot;: [&quot;name&quot;]
+        }&apos;&lt;/span&gt;::json&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        instance &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;data&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 하면 users 테이블의 data 열에 저장되는 JSONB 데이터가 반드시 지정된 스키마를 만족해야 합니다. 스키마를 위반하는 데이터를 INSERT 또는 UPDATE하려고 하면 오류가 발생합니다.&lt;/p&gt;
+&lt;h2&gt;pg_jsonschema를 활용한 실제 예제&lt;/h2&gt;
+&lt;p&gt;실제 예제를 통해 pg_jsonschema를 어떻게 활용할 수 있는지 살펴보겠습니다. 여기서는 게시물 데이터를 저장하는 posts 테이블을 예로 들겠습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; posts &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    id &lt;span class=&quot;token keyword&quot;&gt;SERIAL&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    author_id UUID &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    content JSONB &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;CHECK&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jsonb_matches_schema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;schema&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;{
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+                &quot;title&quot;: { &quot;type&quot;: &quot;string&quot; },
+                &quot;body&quot;: { &quot;type&quot;: &quot;string&quot; },
+                &quot;tags&quot;: {
+                    &quot;type&quot;: &quot;array&quot;,
+                    &quot;items&quot;: { &quot;type&quot;: &quot;string&quot; },
+                    &quot;minItems&quot;: 1
+                }
+            },
+            &quot;required&quot;: [&quot;title&quot;, &quot;body&quot;, &quot;tags&quot;]
+        }&apos;&lt;/span&gt;::json&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        instance &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; content
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 테이블에서는 content 열에 JSONB 데이터가 저장되며, 이 데이터는 반드시 title(문자열), body(문자열), tags(문자열 배열, 최소 1개 이상의 항목) 필드를 포함해야 합니다.&lt;/p&gt;
+&lt;p&gt;다음과 같이 유효한 데이터를 INSERT할 수 있습니다:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;INTO&lt;/span&gt; posts &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;author_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;8c189b74-9865-4e0b-9bfd-a1a6a3e7fcc0&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;{ &quot;title&quot;: &quot;Hello, World!&quot;, &quot;body&quot;: &quot;This is my first post.&quot;, &quot;tags&quot;: [&quot;hello&quot;, &quot;world&quot;] }&apos;&lt;/span&gt;::jsonb
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;하지만 다음과 같이 스키마를 위반하는 데이터를 INSERT하려고 하면 오류가 발생합니다:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;INTO&lt;/span&gt; posts &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;author_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;8c189b74-9865-4e0b-9bfd-a1a6a3e7fcc0&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;{ &quot;title&quot;: 123, &quot;body&quot;: &quot;Invalid data&quot; }&apos;&lt;/span&gt;::jsonb
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- ERROR:  23514: check constraint &quot;posts_content_check&quot; of relation &quot;posts&quot; is violated by some row&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이처럼 pg_jsonschema를 활용하면 PostgreSQL 데이터베이스 내에서 JSON 데이터에 대한 스키마 유효성 검사를 수행할 수 있습니다. 이를 통해 데이터 무결성을 높이고, 잘못된 데이터로 인한 애플리케이션 오류를 방지할 수 있습니다.&lt;/p&gt;
+&lt;h2&gt;마무리&lt;/h2&gt;
+&lt;p&gt;이 글에서는 PostgreSQL 확장 기능인 pg_jsonschema에 대해 알아보았습니다. JSON 데이터의 스키마 유효성 검사 필요성과 JSON 스키마의 개념, pg_jsonschema의 기능과 활용 방법, 실제 예제를 통해 실습해보는 과정을 다루었습니다.&lt;/p&gt;
+&lt;p&gt;pg_jsonschema를 사용하면 유연한 JSON 데이터의 장점을 그대로 활용하면서도, 데이터 무결성을 보장할 수 있습니다. 이를 통해 데이터베이스 애플리케이션의 안정성과 신뢰성을 높일 수 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Postgresql Function, Trigger 생성 쿼리문 확인하기]]></title><description><![CDATA[서론 어떤 함수를 만들었었는지, 어떤 트리거를 만들었었는지가 관리하기가 어렵다고 느낍니다. 현재 개발 상황 상 따로 백엔드 서버도 없는 상황이어서 쿼리문을 관리하려고 합니다.  Supabase Dashboard…]]></description><link>https://sharknia.github.io/Postgresql-Function-Trigger-생성-쿼리문-확인하기/</link><guid isPermaLink="false">https://sharknia.github.io/Postgresql-Function-Trigger-생성-쿼리문-확인하기/</guid><pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;어떤 함수를 만들었었는지, 어떤 트리거를 만들었었는지가 관리하기가 어렵다고 느낍니다. 현재 개발 상황 상 따로 백엔드 서버도 없는 상황이어서 쿼리문을 관리하려고 합니다. &lt;/p&gt;
 &lt;p&gt;Supabase Dashboard에서도 확인이 가능하긴 하지만, 제한적인 부분이 있어 깔끔하게 쿼리문으로 확인하는 방법을 기록해두려고 합니다. &lt;/p&gt;
 &lt;h2&gt;Function 생성 쿼리문 확인하기&lt;/h2&gt;
@@ -1103,7 +1226,22 @@ _db_connection&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Eng
 &lt;h4&gt;FastAPI에서 모델 클래스가 정의되는 순간은?&lt;/h4&gt;
 &lt;p&gt;FastAPI 어플리케이션에서 “모델 클래스가 정의되는 순간”은 Python 스크립트가 실행되어 해당 모델 클래스가 메모리에 로드되는 시점을 의미합니다. &lt;/p&gt;
 &lt;p&gt;FastAPI 어플리케이션을 실행하면(예를 들어 &lt;code class=&quot;language-text&quot;&gt;uvicorn main:app&lt;/code&gt; 등의 명령어를 사용하여) Python 인터프리터는 main.py를 로드하고 실행합니다. 이 과정에서 main.py에서 직접적으로, 또는 임포트된 모듈 내에서 다시 임포트된 SqlAlchemy의ㅏ 모델 클래스들도 함께 로드되고 메모리에 생성됩니다. 바로 이 시점에 각 모델 클래스에 해당하는 &lt;code class=&quot;language-text&quot;&gt;Table&lt;/code&gt; 객체가 &lt;code class=&quot;language-text&quot;&gt;Metadata&lt;/code&gt; 객체에 등록됩니다. &lt;/p&gt;
-&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
+&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
+&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
+&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
+&lt;h3&gt;Major Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
+&lt;h3&gt;Minor Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
+&lt;h3&gt;Patch Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
+&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;목적&lt;/h2&gt;
+&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
+&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
 &lt;h3&gt;소개&lt;/h3&gt;
 &lt;p&gt;많은 개발자들이 한 번쯤은 &quot;나만의 블로그를 운영해야지&quot;라고 생각해본 적이 있을 겁니다. 하지만 실제로 블로그를 시작하고 유지하는 일은 상당한 도전과제입니다. 공부하고 개발하는 것만으로도 바쁜데, 여기에 글을 쓰고 관리하는 일은 때때로, 아니 항상 부담스러운 일입니다.&lt;/p&gt;
 &lt;p&gt;노션으로 공부를 하는 개발자가 있습니다. 일을 하면서일수도 있고, 따로 짬을 내어 공부를 하면서일수도 있습니다. 그러다가 한 번 쯤은 생각하게 됩니다. 노션으로 한 공부나 작업 기록이 블로그에 자동으로 업로드된다면 좋을텐데!&lt;/p&gt;
@@ -1231,22 +1369,7 @@ BLOG&lt;em&gt;REPO, BLOG&lt;/em&gt;URL, GIT&lt;em&gt;USER&lt;/em&gt;EMAIL, GIT&l
 &lt;h3&gt;개발과정&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;개발과정 몰아보기&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;문의&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
-&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
-&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
-&lt;h3&gt;Major Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
-&lt;h3&gt;Minor Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
-&lt;h3&gt;Patch Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
-&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
-&lt;h2&gt;목적&lt;/h2&gt;
-&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
-&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;파이썬에서 잠깐 테스트코드를 맛본적이 있습니다. 문법 자체는 조금 복잡했지만(익숙하지 않았지만) 설치 자체는 그다지 어렵지 않았던 것으로 기억합니다. &lt;/p&gt;
 &lt;p&gt;그래서 타입스크립트에서도 그럴 줄 알았습니다. &lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
