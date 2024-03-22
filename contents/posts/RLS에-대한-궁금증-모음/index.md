@@ -4,8 +4,8 @@ tags:
   - RLS
   - Postgresql
 description: "작업하면서 생긴 RLS에 대한 QnA"
-update: "2024-03-21T09:28:00.000Z"
-date: "2024-03-20"
+update: "2024-03-22T01:44:00.000Z"
+date: "2024-03-21"
 상태: "Ready"
 title: "RLS에 대한 궁금증 모음"
 ---
