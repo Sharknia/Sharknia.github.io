@@ -4,8 +4,10 @@ tags:
   - Django
   - Python
   - Pyenv
+  - Docker
+  - Docker-compose
 description: "Django를 맥에 설치하자"
-update: "2024-05-10T06:24:00.000Z"
+update: "2024-05-13T04:57:00.000Z"
 date: "2024-05-10"
 상태: "Ready"
 title: "Django 설치"
