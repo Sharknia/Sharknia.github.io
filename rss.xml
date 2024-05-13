@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 10 May 2024 07:08:26 GMT</lastBuildDate><item><title><![CDATA[Django 설치]]></title><description><![CDATA[설치할 버전의 선택 오늘 날짜(2024년 5월 10일) 기준 Django 4.2 버전이 가장 최신의 LTS 버전이며, 해당 Django 버전에서는 4.2.8 버전부터 파이썬 3.12를 지원하며 그 미만 버전은 파이썬 3.1…]]></description><link>https://sharknia.github.io/Django-설치/</link><guid isPermaLink="false">https://sharknia.github.io/Django-설치/</guid><pubDate>Fri, 10 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;설치할 버전의 선택&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 13 May 2024 05:09:01 GMT</lastBuildDate><item><title><![CDATA[Django 설치]]></title><description><![CDATA[설치할 버전의 선택 오늘 날짜(2024년 5월 10일) 기준 Django 4.2 버전이 가장 최신의 LTS 버전이며, 해당 Django 버전에서는 4.2.8 버전부터 파이썬 3.12를 지원하며 그 미만 버전은 파이썬 3.1…]]></description><link>https://sharknia.github.io/Django-설치/</link><guid isPermaLink="false">https://sharknia.github.io/Django-설치/</guid><pubDate>Fri, 10 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;설치할 버전의 선택&lt;/h2&gt;
 &lt;p&gt;오늘 날짜(2024년 5월 10일) 기준 &lt;a href=&quot;https://docs.djangoproject.com/en/5.0/releases/4.2/&quot;&gt;Django 4.2 버전&lt;/a&gt;이 가장 최신의 LTS 버전이며, 해당 Django 버전에서는 4.2.8 버전부터 파이썬 3.12를 지원하며 그 미만 버전은 파이썬 3.11까지 지원합니다. &lt;/p&gt;
 &lt;p&gt;따라서 저는 파이썬 3.11, Django 4.2.13 버전을 설치하겠습니다. &lt;/p&gt;
 &lt;h2&gt;파이썬 설치&lt;/h2&gt;
@@ -845,18 +845,7 @@ verify_jwt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span 
     &lt;span class=&quot;token operator&quot;&gt;AND&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nspname &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;스키마명&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;-- 테이블이 위치한 스키마명&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;뷰 생성 쿼리문 확인하기&lt;/h2&gt;
 &lt;p&gt;사실 뷰 생성 쿼리문은 전문을 supabase에서 확인할 수 있습니다. 근데 그냥 서비스로 같이 기록합니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; pg_get_viewdef&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&quot;스키마명&quot;.&quot;뷰명&quot;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Supabase CLI db migration 이력 초기화하기]]></title><description><![CDATA[서론 supabase에는 DB 마이그레이션 기능이 있어, 연결된 프로젝트의 스키마를 그대로 로컬 supabase DB…]]></description><link>https://sharknia.github.io/Supabase-CLI-db-migration-이력-초기화하기/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-CLI-db-migration-이력-초기화하기/</guid><pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;supabase에는 DB 마이그레이션 기능이 있어, 연결된 프로젝트의 스키마를 그대로 로컬 supabase DB에 적용할 수 있습니다. 버전관리도 가능합니다. &lt;/p&gt;
-&lt;p&gt;근데 이것도 완벽한 기능은 아니어서, 꼬일때가 있고 그래서 다시 마이그레이션을 실행해야 할 수도 있습니다. 그 방법을 기록합니다. &lt;/p&gt;
-&lt;h2&gt;마이그레이션 기록 초기화하기&lt;/h2&gt;
-&lt;h3&gt;로컬 마이그레이션 파일 삭제&lt;/h3&gt;
-&lt;p&gt;다음의 명령어를 입력해 로컬 마이그레이션 파일들을 삭제합니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; supabase/migrations/*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;마이그레이션 기록 삭제&lt;/h3&gt;
-&lt;p&gt;기록을 하나하나 reverted 해줘야 합니다. &lt;code class=&quot;language-text&quot;&gt;supabase migration list&lt;/code&gt; 명령어로 초기화 할 마이그레이션 리스트와 REMOTE 키값을 확인합니다. &lt;/p&gt;
-&lt;p&gt;다음의 명령어로 한땀 한땀 삭제합니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;supabase migration repair &lt;span class=&quot;token parameter variable&quot;&gt;--status&lt;/span&gt; reverted &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;키값&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 모든 기록을 삭제 후, &lt;code class=&quot;language-text&quot;&gt;supabase db pull&lt;/code&gt; 을 실행해 다시 DB를 덤프하면 됩니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Supabase EdgeFunction  - Deno 개발환경 꾸미기]]></title><description><![CDATA[개요 Edge function을 열심히 개발하고 있었는데, 코드 자동완성이나 줄바꿈이나 이런것들이 적용되지 않았습니다.  Edge function은 Deno…]]></description><link>https://sharknia.github.io/Supabase-EdgeFunction---Deno-개발환경-꾸미기/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-EdgeFunction---Deno-개발환경-꾸미기/</guid><pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;SELECT&lt;/span&gt; pg_get_viewdef&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&quot;스키마명&quot;.&quot;뷰명&quot;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Supabase EdgeFunction  - Deno 개발환경 꾸미기]]></title><description><![CDATA[개요 Edge function을 열심히 개발하고 있었는데, 코드 자동완성이나 줄바꿈이나 이런것들이 적용되지 않았습니다.  Edge function은 Deno…]]></description><link>https://sharknia.github.io/Supabase-EdgeFunction---Deno-개발환경-꾸미기/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-EdgeFunction---Deno-개발환경-꾸미기/</guid><pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/e3a5c6869b825a7dbb0b935dff823dba/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACa0lEQVR42mMQVNITVNIVAiJlAyFlfSApqWMtZ+ggqGYuqWurYuEmomklqWMjpWPFK68NUqBiIATSAkIMgkr6IM3KQP16AkoGVr4xcQW1Homls5ZvLGqZ4h5f0jdnBZDhl1qRUFAjrmnOr6gLMkJJT0hJn0FAGahZT0hZj19Bx9Q30Tep0N4/KqN+8uptexunLs1rnnrs/LW6yYsre2Yv3rDTNiRNUAXkQGGQG/UZQCwVfT55LVUrr8jClsz6iZV981pnrW6ZtqRj1ooJC9bU9s1qmbG8bvKSrLq+zMapWg6B/HKawmDLwZqV9QQVdV1i8is6Z1T3L1i243hD96T4zJyo1OyQhPTIlKzu6fNW7TpW0NCdWdvjl1bFJ68tDPYmA9gMXSFVw5Cc+toJ8xZu2HP+5qOyxg47r4Cyps7Ktn5DB/fG7sknLt9ds/vY1JU7oopbhVWNwAEMcbaSHp+CTkBmzfTVuyqaO3YfPtk0YXpgbKpXRGJgfLpHWGzHlLnnrj+o65rYNGWhX0Y1vwIwjPSBnmcA2g50Np+cpp5rRN2U5d7RadOXrH/y4tWK9Ztq2nubeiau2bT13qMnmw6cKWufUtQ5W8ctik9OCxSvEM2geFPUEVU3CcyoKmyb3jtn+dGTp9Zv2+UZFucTmbB2y47DJ041TJjTNm1xdH69uLaVoIIOMHbAAQbWDHSGgKKujJ6Ne3xBaE5dQHp5aE5tYnFjclkTkOGRUAw01yuxSN7YCWgNWCcoXQE160NSDFA/v4K2mLqJuo03MD50nYKsfWPcIlJ1HAJ0HAO1bH3FNc345XVAvlUGpyslPQB+pNyaDQ8c2AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/e3a5c6869b825a7dbb0b935dff823dba/ca1dc/image1.png&apos; srcset=&apos;/static/e3a5c6869b825a7dbb0b935dff823dba/e7570/image1.png 170w,
@@ -895,7 +884,18 @@ verify_jwt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span 
 &lt;p&gt;Deno는 모듈을 한 번 다운로드하면 로컬에 캐시합니다. 캐시된 모듈이 문제를 일으킬 수 있으므로, 모듈 캐시를 강제로 업데이트해 볼 수 있습니다. 다음 명령어를 사용하여 모듈을 강제로 캐시에서 업데이트하고 다시 로드할 수 있습니다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;deno cache &lt;span class=&quot;token parameter variable&quot;&gt;--reload&lt;/span&gt; https://esm.sh/@supabase/supabase-js@2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;캐시 초기화&lt;/h3&gt;
-&lt;p&gt;외부 모듈이 자동으로 캐시되지 않거나 오래된 버전의 캐시가 문제를 일으킬 수 있습니다. Deno 캐시를 갱신하려면, 터미널에서 &lt;code class=&quot;language-text&quot;&gt;deno cache --reload&lt;/code&gt; 명령어를 사용할 수 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Supabase Local 개발 환경 꾸미기 - DB 세팅]]></title><description><![CDATA[개요 지난 시간에 Egde Function을 만들어서 배포하는 것까지 진행해봤습니다. 하지만 저기서 끝낸다면 로컬에 DB가 없으므로 DB에 접근을 필요로 하는 Edge Function…]]></description><link>https://sharknia.github.io/Supabase-Local-개발-환경-꾸미기---DB-세팅/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-Local-개발-환경-꾸미기---DB-세팅/</guid><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+&lt;p&gt;외부 모듈이 자동으로 캐시되지 않거나 오래된 버전의 캐시가 문제를 일으킬 수 있습니다. Deno 캐시를 갱신하려면, 터미널에서 &lt;code class=&quot;language-text&quot;&gt;deno cache --reload&lt;/code&gt; 명령어를 사용할 수 있습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Supabase CLI db migration 이력 초기화하기]]></title><description><![CDATA[서론 supabase에는 DB 마이그레이션 기능이 있어, 연결된 프로젝트의 스키마를 그대로 로컬 supabase DB…]]></description><link>https://sharknia.github.io/Supabase-CLI-db-migration-이력-초기화하기/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-CLI-db-migration-이력-초기화하기/</guid><pubDate>Thu, 14 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;supabase에는 DB 마이그레이션 기능이 있어, 연결된 프로젝트의 스키마를 그대로 로컬 supabase DB에 적용할 수 있습니다. 버전관리도 가능합니다. &lt;/p&gt;
+&lt;p&gt;근데 이것도 완벽한 기능은 아니어서, 꼬일때가 있고 그래서 다시 마이그레이션을 실행해야 할 수도 있습니다. 그 방법을 기록합니다. &lt;/p&gt;
+&lt;h2&gt;마이그레이션 기록 초기화하기&lt;/h2&gt;
+&lt;h3&gt;로컬 마이그레이션 파일 삭제&lt;/h3&gt;
+&lt;p&gt;다음의 명령어를 입력해 로컬 마이그레이션 파일들을 삭제합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; supabase/migrations/*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;마이그레이션 기록 삭제&lt;/h3&gt;
+&lt;p&gt;기록을 하나하나 reverted 해줘야 합니다. &lt;code class=&quot;language-text&quot;&gt;supabase migration list&lt;/code&gt; 명령어로 초기화 할 마이그레이션 리스트와 REMOTE 키값을 확인합니다. &lt;/p&gt;
+&lt;p&gt;다음의 명령어로 한땀 한땀 삭제합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;supabase migration repair &lt;span class=&quot;token parameter variable&quot;&gt;--status&lt;/span&gt; reverted &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;키값&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 모든 기록을 삭제 후, &lt;code class=&quot;language-text&quot;&gt;supabase db pull&lt;/code&gt; 을 실행해 다시 DB를 덤프하면 됩니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Supabase Local 개발 환경 꾸미기 - DB 세팅]]></title><description><![CDATA[개요 지난 시간에 Egde Function을 만들어서 배포하는 것까지 진행해봤습니다. 하지만 저기서 끝낸다면 로컬에 DB가 없으므로 DB에 접근을 필요로 하는 Edge Function…]]></description><link>https://sharknia.github.io/Supabase-Local-개발-환경-꾸미기---DB-세팅/</link><guid isPermaLink="false">https://sharknia.github.io/Supabase-Local-개발-환경-꾸미기---DB-세팅/</guid><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/152c2bb9c5f2591e1bf22e1a25800d4a/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9ABQpSxIyVQ87YAxGbApUfQ90nh+XviipzUTO6EW/10rF3DrE4SqpyxqNtwpqlgpWfwxIbg89YhIyVhUpSwAULlEQOV0LRm0JWIEVgakvpspIrsOG8vR9zNILSGY9pLR61txXwdE3sMszsdEXgqwJW4YLR20ROV0VLlEAEjFVDUFnCVN7DXejKYWkKV9wHl5znNHVTZ2vJr7TedXdhKmxdK23QpKiPY6jKY+xE3+pCFV/DUJnEjJWABA3WgpNdApqlSOhyC9thQddbiugtbPZ136zuWGOmCJIY3KVok2Vq364wCyHohNacyacwQtvmwpMcxA4XAAPO2AJV4EWjbgmi6ogbYVcsr+O5OdhfYwMM08aSl8NWHZXi5wLWG9puL5Tt8sNfZ06vNgWibQKWIEQPWIAD0BlCmCLIqDHTsPSZaStV4CSd6SvOWF2El14KYScGJq6DWOEF2d6GImdmdPXQ3+VKJGsIaDICmCKD0FlAA8/YwpiiySmzFTG1BxhfwxZdHmmrUmAkQx1lByQsBONryJ3jyBbbni5u7vi3lmqtTKTqSKgyAphiw9AZQAQO18LW4Qblr8wnLgVX38aepii09g/gZodaIQ1c4lglaVHna58srXK4tWv4Nmv6+tbu9ERjbgMW4QRPGAAEjZZDE11FHumHHWZFz5aDTxbQp60hLG3V4GMTau7Y7XCtuTcndTWM4+nFVZud5OdQZy5DHejDUxyEjdZABQwUw8+ZAxYgRqEriuLrSx7lk2TpWC0vaTPxy15iIaxsZvNyVqgqlKVqh1hfxhniRp/pg1YgA88YBQwUwAVKkwSNVgOP2QMTXURcJwnmsQlgKYslbNZyNoxs8dcz91UvNUgfqAui60nm8MVeKINUnoNP2QRNFgVK00sNRrs1cLQjwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/152c2bb9c5f2591e1bf22e1a25800d4a/ca1dc/image1.png&apos; srcset=&apos;/static/152c2bb9c5f2591e1bf22e1a25800d4a/e7570/image1.png 170w,
@@ -1600,87 +1600,7 @@ No analytics data has been sent yet &lt;span class=&quot;token punctuation&quot;
 &lt;h2&gt;결론&lt;/h2&gt;
 &lt;p&gt;길게 적게 되었지만 사실 제가 궁금했던 부분을 “실제 결제 과정을 어디에서 담당하냐” 였습니다. 결제 과정은 앱스토어에서 직접 담당하므로 결국 인앱결제에 있어서 백엔드가 해야 할 가장 핵심 프로세스는 영수증 검증인것으로 보입니다.&lt;/p&gt;
 &lt;p&gt;물론, 금전을 직접 다루는 중요한 과정이므로 보안 등의 사항에 특별히 유념해서 더 신경써야 하겟습니다. &lt;/p&gt;
-&lt;p&gt;오늘은 이론적인 부분만 미리 살펴봤습니다. 언제나 그렇지만 실재 구현에 들어가면 항상 예외적인 상황이 발생합니다. 나중에 구현을 할 경우에 그 부분에 대해서도 자새히 기록을 해보려고 합니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 index]]></title><description><![CDATA[서론 DB 설계를 하다보면 index를 정의해야 하는 경우가 많습니다. 만약 Sqlalchemy의 create_all() 메소드를 사용해 테이블을 생성하고 있다면 Sqlalchemy에서 동시에 index를 정의할 수 있습니다.  Sqlalchemy…]]></description><link>https://sharknia.github.io/Sqlalchemy의-index/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-index/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c4d481406cdf76b79bd78dfaaff95aa7/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9AAA4VQdNZhpacCljeDNqfThugUB2h0x5hkt7iWOHkJ2trF2EjU56h0l8jDtvgjJpfSVhdxVWbgRJZgA3VgAHUG4ra4JDe49PhplckKCQr7SMsblojZeHmppfiJJJY2pYe4RujZJuhopllqVRiJxLgpY/d40kZn8ETW0AHGF9R36UWo+jaqCycpehUmhtYoWOiK22d5SZjK2zk7K3iq61gKawb46WfKGpqMrRa6CyU4ugQ3uSF157AC5tiFWMoWqhtJa3v5WsrlJzfXCbqIKkrJy2uOvl2cHLx8zZ1Yy4wYi2womhpnR/gHabpnKnuVSKoS5tiAA6dY9flqyDsL9RZGhBZ3KZvsmGq7VvrbuUu8OQt7ucw8SDr7qCtL+BprBqkJtFaHNuhIh1n65knLI6dZAAQnuUbKS6c5aheI2RpLe2nbe7f6WxtMfKpLy9DImZHay/JIeUzdDLlK6zia24lamqsby4ibXEa6K4Q3yWAER9lm+juIOwwH6SlXB7enuYn6bH0IewtoWWlCVeXhppaz9mZaatqaC7wK/N1XqcpjtLUHCSnnKpvkJ7lAA/eZFroLR/qrpUYmQ0VF6gvcGXtr5Wk6RMeIMXW2kNWWUuW2Zyh4yHn6OTqKyPpqpacHV0maZsobY4c40AM26IX5Gleq3AapKgd5KYTGdufpieo7S3kKmqPYeUOYONU42YgpOUnLK1fJujUVtbbI6ae67BXo+jK2mDAB5eeUt+kmOTpn2svYCquVR5iHGEh297em1/gIabnYKLioujpYSanmd0dYGYm3OVn3ysvmOTp0Z5jxhadQAFR2QlYHdCc4dQgJJejZ11oK93nap2mKJdfolnh45kg4hykppli5cxV2ZpjppplqdRgZM8cIQgXnUERGJyl1KVtMDmNQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c4d481406cdf76b79bd78dfaaff95aa7/ca1dc/image1.png&apos; srcset=&apos;/static/c4d481406cdf76b79bd78dfaaff95aa7/e7570/image1.png 170w,
-/static/c4d481406cdf76b79bd78dfaaff95aa7/f46e7/image1.png 340w,
-/static/c4d481406cdf76b79bd78dfaaff95aa7/ca1dc/image1.png 680w,
-/static/c4d481406cdf76b79bd78dfaaff95aa7/02d09/image1.png 1020w,
-/static/c4d481406cdf76b79bd78dfaaff95aa7/9d567/image1.png 1360w,
-/static/c4d481406cdf76b79bd78dfaaff95aa7/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;DB 설계를 하다보면 index를 정의해야 하는 경우가 많습니다.&lt;/p&gt;
-&lt;p&gt;만약 Sqlalchemy의 &lt;a href=&quot;https://sharknia.github.io/SQLAlchemy-create_all-%EB%A9%94%EC%86%8C%EB%93%9C%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9E%90%EB%8F%99-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;create_all()&lt;/a&gt; 메소드를 사용해 테이블을 생성하고 있다면 Sqlalchemy에서 동시에 index를 정의할 수 있습니다. &lt;/p&gt;
-&lt;h2&gt;Sqlalchemy에서의 인덱스 정의&lt;/h2&gt;
-&lt;h3&gt;단일 컬럼 인덱스&lt;/h3&gt;
-&lt;p&gt;Sqlalchemy의 &lt;code class=&quot;language-text&quot;&gt;Column&lt;/code&gt; 객체를 생성할 때에 &lt;code class=&quot;language-text&quot;&gt;index=True&lt;/code&gt;  플래그를 설정하면 간단하게 단일 컬럼에 대한 인덱스를 생성할 수 있습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;user_id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;복합 인덱스&lt;/h3&gt;
-&lt;p&gt;두 개 이상의 컬럼을 포함하는 복합 인덱스는 &lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt; 객체를 사용하여 생성할 수 있습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Index
-Index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_index&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MyModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MyModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;desc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;여기서 &lt;code class=&quot;language-text&quot;&gt;desc()&lt;/code&gt; 메소드는 해당 컬럼을 내림차순으로 정렬하도록 지시합니다. 오름차순은 기본값이므로 &lt;code class=&quot;language-text&quot;&gt;asc()&lt;/code&gt;는 일반적으로 생략됩니다.&lt;/p&gt;
-&lt;h3&gt;Unique 인덱스&lt;/h3&gt;
-&lt;p&gt;Unique 인덱스는 값의 중복을 방지하고 해당 컬럼의 각 값이 유일하다는 것을 보장합니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;email&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; unique&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;복합 Unique 인덱스&lt;/h3&gt;
-&lt;p&gt;SqlAlchemy에서는 복합 인덱스에 대해서도 유니크 제약 조건을 적용할 수 있습니다. 이를 통해 테이블 내에서 특정 컬럼 조합의 유니크성을 강제할 수 있습니다. &lt;/p&gt;
-&lt;p&gt;SqlAlchemy에서 복합 유니크 인덱스를 정의하는 방법은 두 가지입니다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;UniqueConstraint&lt;/code&gt; 사용&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;UniqueConstraint&lt;/code&gt;는 테이블의 컬럼에 대한 유니크 제약 조건을 정의하는 데 사용됩니다. 이는 &lt;code class=&quot;language-text&quot;&gt;__table_args__&lt;/code&gt; 속성 내부에서 사용될 수 있습니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; create_engine
-&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ext&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;declarative &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; declarative_base
-&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;schema &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; UniqueConstraint
-
-Base &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; declarative_base&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;MyModel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Base&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    __tablename__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;my_model&apos;&lt;/span&gt;
-    &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    column1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    column2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    __table_args__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;UniqueConstraint&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;column1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;column2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_unique_constraint&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt; 사용 시 &lt;code class=&quot;language-text&quot;&gt;unique=True&lt;/code&gt; 설정&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt; 객체를 생성할 때 &lt;code class=&quot;language-text&quot;&gt;unique=True&lt;/code&gt; 플래그를 설정하여 복합 유니크 인덱스를 생성할 수 있습니다. 이 방법은 인덱스 생성과 동시에 컬럼 조합의 유니크성도 보장합니다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MetaData&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Table
-&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;schema &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Index
-
-metadata &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; MetaData&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-my_table &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Table&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_table&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; metadata&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;column1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;column2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 복합 유니크 인덱스 생성&lt;/span&gt;
-my_unique_index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_unique_index&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; unique&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;두 방법 모두 데이터베이스에서 해당 컬럼 조합의 유니크성을 강제합니다. &lt;code class=&quot;language-text&quot;&gt;UniqueConstraint&lt;/code&gt;는 주로 제약 조건을 명시적으로 표현할 때 사용되며, &lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;unique=True&lt;/code&gt; 설정은 검색 최적화와 유니크 제약 조건을 동시에 적용하고자 할 때 유용합니다.&lt;/p&gt;
-&lt;h3&gt;&lt;strong&gt;&lt;em&gt;\&lt;/em&gt;table_args__&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;  &lt;code class=&quot;language-text&quot;&gt;__table_args__&lt;/code&gt; 클래스 속성은 튜플이나 사전 형태로 제공될 수 있으며, 테이블 생성 시 추가적인 SQL 제약 조건이나 인덱스를 정의하는데 사용됩니다.  &lt;/p&gt;
-&lt;p&gt;예를 들어 복합 인덱스를 &lt;code class=&quot;language-text&quot;&gt;__table_args__&lt;/code&gt; 클래스 속성을 사용해 모델 내부에서 정의한 예제 코드는 다음과 같습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Base&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    __tablename__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;events&apos;&lt;/span&gt;
-
-    &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    timestamp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;DateTime&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    user_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    is_active &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Boolean&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;# 복합 인덱스 정의&lt;/span&gt;
-    __table_args__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-        Index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;ix_events_user_id_timestamp&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;user_id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; timestamp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;desc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 방식으로 정의된 인덱스는 데이터베이스에 해당 모델을 반영할 때 자동으로 생성됩니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[위치 기반 검색 기능의 구현]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/위치-기반-검색-기능의-구현/</link><guid isPermaLink="false">https://sharknia.github.io/위치-기반-검색-기능의-구현/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+&lt;p&gt;오늘은 이론적인 부분만 미리 살펴봤습니다. 언제나 그렇지만 실재 구현에 들어가면 항상 예외적인 상황이 발생합니다. 나중에 구현을 할 경우에 그 부분에 대해서도 자새히 기록을 해보려고 합니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[위치 기반 검색 기능의 구현]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/위치-기반-검색-기능의-구현/</link><guid isPermaLink="false">https://sharknia.github.io/위치-기반-검색-기능의-구현/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/1670a671c6f9439f25c6635d75793c7d/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9ABYXOhQqXxQ9ewlXmAqHuwx5vRWJxxKu3RPJ5xXL6Q294xWr2w2PzQOHxQ6Fuw9Tmw83ehY5dREeUhUTMAAdFjcdKFcfN24QWI0PkLMYfbUchb4To9Qav+UVx+sTsNsRoc8PicUXk8AZiqkXXJgdT4YhNGkbHEkbEi0AIhUxJChSKUFuI1J8JnmbHm6mIoW5H5zJKarOKK7PH6/YHpvDGHuzGnerIHGUImSZJz9wKjZkJBxCIRAnACgXMy0uVixJcC9OdDd1jzJuoD6MwzdfjChbiDyBsCFSf0+WvEV+qjZ0ojN6oyxQfi0vYTJiiylBYykHHQAxDCI0LlU3QW1QPWZRTnZGf69vfqdFTHk1eqlVyfEoRHRpc5xrY4xFbZtPQnBKS3cxYZg6N2A2HDwxCx8AQQcaShU1Uh1COGWIX119b0hujlx8oWyCIEmMClKgU1aFm3KMeE11c1V6XF+ISE58TyxTRChOSQwnPgkZAEwGGk0aOksYOwppkESLsnpKc4Bkk9GGlnCGuQBp0cSXpoOPtW5ilFNjjwx2r0hAZVciQloOKlENJUMKHAA2Fzc+IEU1HjwQR28cgrFIj8Vhg7Z5mcKVyN0v2fadt85xkL1airsjZ6gATY8japQsRW9EMWA+KFI3Gj0AJS9lJ0V4I0t5GFqTGXCqH36wLIu6PcroVun1e/v8PN/xM7fYFW2dIX+1HYK8EViXETtkIlmNHlOTITZzABo3fhZWmB9ppSR3sCF+tRRZhgxahR59ozm81U/Q50S0zi1+pBNOexhxmTebuSqGqxZBXRJTjxpTlRw1cAAVJWQTPIMUUZMiWYwfW4UcbZYWZY8cZY0ZSW0qWHYiWn4raosue5ohgKMpWHYgUG8YRG0YVIgQPHwUJlk4xPXKsEQ3NAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/1670a671c6f9439f25c6635d75793c7d/ca1dc/image1.png&apos; srcset=&apos;/static/1670a671c6f9439f25c6635d75793c7d/e7570/image1.png 170w,
@@ -1832,7 +1752,87 @@ my_unique_index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Inde
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;같이 보기&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://postgis.net/docs/manual-3.0/postgis-ko_KR.html&quot;&gt;PostGIS 3.0.0 사용자 지침서&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[SQLAlchemy create_all() 메소드로 데이터베이스 테이블 자동 생성하기]]></title><description><![CDATA[서론 현재 회사에서는 Alembic 같은 데이터마이그레이션 도구를 사용하고 있지 않습니다. 따라서 스키마 버전 관리등은 별도로 하고 있지 않으며, 다만 SqlAlchemy의 create_all() 메소드를 이용해 프로덕션 환경이나 dev…]]></description><link>https://sharknia.github.io/SQLAlchemy-create_all-메소드로-데이터베이스-테이블-자동-생성하기/</link><guid isPermaLink="false">https://sharknia.github.io/SQLAlchemy-create_all-메소드로-데이터베이스-테이블-자동-생성하기/</guid><pubDate>Mon, 12 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+&lt;p&gt;&lt;a href=&quot;https://postgis.net/docs/manual-3.0/postgis-ko_KR.html&quot;&gt;PostGIS 3.0.0 사용자 지침서&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 index]]></title><description><![CDATA[서론 DB 설계를 하다보면 index를 정의해야 하는 경우가 많습니다. 만약 Sqlalchemy의 create_all() 메소드를 사용해 테이블을 생성하고 있다면 Sqlalchemy에서 동시에 index를 정의할 수 있습니다.  Sqlalchemy…]]></description><link>https://sharknia.github.io/Sqlalchemy의-index/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-index/</guid><pubDate>Tue, 13 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c4d481406cdf76b79bd78dfaaff95aa7/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9AAA4VQdNZhpacCljeDNqfThugUB2h0x5hkt7iWOHkJ2trF2EjU56h0l8jDtvgjJpfSVhdxVWbgRJZgA3VgAHUG4ra4JDe49PhplckKCQr7SMsblojZeHmppfiJJJY2pYe4RujZJuhopllqVRiJxLgpY/d40kZn8ETW0AHGF9R36UWo+jaqCycpehUmhtYoWOiK22d5SZjK2zk7K3iq61gKawb46WfKGpqMrRa6CyU4ugQ3uSF157AC5tiFWMoWqhtJa3v5WsrlJzfXCbqIKkrJy2uOvl2cHLx8zZ1Yy4wYi2womhpnR/gHabpnKnuVSKoS5tiAA6dY9flqyDsL9RZGhBZ3KZvsmGq7VvrbuUu8OQt7ucw8SDr7qCtL+BprBqkJtFaHNuhIh1n65knLI6dZAAQnuUbKS6c5aheI2RpLe2nbe7f6WxtMfKpLy9DImZHay/JIeUzdDLlK6zia24lamqsby4ibXEa6K4Q3yWAER9lm+juIOwwH6SlXB7enuYn6bH0IewtoWWlCVeXhppaz9mZaatqaC7wK/N1XqcpjtLUHCSnnKpvkJ7lAA/eZFroLR/qrpUYmQ0VF6gvcGXtr5Wk6RMeIMXW2kNWWUuW2Zyh4yHn6OTqKyPpqpacHV0maZsobY4c40AM26IX5Gleq3AapKgd5KYTGdufpieo7S3kKmqPYeUOYONU42YgpOUnLK1fJujUVtbbI6ae67BXo+jK2mDAB5eeUt+kmOTpn2svYCquVR5iHGEh297em1/gIabnYKLioujpYSanmd0dYGYm3OVn3ysvmOTp0Z5jxhadQAFR2QlYHdCc4dQgJJejZ11oK93nap2mKJdfolnh45kg4hykppli5cxV2ZpjppplqdRgZM8cIQgXnUERGJyl1KVtMDmNQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/c4d481406cdf76b79bd78dfaaff95aa7/ca1dc/image1.png&apos; srcset=&apos;/static/c4d481406cdf76b79bd78dfaaff95aa7/e7570/image1.png 170w,
+/static/c4d481406cdf76b79bd78dfaaff95aa7/f46e7/image1.png 340w,
+/static/c4d481406cdf76b79bd78dfaaff95aa7/ca1dc/image1.png 680w,
+/static/c4d481406cdf76b79bd78dfaaff95aa7/02d09/image1.png 1020w,
+/static/c4d481406cdf76b79bd78dfaaff95aa7/9d567/image1.png 1360w,
+/static/c4d481406cdf76b79bd78dfaaff95aa7/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;DB 설계를 하다보면 index를 정의해야 하는 경우가 많습니다.&lt;/p&gt;
+&lt;p&gt;만약 Sqlalchemy의 &lt;a href=&quot;https://sharknia.github.io/SQLAlchemy-create_all-%EB%A9%94%EC%86%8C%EB%93%9C%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9E%90%EB%8F%99-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0&quot;&gt;create_all()&lt;/a&gt; 메소드를 사용해 테이블을 생성하고 있다면 Sqlalchemy에서 동시에 index를 정의할 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;Sqlalchemy에서의 인덱스 정의&lt;/h2&gt;
+&lt;h3&gt;단일 컬럼 인덱스&lt;/h3&gt;
+&lt;p&gt;Sqlalchemy의 &lt;code class=&quot;language-text&quot;&gt;Column&lt;/code&gt; 객체를 생성할 때에 &lt;code class=&quot;language-text&quot;&gt;index=True&lt;/code&gt;  플래그를 설정하면 간단하게 단일 컬럼에 대한 인덱스를 생성할 수 있습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;user_id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;복합 인덱스&lt;/h3&gt;
+&lt;p&gt;두 개 이상의 컬럼을 포함하는 복합 인덱스는 &lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt; 객체를 사용하여 생성할 수 있습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Index
+Index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_index&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MyModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MyModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;desc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 &lt;code class=&quot;language-text&quot;&gt;desc()&lt;/code&gt; 메소드는 해당 컬럼을 내림차순으로 정렬하도록 지시합니다. 오름차순은 기본값이므로 &lt;code class=&quot;language-text&quot;&gt;asc()&lt;/code&gt;는 일반적으로 생략됩니다.&lt;/p&gt;
+&lt;h3&gt;Unique 인덱스&lt;/h3&gt;
+&lt;p&gt;Unique 인덱스는 값의 중복을 방지하고 해당 컬럼의 각 값이 유일하다는 것을 보장합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;email&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; unique&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;복합 Unique 인덱스&lt;/h3&gt;
+&lt;p&gt;SqlAlchemy에서는 복합 인덱스에 대해서도 유니크 제약 조건을 적용할 수 있습니다. 이를 통해 테이블 내에서 특정 컬럼 조합의 유니크성을 강제할 수 있습니다. &lt;/p&gt;
+&lt;p&gt;SqlAlchemy에서 복합 유니크 인덱스를 정의하는 방법은 두 가지입니다. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;UniqueConstraint&lt;/code&gt; 사용&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;UniqueConstraint&lt;/code&gt;는 테이블의 컬럼에 대한 유니크 제약 조건을 정의하는 데 사용됩니다. 이는 &lt;code class=&quot;language-text&quot;&gt;__table_args__&lt;/code&gt; 속성 내부에서 사용될 수 있습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; create_engine
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ext&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;declarative &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; declarative_base
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;schema &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; UniqueConstraint
+
+Base &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; declarative_base&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;MyModel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Base&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    __tablename__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;my_model&apos;&lt;/span&gt;
+    &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    column1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    column2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    __table_args__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;UniqueConstraint&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;column1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;column2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_unique_constraint&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt; 사용 시 &lt;code class=&quot;language-text&quot;&gt;unique=True&lt;/code&gt; 설정&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt; 객체를 생성할 때 &lt;code class=&quot;language-text&quot;&gt;unique=True&lt;/code&gt; 플래그를 설정하여 복합 유니크 인덱스를 생성할 수 있습니다. 이 방법은 인덱스 생성과 동시에 컬럼 조합의 유니크성도 보장합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; MetaData&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Table
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;schema &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Index
+
+metadata &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; MetaData&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+my_table &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Table&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_table&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; metadata&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;column1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Integer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;column2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 복합 유니크 인덱스 생성&lt;/span&gt;
+my_unique_index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;my_unique_index&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; unique&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;두 방법 모두 데이터베이스에서 해당 컬럼 조합의 유니크성을 강제합니다. &lt;code class=&quot;language-text&quot;&gt;UniqueConstraint&lt;/code&gt;는 주로 제약 조건을 명시적으로 표현할 때 사용되며, &lt;code class=&quot;language-text&quot;&gt;Index&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;unique=True&lt;/code&gt; 설정은 검색 최적화와 유니크 제약 조건을 동시에 적용하고자 할 때 유용합니다.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;&lt;em&gt;\&lt;/em&gt;table_args__&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;  &lt;code class=&quot;language-text&quot;&gt;__table_args__&lt;/code&gt; 클래스 속성은 튜플이나 사전 형태로 제공될 수 있으며, 테이블 생성 시 추가적인 SQL 제약 조건이나 인덱스를 정의하는데 사용됩니다.  &lt;/p&gt;
+&lt;p&gt;예를 들어 복합 인덱스를 &lt;code class=&quot;language-text&quot;&gt;__table_args__&lt;/code&gt; 클래스 속성을 사용해 모델 내부에서 정의한 예제 코드는 다음과 같습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Base&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    __tablename__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;events&apos;&lt;/span&gt;
+
+    &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; primary_key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    timestamp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;DateTime&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    user_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Integer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    is_active &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Column&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Boolean&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 복합 인덱스 정의&lt;/span&gt;
+    __table_args__ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        Index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;ix_events_user_id_timestamp&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;user_id&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; timestamp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;desc&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 방식으로 정의된 인덱스는 데이터베이스에 해당 모델을 반영할 때 자동으로 생성됩니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[SQLAlchemy create_all() 메소드로 데이터베이스 테이블 자동 생성하기]]></title><description><![CDATA[서론 현재 회사에서는 Alembic 같은 데이터마이그레이션 도구를 사용하고 있지 않습니다. 따라서 스키마 버전 관리등은 별도로 하고 있지 않으며, 다만 SqlAlchemy의 create_all() 메소드를 이용해 프로덕션 환경이나 dev…]]></description><link>https://sharknia.github.io/SQLAlchemy-create_all-메소드로-데이터베이스-테이블-자동-생성하기/</link><guid isPermaLink="false">https://sharknia.github.io/SQLAlchemy-create_all-메소드로-데이터베이스-테이블-자동-생성하기/</guid><pubDate>Mon, 12 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/adeaa97d904dbe547536564c64470baa/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR42hXL209SARwA4N8h7SVnpaZrbIYmJQoRwklDLl64KAqKFy5yPYgcODcuwhFNUVHRNC4iWdOlW700c5W9ZWtzvbS59dbWeuh/Cbfv9QPgycoQHlrRhEKjRO8i5eOeB5pRrmZE7qPqtCNPrVirbsw8EzZ6qSqJ+oZICY1S4KHAkwLwO6HlCUesvNmhblYZJFhQzCZ2Pn5w7Of7CtsCihRbXI+n/Na1rW4iWmMw1Sh0cB+9WmUgVIJQBe3yhyNW40K6xjDa6g8ocUrq9JtCcf9ywbWyHs4WYvm33QG6J5JQ+xgQqhGR6iqCTFuGoP31g2Ntjune6YQtvm5n13/8+u3+9JO6+Fv6fiGjFx4OO4TjU55s9u6kE+SDgGoB1QEohkBlhD6TiCAnVjfD6bw5uUbk9z+fn4smgorQ4lyhqE1uSKkFXXzeV3pZMWG/pjGD2gRqIyADFtBbqx3upijp2tld3iqa6WexvVelLyfCYUwTz4SzL/SrhWYs2Rlg8HeHnYuLYPXCoA3KEbFPgxW75QtM7he71pZXtvcs7IZzLevJ7KC9xr4Jb78rIPCE271B3WrS8CYnTKUqfTjYfGDDAKZDZZUzhDy3aTjI4bHU8ExMNmDhtkj4OnuLO3m9uqlO3Ot9fSz2zXUQVNfR7u1wGDAcKUcED8MMXcsw44cH+rklgd6qwGal3nivn1V6Yu6lnczxyerZN//ZpSCU5Q5NPUqnGkiag1OA04CQMQhG6mejrZbAPZmmze7sT+VNudPc6dfLP/9KR+8jz4s9FKsKRaU00cHGJQm2Gic5RBTICAA1W4YQ0UqCaYjO8pMJAROpddJcJ95GMHecWJXdWUeTzfPz/Ey6jmU5JHM1qRhQsf/eQNuGNwq8qwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/adeaa97d904dbe547536564c64470baa/ca1dc/image1.png&apos; srcset=&apos;/static/adeaa97d904dbe547536564c64470baa/e7570/image1.png 170w,
@@ -1924,7 +1924,22 @@ _db_connection&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Eng
 &lt;h4&gt;FastAPI에서 모델 클래스가 정의되는 순간은?&lt;/h4&gt;
 &lt;p&gt;FastAPI 어플리케이션에서 “모델 클래스가 정의되는 순간”은 Python 스크립트가 실행되어 해당 모델 클래스가 메모리에 로드되는 시점을 의미합니다. &lt;/p&gt;
 &lt;p&gt;FastAPI 어플리케이션을 실행하면(예를 들어 &lt;code class=&quot;language-text&quot;&gt;uvicorn main:app&lt;/code&gt; 등의 명령어를 사용하여) Python 인터프리터는 main.py를 로드하고 실행합니다. 이 과정에서 main.py에서 직접적으로, 또는 임포트된 모듈 내에서 다시 임포트된 SqlAlchemy의ㅏ 모델 클래스들도 함께 로드되고 메모리에 생성됩니다. 바로 이 시점에 각 모델 클래스에 해당하는 &lt;code class=&quot;language-text&quot;&gt;Table&lt;/code&gt; 객체가 &lt;code class=&quot;language-text&quot;&gt;Metadata&lt;/code&gt; 객체에 등록됩니다. &lt;/p&gt;
-&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
+&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
+&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
+&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
+&lt;h3&gt;Major Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
+&lt;h3&gt;Minor Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
+&lt;h3&gt;Patch Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
+&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;목적&lt;/h2&gt;
+&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
+&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
 &lt;h3&gt;소개&lt;/h3&gt;
 &lt;p&gt;많은 개발자들이 한 번쯤은 &quot;나만의 블로그를 운영해야지&quot;라고 생각해본 적이 있을 겁니다. 하지만 실제로 블로그를 시작하고 유지하는 일은 상당한 도전과제입니다. 공부하고 개발하는 것만으로도 바쁜데, 여기에 글을 쓰고 관리하는 일은 때때로, 아니 항상 부담스러운 일입니다.&lt;/p&gt;
 &lt;p&gt;노션으로 공부를 하는 개발자가 있습니다. 일을 하면서일수도 있고, 따로 짬을 내어 공부를 하면서일수도 있습니다. 그러다가 한 번 쯤은 생각하게 됩니다. 노션으로 한 공부나 작업 기록이 블로그에 자동으로 업로드된다면 좋을텐데!&lt;/p&gt;
@@ -2052,22 +2067,7 @@ BLOG&lt;em&gt;REPO, BLOG&lt;/em&gt;URL, GIT&lt;em&gt;USER&lt;/em&gt;EMAIL, GIT&l
 &lt;h3&gt;개발과정&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;개발과정 몰아보기&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;문의&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
-&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
-&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
-&lt;h3&gt;Major Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
-&lt;h3&gt;Minor Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
-&lt;h3&gt;Patch Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
-&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
-&lt;h2&gt;목적&lt;/h2&gt;
-&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
-&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;파이썬에서 잠깐 테스트코드를 맛본적이 있습니다. 문법 자체는 조금 복잡했지만(익숙하지 않았지만) 설치 자체는 그다지 어렵지 않았던 것으로 기억합니다. &lt;/p&gt;
 &lt;p&gt;그래서 타입스크립트에서도 그럴 줄 알았습니다. &lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
@@ -3103,46 +3103,7 @@ Secrets는 로그에도 노출되지 않으며, variables는 로그에서 노출
 &lt;p&gt;예외 발생&lt;/p&gt;
 &lt;p&gt;함수 실행 중 예외가 발생하여 처리 흐름이 중단되는 경우. SQLAlchemy의 세션 관리는 트랜잭션이 커밋되지 않으면 자동으로 롤백을 수행하므로 사실상 트랜잭션이 롤백되는 시점과 일치한다. &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
-&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
-&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
-&lt;h2&gt;func의 특징&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;함수 생성기&lt;/p&gt;
-&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;동적 생성&lt;/p&gt;
-&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
-&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;다양한 함수 지원&lt;/p&gt;
-&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;__getattr__&lt;/code&gt; method&lt;/h2&gt;
-&lt;p&gt;func 객체의 &lt;strong&gt;getattr&lt;/strong&gt; 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
-&lt;p&gt;예를 들어, func.pg&lt;em&gt;try&lt;/em&gt;advisory&lt;em&gt;lock에 접근하면 pg&lt;/em&gt;try&lt;em&gt;advisory&lt;/em&gt;lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
-&lt;h2&gt;사용방법&lt;/h2&gt;
-&lt;h3&gt;기본 사용&lt;/h3&gt;
-&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;strong&gt;getattr&lt;/strong&gt; 메소드로 연결된다.)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
-
-&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
-&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
-&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
 &lt;p&gt;가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.01초 미만의 간격으로 두 번씩 들어오는 경우가 있다. 사실상 요청이 동시에 들어오는 것과 같다. 대부분의 경우에는 문제가 되지 않지만, 쿠폰 구매 같은 민감한 요청에 대해서는 회사의 손해 또는 사용자의 불편과 예민하게 직결되므로 문제가 커질 수 있다. &lt;/p&gt;
 &lt;p&gt;따라서 해당 문제를 완벽히 해결하고자 한다. &lt;/p&gt;
 &lt;p&gt;현재 별다른 조치가 없는 상황에서 발생하는 문제 상황은 다음과 같다. &lt;/p&gt;
@@ -3239,7 +3200,46 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
 &lt;p&gt;쿠폰 구매 서비스 로직에서 트랜잭션 시작 전에  user_id를 기반으로 Advisory Lock을 요청하면 1번 요청이 처리되는 동안 동일한 user_id 에 대한 다른 요청은 대기하게 된다. 쿠폰 구매 처리가 완료되면, Advisory Lock을 해제하면 된다. &lt;/p&gt;
 &lt;h2&gt;결론 - PostgreSQL Advisory Locks 채용&lt;/h2&gt;
 &lt;p&gt;이 방법을 사용하면 매우 짧은 간격의 요청도 효과적으로 처리할 수 있다. 특히 트랜잭션 레벨의 잠금은 각 트랜잭션이 커밋되거나 롤백될 때까지만 유지되므로 0.005초와 같은 짧은 간격의 요청을 동기화하는데 매우 적합하다. &lt;/p&gt;
-&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
+&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
+&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
+&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
+&lt;h2&gt;func의 특징&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;함수 생성기&lt;/p&gt;
+&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;동적 생성&lt;/p&gt;
+&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
+&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다양한 함수 지원&lt;/p&gt;
+&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;__getattr__&lt;/code&gt; method&lt;/h2&gt;
+&lt;p&gt;func 객체의 &lt;strong&gt;getattr&lt;/strong&gt; 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
+&lt;p&gt;예를 들어, func.pg&lt;em&gt;try&lt;/em&gt;advisory&lt;em&gt;lock에 접근하면 pg&lt;/em&gt;try&lt;em&gt;advisory&lt;/em&gt;lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
+&lt;h2&gt;사용방법&lt;/h2&gt;
+&lt;h3&gt;기본 사용&lt;/h3&gt;
+&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;strong&gt;getattr&lt;/strong&gt; 메소드로 연결된다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
+
+&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
+&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
+&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
 &lt;h2&gt;유지보수 내역&lt;/h2&gt;
 &lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
 &lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
@@ -3277,7 +3277,82 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
 &lt;h3&gt;URL 형식 변경&lt;/h3&gt;
 &lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;노션 소개 페이지&lt;/code&gt; 라는 타이틀을 &lt;code class=&quot;language-text&quot;&gt;노션소개페이지&lt;/code&gt; 로 변환해서 URL로 사용하고 있었는데, 공백을 완전히 제거하는 대신 하이픈을 넣도록 수정해주었다. &lt;/p&gt;
 &lt;h2&gt;다음 단계는?&lt;/h2&gt;
-&lt;p&gt;이제 다음 단계는 자동화가 목적이다. 어느정도 기능 구현은 90프로 이상 됐다고 생각하고, 당장 내가 블로그 글을 쓰는데 큰 문제가 없어보인다. 이제 github.io와 합쳐서 실질적인 사용이 가능하도록 해보려고 한다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy에서의 트랜잭션 격리 수준 구현]]></title><description><![CDATA[구현 목적 상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS…]]></description><link>https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구현 목적&lt;/h2&gt;
+&lt;p&gt;이제 다음 단계는 자동화가 목적이다. 어느정도 기능 구현은 90프로 이상 됐다고 생각하고, 당장 내가 블로그 글을 쓰는데 큰 문제가 없어보인다. 이제 github.io와 합쳐서 실질적인 사용이 가능하도록 해보려고 한다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level)]]></title><description><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level…]]></description><link>https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</link><guid isPermaLink="false">https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;트랜잭션 격리 수준(Transaction Isolation Level)이란?&lt;/h2&gt;
+&lt;p&gt;트랜잭션 격리 수준은 데이터베이스 시스템에서 동시에 여러 트랜잭션이 실행될 때, 트랜잭션 간에 데이터를 어떻게 고립시킬지를 결정하는 설정이다. 이 설정은 트랜잭션이 다른 트랜잭션의 작업에 영향을 받지 않도록 보장하는 동시에 여러 트랜잭션이 데이터베이스의 동일한 데이터에 접근할 때 발생하는 문제들을 관리하는데 중요한 역할을 한다. &lt;/p&gt;
+&lt;p&gt;격리 수준이 높을 수록 트랜잭션 간의 고립 정도가 증가하지만, 그만큼 데이터베이스의 처리량(throughput)과 동시성(concurrency)이 감소할 수 있다. 반대로 격리 수준이 낮으면 처리량과 동시성은 증가하지만 데이터 무결성 문제가 발생할 위험이 높아진다. 따라서 적절한 격리 수준을 선택해야 한다. &lt;/p&gt;
+&lt;p&gt;데이터베이스의 동일한 데이터에 접근할 때 발생할 수 있는 문제들은 다음과 같다. &lt;/p&gt;
+&lt;h3&gt;Dirty Read&lt;/h3&gt;
+&lt;p&gt;한 트랜잭션이 아직 커밋되지 않은 데이터를 읽는 경우&lt;/p&gt;
+&lt;h3&gt;Non-repeatable Read&lt;/h3&gt;
+&lt;p&gt;한 트랜잭션이 동일한 쿼리를 여러 번 실행할 떄마다 다른 결과를 얻는 경우. 이는 다른 트랜잭션이 데이터를 변경하거나 삭제했기 때문이다. &lt;/p&gt;
+&lt;h3&gt;Phantom Read&lt;/h3&gt;
+&lt;p&gt;한 트랜잭션이 동일한 쿼리를 여러 번 실행할 때, 새로 삽입된 행이 결과에 나타나는 현상이다. &lt;/p&gt;
+&lt;h3&gt;Serialization Anomaly&lt;/h3&gt;
+&lt;p&gt;트랜잭션들이 서로 다른 순서로 실행될 때 발생할 수 있는 일관성 없는 결과를 말한다. &lt;/p&gt;
+&lt;h2&gt;격리 수준의 종류&lt;/h2&gt;
+&lt;p&gt;각 데이터베이스 시스템은 아래의 격리 수준을 제공하며, 이는 ANSI SQL 표준에 의해 정의된다. &lt;/p&gt;
+&lt;h3&gt;Read Uncommitted&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;가장 낮은 격리 수준이다. &lt;/li&gt;
+&lt;li&gt;다른 트랜잭션에서 아직 커밋되지 않은 변경 사항을 조회할 수 있다. (Dirty Read)&lt;/li&gt;
+&lt;li&gt;Postgreql에서는 구현되지 있지 않아 Read Committed로 자동 처리된다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;장점&lt;/h4&gt;
+&lt;p&gt;높은 동시성과 성능을 보여준다. &lt;/p&gt;
+&lt;h4&gt;단점&lt;/h4&gt;
+&lt;p&gt;데이터 무결성 문제가 발생할 수 있다. &lt;/p&gt;
+&lt;h4&gt;고려사항&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터의 정확성보다 동시성이 중요한 경우에 고려될 수 있으나, 일반적으로 권장되지 않는다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Read Committed&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;각 쿼리가 실행될 때 커밋된 데이터만 읽는다. &lt;/li&gt;
+&lt;li&gt;다른 트랜잭션에서 커밋된 변경 사항을 쿼리 시점에 볼 수 있다. (Non-repeatable Read이 발생할 수 있다. )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;장점&lt;/h4&gt;
+&lt;p&gt;적당한 수준의 동시성과 성능을 보여준다. &lt;/p&gt;
+&lt;h4&gt;단점&lt;/h4&gt;
+&lt;p&gt;같은 트랜잭션 내에서 같은 데이터를 두 번 읽을 때 다른 결과가 나올 수 있다. &lt;/p&gt;
+&lt;h4&gt;고려사항&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;일반적인 응용 프로그램에서 광범위하게 사용된다. &lt;/li&gt;
+&lt;li&gt;대부분의 경우에 적합한 격리 수준이다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Repeatable Read&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;트랜잭션이 시작될 때의 데이터 상태를 유지한다. &lt;/li&gt;
+&lt;li&gt;트랜잭션 중에 다른 트랜잭션이 커밋한 변경 사항이 보이지 않음(Phantom Read이 발생할 수 있다.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;장점&lt;/h4&gt;
+&lt;p&gt;하나의 트랜잭션 내에서 일관된 조회 결과를 보장한다. &lt;/p&gt;
+&lt;h4&gt;단점&lt;/h4&gt;
+&lt;p&gt;트랜잭션이 길어질수록 다른 트랜잭션과의 충돌 가능성이 증가한다. &lt;/p&gt;
+&lt;h4&gt;고려사항&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;일관된 데이터 읽기가 필요할 때 사용한다. &lt;/li&gt;
+&lt;li&gt;데이터 무결정이 중요한 경우 적합하지만, 긴 트랜잭션은 피해야 한다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Serializable&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터베이스 트랜잭션에서 가장 높은 격리 수준이다. &lt;/li&gt;
+&lt;li&gt;트랜잭션이 서로 독립적으로 작동하며, 동시에 여러 트랜잭션이 수행되는 경우에도 하나의 트랜잭션이 완료된 것 처럼 작동한다. &lt;/li&gt;
+&lt;li&gt;다른 트랜잭션이 동시에 같은 데이터를 수정하지 못하도록 하여 데이터의 일관성을 보장한다. &lt;/li&gt;
+&lt;li&gt;하나의 트랜잭션 동안 새로 삽입되거나 삭제된 행이 다른 트랜잭션에 의해 보이지 않도록 해서 Phantom Read를 방지한다. &lt;/li&gt;
+&lt;li&gt;각 트랜잭션이 독립적인 환경에서 실행되며 다른 트랜잭션의 중간 결과를 볼 수 없다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;장점&lt;/h4&gt;
+&lt;p&gt;높은 수준의 데이터 무결성을 제공한다. 데이터베이스 내의 데이터는 모든 트랜잭션에 대해 완전히 일관된 상태를 유지한다. &lt;/p&gt;
+&lt;p&gt;따라서 동시성 문제도 최소화된다. 동시에 여러 트랜잭션이 실행되는 환경에서 발생할 수 있는 대부분의 동시성 문제를 예방한다. &lt;/p&gt;
+&lt;h4&gt;단점&lt;/h4&gt;
+&lt;p&gt;트랜잭션의 격리 수준이 높을 수록 데이터베이스의 처리량이 감소할 수 있다. 락 경합(lock contention)이 증가하고, 이는 성능저하로 이어질 가능성이 높다. &lt;/p&gt;
+&lt;p&gt;서로 다른 트랜잭션이 같은 자원을 기다리는 상황이 발생할 수 있으며, 이는 데드락으로 이어질 수 있다. &lt;/p&gt;
+&lt;h4&gt;고려사항&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터 무결성이 중요한 경우에 적합하지만 성능상의 영향을 고려해야 한다. &lt;/li&gt;
+&lt;li&gt;데드락을 방지하기 위해 트랜잭션 설계 시 주의가 필요하다. &lt;/li&gt;
+&lt;li&gt;읽기만 수행하는 트랜잭션의 경우 더 낮은 격리 수준을 고려하는 것이 성능상 이점이 있을 수 있다. &lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy에서의 트랜잭션 격리 수준 구현]]></title><description><![CDATA[구현 목적 상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS…]]></description><link>https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구현 목적&lt;/h2&gt;
 &lt;p&gt;상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS로 옮긴 김에 해당 문제를 완벽하게 해결하기 위해 다각도로 방법을 고민했다. &lt;/p&gt;
 &lt;p&gt;그 방안 중 하나가 &lt;a href=&quot;https://sharknia.github.io/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80Transaction-Isolation-Level&quot;&gt;트랜잭션 격리 수준(Transaction Isolation Level)&lt;/a&gt; 을 이용한 것이다. &lt;/p&gt;
 &lt;p&gt;SqlAlchemy - Postgresql을 사용하고 있는데, 이 라이브러리에서 트랜잭션 격리 수준을 어떻게 구현했는지 기록한다. &lt;/p&gt;
@@ -3366,115 +3441,7 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
     &lt;span class=&quot;token keyword&quot;&gt;finally&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; session&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; session&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;close&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이제 엔드포인트에서 기존 get&lt;em&gt;db&lt;/em&gt;session 대신 이 메소드를 사용하면 다른 옵션의 격리 레벨을 사용할 수 있다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level)]]></title><description><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level…]]></description><link>https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</link><guid isPermaLink="false">https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;트랜잭션 격리 수준(Transaction Isolation Level)이란?&lt;/h2&gt;
-&lt;p&gt;트랜잭션 격리 수준은 데이터베이스 시스템에서 동시에 여러 트랜잭션이 실행될 때, 트랜잭션 간에 데이터를 어떻게 고립시킬지를 결정하는 설정이다. 이 설정은 트랜잭션이 다른 트랜잭션의 작업에 영향을 받지 않도록 보장하는 동시에 여러 트랜잭션이 데이터베이스의 동일한 데이터에 접근할 때 발생하는 문제들을 관리하는데 중요한 역할을 한다. &lt;/p&gt;
-&lt;p&gt;격리 수준이 높을 수록 트랜잭션 간의 고립 정도가 증가하지만, 그만큼 데이터베이스의 처리량(throughput)과 동시성(concurrency)이 감소할 수 있다. 반대로 격리 수준이 낮으면 처리량과 동시성은 증가하지만 데이터 무결성 문제가 발생할 위험이 높아진다. 따라서 적절한 격리 수준을 선택해야 한다. &lt;/p&gt;
-&lt;p&gt;데이터베이스의 동일한 데이터에 접근할 때 발생할 수 있는 문제들은 다음과 같다. &lt;/p&gt;
-&lt;h3&gt;Dirty Read&lt;/h3&gt;
-&lt;p&gt;한 트랜잭션이 아직 커밋되지 않은 데이터를 읽는 경우&lt;/p&gt;
-&lt;h3&gt;Non-repeatable Read&lt;/h3&gt;
-&lt;p&gt;한 트랜잭션이 동일한 쿼리를 여러 번 실행할 떄마다 다른 결과를 얻는 경우. 이는 다른 트랜잭션이 데이터를 변경하거나 삭제했기 때문이다. &lt;/p&gt;
-&lt;h3&gt;Phantom Read&lt;/h3&gt;
-&lt;p&gt;한 트랜잭션이 동일한 쿼리를 여러 번 실행할 때, 새로 삽입된 행이 결과에 나타나는 현상이다. &lt;/p&gt;
-&lt;h3&gt;Serialization Anomaly&lt;/h3&gt;
-&lt;p&gt;트랜잭션들이 서로 다른 순서로 실행될 때 발생할 수 있는 일관성 없는 결과를 말한다. &lt;/p&gt;
-&lt;h2&gt;격리 수준의 종류&lt;/h2&gt;
-&lt;p&gt;각 데이터베이스 시스템은 아래의 격리 수준을 제공하며, 이는 ANSI SQL 표준에 의해 정의된다. &lt;/p&gt;
-&lt;h3&gt;Read Uncommitted&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;가장 낮은 격리 수준이다. &lt;/li&gt;
-&lt;li&gt;다른 트랜잭션에서 아직 커밋되지 않은 변경 사항을 조회할 수 있다. (Dirty Read)&lt;/li&gt;
-&lt;li&gt;Postgreql에서는 구현되지 있지 않아 Read Committed로 자동 처리된다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;장점&lt;/h4&gt;
-&lt;p&gt;높은 동시성과 성능을 보여준다. &lt;/p&gt;
-&lt;h4&gt;단점&lt;/h4&gt;
-&lt;p&gt;데이터 무결성 문제가 발생할 수 있다. &lt;/p&gt;
-&lt;h4&gt;고려사항&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;데이터의 정확성보다 동시성이 중요한 경우에 고려될 수 있으나, 일반적으로 권장되지 않는다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Read Committed&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;각 쿼리가 실행될 때 커밋된 데이터만 읽는다. &lt;/li&gt;
-&lt;li&gt;다른 트랜잭션에서 커밋된 변경 사항을 쿼리 시점에 볼 수 있다. (Non-repeatable Read이 발생할 수 있다. )&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;장점&lt;/h4&gt;
-&lt;p&gt;적당한 수준의 동시성과 성능을 보여준다. &lt;/p&gt;
-&lt;h4&gt;단점&lt;/h4&gt;
-&lt;p&gt;같은 트랜잭션 내에서 같은 데이터를 두 번 읽을 때 다른 결과가 나올 수 있다. &lt;/p&gt;
-&lt;h4&gt;고려사항&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;일반적인 응용 프로그램에서 광범위하게 사용된다. &lt;/li&gt;
-&lt;li&gt;대부분의 경우에 적합한 격리 수준이다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Repeatable Read&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;트랜잭션이 시작될 때의 데이터 상태를 유지한다. &lt;/li&gt;
-&lt;li&gt;트랜잭션 중에 다른 트랜잭션이 커밋한 변경 사항이 보이지 않음(Phantom Read이 발생할 수 있다.)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;장점&lt;/h4&gt;
-&lt;p&gt;하나의 트랜잭션 내에서 일관된 조회 결과를 보장한다. &lt;/p&gt;
-&lt;h4&gt;단점&lt;/h4&gt;
-&lt;p&gt;트랜잭션이 길어질수록 다른 트랜잭션과의 충돌 가능성이 증가한다. &lt;/p&gt;
-&lt;h4&gt;고려사항&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;일관된 데이터 읽기가 필요할 때 사용한다. &lt;/li&gt;
-&lt;li&gt;데이터 무결정이 중요한 경우 적합하지만, 긴 트랜잭션은 피해야 한다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Serializable&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;데이터베이스 트랜잭션에서 가장 높은 격리 수준이다. &lt;/li&gt;
-&lt;li&gt;트랜잭션이 서로 독립적으로 작동하며, 동시에 여러 트랜잭션이 수행되는 경우에도 하나의 트랜잭션이 완료된 것 처럼 작동한다. &lt;/li&gt;
-&lt;li&gt;다른 트랜잭션이 동시에 같은 데이터를 수정하지 못하도록 하여 데이터의 일관성을 보장한다. &lt;/li&gt;
-&lt;li&gt;하나의 트랜잭션 동안 새로 삽입되거나 삭제된 행이 다른 트랜잭션에 의해 보이지 않도록 해서 Phantom Read를 방지한다. &lt;/li&gt;
-&lt;li&gt;각 트랜잭션이 독립적인 환경에서 실행되며 다른 트랜잭션의 중간 결과를 볼 수 없다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;장점&lt;/h4&gt;
-&lt;p&gt;높은 수준의 데이터 무결성을 제공한다. 데이터베이스 내의 데이터는 모든 트랜잭션에 대해 완전히 일관된 상태를 유지한다. &lt;/p&gt;
-&lt;p&gt;따라서 동시성 문제도 최소화된다. 동시에 여러 트랜잭션이 실행되는 환경에서 발생할 수 있는 대부분의 동시성 문제를 예방한다. &lt;/p&gt;
-&lt;h4&gt;단점&lt;/h4&gt;
-&lt;p&gt;트랜잭션의 격리 수준이 높을 수록 데이터베이스의 처리량이 감소할 수 있다. 락 경합(lock contention)이 증가하고, 이는 성능저하로 이어질 가능성이 높다. &lt;/p&gt;
-&lt;p&gt;서로 다른 트랜잭션이 같은 자원을 기다리는 상황이 발생할 수 있으며, 이는 데드락으로 이어질 수 있다. &lt;/p&gt;
-&lt;h4&gt;고려사항&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;데이터 무결성이 중요한 경우에 적합하지만 성능상의 영향을 고려해야 한다. &lt;/li&gt;
-&lt;li&gt;데드락을 방지하기 위해 트랜잭션 설계 시 주의가 필요하다. &lt;/li&gt;
-&lt;li&gt;읽기만 수행하는 트랜잭션의 경우 더 낮은 격리 수준을 고려하는 것이 성능상 이점이 있을 수 있다. &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[우분투 용량 관리]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/우분투-용량-관리/</link><guid isPermaLink="false">https://sharknia.github.io/우분투-용량-관리/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 나스를 하나 운영하고 있다. &lt;/p&gt;
-&lt;p&gt;이것저것 설정해서 쓰고 있는데, 어느 날 갑자기 토렌트 다운로드가 용량이 없다고 작동하지 않았다. &lt;/p&gt;
-&lt;p&gt;용량은 다음의 명령어를 통해 확인할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/HDD2/myHomePage$ &lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt;
-Filesystem      Size  Used Avail Use% Mounted on
-tmpfs           200M   29M  171M  &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;% /run
-/dev/mmcblk1p2   15G   15G     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;% /
-tmpfs           996M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  996M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /dev/shm
-tmpfs           &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/lock
-/dev/mmcblk1p1  128M   14M  114M  &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;% /media/boot
-/dev/sdb1       &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.7T  656G  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.0T  &lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt;% /HDD2
-/dev/sda1        11T  &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.3T  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.1T  &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;% /HDD
-tmpfs           200M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  200M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/user/1000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;외장하든 왕 큰 놈을 달아서 사용하고 있는데, 오드로이드다보니 메인 OS가 깔리는 드라이브는 15gb짜리 작은 용량이다.. 그 드라이브가 100퍼센트 꽉 차 있었다. &lt;/p&gt;
-&lt;p&gt;다음의 명령어를 사용해 용량이 큰 디렉토리를 검색했다. 외장하드 경로는 제외하고 검색했다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/$ &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt; / &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD2 &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-hr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
-du: cannot &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt; directory &lt;span class=&quot;token string&quot;&gt;&apos;/proc/sys/fs/binfmt_misc&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such device
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fd/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fdinfo/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fd/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fdinfo/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-15G     /
-11G     /home/furychick
-11G     /home
-&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.7G    /home/furychick/.forever
-&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.2G    /var
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.7G    /usr
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.6G    /var/log
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal/dc87f36fc06c441a85ff7269ba4d50fb
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.3G    /usr/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;아~ 개인 홈페이지를 돌리는 로그가.. 몇 년 째 사이트를 그냥 켜둔채로 방치하다 보니 9기가에 달하게 크게 자라 내 서버를 억누르고 있었다. &lt;/p&gt;
-&lt;p&gt;당장 로그를 삭제해주었다. &lt;/p&gt;
-&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
+&lt;p&gt;이제 엔드포인트에서 기존 get&lt;em&gt;db&lt;/em&gt;session 대신 이 메소드를 사용하면 다른 옵션의 격리 레벨을 사용할 수 있다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
 &lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
 &lt;h2&gt;구현 내용&lt;/h2&gt;
 &lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
@@ -3639,7 +3606,40 @@ value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class
 &lt;p&gt;C로 개발을 시작했어서 그런지 처음에 자바스크립트를 접하고 아주 재미있고 자유도가 높다고 생각했는데, 갈 수록 나 자신에게 쇠사슬이 묶여있는게 오히려 편하다고 느낀다. &lt;/p&gt;
 &lt;p&gt;프로젝트 크기가 커질수록 더 그렇게 느끼는 것 같다. &lt;/p&gt;
 &lt;p&gt;물론 이런 기능을 잘 활용하면 더 편할때도 많긴 하다. 코드가 짧아지는 것도 맞고..&lt;/p&gt;
-&lt;p&gt;결국 내 자신이 잘하면 아무일도 안생길거라는 생각도 든다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3) 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
+&lt;p&gt;결국 내 자신이 잘하면 아무일도 안생길거라는 생각도 든다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[우분투 용량 관리]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/우분투-용량-관리/</link><guid isPermaLink="false">https://sharknia.github.io/우분투-용량-관리/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 나스를 하나 운영하고 있다. &lt;/p&gt;
+&lt;p&gt;이것저것 설정해서 쓰고 있는데, 어느 날 갑자기 토렌트 다운로드가 용량이 없다고 작동하지 않았다. &lt;/p&gt;
+&lt;p&gt;용량은 다음의 명령어를 통해 확인할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/HDD2/myHomePage$ &lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt;
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           200M   29M  171M  &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;% /run
+/dev/mmcblk1p2   15G   15G     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;% /
+tmpfs           996M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  996M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /dev/shm
+tmpfs           &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/lock
+/dev/mmcblk1p1  128M   14M  114M  &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;% /media/boot
+/dev/sdb1       &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.7T  656G  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.0T  &lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt;% /HDD2
+/dev/sda1        11T  &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.3T  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.1T  &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;% /HDD
+tmpfs           200M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  200M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/user/1000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;외장하든 왕 큰 놈을 달아서 사용하고 있는데, 오드로이드다보니 메인 OS가 깔리는 드라이브는 15gb짜리 작은 용량이다.. 그 드라이브가 100퍼센트 꽉 차 있었다. &lt;/p&gt;
+&lt;p&gt;다음의 명령어를 사용해 용량이 큰 디렉토리를 검색했다. 외장하드 경로는 제외하고 검색했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/$ &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt; / &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD2 &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-hr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
+du: cannot &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt; directory &lt;span class=&quot;token string&quot;&gt;&apos;/proc/sys/fs/binfmt_misc&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such device
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fd/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fdinfo/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fd/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fdinfo/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+15G     /
+11G     /home/furychick
+11G     /home
+&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.7G    /home/furychick/.forever
+&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.2G    /var
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.7G    /usr
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.6G    /var/log
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal/dc87f36fc06c441a85ff7269ba4d50fb
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.3G    /usr/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아~ 개인 홈페이지를 돌리는 로그가.. 몇 년 째 사이트를 그냥 켜둔채로 방치하다 보니 9기가에 달하게 크게 자라 내 서버를 억누르고 있었다. &lt;/p&gt;
+&lt;p&gt;당장 로그를 삭제해주었다. &lt;/p&gt;
+&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3) 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/NotionAPI%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%8F%AC%EC%8A%A4%ED%8C%853&quot;&gt;NotionAPI를 활용한 자동 포스팅(3)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다. &lt;/p&gt;
 &lt;h2&gt;오늘의 작업&lt;/h2&gt;
@@ -7909,36 +7909,7 @@ jobs:
 &lt;ul&gt;
 &lt;li&gt;프레임워크의 발전: 많은 현대 웹 프레임워크와 라이브러리가 이 문제를 내부적으로 처리합니다.&lt;/li&gt;
 &lt;li&gt;Single Page Applications (SPA): AJAX와 함께 SPA의 인기가 높아지면서 전통적인 폼 제출 방식이 적게 사용되게 되었습니다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Python venv (Windows)]]></title><description><![CDATA[venv란? Python의 표준 라이브러리에 포함된 가상 환경 모듈이다. 가상환경은 프로젝트마다 독립적인 Python…]]></description><link>https://sharknia.github.io/Python-venv-Windows/</link><guid isPermaLink="false">https://sharknia.github.io/Python-venv-Windows/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;venv란?&lt;/h4&gt;
-&lt;p&gt;Python의 표준 라이브러리에 포함된 가상 환경 모듈이다. 가상환경은 프로젝트마다 독립적인 Python 환경을 생성하여 패키지 의존성을 분리하고 관리할 수 있는 기능을 제공한다. &lt;/p&gt;
-&lt;p&gt;한 시스템 내에서 여러 프로젝트를 개발하거나 실행할 때 각 프로젝트별로 필요한 패키지를 격리된 환경에서 관리할 수 있다. &lt;/p&gt;
-&lt;p&gt;Python 3.3부터 venv가 표준 라이브러리에 탑재되었다. &lt;/p&gt;
-&lt;h4&gt;venv의 장점&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;독립성&lt;/li&gt;
-&lt;li&gt;의존성 분리&lt;/li&gt;
-&lt;li&gt;가볍고 효율적&lt;/li&gt;
-&lt;li&gt;파일 분리&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4&gt;venv를 이용한 가상환경 생성&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;가상환경을 생성할 디렉토리를 생성하고 이동한다. &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;가상환경 생성&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;phthon &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; venv venv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;마지막 “venv”는 가상환경 이름이다. 이렇게 하면 현재 디렉토리 하에 가상환경의 이름으로 새로운 디렉토리가 생성된다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;가상환경 활성화&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;venv&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;Scripts&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;activate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;첫번째 venv는 가상환경의 이름이다. 가상환경이 활성화되면, 프롬포트에서 가장 앞에 가상 환경의 이름이 나타난다. 이제부터 설치한 패키지는 해당 가상환경에만 적용이 된다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;가상환경 비활성화&lt;/p&gt;
-&lt;p&gt;가상환경이 활성화된 상태에서 &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;deactivate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[print와 pprint]]></title><description><![CDATA[print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다.  print 값을 터미널에 간단히 출력할 때 사용한다.  pprint pprint는 pretty print…]]></description><link>https://sharknia.github.io/print와-pprint/</link><guid isPermaLink="false">https://sharknia.github.io/print와-pprint/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다. &lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[print와 pprint]]></title><description><![CDATA[print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다.  print 값을 터미널에 간단히 출력할 때 사용한다.  pprint pprint는 pretty print…]]></description><link>https://sharknia.github.io/print와-pprint/</link><guid isPermaLink="false">https://sharknia.github.io/print와-pprint/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다. &lt;/p&gt;
 &lt;h3&gt;print&lt;/h3&gt;
 &lt;p&gt;값을 터미널에 간단히 출력할 때 사용한다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
@@ -8116,6 +8087,35 @@ pprint&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pprint&lt;sp
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;CDN 사용&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;이미지나 정적 파일과 같은 컨텐츠를 전세계적으로 빠르게 제공하기 위해 CDN 사용을 고려할 수 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Python venv (Windows)]]></title><description><![CDATA[venv란? Python의 표준 라이브러리에 포함된 가상 환경 모듈이다. 가상환경은 프로젝트마다 독립적인 Python…]]></description><link>https://sharknia.github.io/Python-venv-Windows/</link><guid isPermaLink="false">https://sharknia.github.io/Python-venv-Windows/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;venv란?&lt;/h4&gt;
+&lt;p&gt;Python의 표준 라이브러리에 포함된 가상 환경 모듈이다. 가상환경은 프로젝트마다 독립적인 Python 환경을 생성하여 패키지 의존성을 분리하고 관리할 수 있는 기능을 제공한다. &lt;/p&gt;
+&lt;p&gt;한 시스템 내에서 여러 프로젝트를 개발하거나 실행할 때 각 프로젝트별로 필요한 패키지를 격리된 환경에서 관리할 수 있다. &lt;/p&gt;
+&lt;p&gt;Python 3.3부터 venv가 표준 라이브러리에 탑재되었다. &lt;/p&gt;
+&lt;h4&gt;venv의 장점&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;독립성&lt;/li&gt;
+&lt;li&gt;의존성 분리&lt;/li&gt;
+&lt;li&gt;가볍고 효율적&lt;/li&gt;
+&lt;li&gt;파일 분리&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;venv를 이용한 가상환경 생성&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;가상환경을 생성할 디렉토리를 생성하고 이동한다. &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가상환경 생성&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;phthon &lt;span class=&quot;token parameter variable&quot;&gt;-m&lt;/span&gt; venv venv&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;마지막 “venv”는 가상환경 이름이다. 이렇게 하면 현재 디렉토리 하에 가상환경의 이름으로 새로운 디렉토리가 생성된다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가상환경 활성화&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;venv&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;Scripts&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;activate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;첫번째 venv는 가상환경의 이름이다. 가상환경이 활성화되면, 프롬포트에서 가장 앞에 가상 환경의 이름이 나타난다. 이제부터 설치한 패키지는 해당 가상환경에만 적용이 된다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;가상환경 비활성화&lt;/p&gt;
+&lt;p&gt;가상환경이 활성화된 상태에서 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;deactivate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Nuget 패키지 dll 추출]]></title><description><![CDATA[파일의 확장자를 으로 변경합니다. 예를 들어, 을 으로 변경합니다. ZIP 압축 해제 도구 (예: WinRAR, 7-Zip…]]></description><link>https://sharknia.github.io/Nuget-패키지-dll-추출/</link><guid isPermaLink="false">https://sharknia.github.io/Nuget-패키지-dll-추출/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt; 파일의 확장자를 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt;으로 변경합니다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.nupkg&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.zip&lt;/code&gt;으로 변경합니다.&lt;/li&gt;
