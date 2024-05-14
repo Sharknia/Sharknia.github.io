@@ -4,11 +4,12 @@ tags:
   - Next.js
   - Javascript
 description: "Next.js 소개와 설치, 간단 예제"
-update: "2024-05-13T12:34:00.000Z"
+update: "2024-05-14T00:49:00.000Z"
 date: "2024-05-13"
 상태: "Ready"
 title: "Next.js 소개와 설치, 간단 예제"
 ---
+![](image1.png)
 ## Next.js?
 
 ### 개요
@@ -125,7 +126,7 @@ export default function Hello() {
 
 [http://localhost:3000/test/hello](http://localhost:3000/test/hello)로 접속해보면 Hello World 문구를 확인할 수 있습니다. 
 
-![](image1.png)
+![](image2.png)
 ### API Route 방식을 사용해서 Hello World 출력하기
 
 #### API Route?
@@ -189,7 +190,7 @@ export default function Hello() {
 
 이제 [http://localhost:3000/test/hello](http://localhost:3000/test/hello)로 접속하면 다음과 같은 화면을 볼 수 있습니다. 
 
-![](image2.png)
+![](image3.png)
 ## getStaticProps
 
 `getStaticProps`는 빌드 시에 데이터를 불러와 페이지를 미리 생성하는 데 사용됩니다. 이는 주로 변경되지 않는 데이터가 필요한 페이지에 적합합니다.
