@@ -3,7 +3,7 @@ IDX: "NUM-182"
 tags:
   - BackEnd
 description: "ngrok을 활용한 로컬 서버 공개"
-update: "2024-05-14T01:36:00.000Z"
+update: "2024-05-14T02:17:00.000Z"
 date: "2024-05-14"
 상태: "Ready"
 title: "ngrok: 로컬 서버를 쉽게 공개하는 도구"
