@@ -1,4 +1,289 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 14 May 2024 03:09:05 GMT</lastBuildDate><item><title><![CDATA[ngrok: 로컬 서버를 쉽게 공개하는 도구]]></title><description><![CDATA[서론 로컬에서 개발할 때, 종종 외부에서 로컬 서버에 접근해야 하는 상황이 발생합니다. 예를 들어, 웹훅(Webhook…]]></description><link>https://sharknia.github.io/ngrok-로컬-서버를-쉽게-공개하는-도구/</link><guid isPermaLink="false">https://sharknia.github.io/ngrok-로컬-서버를-쉽게-공개하는-도구/</guid><pubDate>Tue, 14 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 17 May 2024 08:10:22 GMT</lastBuildDate><item><title><![CDATA[Django Discord 소셜 회원가입 및 로그인 구현]]></title><description><![CDATA[지난 시간에는 django를 설치하고 DB 세팅까지 완료했습니다. 이번에는 소셜 로그인 기능을 붙여보겠습니다.  django-allauth vs dj-rest-auth 와 는 모두 Django…]]></description><link>https://sharknia.github.io/Django-Discord-소셜-회원가입-및-로그인-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Django-Discord-소셜-회원가입-및-로그인-구현/</guid><pubDate>Fri, 17 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEhklEQVR42iWS21MTVxjA9w/oax+cTh86nU4f+tLOdPrkjNqLM+pYp6MOpWhtHUerjtiWq1gVCwZQgyhpIoragIpJFkyEoKJAQgiQxBJI5BICSTa33U32vns22Q3LdtUzvznzzZnv933nnPmgNENmOQrl6bzIkyJHAIqXBb4kgHWwrsqquq6oJVEROZlnJY4usqTI5ACNCZpCQW9NigBsisiGoqG5SBBjMEktSiUxnk37FpYX43FQYCWlqPmc5hfod/4bOcOSuEDRRS4vEHE8EYrOkwIpyrxl3N9kn293p5uHl0xDUyiJympRkAWhBOgCg3N5ssBBeZElAL2SikaQCFNgeImXN0S7119vnYNDtOM19WSBaRxcMTxxCwUSyCDP5iYCLuf4YDAyByH5rNbQ/tx+p+/ucmIpEluKrIaaLS79syhGsZkcQbPc/WmkyuyemfMhqbUR97A/PJPAEMtgHxTLIAk84Xjp6IF7osnI66XQlM9V0z1sm14jGW4ytJrE8sFY7phxeMQzuhiZ9wWnTPeuGW5dfvTYDNESp31smkglsBgLKFDgOTbd0ms/2g7fMPedbmrXd/dUG+BKAxxe8HEizQikP+gZGHqIYAkoisYozSkJRVkUizzDEYpSCAQnys8btlRe31rZsaWyY3edAXb2vw5P50iUA1QaS7KA1hQoSaRIgcgz2PziLE5kSkoBFLkNRfBOOi52dlbpTQ3XDI8d5iLAwgtzFI0VZWHmP082lxQkFsJoVLtMCo+vxBdwMh0IzYx6RyiG0MZjddHtm7CGXjk5FlVVNRicxvNJisHRHJLGEhkcgXIMrk1SjsjIpQIrELYnD2+a/8niiKqWUtmYx+deXAlxPK3JydRKFo0BQFIMSlLZbD4JLccj9X/VtOobH1rvKIqEEakUurahyiSF/l574syF6hb9xWm/S5MxPMmyaEkmSiWeIDMMyEEev+eDD9/ftOm98ordGxtSscRKsqClUlSqtv74vV7j4SP75oIT2gmOI5qsKIATEIpGGEBAkz7P9p3byip2tl49r2VoJhBJwOOqKsMW4+dffNTYcFRZZ7VX4FiM53IMnzQP7g9H+wsSgLK59He7vt22Y/O+it3PR52CJM56+8N+x9tC4rR3iGO1Qm8WkcdEAKR14U7fsdVkYENVIEakKw7srT/yTWfD3q6mQ47b9dbLB17+WzXr1L8aurLsuhl8eu3VYNus8+rMQLPf0To73O59cM43oFsLj0CBhdmfyvdU/fBp+def/Lj14193fdZnqIa76q3GGqup9lHnn1pgM9XZjHU2Uy18s65Xf0pf/f2tC2X222cgeNhitZk6zpaV/7y3seWc2Xrvhff5mG/UHRh7h0vDPzbuHxvzvRgPuIZeDOh1f/TbjJauGsjQ3dbWUtlw8Mv9e746WLH9zNnDurZTzboTl1pO6lpO6Fq14A261pMarVdONzX/VnV8R9vfv3RdOgh5g1MWuLu98dD5xlMXdVUdxkvwUM+As8fu7LU/va/hePrgHXZtf9YHO+7euHG2t6fNabv+PzkclR6hQGdvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/31ee4579cf5196e450d4bbac3763ed5d/ca1dc/image1.png&apos; srcset=&apos;/static/31ee4579cf5196e450d4bbac3763ed5d/e7570/image1.png 170w,
+/static/31ee4579cf5196e450d4bbac3763ed5d/f46e7/image1.png 340w,
+/static/31ee4579cf5196e450d4bbac3763ed5d/ca1dc/image1.png 680w,
+/static/31ee4579cf5196e450d4bbac3763ed5d/02d09/image1.png 1020w,
+/static/31ee4579cf5196e450d4bbac3763ed5d/42a19/image1.png 1024w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+    &lt;/span&gt;
+&lt;a href=&quot;https://sharknia.github.io/docker-compose%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-postgresql%EA%B3%BC-django-%EC%BB%A4%EB%84%A5%EC%85%98-%EB%A7%8C%EB%93%A4%EA%B8%B0&quot;&gt;지난 시간&lt;/a&gt;에는 django를 설치하고 DB 세팅까지 완료했습니다. 이번에는 소셜 로그인 기능을 붙여보겠습니다. &lt;/p&gt;
+&lt;h2&gt;django-allauth vs dj-rest-auth&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;django-allauth&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;dj-rest-auth&lt;/code&gt;는 모두 Django 애플리케이션에서 인증 및 사용자 관리를 쉽게 할 수 있도록 도와주는 패키지입니다. 하지만 이 두 패키지는 약간 다른 목적과 사용 사례를 가지고 있습니다. 둘을 비교해보면 다음과 같습니다.&lt;/p&gt;
+&lt;h2&gt;Discord 세팅&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.com/developers/applications&quot;&gt;Discord Developer Portal&lt;/a&gt;에서 Application을 생성합니다. &lt;/p&gt;
+&lt;p&gt;첫 페이지에서 APPLICATION ID, PUBLIC KEY를 기록합니다. &lt;/p&gt;
+&lt;p&gt;좌측의 OAuth2 메뉴로 이동합니다. &lt;/p&gt;
+&lt;p&gt;CLIENT SECRET을 얻고 기록합니다. &lt;/p&gt;
+&lt;p&gt;일단 여기까지만 먼저 해두겠습니다. &lt;/p&gt;
+&lt;h2&gt;설치&lt;/h2&gt;
+&lt;h3&gt;패키지 설치&lt;/h3&gt;
+&lt;p&gt;먼저 패키지를 설치합니다.  위에서 언급한 두 패키지 이외에도 &lt;code class=&quot;language-text&quot;&gt;allauth&lt;/code&gt;는 jwt 토큰은 생성해주지 않기 때문에 &lt;code class=&quot;language-text&quot;&gt;djangorestframework-simplejwt&lt;/code&gt; 라이브리러도 필요합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;poetry &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; django-allauth djangorestframework-simplejwt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;패키지를 설치한 후엔 반드시 이미지를 다시 빌드해줍니다. &lt;/p&gt;
+&lt;h3&gt;settings.py&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;settings.py&lt;/code&gt; 파일을 열고, 다음의 내용을 추가합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;INSTALLED_APPS &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+    &lt;span class=&quot;token string&quot;&gt;&quot;allauth&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;allauth.account&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;allauth.socialaccount&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;allauth.socialaccount.providers.discord&quot;&lt;/span&gt;,  &lt;span class=&quot;token comment&quot;&gt;# 디스코드 소셜 로그인 추가&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;rest_framework&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;rest_framework.authtoken&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;dj_rest_auth&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;dj_rest_auth.registration&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&quot;django.contrib.sites&quot;&lt;/span&gt;,
+    &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+SITE_ID &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+
+AUTHENTICATION_BACKENDS &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;django.contrib.auth.backends.ModelBackend&apos;&lt;/span&gt;,
+    &lt;span class=&quot;token string&quot;&gt;&apos;allauth.account.auth_backends.AuthenticationBackend&apos;&lt;/span&gt;,
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+REST_FRAMEWORK &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&apos;DEFAULT_AUTHENTICATION_CLASSES&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&apos;rest_framework.authentication.TokenAuthentication&apos;&lt;/span&gt;,
+        &lt;span class=&quot;token string&quot;&gt;&apos;rest_framework.authentication.SessionAuthentication&apos;&lt;/span&gt;,
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;,
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 이메일 인증 설정&lt;/span&gt;
+ACCOUNT_EMAIL_VERIFICATION &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;none&quot;&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 이메일 확인 비활성화&lt;/span&gt;
+ACCOUNT_EMAIL_REQUIRED &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; True  &lt;span class=&quot;token comment&quot;&gt;# 회원가입 시 이메일 주소 필수&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 로그인 후 리디렉션 URL&lt;/span&gt;
+LOGIN_REDIRECT_URL &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt;
+
+MIDDLEWARE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+    &lt;span class=&quot;token string&quot;&gt;&quot;allauth.account.middleware.AccountMiddleware&quot;&lt;/span&gt;,  &lt;span class=&quot;token comment&quot;&gt;# 이 줄을 추가&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;마이그레이션 적용&lt;/h3&gt;
+&lt;p&gt;여기까지 마친 후 마이그레이션을 진행합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;docker-compose&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; web python manage.py migrate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;urls.py&lt;/h3&gt;
+&lt;p&gt;urls.py를 열어 urlpattern에 다음의 endpoint를 추가합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;urlpatterns &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;accounts/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; include&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;allauth.urls&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# allauth URL 패턴 추가&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 로그인을 위한 Callback URL을 Discord에 정의할 수 있습니다. Callback URL은 &lt;code class=&quot;language-text&quot;&gt;/accounts/discord/login/callback/&lt;/code&gt; 입니다. &lt;/p&gt;
+&lt;p&gt;Discord의 Redirects에 해당 주소를 추가합니다. &lt;a href=&quot;http://127.0.0.1:8000/accounts/discord/login/callback/&quot;&gt;http://127.0.0.1:8000/accounts/discord/login/callback/&lt;/a&gt;로 적어주어도 좋고, 저는 ngrok을 이용중이므로 해당 주소를 입력해주었습니다. &lt;/p&gt;
+&lt;h3&gt;관리자 페이지 접속&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://localhost:8000/admin&quot;&gt;관리자 페이지&lt;/a&gt;에 Social Application을 생성해줘야 합니다. 해당 페이지에 접속하여 로그인합니다. 계정이 없다면 다음의 명령어를 사용하여 계정을 생성합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;docker-compose&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-f&lt;/span&gt; docker/docker-compose.yml &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; web python manage.py createsuperuser&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Sites 추가&lt;/h4&gt;
+&lt;p&gt;먼저 Sites를 추가해야 합니다. Sites-sites에서 추가를 해주면 되는데, &lt;a href=&quot;http://localhost/&quot;&gt;localhost&lt;/a&gt; 또는 ngrok 주소 중 사용하는 것을 입력해줍니다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ba839d1070028404bfa7d5e4c385de0d/bb03a/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 64.70588235294117%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABr0lEQVR42q3QWU/iUBTA8T4TCnSztEBbLy24YAsoxJWoM0PcEKLGNYY1muiTH8GlfglNX818w9HbeDzUxGhGE0N8+OW0vcm/914mv9Col3/vPcyvHtxPrxx50yvH3twaWm+hJj43vcV6z1vAWXlnES3j+p9ax6tUj+/s2d2/2amNGuNsHN1WTy7gV/uczhyeQWnnFIpbPZioNcHebIFTb0Oh0YV8vfNBodGB0nYX9WByq0vL++cwVt27ZuSEdmMWZ0DJ2I9xw/StNPG1VNJPJRO+qsT9aIRFkU9FcC3Asv9keQg4jrtk5KThDtslULM5qhALSNqElKaDlcmCPkxAGpJBEMRPiSJOMZhUkaR+8IqJa4Zr2UUgI+NUt7JAcgVI25NgjDlAJnCO5EBV1S8pKKWqtKLrIAnCFSMT01UKZRByRSplRoHnOOB4Hv/GB5P/HioKAnDRKAYN4lqzS5BwylS2XoP890NvQQGD0SAox11z3IGkZtD+9geIfQziRbp8cESODhj7P9h/6X/86eATeh7Q0/vg7Q/u8JoJhUL5cDh8wrJsC7UH1MLGaSwWc14Ayqc8IQW7O/MAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/ba839d1070028404bfa7d5e4c385de0d/ca1dc/image2.png&apos; srcset=&apos;/static/ba839d1070028404bfa7d5e4c385de0d/e7570/image2.png 170w,
+/static/ba839d1070028404bfa7d5e4c385de0d/f46e7/image2.png 340w,
+/static/ba839d1070028404bfa7d5e4c385de0d/ca1dc/image2.png 680w,
+/static/ba839d1070028404bfa7d5e4c385de0d/02d09/image2.png 1020w,
+/static/ba839d1070028404bfa7d5e4c385de0d/9d567/image2.png 1360w,
+/static/ba839d1070028404bfa7d5e4c385de0d/bb03a/image2.png 3824w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h4&gt;Social Application 추가&lt;/h4&gt;
+&lt;p&gt;여기까지 완료해야 Social Application을 추가할 수 있습니다. &lt;/p&gt;
+&lt;p&gt;Social Accounts 메뉴의 Social Application를 선택하고, &lt;code class=&quot;language-text&quot;&gt;ADD SOCIAL APPLICATION&lt;/code&gt; 버튼을 눌러 추가합니다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/1cb49695e5a4d2454fbe21df696d4f03/bb03a/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 64.70588235294117%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACDklEQVR42n2Sa0/TYBTH+3pZ7/d269q5MWFj62ROHI4QL4siZIskohDCLoCJvPIjKJYvoelb4zdU2+x4nm7rWhRe/HL6nOc8//zPOaXc7qDffn7448mr9983Xx77m7snfgfZ2j2N2emf+V2M2wl2kKevT/0X+2N/u3fyrd55+7PS2tunGnvH172LT/BseBlsHX2EjYPzCHcwhkZ/DC7SHEyimKSJ9w8PJsgZbLyZBO13l7DWO7yiVNP6WnrwGPSV+m+jWA7tghUahh4qshSyDB2yLHMrDBPzS9NU4Hn+M6XmLM+pt8BYqQV6sQyGYYAgiiDLMkiSFCEI4g2EGVg3JxAxsiz7hdKsoldqtMBZXQ8KlVUwTTMScxwHFEUBUniTWHDJUlDN2V6uUgOtWAl0pxSJSJIMtm2DruuROCleuCX8RzTt8P6jLuRrzUC/VwGFCOAjTdNSAimHdwmKOMNCuwNKdT2QsE1xXoQDjiFnjmWBY2jgWSZCmOf/EWR53hNECThMkrhwZFlW1DJxquIY8ui+UHXBKK/hAqsga0ZSdCmIDjxRnCWTbaiqmmrZzFuQtx0wrQKoRg6EaPvCbYLRTP4g0wWYjyFnHMUU/70ph/A8N03WkrdJweu5YMohcUZczrYuxZsmY7hjy1dUJpNxs9nsBU3TQ2REwIsR/uAxKDxa3OHj+DvBEDU+cBzX+Av5OzxOasvcDgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/1cb49695e5a4d2454fbe21df696d4f03/ca1dc/image3.png&apos; srcset=&apos;/static/1cb49695e5a4d2454fbe21df696d4f03/e7570/image3.png 170w,
+/static/1cb49695e5a4d2454fbe21df696d4f03/f46e7/image3.png 340w,
+/static/1cb49695e5a4d2454fbe21df696d4f03/ca1dc/image3.png 680w,
+/static/1cb49695e5a4d2454fbe21df696d4f03/02d09/image3.png 1020w,
+/static/1cb49695e5a4d2454fbe21df696d4f03/9d567/image3.png 1360w,
+/static/1cb49695e5a4d2454fbe21df696d4f03/bb03a/image3.png 3824w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+사이트는 여러개 등록해둘 수 있지만 일단 하나만 추가해줍니다. 아까 기록해두었던 키 들을 적절한 곳에 입력하면 됩니다. &lt;/p&gt;
+&lt;h3&gt;로그인 테스트&lt;/h3&gt;
+&lt;p&gt;이제 로그인을 테스트 해볼 수 있습니다. Discord의 OAuth2 메뉴에 가서 OAuth2 URL Generator에서&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/720bc13153407ea6c83aaff59e02c900/c3a54/image4.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 62.35294117647059%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABjklEQVR42mVTWXaDMBDjNmmahBDAZjFmX0rTvtf7X2Y6GjAPkg9hLMuyZjCesQ0ZW5OtWkZHOjGkU6CgWOcCxZxKlhHz+0NRGKeieUSaPq8BXW4PgdePMzXdRLd7zIhYrDdgc6Qy8gO1cdBN8y/lRXPgAcw9JOzHJ6Wm5lMzPjHdYGxLaV6J2HF4b/svqtvpTR+ECXkQ2Kpn0Uy2Hg4CpKiakZMaETs+VLmsZS8hxBAEkhRlRyq1B0Okw2HY6AwxqqSgXHrfch/tYc1D3djUDd9iujeEkeNdEjFkE+xJOSXWUMFmWNY9DdOPLECkduXBsGwGKU/v0iNhye0B3gzxhefnH1XcZBhG3J99woZ7i9JeS5YW8Yj5oWR8lIwT4DQIMHci18OqHblnrZTtDMtqSQfNISEeSGDWxSQrBZo3RdpIqXrlXB8xggf3ZoiLW5St3HrcfpQMDu9+EAtw4a9+uF7+BVc/WhHK6HgPG/Oi5o/BvQs1hRH6kSzmDPwtAf9qp48rnc63Az52wPx8udM/qxeKRJjqMN4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image4&apos; title=&apos;&apos; src=&apos;/static/720bc13153407ea6c83aaff59e02c900/ca1dc/image4.png&apos; srcset=&apos;/static/720bc13153407ea6c83aaff59e02c900/e7570/image4.png 170w,
+/static/720bc13153407ea6c83aaff59e02c900/f46e7/image4.png 340w,
+/static/720bc13153407ea6c83aaff59e02c900/ca1dc/image4.png 680w,
+/static/720bc13153407ea6c83aaff59e02c900/02d09/image4.png 1020w,
+/static/720bc13153407ea6c83aaff59e02c900/9d567/image4.png 1360w,
+/static/720bc13153407ea6c83aaff59e02c900/c3a54/image4.png 2226w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+위와 같이 선택을 하고 Redirect URL을 선택하면 GENERATED URL이 생성됩니다. &lt;/p&gt;
+&lt;p&gt;해당 URL로 접속 후, Discord로 로그인을 하면 &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/699cee0b9081424e28decd3386f0d687/bb03a/image5.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 64.70588235294117%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA7UlEQVR42mMoL2/xb2qZuKKtfcqc9vYp8zo7p83r6poOxi2tk+YB5fBikJqOrumz29unrqyqavdl2LPnUNvfv/////oNAn/+I4N//4jDQPAbRJw6daGZ4eD+oy2fPnz5//nz55/v37/78/PnT5CppOIfIAPPnj3fyHD48PHWP3/+/H/37u3vN2/egAz+/+vXr/8kArALz5w538Rw+vT5VmRBiFf/UddAMsCogTQyEJRW/pGJf8ENPH78bBuI8/fv399A/J8cDEzHYBeeOHGmmaGkpMqgs3NiWnt7f0JHx4REcjBIb1fXpPTCwhp9AHm/pVCAnV/kAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image5&apos; title=&apos;&apos; src=&apos;/static/699cee0b9081424e28decd3386f0d687/ca1dc/image5.png&apos; srcset=&apos;/static/699cee0b9081424e28decd3386f0d687/e7570/image5.png 170w,
+/static/699cee0b9081424e28decd3386f0d687/f46e7/image5.png 340w,
+/static/699cee0b9081424e28decd3386f0d687/ca1dc/image5.png 680w,
+/static/699cee0b9081424e28decd3386f0d687/02d09/image5.png 1020w,
+/static/699cee0b9081424e28decd3386f0d687/9d567/image5.png 1360w,
+/static/699cee0b9081424e28decd3386f0d687/bb03a/image5.png 3824w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+이렇게 로그인이 된 화면을 확인할 수 있습니다. Third-Party Login Failure라고 나오지만, 가장 위쪽의 Message에 주목하면 됩니다. 로그인이 잘 된 것이 맞습니다. &lt;del&gt;(여기서 100년 헤맸습니다. 누군가 왜 이런 화면이 나오는지 아시는 분 계신가요)&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;이 화면을 보고 나면 관리자 페이지에서 User 또는 Social Users를 확인하면 제대로 가입이 된 것을 볼 수 있습니다. 성공 여부는 해당 페이지에서 확인하시면 됩니다. &lt;/p&gt;
+&lt;h2&gt;Restful한 로그인을 위한 API 구현&lt;/h2&gt;
+&lt;p&gt;짠! 완료입니다! 면 좋겠지만 사실은 그렇지 않습니다. 위에서 짧게 언급했듯이 allauth는 JWT TOKEN 발급까지는 해주지 않습니다. 클라이언트와의 협의에 따라 달라지겠지만 REST한 JWT 토큰 생성을 위한 별도의 API가 필요합니다. &lt;/p&gt;
+&lt;h3&gt;모듈 생성&lt;/h3&gt;
+&lt;p&gt;authentication 이라는 모듈을 만들어서 해당 앱에서 로그인을 관리하겠습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;docker-compose&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-f&lt;/span&gt; docker/docker-compose.yml &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; web python manage.py startapp authentication&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Settings.py&lt;/h3&gt;
+&lt;p&gt;생성한 앱을 추가해줍니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;INSTALLED_APPS &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;authentication&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 인증 관련 모듈&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;views.py&lt;/h3&gt;
+&lt;p&gt;authetication의 views.py에 다음의 내용을 작성합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; os
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; requests
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; allauth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;socialaccount&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;helpers &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; complete_social_login
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; allauth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;socialaccount&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;models &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; SocialLogin&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; SocialToken
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; allauth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;socialaccount&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;providers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;discord&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;views &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DiscordOAuth2Adapter
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; status
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;response &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Response
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;views &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; APIView
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework_simplejwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tokens &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; RefreshToken
+
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;DiscordRestCallback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;APIView&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;args&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        code &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;GET&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; code&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Response&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;No code provided&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; status&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;status&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HTTP_400_BAD_REQUEST
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        access_token &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_access_token&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;code&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        user_info &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_user_info&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;access_token&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        jwt_tokens &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;perform_login&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; access_token&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; user_info&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Response&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jwt_tokens&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; status&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;status&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HTTP_200_OK&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;perform_login&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; access_token&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; user_info&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        adapter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; DiscordOAuth2Adapter&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        provider &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; adapter&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_provider&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        app &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; provider&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;app
+        token &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; SocialToken&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;app&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;app&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; token&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;access_token&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# 유저 정보를 사용하여 소셜 로그인 객체를 생성&lt;/span&gt;
+        login &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; adapter&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;complete_login&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; app&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; token&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; response&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;user_info&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        login&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;token &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; token
+        login&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; SocialLogin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state_from_request&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        complete_social_login&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; login&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; login&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;is_existing&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            login&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;save&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; connect&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# JWT 토큰 생성&lt;/span&gt;
+        user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; login&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;account&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user
+        refresh &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; RefreshToken&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;for_user&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;refresh&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;refresh&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;access&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;refresh&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;access_token&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_access_token&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; code&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        API_ENDPOINT &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://discord.com/api/v10&quot;&lt;/span&gt;
+        CLIENT_ID &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;DISCORD_CLIENT_ID&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        CLIENT_SECRET &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;DISCORD_CLIENT_SECRET&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        REDIRECT_URI &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getenv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;DISCORD_REDIRECT_URI&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;grant_type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;authorization_code&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;code&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; code&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;redirect_uri&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; REDIRECT_URI&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        headers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;application/x-www-form-urlencoded&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; requests&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;API_ENDPOINT&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;/oauth2/token&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            headers&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;headers&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            auth&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;CLIENT_ID&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; CLIENT_SECRET&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;raise_for_status&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        access_token &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;json&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;access_token&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; access_token
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_user_info&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; access_token&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        API_ENDPOINT &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://discord.com/api/v10&quot;&lt;/span&gt;
+        headers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;Authorization&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;Bearer &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;access_token&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; requests&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;API_ENDPOINT&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;/users/@me&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; headers&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;headers&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;raise_for_status&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;json&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Discord의 API들을 활용해 access token을 얻고, 해당 access_token을 사용해서 유저 정보를 Discord로부터 받아옵니다. 그리고 해당 정보들을 이용해 로그인(회원가입)을 한 후 jwt token을 만들어 클라이언트에게 응답합니다. &lt;/p&gt;
+&lt;h3&gt;urls.py&lt;/h3&gt;
+&lt;p&gt;소셜 로그인 관련 URL을 추가해야 합니다. authentication 안에 urls.py를 생성하고 다음의 코드를 입력합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; django&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;urls &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; path
+
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;views &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; DiscordRestCallback
+
+urlpatterns &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&quot;discord/login/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        DiscordRestCallback&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;as_view&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;discord_rest_callback&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# JWT 토큰 설정&lt;/span&gt;
+SIMPLE_JWT &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;ACCESS_TOKEN_LIFETIME&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; timedelta&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;minutes&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;REFRESH_TOKEN_LIFETIME&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; timedelta&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;days&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;ROTATE_REFRESH_TOKENS&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;BLACKLIST_AFTER_ROTATION&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;UPDATE_LAST_LOGIN&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;ALGORITHM&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HS256&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;SIGNING_KEY&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; SECRET_KEY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;VERIFYING_KEY&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;AUDIENCE&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;ISSUER&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;AUTH_HEADER_TYPES&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Bearer&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;AUTH_HEADER_NAME&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;HTTP_AUTHORIZATION&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;USER_ID_FIELD&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;USER_ID_CLAIM&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;user_id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;AUTH_TOKEN_CLASSES&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;rest_framework_simplejwt.tokens.AccessToken&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;TOKEN_TYPE_CLAIM&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;token_type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;JTI_CLAIM&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;jti&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;SLIDING_TOKEN_REFRESH_EXP_CLAIM&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;refresh_exp&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;SLIDING_TOKEN_LIFETIME&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; timedelta&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;minutes&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;SLIDING_TOKEN_REFRESH_LIFETIME&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; timedelta&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;days&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그리고 프로젝트 메인의 urls.py를 넣어 authentication의 url을 추가해줍니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;urlpatterns &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;authentication/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; include&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;authentication.urls&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 Discord OAuth2 페이지로 이동해서 Callback URL을 &lt;code class=&quot;language-text&quot;&gt;/authentication/discord/login/&lt;/code&gt;로 교체합니다. &lt;/p&gt;
+&lt;p&gt;그 후 로그인을 시도하면,&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/9a830726925bc0514645543b5bb6a854/bb03a/image6.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 64.70588235294117%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABWElEQVR42u2SO0/CUBTH+430KwBWG7W0C6OJLjqTMBkXX7wWH6ums34DBjdNIOESHHQgIVJK1YQgfV4K9LbHewExGB0kcfMkv9z/ucn55QyHk1dlKR5duYpHli7lGK8kBJGypsi8oIhR/kcSgqBsiJLCZuIR/kKKLV9LwrrIFQo3acsw4EVv+brWhHqtNqVRr0NLVUFTGzOojSe4Qw9wix6hqTbhuaX5rm0DdR1yCN0fwbgGFGJYNjEth5i2Q1zcIz4JSEj/4Qtat0/UjkeCcd9ngkqlus+Vy9XjidAnhICuv0K7bYJrYcA2Bsd0aHZHGX+8lCHugd/zIAgChs8ECFUPZoQhWxN7MDAc6L9ZY7r2Z+6YU7wJYRCOZr8Vwvz1L/wj4ZASzslwKiwWK2nWsFua3NSvofc72rBUQodcKrW7mMudbWcyJ5vZ7OnWPLDZfP58J5ncW3gHxIeMZPw3IHYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image6&apos; title=&apos;&apos; src=&apos;/static/9a830726925bc0514645543b5bb6a854/ca1dc/image6.png&apos; srcset=&apos;/static/9a830726925bc0514645543b5bb6a854/e7570/image6.png 170w,
+/static/9a830726925bc0514645543b5bb6a854/f46e7/image6.png 340w,
+/static/9a830726925bc0514645543b5bb6a854/ca1dc/image6.png 680w,
+/static/9a830726925bc0514645543b5bb6a854/02d09/image6.png 1020w,
+/static/9a830726925bc0514645543b5bb6a854/9d567/image6.png 1360w,
+/static/9a830726925bc0514645543b5bb6a854/bb03a/image6.png 3824w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+아까처럼 로그인 성공 화면이 아니라 JWT 토큰을 발급 받을 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;참조&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.com/developers/docs/topics/oauth2&quot;&gt;https://discord.com/developers/docs/topics/oauth2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.allauth.org/en/latest/introduction/index.html&quot;&gt;https://docs.allauth.org/en/latest/introduction/index.html&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ngrok: 로컬 서버를 쉽게 공개하는 도구]]></title><description><![CDATA[서론 로컬에서 개발할 때, 종종 외부에서 로컬 서버에 접근해야 하는 상황이 발생합니다. 예를 들어, 웹훅(Webhook…]]></description><link>https://sharknia.github.io/ngrok-로컬-서버를-쉽게-공개하는-도구/</link><guid isPermaLink="false">https://sharknia.github.io/ngrok-로컬-서버를-쉽게-공개하는-도구/</guid><pubDate>Tue, 14 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;로컬에서 개발할 때, 종종 외부에서 로컬 서버에 접근해야 하는 상황이 발생합니다. 예를 들어, 웹훅(Webhook)을 테스트하거나, 클라이언트에게 데모를 보여주기 위해 로컬 서버를 공개해야 할 때가 있습니다. 이러한 상황에서 매우 유용한 도구가 바로 ngrok입니다.&lt;/p&gt;
 &lt;h2&gt;ngrok 소개&lt;/h2&gt;
 &lt;p&gt;ngrok은 로컬에서 실행 중인 서버를 공용 인터넷에 노출시켜주는 역방향 프록시 도구입니다. 이를 통해 로컬에서 개발 중인 애플리케이션을 외부에서도 접근할 수 있게 됩니다. ngrok은 다음과 같은 주요 기능을 제공합니다:&lt;/p&gt;
@@ -2280,7 +2565,22 @@ _db_connection&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Eng
 &lt;h4&gt;FastAPI에서 모델 클래스가 정의되는 순간은?&lt;/h4&gt;
 &lt;p&gt;FastAPI 어플리케이션에서 “모델 클래스가 정의되는 순간”은 Python 스크립트가 실행되어 해당 모델 클래스가 메모리에 로드되는 시점을 의미합니다. &lt;/p&gt;
 &lt;p&gt;FastAPI 어플리케이션을 실행하면(예를 들어 &lt;code class=&quot;language-text&quot;&gt;uvicorn main:app&lt;/code&gt; 등의 명령어를 사용하여) Python 인터프리터는 main.py를 로드하고 실행합니다. 이 과정에서 main.py에서 직접적으로, 또는 임포트된 모듈 내에서 다시 임포트된 SqlAlchemy의ㅏ 모델 클래스들도 함께 로드되고 메모리에 생성됩니다. 바로 이 시점에 각 모델 클래스에 해당하는 &lt;code class=&quot;language-text&quot;&gt;Table&lt;/code&gt; 객체가 &lt;code class=&quot;language-text&quot;&gt;Metadata&lt;/code&gt; 객체에 등록됩니다. &lt;/p&gt;
-&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
+&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
+&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
+&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
+&lt;h3&gt;Major Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
+&lt;h3&gt;Minor Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
+&lt;h3&gt;Patch Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
+&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;목적&lt;/h2&gt;
+&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
+&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
 &lt;h3&gt;소개&lt;/h3&gt;
 &lt;p&gt;많은 개발자들이 한 번쯤은 &quot;나만의 블로그를 운영해야지&quot;라고 생각해본 적이 있을 겁니다. 하지만 실제로 블로그를 시작하고 유지하는 일은 상당한 도전과제입니다. 공부하고 개발하는 것만으로도 바쁜데, 여기에 글을 쓰고 관리하는 일은 때때로, 아니 항상 부담스러운 일입니다.&lt;/p&gt;
 &lt;p&gt;노션으로 공부를 하는 개발자가 있습니다. 일을 하면서일수도 있고, 따로 짬을 내어 공부를 하면서일수도 있습니다. 그러다가 한 번 쯤은 생각하게 됩니다. 노션으로 한 공부나 작업 기록이 블로그에 자동으로 업로드된다면 좋을텐데!&lt;/p&gt;
@@ -2408,22 +2708,7 @@ BLOG&lt;em&gt;REPO, BLOG&lt;/em&gt;URL, GIT&lt;em&gt;USER&lt;/em&gt;EMAIL, GIT&l
 &lt;h3&gt;개발과정&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;개발과정 몰아보기&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;문의&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
-&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
-&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
-&lt;h3&gt;Major Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
-&lt;h3&gt;Minor Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
-&lt;h3&gt;Patch Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
-&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
-&lt;h2&gt;목적&lt;/h2&gt;
-&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
-&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;파이썬에서 잠깐 테스트코드를 맛본적이 있습니다. 문법 자체는 조금 복잡했지만(익숙하지 않았지만) 설치 자체는 그다지 어렵지 않았던 것으로 기억합니다. &lt;/p&gt;
 &lt;p&gt;그래서 타입스크립트에서도 그럴 줄 알았습니다. &lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
@@ -3381,124 +3666,7 @@ Secrets는 로그에도 노출되지 않으며, variables는 로그에서 노출
     &lt;span class=&quot;token property&quot;&gt;&quot;strings&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;comments&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;other&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
-&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
-&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
-&lt;h2&gt;func의 특징&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;함수 생성기&lt;/p&gt;
-&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;동적 생성&lt;/p&gt;
-&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
-&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;다양한 함수 지원&lt;/p&gt;
-&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;__getattr__&lt;/code&gt; method&lt;/h2&gt;
-&lt;p&gt;func 객체의 &lt;strong&gt;getattr&lt;/strong&gt; 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
-&lt;p&gt;예를 들어, func.pg&lt;em&gt;try&lt;/em&gt;advisory&lt;em&gt;lock에 접근하면 pg&lt;/em&gt;try&lt;em&gt;advisory&lt;/em&gt;lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
-&lt;h2&gt;사용방법&lt;/h2&gt;
-&lt;h3&gt;기본 사용&lt;/h3&gt;
-&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;strong&gt;getattr&lt;/strong&gt; 메소드로 연결된다.)&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
-
-&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
-&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
-&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
-&lt;h2&gt;돌아보기&lt;/h2&gt;
-&lt;p&gt;어제 상당수의 디버깅을 진행하고 기존 블로그에서 새 블로그로 글을 이전했다. 깃허브 블로그에 업로드까지 마치고, 오늘 다시 보니 짜잘짜잘한 오류가 다시 또(!!) 발견되었다. &lt;/p&gt;
-&lt;h2&gt;유지보수&lt;/h2&gt;
-&lt;h3&gt;Callout 수정&lt;/h3&gt;
-&lt;p&gt;내가 선택한 블로그의 기능인지, 원래 마크다운 기능인지 모르겠다. 굳이 태그를 넣을 필요가 없어서, 태그를 제거해주었다. &lt;/p&gt;
-&lt;h3&gt;이미지 캡션 수정&lt;/h3&gt;
-&lt;p&gt;이미지 캡션도 마찬가지였다. 혹시 하는 노파심에 따로 p태그를 넣어주고 있었는데, 아무 문제 없이 정상 작동 되었다. 아무래도 깃허브 블로그도 마크다운 기반으로 움직이다보니 마크다운에서 좀 잘 나오면 잘 이쁘게 지원하는 것 같다. &lt;/p&gt;
-&lt;h3&gt;넘버링 숫자 안올라감 &amp;#x26; 들여쓰기 문제&lt;/h3&gt;
-&lt;p&gt;넘버링이 모두 1로 나오고, 글머리 기호와 넘버링 리스트를 제외한 나머지 부분에 들여쓰기를 넣지 않았다는 사실을 깨달았다. &lt;/p&gt;
-&lt;p&gt;넘버링부터 고치려다가 문득 들여쓰기가 제대로 되면 숫자가 제대로 나오지 않을까? 해서 들여쓰기부터 수정했는데, 정답이었다. &lt;/p&gt;
-&lt;p&gt;들여쓰기를 고치고 나서 마크다운에 1. 이라고 숫자가 고정되어 있어도 제대로 숫자가 증가되면서 출력된다. &lt;/p&gt;
-&lt;h3&gt;일부 부분 [objcet Promise] 출력&lt;/h3&gt;
-&lt;p&gt;이건 await을 까먹은거다. 추가해주었다. &lt;/p&gt;
-&lt;h3&gt;이미지 깨짐&lt;/h3&gt;
-&lt;p&gt;어제 디버깅을 하면서 이미지 카운터를 static에서 인스턴스로 변경해주었는데, 어제 내가 멍청하다고 썼는데 사실은 오늘의 내가 멍청한 것이었다. &lt;/p&gt;
-&lt;p&gt;이미지 카운터를 컨버터에 넣어놓을거면 거기서 인스턴스 변수로 선언하면 안됐다. 이미지가 거의 모든 경우에 항상 1번으로 저장된다.. &lt;/p&gt;
-&lt;p&gt;페이지에 이미지 카운터 변수를 심고 블록-컨버터까지 내려줄 생각을 하니 아득해졌는데 생각해보니 그냥 컨버터 클래스에 넣어놓고 static 변수로 변경한 다음 페이지를 새로 만들 때마다 해당 값을 초기화 해주면 되지 않나 싶어서 그렇게 구현 해보려고 한다. &lt;/p&gt;
-&lt;h3&gt;언더바 또는 *가 포함된 경우 스타일 깨짐&lt;/h3&gt;
-&lt;p&gt;예를 들어 &lt;em&gt;db&lt;/em&gt;connection_serializable 라고 입력된 텍스트가 &lt;em&gt;db&lt;/em&gt;connection&lt;em&gt;serializable&lt;/em&gt; 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 언더스코어 이스케이프 처리 함수&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;escapeMarkdownUnderscores&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;text&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;(\w)_(\w)&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-flags&quot;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;$1\\_$2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;해당 메소드를 사용해 언더바 앞에 백슬래시를 붙여주었다. &lt;/p&gt;
-&lt;p&gt;잘 될지는 배포 후 테스트를 해봐야 한다. &lt;/p&gt;
-&lt;h2&gt;신규 기능&lt;/h2&gt;
-&lt;h3&gt;테이블 지원&lt;/h3&gt;
-&lt;p&gt;이제 테이블을 지원한다.. 지금 고치느라 기록할 시간이 없는데 많은 것을 고쳤다.. &lt;/p&gt;
-&lt;p&gt;근본적인 설계가 아쉽다. 굳이 block을 별도의 클래스로 뺄 필요도 없었을 것 같고, MarkdownConverter 클래스가 굳이 인스턴스 메소드가 이렇게 많아야 할 이유도 모르겠다. &lt;/p&gt;
-&lt;p&gt;여유가 된다면 전체적으로 코드 리팩토링을 (다시 만드는 수준으로) 진행해야 할 것 같다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[PostgreSQL Advisory Locks 트랜잭션 레벨에서 구현]]></title><description><![CDATA[서론 동시성 제어 문제를 해결하기 위한 여러가지 방법을 고민 끝에 PostgreSQL Advisory Locks를 사용한 방법으로 구현하기로 했다.  구현을 하면서 겪은 과정을 여기에 기록한다.  구현 목표 현재 회사에서는 FastAPI…]]></description><link>https://sharknia.github.io/PostgreSQL-Advisory-Locks-트랜잭션-레벨에서-구현/</link><guid isPermaLink="false">https://sharknia.github.io/PostgreSQL-Advisory-Locks-트랜잭션-레벨에서-구현/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A0%9C%EC%96%B4%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot;&gt;동시성 제어 문제를 해결하기 위한 여러가지 방법을 고민&lt;/a&gt; 끝에 PostgreSQL Advisory Locks를 사용한 방법으로 구현하기로 했다. &lt;/p&gt;
-&lt;p&gt;구현을 하면서 겪은 과정을 여기에 기록한다. &lt;/p&gt;
-&lt;h2&gt;구현 목표&lt;/h2&gt;
-&lt;p&gt;현재 회사에서는 FastAPI와 SqlAlchemy 2.0, PostgreSQL을 사용하고 있다. 아주 짧은 텀으로 중복으로 온 API 요청에 대해 중복 구매가 되지 않도록 동시성 제어를 하려고 한다. &lt;/p&gt;
-&lt;p&gt;유저의 아이디 값 또는 API 고유의 값 + 유저의 아이디 값을 사용해 트랜잭션 레벨에서 PostgreSQL Advisory Locks를 생성하고, 동일한 유저가 PostgreSQL Advisory Locks에 걸린 경우에는 중복 요청이라고 판단하고 두번째 요청은 중단 하거나, 또는 반드시 유효성 검사를 하도록 해 중복 구매가 되는 일이 없게 사전에 차단하려고 한다. &lt;/p&gt;
-&lt;h2&gt;구현 사전단계&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.postgresql.org/docs/9.1/functions-admin.html&quot;&gt;공식문서&lt;/a&gt;를 살펴보니 트랜잭션 레벨에서의 락을 위해 내가 사용할 수 있는 함수는 두 가지가 있었다. 트랜잭션 레벨의 락은 공통적으로 명시적인 언락이 불가능하다. &lt;/p&gt;
-&lt;p&gt;아래의 두가지 함수는 모두 트랜잭션 레벨의 함수로 Advisory Lock을 획득할 수 있다는 점은 같지만, Advisory Lock을 바로 획득하지 못했을 때의 반응이 다르다. &lt;/p&gt;
-&lt;h3&gt;pg_advisory_xact_lock&lt;/h3&gt;
-&lt;p&gt;지정된 키에 대한 Advisory Lock을 획득할 때까지 호출을 블로킹(대기)한다. 만약 다른 세션이 이미 해당 키에 대한 Advisory Lock을 갖고 있다면 그 Advisory Lock이 해제될 때까지 현재 세션에서의 처리가 중단된다. &lt;/p&gt;
-&lt;p&gt;Advisory Lock을 반드시 획득해야 해서 대기해야 할 경우에 적합하다.&lt;/p&gt;
-&lt;h3&gt;pg_try_advisory_xact_lock&lt;/h3&gt;
-&lt;p&gt;이 함수는 즉시 Advisory Lock을 시도하고 성공하면 True, 실패하면 False를 반환한다. 이 함수는 잠금 획득을 위해 대기하지 않으며, 잠금이 이미 다른 세션에 의해 보유되고 있는 경우 즉시 실패한다.&lt;/p&gt;
-&lt;p&gt;Advisory Lock을 반드시 획득할 필요가 없고 대기하지 않고 다른 작업을 수행해야 할 경우에 적합하다. &lt;/p&gt;
-&lt;h3&gt;결정&lt;/h3&gt;
-&lt;p&gt;우리의 경우에는 쿠폰 중복 발급을 막으려고 하는 것이므로 만약 이미 잠금이 걸린 경우에는 굳이 나머지 DB 작업을 실행할 필요가 없다. 따라서 pg_try_advisory_xact_lock를 사용하는 것이 적절해보인다. &lt;/p&gt;
-&lt;h2&gt;구현&lt;/h2&gt;
-&lt;p&gt;따라서, 서비스 로직의 시작 지점에 다음의 코드를 넣어 락을 얻거나, 락을 얻지 못한 경우 해당 요청은 실행을 중단하려고 한다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Advisory Lock 획득&lt;/span&gt;
-    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_try_advisory_xact_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# Advisory Lock을 획득하지 못한 경우에는 이미 선제 작업이 있는 것이므로 DB 작업을 계속할 필요가 없으므로&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# 바로 중단한다.&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;scalar&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; Exception&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to acquire lock&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;SQL 인젝션과 같은 보안 문제를 줄이고 쿼리 구성과 관련된 오류를 예방하기 위해 다음과 같이 코드를 수정했다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Advisory Lock 획득&lt;/span&gt;
-    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pg_try_advisory_xact_lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# Advisory Lock을 획득하지 못한 경우에는 이미 선제 작업이 있는 것이므로 DB 작업을 계속할 필요가 없으므로&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# 바로 중단한다.&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;scalar&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; Exception&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to acquire lock&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;잠금 해제 지점은 어떻게 될까?&lt;/h2&gt;
-&lt;p&gt;막연히 트랜잭션이 커밋되거나 롤백될 때라고 알아둬도 충분할 것 같다(세션 주입 방식을 통해 에러가 발생하거나 요청이 정상정이 끝나지 않는 경우에 세션을 롤백하며, 정상적으로 요청이 정리된 경우에는 세션을 커밋하는 과정이 포함되어 있을 것이므로 충분할 것이다).&lt;/p&gt;
-&lt;p&gt;다만, 트랜잭션 레벨에서의 락은 명시적으로 언락이 불가능하므로 정확한 언락 지점을 알아둬야 할 필요성이 있다고 느꼈다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;트랜잭션 커밋 또는 롤백&lt;/p&gt;
-&lt;p&gt;함수 내부에서 명시적으로 await db.commit() 또는 await db.rollback()이 호출되는 경우에 같은 세션이라고 하더라도 언락된다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;비동기 세션 컨텍스트 종료&lt;/p&gt;
-&lt;p&gt;AsyncSession 인스턴스가 컨텍스트 매니저(async with) 내에서 사용되고, 해당 컨텍스트 블록이 종료되는 경우&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;예외 발생&lt;/p&gt;
-&lt;p&gt;함수 실행 중 예외가 발생하여 처리 흐름이 중단되는 경우. SQLAlchemy의 세션 관리는 트랜잭션이 커밋되지 않으면 자동으로 롤백을 수행하므로 사실상 트랜잭션이 롤백되는 시점과 일치한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
 &lt;p&gt;가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.01초 미만의 간격으로 두 번씩 들어오는 경우가 있다. 사실상 요청이 동시에 들어오는 것과 같다. 대부분의 경우에는 문제가 되지 않지만, 쿠폰 구매 같은 민감한 요청에 대해서는 회사의 손해 또는 사용자의 불편과 예민하게 직결되므로 문제가 커질 수 있다. &lt;/p&gt;
 &lt;p&gt;따라서 해당 문제를 완벽히 해결하고자 한다. &lt;/p&gt;
 &lt;p&gt;현재 별다른 조치가 없는 상황에서 발생하는 문제 상황은 다음과 같다. &lt;/p&gt;
@@ -3595,7 +3763,124 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
 &lt;p&gt;쿠폰 구매 서비스 로직에서 트랜잭션 시작 전에  user_id를 기반으로 Advisory Lock을 요청하면 1번 요청이 처리되는 동안 동일한 user_id 에 대한 다른 요청은 대기하게 된다. 쿠폰 구매 처리가 완료되면, Advisory Lock을 해제하면 된다. &lt;/p&gt;
 &lt;h2&gt;결론 - PostgreSQL Advisory Locks 채용&lt;/h2&gt;
 &lt;p&gt;이 방법을 사용하면 매우 짧은 간격의 요청도 효과적으로 처리할 수 있다. 특히 트랜잭션 레벨의 잠금은 각 트랜잭션이 커밋되거나 롤백될 때까지만 유지되므로 0.005초와 같은 짧은 간격의 요청을 동기화하는데 매우 적합하다. &lt;/p&gt;
-&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy에서의 트랜잭션 격리 수준 구현]]></title><description><![CDATA[구현 목적 상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS…]]></description><link>https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구현 목적&lt;/h2&gt;
+&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
+&lt;h2&gt;돌아보기&lt;/h2&gt;
+&lt;p&gt;어제 상당수의 디버깅을 진행하고 기존 블로그에서 새 블로그로 글을 이전했다. 깃허브 블로그에 업로드까지 마치고, 오늘 다시 보니 짜잘짜잘한 오류가 다시 또(!!) 발견되었다. &lt;/p&gt;
+&lt;h2&gt;유지보수&lt;/h2&gt;
+&lt;h3&gt;Callout 수정&lt;/h3&gt;
+&lt;p&gt;내가 선택한 블로그의 기능인지, 원래 마크다운 기능인지 모르겠다. 굳이 태그를 넣을 필요가 없어서, 태그를 제거해주었다. &lt;/p&gt;
+&lt;h3&gt;이미지 캡션 수정&lt;/h3&gt;
+&lt;p&gt;이미지 캡션도 마찬가지였다. 혹시 하는 노파심에 따로 p태그를 넣어주고 있었는데, 아무 문제 없이 정상 작동 되었다. 아무래도 깃허브 블로그도 마크다운 기반으로 움직이다보니 마크다운에서 좀 잘 나오면 잘 이쁘게 지원하는 것 같다. &lt;/p&gt;
+&lt;h3&gt;넘버링 숫자 안올라감 &amp;#x26; 들여쓰기 문제&lt;/h3&gt;
+&lt;p&gt;넘버링이 모두 1로 나오고, 글머리 기호와 넘버링 리스트를 제외한 나머지 부분에 들여쓰기를 넣지 않았다는 사실을 깨달았다. &lt;/p&gt;
+&lt;p&gt;넘버링부터 고치려다가 문득 들여쓰기가 제대로 되면 숫자가 제대로 나오지 않을까? 해서 들여쓰기부터 수정했는데, 정답이었다. &lt;/p&gt;
+&lt;p&gt;들여쓰기를 고치고 나서 마크다운에 1. 이라고 숫자가 고정되어 있어도 제대로 숫자가 증가되면서 출력된다. &lt;/p&gt;
+&lt;h3&gt;일부 부분 [objcet Promise] 출력&lt;/h3&gt;
+&lt;p&gt;이건 await을 까먹은거다. 추가해주었다. &lt;/p&gt;
+&lt;h3&gt;이미지 깨짐&lt;/h3&gt;
+&lt;p&gt;어제 디버깅을 하면서 이미지 카운터를 static에서 인스턴스로 변경해주었는데, 어제 내가 멍청하다고 썼는데 사실은 오늘의 내가 멍청한 것이었다. &lt;/p&gt;
+&lt;p&gt;이미지 카운터를 컨버터에 넣어놓을거면 거기서 인스턴스 변수로 선언하면 안됐다. 이미지가 거의 모든 경우에 항상 1번으로 저장된다.. &lt;/p&gt;
+&lt;p&gt;페이지에 이미지 카운터 변수를 심고 블록-컨버터까지 내려줄 생각을 하니 아득해졌는데 생각해보니 그냥 컨버터 클래스에 넣어놓고 static 변수로 변경한 다음 페이지를 새로 만들 때마다 해당 값을 초기화 해주면 되지 않나 싶어서 그렇게 구현 해보려고 한다. &lt;/p&gt;
+&lt;h3&gt;언더바 또는 *가 포함된 경우 스타일 깨짐&lt;/h3&gt;
+&lt;p&gt;예를 들어 &lt;em&gt;db&lt;/em&gt;connection_serializable 라고 입력된 텍스트가 &lt;em&gt;db&lt;/em&gt;connection&lt;em&gt;serializable&lt;/em&gt; 로 마음대로 스타일이 변경되고 있었다. 이를 예방하기 위해 일단 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// 언더스코어 이스케이프 처리 함수&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;escapeMarkdownUnderscores&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;text&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;(\w)_(\w)&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-flags&quot;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;$1\\_$2&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;해당 메소드를 사용해 언더바 앞에 백슬래시를 붙여주었다. &lt;/p&gt;
+&lt;p&gt;잘 될지는 배포 후 테스트를 해봐야 한다. &lt;/p&gt;
+&lt;h2&gt;신규 기능&lt;/h2&gt;
+&lt;h3&gt;테이블 지원&lt;/h3&gt;
+&lt;p&gt;이제 테이블을 지원한다.. 지금 고치느라 기록할 시간이 없는데 많은 것을 고쳤다.. &lt;/p&gt;
+&lt;p&gt;근본적인 설계가 아쉽다. 굳이 block을 별도의 클래스로 뺄 필요도 없었을 것 같고, MarkdownConverter 클래스가 굳이 인스턴스 메소드가 이렇게 많아야 할 이유도 모르겠다. &lt;/p&gt;
+&lt;p&gt;여유가 된다면 전체적으로 코드 리팩토링을 (다시 만드는 수준으로) 진행해야 할 것 같다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[PostgreSQL Advisory Locks 트랜잭션 레벨에서 구현]]></title><description><![CDATA[서론 동시성 제어 문제를 해결하기 위한 여러가지 방법을 고민 끝에 PostgreSQL Advisory Locks를 사용한 방법으로 구현하기로 했다.  구현을 하면서 겪은 과정을 여기에 기록한다.  구현 목표 현재 회사에서는 FastAPI…]]></description><link>https://sharknia.github.io/PostgreSQL-Advisory-Locks-트랜잭션-레벨에서-구현/</link><guid isPermaLink="false">https://sharknia.github.io/PostgreSQL-Advisory-Locks-트랜잭션-레벨에서-구현/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A0%9C%EC%96%B4%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0&quot;&gt;동시성 제어 문제를 해결하기 위한 여러가지 방법을 고민&lt;/a&gt; 끝에 PostgreSQL Advisory Locks를 사용한 방법으로 구현하기로 했다. &lt;/p&gt;
+&lt;p&gt;구현을 하면서 겪은 과정을 여기에 기록한다. &lt;/p&gt;
+&lt;h2&gt;구현 목표&lt;/h2&gt;
+&lt;p&gt;현재 회사에서는 FastAPI와 SqlAlchemy 2.0, PostgreSQL을 사용하고 있다. 아주 짧은 텀으로 중복으로 온 API 요청에 대해 중복 구매가 되지 않도록 동시성 제어를 하려고 한다. &lt;/p&gt;
+&lt;p&gt;유저의 아이디 값 또는 API 고유의 값 + 유저의 아이디 값을 사용해 트랜잭션 레벨에서 PostgreSQL Advisory Locks를 생성하고, 동일한 유저가 PostgreSQL Advisory Locks에 걸린 경우에는 중복 요청이라고 판단하고 두번째 요청은 중단 하거나, 또는 반드시 유효성 검사를 하도록 해 중복 구매가 되는 일이 없게 사전에 차단하려고 한다. &lt;/p&gt;
+&lt;h2&gt;구현 사전단계&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.postgresql.org/docs/9.1/functions-admin.html&quot;&gt;공식문서&lt;/a&gt;를 살펴보니 트랜잭션 레벨에서의 락을 위해 내가 사용할 수 있는 함수는 두 가지가 있었다. 트랜잭션 레벨의 락은 공통적으로 명시적인 언락이 불가능하다. &lt;/p&gt;
+&lt;p&gt;아래의 두가지 함수는 모두 트랜잭션 레벨의 함수로 Advisory Lock을 획득할 수 있다는 점은 같지만, Advisory Lock을 바로 획득하지 못했을 때의 반응이 다르다. &lt;/p&gt;
+&lt;h3&gt;pg_advisory_xact_lock&lt;/h3&gt;
+&lt;p&gt;지정된 키에 대한 Advisory Lock을 획득할 때까지 호출을 블로킹(대기)한다. 만약 다른 세션이 이미 해당 키에 대한 Advisory Lock을 갖고 있다면 그 Advisory Lock이 해제될 때까지 현재 세션에서의 처리가 중단된다. &lt;/p&gt;
+&lt;p&gt;Advisory Lock을 반드시 획득해야 해서 대기해야 할 경우에 적합하다.&lt;/p&gt;
+&lt;h3&gt;pg_try_advisory_xact_lock&lt;/h3&gt;
+&lt;p&gt;이 함수는 즉시 Advisory Lock을 시도하고 성공하면 True, 실패하면 False를 반환한다. 이 함수는 잠금 획득을 위해 대기하지 않으며, 잠금이 이미 다른 세션에 의해 보유되고 있는 경우 즉시 실패한다.&lt;/p&gt;
+&lt;p&gt;Advisory Lock을 반드시 획득할 필요가 없고 대기하지 않고 다른 작업을 수행해야 할 경우에 적합하다. &lt;/p&gt;
+&lt;h3&gt;결정&lt;/h3&gt;
+&lt;p&gt;우리의 경우에는 쿠폰 중복 발급을 막으려고 하는 것이므로 만약 이미 잠금이 걸린 경우에는 굳이 나머지 DB 작업을 실행할 필요가 없다. 따라서 pg_try_advisory_xact_lock를 사용하는 것이 적절해보인다. &lt;/p&gt;
+&lt;h2&gt;구현&lt;/h2&gt;
+&lt;p&gt;따라서, 서비스 로직의 시작 지점에 다음의 코드를 넣어 락을 얻거나, 락을 얻지 못한 경우 해당 요청은 실행을 중단하려고 한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Advisory Lock 획득&lt;/span&gt;
+    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_try_advisory_xact_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Advisory Lock을 획득하지 못한 경우에는 이미 선제 작업이 있는 것이므로 DB 작업을 계속할 필요가 없으므로&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# 바로 중단한다.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;scalar&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; Exception&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to acquire lock&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;SQL 인젝션과 같은 보안 문제를 줄이고 쿼리 구성과 관련된 오류를 예방하기 위해 다음과 같이 코드를 수정했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Advisory Lock 획득&lt;/span&gt;
+    result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pg_try_advisory_xact_lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# Advisory Lock을 획득하지 못한 경우에는 이미 선제 작업이 있는 것이므로 DB 작업을 계속할 필요가 없으므로&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# 바로 중단한다.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;scalar&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; Exception&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to acquire lock&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;잠금 해제 지점은 어떻게 될까?&lt;/h2&gt;
+&lt;p&gt;막연히 트랜잭션이 커밋되거나 롤백될 때라고 알아둬도 충분할 것 같다(세션 주입 방식을 통해 에러가 발생하거나 요청이 정상정이 끝나지 않는 경우에 세션을 롤백하며, 정상적으로 요청이 정리된 경우에는 세션을 커밋하는 과정이 포함되어 있을 것이므로 충분할 것이다).&lt;/p&gt;
+&lt;p&gt;다만, 트랜잭션 레벨에서의 락은 명시적으로 언락이 불가능하므로 정확한 언락 지점을 알아둬야 할 필요성이 있다고 느꼈다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;트랜잭션 커밋 또는 롤백&lt;/p&gt;
+&lt;p&gt;함수 내부에서 명시적으로 await db.commit() 또는 await db.rollback()이 호출되는 경우에 같은 세션이라고 하더라도 언락된다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;비동기 세션 컨텍스트 종료&lt;/p&gt;
+&lt;p&gt;AsyncSession 인스턴스가 컨텍스트 매니저(async with) 내에서 사용되고, 해당 컨텍스트 블록이 종료되는 경우&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;예외 발생&lt;/p&gt;
+&lt;p&gt;함수 실행 중 예외가 발생하여 처리 흐름이 중단되는 경우. SQLAlchemy의 세션 관리는 트랜잭션이 커밋되지 않으면 자동으로 롤백을 수행하므로 사실상 트랜잭션이 롤백되는 시점과 일치한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy의 func]]></title><description><![CDATA[func란? SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다.  Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic…]]></description><link>https://sharknia.github.io/Sqlalchemy의-func/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy의-func/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;func란?&lt;/h2&gt;
+&lt;p&gt;SQL 함수를 생성하고 호출하는 데 사용되는 기능이다. SQL 표준 함수 뿐 아니라 데이터베이스 별 특정 함수까지 다룰 수 있다. &lt;/p&gt;
+&lt;p&gt;Sqlalchemy의 유연한 기능으로 다양한 데이터베이스 작업을 보다 Pythonic한 방식으로 작성할 수 있게 해준다. &lt;/p&gt;
+&lt;h2&gt;func의 특징&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;함수 생성기&lt;/p&gt;
+&lt;p&gt;func는 데이터베이스의 내장 함수나 사용자 정의 함수를 파이썬 코드 내에서 호출하기 위한 함수 생성기이다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;동적 생성&lt;/p&gt;
+&lt;p&gt;func 객체에 접근할 때 Python의 속성 접근 매커니즘을 통해 동적으로 SQL 함수 호출을 생성한다. 예를 들어 func.count() 는 SQL의 COUNT() 함수 호출을 생성한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;데이터베이스 독립성&lt;/p&gt;
+&lt;p&gt;다양한 데이터베이스 시스템에서 사용할 수 있는 표준 SQL 함수를 추상화한다. 따라서 특정 데이터베이스에 종속적이지 않은 코드를 작성할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;다양한 함수 지원&lt;/p&gt;
+&lt;p&gt;func는 거의 모든 종류의 SQL 함수를 호출할 수 있도록 지원한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;code class=&quot;language-text&quot;&gt;__getattr__&lt;/code&gt; method&lt;/h2&gt;
+&lt;p&gt;func 객체의 &lt;strong&gt;getattr&lt;/strong&gt; 메소드는 특정 속성에 접근할 때 호출된다. 이 메소드는 동적으로 SQL 함수 호출을 생성한다. &lt;/p&gt;
+&lt;p&gt;예를 들어, func.pg&lt;em&gt;try&lt;/em&gt;advisory&lt;em&gt;lock에 접근하면 pg&lt;/em&gt;try&lt;em&gt;advisory&lt;/em&gt;lock 이름으로 _FunctionGenerator 객체를 생성한다. 이 객체는 최종적으로 SQL 쿼리 내에서 해당 함수 호출을 나타낸다. &lt;/p&gt;
+&lt;h2&gt;사용방법&lt;/h2&gt;
+&lt;h3&gt;기본 사용&lt;/h3&gt;
+&lt;p&gt;함수 이름을 func 객체의 속성으로 접근하여 사용한다. (&lt;strong&gt;getattr&lt;/strong&gt; 메소드로 연결된다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; func
+
+&lt;span class=&quot;token comment&quot;&gt;# COUNT 함수 호출 예시&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;select_from&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;함수 매개변수 전달&lt;/h3&gt;
+&lt;p&gt;함수 호출 시 매개변수를 전달할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# LENGTH 함수에 문자열 전달&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;some string&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;복잡한 표현식&lt;/h3&gt;
+&lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sqlalchemy에서의 트랜잭션 격리 수준 구현]]></title><description><![CDATA[구현 목적 상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS…]]></description><link>https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</link><guid isPermaLink="false">https://sharknia.github.io/Sqlalchemy에서의-트랜잭션-격리-수준-구현/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구현 목적&lt;/h2&gt;
 &lt;p&gt;상품 구매에 관련된 API를 구현하려고 한다. DynamoDB를 사용할 때에 동시성 이슈로 쿠폰 중복 구매 이슈가 있었으므로 이번에 RDS로 옮긴 김에 해당 문제를 완벽하게 해결하기 위해 다각도로 방법을 고민했다. &lt;/p&gt;
 &lt;p&gt;그 방안 중 하나가 &lt;a href=&quot;https://sharknia.github.io/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EA%B2%A9%EB%A6%AC-%EC%88%98%EC%A4%80Transaction-Isolation-Level&quot;&gt;트랜잭션 격리 수준(Transaction Isolation Level)&lt;/a&gt; 을 이용한 것이다. &lt;/p&gt;
 &lt;p&gt;SqlAlchemy - Postgresql을 사용하고 있는데, 이 라이브러리에서 트랜잭션 격리 수준을 어떻게 구현했는지 기록한다. &lt;/p&gt;
@@ -3684,45 +3969,7 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
     &lt;span class=&quot;token keyword&quot;&gt;finally&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; session&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; session&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;close&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이제 엔드포인트에서 기존 get&lt;em&gt;db&lt;/em&gt;session 대신 이 메소드를 사용하면 다른 옵션의 격리 레벨을 사용할 수 있다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
-&lt;h2&gt;유지보수 내역&lt;/h2&gt;
-&lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
-&lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
-&lt;p&gt;추가로, 프로퍼티가 고정값이 아니라 커스텀에 따라서 유연하게 대응해 Front Matter에 추가되도록 해주었다. &lt;/p&gt;
-&lt;h3&gt;줄바꿈 주의!&lt;/h3&gt;
-&lt;p&gt;마크다운은 기본적으로 엔터를 두 번씩 쳐야 줄바꿈이 되는 모양이다. 리스트 컨버터 일부에 줄바꿈이 하나만 들어가있던 것을 두 개가 들어가도록 수정해주었다. &lt;/p&gt;
-&lt;h3&gt;이미지 다운로드 안되는 현상&lt;/h3&gt;
-&lt;p&gt;분명 동기적으로 작동하게끔 짜놓았는데도 불구하고 이미지가 제대로 들어가지 않는 현상이 있었다.  axios 재시도 패키지를 설치하고, 재시도 로직을 추가하고 타임아웃 10초 설정도 해주었다. 뭐가 문제였는지는 정확히 파악이 안됐는데, (오류 로그조차 없었다) 일단 이 이후로는 이미지 다운로드에 실패하는 현상은 없다. &lt;/p&gt;
-&lt;p&gt;추가로, 이미지 다운로드 시에도 디렉토리가 없다면 만들도록 해주었다. &lt;/p&gt;
-&lt;h3&gt;스타일이 두 개 적용된 경우&lt;/h3&gt;
-&lt;p&gt;스타일이 두 개가 적용된 경우는 더 띄어쓰기에 민감했다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;*~~안녕하세요 ~~*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;처럼 애매하게 띄어쓰기가 들어가면 하나만 적용된다. &lt;/p&gt;
-&lt;p&gt;그래서 스타일이 있는 경우에는 공백을 제거 한 후에, 스타일을 붙이고 다시 스타일 뒤로 공백을 붙여서 자연스럽게 포맷이 유지되도록 수정해주었다. &lt;/p&gt;
-&lt;h3&gt;ImageCounter 변수 수정&lt;/h3&gt;
-&lt;p&gt;이미지가 디렉토리가 변경되어도 숫자가 계속 늘어나는 현상을 겪었는데… 멍청하게 내가 이미지 카운터를 static 변수로 선언해서 모든 인스턴스가 값을 공유하고 있는 것 뿐이었다. 바로 인스턴스 변수로 변경 해주었다. &lt;/p&gt;
-&lt;h3&gt;멘션 링크 이후 줄바꿈 문제 해결&lt;/h3&gt;
-&lt;p&gt;멘션 링크를 북마크로 바꿔주는 메소드에 줄바꿈이 고정되어있어서, paragraph 안에 들어가 있는 멘션의 경우에도 줄바꿈이 들어가버렸다. 번거롭지만, 메소드를 수정해서 리스트로 처리되는 경우에만 줄바꿈이 들어가도록 수정해주었다. &lt;/p&gt;
-&lt;h3&gt;notion url만 주어지는 경우&lt;/h3&gt;
-&lt;p&gt;노션의 페이지 링크를 따온 다음에, 아무 글자 또는 문장을 드래그 하고 붙여넣기 하면 해당 글자 또는 문장에 페이지 링크로 연결되는 북마크가 생성된다. &lt;/p&gt;
-&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 382px; &apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 10.588235294117647%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAVElEQVR42k2NSw4AIQhDvYZr/KGB+9+OySPRzKJpSwuUOWe4e5hZnHOS996x1koPA1VNTxfdWksPuDHGiFprFBHJISWCyyyge+9v4f/k5ngyehz8AHh4OntOXZx1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &apos; title=&apos;&apos; src=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; srcset=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/e7570/image1.png 170w,
-/static/0981c6ff94ee6b99478b05d66508c51e/f46e7/image1.png 340w,
-/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png 382w&apos; sizes=&apos;(max-width: 382px) 100vw, 382px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
-    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &lt;/figcaption&gt;
-  &lt;/figure&gt;
-근데 애석하게도 이 링크는 단순히 32자리 문자열만 가지고 있다. (페이지의 아이디가 아니다). 따라서 해당 경우에는 북마크를 연결할 수가 없었다… &lt;/p&gt;
-&lt;p&gt;인 줄 알았는데, 32자리인게 이상해서 혹시나 해서 UUID 형식으로 변환해봤더니 그게 내부 페이지의 아이디였다. 그러니까, 각 블록의 아이디가 UUID로 주어지는데 거기에서 하이픈만 제외하고 내부 URL로 사용중이었던 것이다. &lt;/p&gt;
-&lt;p&gt;얼씨구나~ 하고 바로 해당 케이스도 북마크 기능으로 연결해주었다. &lt;/p&gt;
-&lt;h3&gt;URL 형식 변경&lt;/h3&gt;
-&lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;노션 소개 페이지&lt;/code&gt; 라는 타이틀을 &lt;code class=&quot;language-text&quot;&gt;노션소개페이지&lt;/code&gt; 로 변환해서 URL로 사용하고 있었는데, 공백을 완전히 제거하는 대신 하이픈을 넣도록 수정해주었다. &lt;/p&gt;
-&lt;h2&gt;다음 단계는?&lt;/h2&gt;
-&lt;p&gt;이제 다음 단계는 자동화가 목적이다. 어느정도 기능 구현은 90프로 이상 됐다고 생각하고, 당장 내가 블로그 글을 쓰는데 큰 문제가 없어보인다. 이제 github.io와 합쳐서 실질적인 사용이 가능하도록 해보려고 한다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level)]]></title><description><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level…]]></description><link>https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</link><guid isPermaLink="false">https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;트랜잭션 격리 수준(Transaction Isolation Level)이란?&lt;/h2&gt;
+&lt;p&gt;이제 엔드포인트에서 기존 get&lt;em&gt;db&lt;/em&gt;session 대신 이 메소드를 사용하면 다른 옵션의 격리 레벨을 사용할 수 있다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level)]]></title><description><![CDATA[트랜잭션 격리 수준(Transaction Isolation Level…]]></description><link>https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</link><guid isPermaLink="false">https://sharknia.github.io/트랜잭션-격리-수준Transaction-Isolation-Level/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;트랜잭션 격리 수준(Transaction Isolation Level)이란?&lt;/h2&gt;
 &lt;p&gt;트랜잭션 격리 수준은 데이터베이스 시스템에서 동시에 여러 트랜잭션이 실행될 때, 트랜잭션 간에 데이터를 어떻게 고립시킬지를 결정하는 설정이다. 이 설정은 트랜잭션이 다른 트랜잭션의 작업에 영향을 받지 않도록 보장하는 동시에 여러 트랜잭션이 데이터베이스의 동일한 데이터에 접근할 때 발생하는 문제들을 관리하는데 중요한 역할을 한다. &lt;/p&gt;
 &lt;p&gt;격리 수준이 높을 수록 트랜잭션 간의 고립 정도가 증가하지만, 그만큼 데이터베이스의 처리량(throughput)과 동시성(concurrency)이 감소할 수 있다. 반대로 격리 수준이 낮으면 처리량과 동시성은 증가하지만 데이터 무결성 문제가 발생할 위험이 높아진다. 따라서 적절한 격리 수준을 선택해야 한다. &lt;/p&gt;
 &lt;p&gt;데이터베이스의 동일한 데이터에 접근할 때 발생할 수 있는 문제들은 다음과 같다. &lt;/p&gt;
@@ -3797,7 +4044,45 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
 &lt;li&gt;데이터 무결성이 중요한 경우에 적합하지만 성능상의 영향을 고려해야 한다. &lt;/li&gt;
 &lt;li&gt;데드락을 방지하기 위해 트랜잭션 설계 시 주의가 필요하다. &lt;/li&gt;
 &lt;li&gt;읽기만 수행하는 트랜잭션의 경우 더 낮은 격리 수준을 고려하는 것이 성능상 이점이 있을 수 있다. &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
+&lt;h2&gt;유지보수 내역&lt;/h2&gt;
+&lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
+&lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
+&lt;p&gt;추가로, 프로퍼티가 고정값이 아니라 커스텀에 따라서 유연하게 대응해 Front Matter에 추가되도록 해주었다. &lt;/p&gt;
+&lt;h3&gt;줄바꿈 주의!&lt;/h3&gt;
+&lt;p&gt;마크다운은 기본적으로 엔터를 두 번씩 쳐야 줄바꿈이 되는 모양이다. 리스트 컨버터 일부에 줄바꿈이 하나만 들어가있던 것을 두 개가 들어가도록 수정해주었다. &lt;/p&gt;
+&lt;h3&gt;이미지 다운로드 안되는 현상&lt;/h3&gt;
+&lt;p&gt;분명 동기적으로 작동하게끔 짜놓았는데도 불구하고 이미지가 제대로 들어가지 않는 현상이 있었다.  axios 재시도 패키지를 설치하고, 재시도 로직을 추가하고 타임아웃 10초 설정도 해주었다. 뭐가 문제였는지는 정확히 파악이 안됐는데, (오류 로그조차 없었다) 일단 이 이후로는 이미지 다운로드에 실패하는 현상은 없다. &lt;/p&gt;
+&lt;p&gt;추가로, 이미지 다운로드 시에도 디렉토리가 없다면 만들도록 해주었다. &lt;/p&gt;
+&lt;h3&gt;스타일이 두 개 적용된 경우&lt;/h3&gt;
+&lt;p&gt;스타일이 두 개가 적용된 경우는 더 띄어쓰기에 민감했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;*~~안녕하세요 ~~*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;처럼 애매하게 띄어쓰기가 들어가면 하나만 적용된다. &lt;/p&gt;
+&lt;p&gt;그래서 스타일이 있는 경우에는 공백을 제거 한 후에, 스타일을 붙이고 다시 스타일 뒤로 공백을 붙여서 자연스럽게 포맷이 유지되도록 수정해주었다. &lt;/p&gt;
+&lt;h3&gt;ImageCounter 변수 수정&lt;/h3&gt;
+&lt;p&gt;이미지가 디렉토리가 변경되어도 숫자가 계속 늘어나는 현상을 겪었는데… 멍청하게 내가 이미지 카운터를 static 변수로 선언해서 모든 인스턴스가 값을 공유하고 있는 것 뿐이었다. 바로 인스턴스 변수로 변경 해주었다. &lt;/p&gt;
+&lt;h3&gt;멘션 링크 이후 줄바꿈 문제 해결&lt;/h3&gt;
+&lt;p&gt;멘션 링크를 북마크로 바꿔주는 메소드에 줄바꿈이 고정되어있어서, paragraph 안에 들어가 있는 멘션의 경우에도 줄바꿈이 들어가버렸다. 번거롭지만, 메소드를 수정해서 리스트로 처리되는 경우에만 줄바꿈이 들어가도록 수정해주었다. &lt;/p&gt;
+&lt;h3&gt;notion url만 주어지는 경우&lt;/h3&gt;
+&lt;p&gt;노션의 페이지 링크를 따온 다음에, 아무 글자 또는 문장을 드래그 하고 붙여넣기 하면 해당 글자 또는 문장에 페이지 링크로 연결되는 북마크가 생성된다. &lt;/p&gt;
+&lt;p&gt;&lt;figure class=&apos;gatsby-resp-image-figure&apos; style=&apos;margin-bottom: 16px;&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 382px; &apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 10.588235294117647%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAVElEQVR42k2NSw4AIQhDvYZr/KGB+9+OySPRzKJpSwuUOWe4e5hZnHOS996x1koPA1VNTxfdWksPuDHGiFprFBHJISWCyyyge+9v4f/k5ngyehz8AHh4OntOXZx1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &apos; title=&apos;&apos; src=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png&apos; srcset=&apos;/static/0981c6ff94ee6b99478b05d66508c51e/e7570/image1.png 170w,
+/static/0981c6ff94ee6b99478b05d66508c51e/f46e7/image1.png 340w,
+/static/0981c6ff94ee6b99478b05d66508c51e/29984/image1.png 382w&apos; sizes=&apos;(max-width: 382px) 100vw, 382px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+    &lt;figcaption class=&apos;gatsby-resp-image-figcaption&apos;&gt;이렇게, 이 하이퍼링크는 노션 내부의 모 페이지로 연결된다. /xxxx… 만의 주소를 갖고 있다. &lt;/figcaption&gt;
+  &lt;/figure&gt;
+근데 애석하게도 이 링크는 단순히 32자리 문자열만 가지고 있다. (페이지의 아이디가 아니다). 따라서 해당 경우에는 북마크를 연결할 수가 없었다… &lt;/p&gt;
+&lt;p&gt;인 줄 알았는데, 32자리인게 이상해서 혹시나 해서 UUID 형식으로 변환해봤더니 그게 내부 페이지의 아이디였다. 그러니까, 각 블록의 아이디가 UUID로 주어지는데 거기에서 하이픈만 제외하고 내부 URL로 사용중이었던 것이다. &lt;/p&gt;
+&lt;p&gt;얼씨구나~ 하고 바로 해당 케이스도 북마크 기능으로 연결해주었다. &lt;/p&gt;
+&lt;h3&gt;URL 형식 변경&lt;/h3&gt;
+&lt;p&gt;예를 들어 &lt;code class=&quot;language-text&quot;&gt;노션 소개 페이지&lt;/code&gt; 라는 타이틀을 &lt;code class=&quot;language-text&quot;&gt;노션소개페이지&lt;/code&gt; 로 변환해서 URL로 사용하고 있었는데, 공백을 완전히 제거하는 대신 하이픈을 넣도록 수정해주었다. &lt;/p&gt;
+&lt;h2&gt;다음 단계는?&lt;/h2&gt;
+&lt;p&gt;이제 다음 단계는 자동화가 목적이다. 어느정도 기능 구현은 90프로 이상 됐다고 생각하고, 당장 내가 블로그 글을 쓰는데 큰 문제가 없어보인다. 이제 github.io와 합쳐서 실질적인 사용이 가능하도록 해보려고 한다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
 &lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
 &lt;h2&gt;구현 내용&lt;/h2&gt;
 &lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
@@ -5888,7 +6173,79 @@ asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;run&lt;span
     data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; some_async_function&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; data&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;여기서 await는 some&lt;em&gt;async&lt;/em&gt;function이 완료될 때까지 fetch_data 코루틴의 실행을 중지시킨다. 완료되면 그 결과값을 data에 할당하고 실행을 계속한다. &lt;/p&gt;
-&lt;p&gt;이러한 비동기 프로그래밍 방식의 장점은 I/O 작업이 완료되기를 기다리는 동안 프로그램이 다른 작업을 계속할 수 있어 프로그램의 전반적인 실행 효율을 개선한다는 것이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FastAPI의 데코레이터]]></title><description><![CDATA[개요 FastAPI의 데코레이터는 파이썬 데코레이터 패턴을 활용하여 FastAPI 프레임워크에서 제공하는 여러 기능을 함수나 클래스에 적용하는 구문이다. 이 데코레이터들은 FastAPI…]]></description><link>https://sharknia.github.io/FastAPI의-데코레이터/</link><guid isPermaLink="false">https://sharknia.github.io/FastAPI의-데코레이터/</guid><pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;개요&lt;/h2&gt;
+&lt;p&gt;이러한 비동기 프로그래밍 방식의 장점은 I/O 작업이 완료되기를 기다리는 동안 프로그램이 다른 작업을 계속할 수 있어 프로그램의 전반적인 실행 효율을 개선한다는 것이다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[생성기(generate) 패턴]]></title><description><![CDATA[소개 파이썬의 중요한 특징 중 하나로 이터레이터 프로토콜을 사용하여 데이터의 시퀀스를 느긋하게(lazily) 생성하는데 사용된다. 즉, 생성기는 시퀀스의 전체 항목을 메모리에 한 번에 로드하지 않고 반복(iteration…]]></description><link>https://sharknia.github.io/생성기generate-패턴/</link><guid isPermaLink="false">https://sharknia.github.io/생성기generate-패턴/</guid><pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;소개&lt;/h2&gt;
+&lt;p&gt;파이썬의 중요한 특징 중 하나로 이터레이터 프로토콜을 사용하여 데이터의 시퀀스를 느긋하게(lazily) 생성하는데 사용된다. 즉, 생성기는 시퀀스의 전체 항목을 메모리에 한 번에 로드하지 않고 반복(iteration) 할 때마다 하나씩 항목을 생성한다. &lt;/p&gt;
+&lt;p&gt;이를 통해 메모리 사용을 줄이고 대용량 또는 무한한 시퀀스를 다룰 수 있다. &lt;/p&gt;
+&lt;h2&gt;이터레이터 프로토콜&lt;/h2&gt;
+&lt;p&gt;파이썬에서 반복 가능한 객체(컬렉션)를 순회하기 위한 규약이다. 이 프로토콜은 반복(iteration) 동작을 정의하며 일련의 요소들에 대해 순차적으로 접근할 수 있게 해준다. 파이썬의 모든 반복 가능한 객체는 이 이터레이터 프로토콜을 구현해야 하며 이는 주로 두 가지 매직 매소드(magic method)로 구성된다. &lt;/p&gt;
+&lt;h4&gt;&lt;code class=&quot;language-text&quot;&gt;__iter__()&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;이터레이터 객체를 반환해야 하며, 보통 self를 반환하여 객체 자체가 이터레이터인 경우를 처리한다. 이 메소드는 for 루프와 같은 반복 연산이 시작될 때 호출된다. &lt;/p&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;컬렉션의 다음 요소를 반환해야 한다. 만약 더 이상 요소가 없으면 &lt;code class=&quot;language-text&quot;&gt;StopIteration&lt;/code&gt; 예외를 발생시켜 반복을 종료해야 한다. &lt;/p&gt;
+&lt;h2&gt;생성기 만드는 방법&lt;/h2&gt;
+&lt;h3&gt;생성기 함수 (Generator function)&lt;/h3&gt;
+&lt;p&gt;일반 함수와 비슷하지만 &lt;code class=&quot;language-text&quot;&gt;return&lt;/code&gt; 대신 &lt;code class=&quot;language-text&quot;&gt;yield&lt;/code&gt; 문을 사용하여 값을 하나씩 반환한다. &lt;code class=&quot;language-text&quot;&gt;yield&lt;/code&gt; 를 사용하면 함수는 해당 상태에서 실행을 일시 정지하고 다음 값이 요청될 때까지 대기 상태가 된다. &lt;/p&gt;
+&lt;h3&gt;생성기 표현식 (Generator expression)&lt;/h3&gt;
+&lt;p&gt;리스트 컴프리헨션과 유사하지만 괄호를 사용하여 정의한다. 이 방식은 단순한 경우에 대한 생성기를 간결하게 작성할 수 있게 해준다. &lt;/p&gt;
+&lt;h2&gt;예제&lt;/h2&gt;
+&lt;h3&gt;생성기 함수 예제&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;countdown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Starting to count from&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; n &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; n
+        n &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Done!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 생성기 객체를 생성&lt;/span&gt;
+cd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; countdown&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 생성기를 사용&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; count &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; cd&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 코드를 실행하면 3, 2, 1이 출력되고 각 숫자 사이에 다른 코드를 실행할 수 있는 기회가 주어진다. 각 yield 문마다 함수의 상태는 일시 중단되고 다음 반복에서 계속된다. &lt;/p&gt;
+&lt;h3&gt;생성기 표현식 예제&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;squares &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;x &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; x &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# 생성기를 사용&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; square &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; squares&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;square&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 코드는 0부터 9까지의 숫자에 대한 제곱을 출력한다. 반복(iteration)할 때마다 다음 제곱값이 생성되고 모든 값이 한 번에 메모리에 저장되지 않는다. &lt;/p&gt;
+&lt;h2&gt;yield&lt;/h2&gt;
+&lt;p&gt;yield는 함수가 값을 반환(return)하면서도 그 상태를 기억하고 일시 중지(pause)되는 것을 가능하게 한다. 이는 함수의 실행을 중단시키지만 함수의 로컬 변수와 실행 상태가 유지되어 나중에 이 함수가 다시 호출될 때 이전 상태에서부터 실행을 재개할 수 있다. &lt;/p&gt;
+&lt;p&gt;일반적인 return은 함수의 실행을 완전히 종료하고 해당 함수의 모든 상태(로컬 변수, 실행 컨텍스트)를 버리지만 yeild는 함수가 여전히 살아있다는 점에서 return과 다르다. yeild를 통해 반환된 함수(즉 생성기)는 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드를 호출함으로써 (또는 &lt;code class=&quot;language-text&quot;&gt;next()&lt;/code&gt; 함수를 사용하여) 다시 실행될 수 있으며, yield문 바로 다음부터 실행이 이어진다. &lt;/p&gt;
+&lt;h2&gt;이터러블(iterable) 객체&lt;/h2&gt;
+&lt;h3&gt;소개&lt;/h3&gt;
+&lt;p&gt;멤버를 한 번에 하나씩 반환할 수 있는 객체로, 파이썬에선 주로 순회 가능한 모든 객체를 의미한다. 이터러블 객체는 for 루프와 같은 반복문을 사용해 순회할 수 있으며 이는 그 객체가 반복 가능한(iterable) 인터페이스를 구현하고 있기 때문이다. &lt;/p&gt;
+&lt;p&gt;이터러블 객체가 되기 위해서는 객체 내에 &lt;code class=&quot;language-text&quot;&gt;__iterm__()&lt;/code&gt; 메소드를 구현해야 한다. 이 메소드는 이터레이터를 반환하고 이터레이터는 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드를 구현하여 순차적으로 값을 반환할 수 있어야 한다. &lt;code class=&quot;language-text&quot;&gt;topIteration&lt;/code&gt; 예외는 이터레이터가 더 이상 반환할 값이 없을 때 발생시켜 반복이 끝났음을 알린다.  &lt;/p&gt;
+&lt;h3&gt;파이썬의 이터러블 객체&lt;/h3&gt;
+&lt;p&gt;리스트, 튜플, 문자열, 딕셔너리, 집합 등이 있다. 또한 파일(file) 객체도 이러터블하며 파일의 각 줄을 순회할 수 있다. &lt;/p&gt;
+&lt;h3&gt;예제&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;my_list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 리스트는 이터러블 객체입니다.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; item &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; my_list&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 1, 2, 3, 4가 순차적으로 출력됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;직접 이터러블 객체를 만들고 싶다면 &lt;code class=&quot;language-text&quot;&gt;__iter__()&lt;/code&gt; 메소드를 포함하는 클래스를 정의할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; low&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; high&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; low
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;high &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; high
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__iter__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; self  &lt;span class=&quot;token comment&quot;&gt;# self.__next__()를 호출할 이터레이터로 자신을 반환합니다.&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__next__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;high&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            num &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current
+            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; num
+        &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; StopIteration
+
+&lt;span class=&quot;token comment&quot;&gt;# Counter 인스턴스는 이터러블 객체입니다.&lt;/span&gt;
+counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Counter&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; num &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; counter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 1, 2, 3이 출력됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위는 사용자 정의 이터러블 객체이다. &lt;/p&gt;
+&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;Counter&lt;/code&gt; 클래스는 &lt;code class=&quot;language-text&quot;&gt;__iter__()&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드를 정의하여 이터러블 인터페이스를 구현한다. &lt;code class=&quot;language-text&quot;&gt;Counter&lt;/code&gt; 인스턴스를 순회할 때마다 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드가 호출되어 숫자를 하나씩 반환하고, 더 이상 반환할 숫자가 없을 때 &lt;code class=&quot;language-text&quot;&gt;StopIteration&lt;/code&gt; 예외가 발생한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FastAPI의 데코레이터]]></title><description><![CDATA[개요 FastAPI의 데코레이터는 파이썬 데코레이터 패턴을 활용하여 FastAPI 프레임워크에서 제공하는 여러 기능을 함수나 클래스에 적용하는 구문이다. 이 데코레이터들은 FastAPI…]]></description><link>https://sharknia.github.io/FastAPI의-데코레이터/</link><guid isPermaLink="false">https://sharknia.github.io/FastAPI의-데코레이터/</guid><pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;FastAPI의 데코레이터는 파이썬 데코레이터 패턴을 활용하여 FastAPI 프레임워크에서 제공하는 여러 기능을 함수나 클래스에 적용하는 구문이다. 이 데코레이터들은 FastAPI에서 매우 중요한 역할을 한다. &lt;/p&gt;
 &lt;p&gt;데코레이터는 &lt;code class=&quot;language-text&quot;&gt;@&lt;/code&gt; 기호를 사용하여 함수나 클래스의 위에 선언된다. 데코레이터는 그 아래에 정의된 함수에 추가적인 기능을 부여하거나 특정 작업을 수행하도록 지시한다. &lt;/p&gt;
 &lt;p&gt;데코레이터를 사용하여 개발자는 복잡한 로직을 함수에 직접 쓰지 않고 프레임워크가 제공하는 데코레이터를 사용하여 빠르고 쉽게 웹 애플리케이션을 구현할 수 있다. &lt;/p&gt;
@@ -6004,79 +6361,7 @@ app &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; FastAPI&lt;span 
 &lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;@Query&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@Path&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@Header&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@Cookie&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@Body&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@Form&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;엔드포인트의 각 파라미터를 특정 데이터 위치(쿼리 파라미터, 경로 파라미터, 헤더, 쿠키, 요청 본문, 폼 데이터)에 연결한다. &lt;/p&gt;
 &lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;@Response&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@JSONResponse&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@HTMLResponse&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;code class=&quot;language-text&quot;&gt;@FileResponse&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;특정 응답 클래스를 사용하여 응답을 반환한다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;@JSONResponse&lt;/code&gt;는 JSON 형식의 응답을 반환할 때 사용된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[생성기(generate) 패턴]]></title><description><![CDATA[소개 파이썬의 중요한 특징 중 하나로 이터레이터 프로토콜을 사용하여 데이터의 시퀀스를 느긋하게(lazily) 생성하는데 사용된다. 즉, 생성기는 시퀀스의 전체 항목을 메모리에 한 번에 로드하지 않고 반복(iteration…]]></description><link>https://sharknia.github.io/생성기generate-패턴/</link><guid isPermaLink="false">https://sharknia.github.io/생성기generate-패턴/</guid><pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;소개&lt;/h2&gt;
-&lt;p&gt;파이썬의 중요한 특징 중 하나로 이터레이터 프로토콜을 사용하여 데이터의 시퀀스를 느긋하게(lazily) 생성하는데 사용된다. 즉, 생성기는 시퀀스의 전체 항목을 메모리에 한 번에 로드하지 않고 반복(iteration) 할 때마다 하나씩 항목을 생성한다. &lt;/p&gt;
-&lt;p&gt;이를 통해 메모리 사용을 줄이고 대용량 또는 무한한 시퀀스를 다룰 수 있다. &lt;/p&gt;
-&lt;h2&gt;이터레이터 프로토콜&lt;/h2&gt;
-&lt;p&gt;파이썬에서 반복 가능한 객체(컬렉션)를 순회하기 위한 규약이다. 이 프로토콜은 반복(iteration) 동작을 정의하며 일련의 요소들에 대해 순차적으로 접근할 수 있게 해준다. 파이썬의 모든 반복 가능한 객체는 이 이터레이터 프로토콜을 구현해야 하며 이는 주로 두 가지 매직 매소드(magic method)로 구성된다. &lt;/p&gt;
-&lt;h4&gt;&lt;code class=&quot;language-text&quot;&gt;__iter__()&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;이터레이터 객체를 반환해야 하며, 보통 self를 반환하여 객체 자체가 이터레이터인 경우를 처리한다. 이 메소드는 for 루프와 같은 반복 연산이 시작될 때 호출된다. &lt;/p&gt;
-&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;컬렉션의 다음 요소를 반환해야 한다. 만약 더 이상 요소가 없으면 &lt;code class=&quot;language-text&quot;&gt;StopIteration&lt;/code&gt; 예외를 발생시켜 반복을 종료해야 한다. &lt;/p&gt;
-&lt;h2&gt;생성기 만드는 방법&lt;/h2&gt;
-&lt;h3&gt;생성기 함수 (Generator function)&lt;/h3&gt;
-&lt;p&gt;일반 함수와 비슷하지만 &lt;code class=&quot;language-text&quot;&gt;return&lt;/code&gt; 대신 &lt;code class=&quot;language-text&quot;&gt;yield&lt;/code&gt; 문을 사용하여 값을 하나씩 반환한다. &lt;code class=&quot;language-text&quot;&gt;yield&lt;/code&gt; 를 사용하면 함수는 해당 상태에서 실행을 일시 정지하고 다음 값이 요청될 때까지 대기 상태가 된다. &lt;/p&gt;
-&lt;h3&gt;생성기 표현식 (Generator expression)&lt;/h3&gt;
-&lt;p&gt;리스트 컴프리헨션과 유사하지만 괄호를 사용하여 정의한다. 이 방식은 단순한 경우에 대한 생성기를 간결하게 작성할 수 있게 해준다. &lt;/p&gt;
-&lt;h2&gt;예제&lt;/h2&gt;
-&lt;h3&gt;생성기 함수 예제&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;countdown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;n&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Starting to count from&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; n&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; n &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;yield&lt;/span&gt; n
-        n &lt;span class=&quot;token operator&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Done!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 생성기 객체를 생성&lt;/span&gt;
-cd &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; countdown&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 생성기를 사용&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; count &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; cd&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 코드를 실행하면 3, 2, 1이 출력되고 각 숫자 사이에 다른 코드를 실행할 수 있는 기회가 주어진다. 각 yield 문마다 함수의 상태는 일시 중단되고 다음 반복에서 계속된다. &lt;/p&gt;
-&lt;h3&gt;생성기 표현식 예제&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;squares &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;x &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; x &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# 생성기를 사용&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; square &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; squares&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;square&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 코드는 0부터 9까지의 숫자에 대한 제곱을 출력한다. 반복(iteration)할 때마다 다음 제곱값이 생성되고 모든 값이 한 번에 메모리에 저장되지 않는다. &lt;/p&gt;
-&lt;h2&gt;yield&lt;/h2&gt;
-&lt;p&gt;yield는 함수가 값을 반환(return)하면서도 그 상태를 기억하고 일시 중지(pause)되는 것을 가능하게 한다. 이는 함수의 실행을 중단시키지만 함수의 로컬 변수와 실행 상태가 유지되어 나중에 이 함수가 다시 호출될 때 이전 상태에서부터 실행을 재개할 수 있다. &lt;/p&gt;
-&lt;p&gt;일반적인 return은 함수의 실행을 완전히 종료하고 해당 함수의 모든 상태(로컬 변수, 실행 컨텍스트)를 버리지만 yeild는 함수가 여전히 살아있다는 점에서 return과 다르다. yeild를 통해 반환된 함수(즉 생성기)는 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드를 호출함으로써 (또는 &lt;code class=&quot;language-text&quot;&gt;next()&lt;/code&gt; 함수를 사용하여) 다시 실행될 수 있으며, yield문 바로 다음부터 실행이 이어진다. &lt;/p&gt;
-&lt;h2&gt;이터러블(iterable) 객체&lt;/h2&gt;
-&lt;h3&gt;소개&lt;/h3&gt;
-&lt;p&gt;멤버를 한 번에 하나씩 반환할 수 있는 객체로, 파이썬에선 주로 순회 가능한 모든 객체를 의미한다. 이터러블 객체는 for 루프와 같은 반복문을 사용해 순회할 수 있으며 이는 그 객체가 반복 가능한(iterable) 인터페이스를 구현하고 있기 때문이다. &lt;/p&gt;
-&lt;p&gt;이터러블 객체가 되기 위해서는 객체 내에 &lt;code class=&quot;language-text&quot;&gt;__iterm__()&lt;/code&gt; 메소드를 구현해야 한다. 이 메소드는 이터레이터를 반환하고 이터레이터는 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드를 구현하여 순차적으로 값을 반환할 수 있어야 한다. &lt;code class=&quot;language-text&quot;&gt;topIteration&lt;/code&gt; 예외는 이터레이터가 더 이상 반환할 값이 없을 때 발생시켜 반복이 끝났음을 알린다.  &lt;/p&gt;
-&lt;h3&gt;파이썬의 이터러블 객체&lt;/h3&gt;
-&lt;p&gt;리스트, 튜플, 문자열, 딕셔너리, 집합 등이 있다. 또한 파일(file) 객체도 이러터블하며 파일의 각 줄을 순회할 수 있다. &lt;/p&gt;
-&lt;h3&gt;예제&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;my_list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 리스트는 이터러블 객체입니다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; item &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; my_list&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 1, 2, 3, 4가 순차적으로 출력됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;직접 이터러블 객체를 만들고 싶다면 &lt;code class=&quot;language-text&quot;&gt;__iter__()&lt;/code&gt; 메소드를 포함하는 클래스를 정의할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; low&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; high&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; low
-        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;high &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; high
-
-    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__iter__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; self  &lt;span class=&quot;token comment&quot;&gt;# self.__next__()를 호출할 이터레이터로 자신을 반환합니다.&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__next__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;high&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-            num &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current
-            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; num
-        &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;token keyword&quot;&gt;raise&lt;/span&gt; StopIteration
-
-&lt;span class=&quot;token comment&quot;&gt;# Counter 인스턴스는 이터러블 객체입니다.&lt;/span&gt;
-counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Counter&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; num &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; counter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 1, 2, 3이 출력됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;위는 사용자 정의 이터러블 객체이다. &lt;/p&gt;
-&lt;p&gt;위의 &lt;code class=&quot;language-text&quot;&gt;Counter&lt;/code&gt; 클래스는 &lt;code class=&quot;language-text&quot;&gt;__iter__()&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드를 정의하여 이터러블 인터페이스를 구현한다. &lt;code class=&quot;language-text&quot;&gt;Counter&lt;/code&gt; 인스턴스를 순회할 때마다 &lt;code class=&quot;language-text&quot;&gt;__next__()&lt;/code&gt; 메소드가 호출되어 숫자를 하나씩 반환하고, 더 이상 반환할 숫자가 없을 때 &lt;code class=&quot;language-text&quot;&gt;StopIteration&lt;/code&gt; 예외가 발생한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[FastAPI]]></title><description><![CDATA[특징 및 장점 타입 힌트를 활용한 API 선언 Python 3.6 이상의 타입 힌트를 활용하여 API 매개변수 및 응답 모델을 선언한다. 이를 통해 데이터 검증, 직렬화, 문서화를 자동화한다. 이러한 방식은 깔끔한 코드 작성과 함께 명확한 API…]]></description><link>https://sharknia.github.io/FastAPI/</link><guid isPermaLink="false">https://sharknia.github.io/FastAPI/</guid><pubDate>Thu, 02 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;특징 및 장점&lt;/h2&gt;
+&lt;p&gt;특정 응답 클래스를 사용하여 응답을 반환한다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;@JSONResponse&lt;/code&gt;는 JSON 형식의 응답을 반환할 때 사용된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[FastAPI]]></title><description><![CDATA[특징 및 장점 타입 힌트를 활용한 API 선언 Python 3.6 이상의 타입 힌트를 활용하여 API 매개변수 및 응답 모델을 선언한다. 이를 통해 데이터 검증, 직렬화, 문서화를 자동화한다. 이러한 방식은 깔끔한 코드 작성과 함께 명확한 API…]]></description><link>https://sharknia.github.io/FastAPI/</link><guid isPermaLink="false">https://sharknia.github.io/FastAPI/</guid><pubDate>Thu, 02 Nov 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;특징 및 장점&lt;/h2&gt;
 &lt;h3&gt;타입 힌트를 활용한 API 선언&lt;/h3&gt;
 &lt;p&gt;Python 3.6 이상의 타입 힌트를 활용하여 API 매개변수 및 응답 모델을 선언한다. 이를 통해 데이터 검증, 직렬화, 문서화를 자동화한다. 이러한 방식은 깔끔한 코드 작성과 함께 명확한 API 명세를 제공한다. &lt;/p&gt;
 &lt;h3&gt;속도&lt;/h3&gt;
@@ -8473,14 +8758,7 @@ pprint&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pprint&lt;sp
 &lt;p&gt;&lt;strong&gt;CDN 사용&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;이미지나 정적 파일과 같은 컨텐츠를 전세계적으로 빠르게 제공하기 위해 CDN 사용을 고려할 수 있다.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Nuget 패키지 dll 추출]]></title><description><![CDATA[파일의 확장자를 으로 변경합니다. 예를 들어, 을 으로 변경합니다. ZIP 압축 해제 도구 (예: WinRAR, 7-Zip…]]></description><link>https://sharknia.github.io/Nuget-패키지-dll-추출/</link><guid isPermaLink="false">https://sharknia.github.io/Nuget-패키지-dll-추출/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt; 파일의 확장자를 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt;으로 변경합니다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.nupkg&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.zip&lt;/code&gt;으로 변경합니다.&lt;/li&gt;
-&lt;li&gt;ZIP 압축 해제 도구 (예: WinRAR, 7-Zip 등)를 사용하여 변경된 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일을 엽니다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일 내에서 &lt;code class=&quot;language-text&quot;&gt;lib&lt;/code&gt; 폴더나 해당하는 폴더를 찾아 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 찾습니다.&lt;/li&gt;
-&lt;li&gt;해당 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 추출합니다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;이렇게 하면 &lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt;에서 원하는 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 얻을 수 있습니다.&lt;/p&gt;
-&lt;p&gt;이렇게 하면 의존성, 버전 호환성 등의 문제가 발생할 수 있고 NuGet 패키지 관리 기능도 사용할 수 없기 때문에 권장하지 않는 방법입니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[무료 웹 호스팅 비교]]></title><description><![CDATA[gh-pages (GitHub Pages) 설명: GitHub Pages는 GitHub…]]></description><link>https://sharknia.github.io/무료-웹-호스팅-비교/</link><guid isPermaLink="false">https://sharknia.github.io/무료-웹-호스팅-비교/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[무료 웹 호스팅 비교]]></title><description><![CDATA[gh-pages (GitHub Pages) 설명: GitHub Pages는 GitHub…]]></description><link>https://sharknia.github.io/무료-웹-호스팅-비교/</link><guid isPermaLink="false">https://sharknia.github.io/무료-웹-호스팅-비교/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;gh-pages (GitHub Pages)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -8544,7 +8822,14 @@ pprint&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pprint&lt;sp
 &lt;li&gt;Netlify는 다양한 정적 사이트 생성 도구와의 호환성과 다양한 추가 기능을 통해 풍부한 개발 경험을 제공합니다.&lt;/li&gt;
 &lt;li&gt;Surge는 정적 웹사이트를 빠르고 간단하게 배포하는데 초점을 맞춘 서비스입니다.
 각 프로젝트의 요구 사항에 따라 적합한 플랫폼을 선택할 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[웹 사이트 프로젝트 vs 웹 응용 프로그램 프로젝트]]></title><description><![CDATA[웹 사이트 프로젝트 특징 웹 사이트 프로젝트는 파일 시스템을 기반으로 하는 프로젝트 유형입니다. 웹 애플리케이션의 파일들이 프로젝트 디렉토리 내에 그대로 위치하며, ASP.NET…]]></description><link>https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</link><guid isPermaLink="false">https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</guid><pubDate>Mon, 21 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;웹 사이트 프로젝트&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Nuget 패키지 dll 추출]]></title><description><![CDATA[파일의 확장자를 으로 변경합니다. 예를 들어, 을 으로 변경합니다. ZIP 압축 해제 도구 (예: WinRAR, 7-Zip…]]></description><link>https://sharknia.github.io/Nuget-패키지-dll-추출/</link><guid isPermaLink="false">https://sharknia.github.io/Nuget-패키지-dll-추출/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt; 파일의 확장자를 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt;으로 변경합니다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.nupkg&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.zip&lt;/code&gt;으로 변경합니다.&lt;/li&gt;
+&lt;li&gt;ZIP 압축 해제 도구 (예: WinRAR, 7-Zip 등)를 사용하여 변경된 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일을 엽니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일 내에서 &lt;code class=&quot;language-text&quot;&gt;lib&lt;/code&gt; 폴더나 해당하는 폴더를 찾아 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 찾습니다.&lt;/li&gt;
+&lt;li&gt;해당 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 추출합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이렇게 하면 &lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt;에서 원하는 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 얻을 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이렇게 하면 의존성, 버전 호환성 등의 문제가 발생할 수 있고 NuGet 패키지 관리 기능도 사용할 수 없기 때문에 권장하지 않는 방법입니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[웹 사이트 프로젝트 vs 웹 응용 프로그램 프로젝트]]></title><description><![CDATA[웹 사이트 프로젝트 특징 웹 사이트 프로젝트는 파일 시스템을 기반으로 하는 프로젝트 유형입니다. 웹 애플리케이션의 파일들이 프로젝트 디렉토리 내에 그대로 위치하며, ASP.NET…]]></description><link>https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</link><guid isPermaLink="false">https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</guid><pubDate>Mon, 21 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;웹 사이트 프로젝트&lt;/h2&gt;
 &lt;h3&gt;특징&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;웹 사이트 프로젝트는 파일 시스템을 기반으로 하는 프로젝트 유형입니다. 웹 애플리케이션의 파일들이 프로젝트 디렉토리 내에 그대로 위치하며, &lt;a href=&quot;http://asp.net/&quot;&gt;ASP.NET&lt;/a&gt; 컴파일러에 의해 실시간으로 컴파일됩니다.&lt;/li&gt;
