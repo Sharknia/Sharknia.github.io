@@ -7,7 +7,7 @@ tags:
   - Docker
   - Docker-compose
 description: "Django를 맥에 설치하자"
-update: "2024-05-13T04:57:00.000Z"
+update: "2024-05-21T07:20:00.000Z"
 date: "2024-05-10"
 상태: "Ready"
 title: "Django 설치"
@@ -55,6 +55,12 @@ poetry init
 poetry add django^4.2.13
 ```
 
+그 다음 poetry 가상 환경을 시작합니다. 
+
+```typescript
+poetry shell
+```
+
 다음과 같이 확인할 수 있습니다. 
 
 ```shell
@@ -77,8 +83,7 @@ django-admin startproject project .
 Postgresql을 사용할 것이므로, `psycopg2-binary`를 설치합니다. 또한 `gunicorn`도 설치합니다. 
 
 ```shell
-poetry add psycopg2-binary
-poetry add gunicorn
+poetry add psycopg2-binary gunicorn
 ```
 
 ## Docker 이미지 및 컨테이너 생성과 실행
