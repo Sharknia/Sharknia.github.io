@@ -5,7 +5,7 @@ tags:
   - BackEnd
   - VSCode
 description: "Bastion Host, VSCode Remote - SSH 확장을 사용해 Private subnet 안에 있는 EC2 instance에 Access 하기"
-update: "2024-06-10T08:49:00.000Z"
+update: "2024-06-11T00:29:00.000Z"
 date: "2024-06-10"
 상태: "Ready"
 title: "Private subnet 안에 있는 EC2 instance에 Access 하기"
@@ -100,7 +100,41 @@ VSCode에서 Remote - SSH 확장을 사용하여 프라이빗 서브넷의 인�
 
 VSCode는 `~/.ssh/config` 파일을 읽고, Bastion Host를 통해 프라이빗 서브넷의 인스턴스에 연결합니다.
 
-## 4. 기타 
+## 4. NAT 게이트웨이 설정
 
+프라이빗 서브넷에 있는 인스턴스는 직접 인터넷에 접근할 수 없기 때문에 `yum` 명령어를 사용하여 패키지를 다운로드할 수 없습니다. 이를 해결하려면 NAT 게이트웨이를 설정하여 프라이빗 서브넷의 인스턴스가 인터넷에 접근할 수 있도록 해야 합니다.
 
+#### NAT 게이트웨이 생성
+
+- VPC Dashboard로 이동합니다.
+
+- NAT Gateways를 클릭합니다.
+
+- Create NAT Gateway를 클릭합니다.
+
+- Subnet에서 퍼블릭 서브넷을 선택합니다.
+
+- Elastic IP Allocation ID를 선택하여 EIP를 할당합니다.
+
+- Create NAT Gateway를 클릭합니다.
+
+#### 라우팅 테이블 수정
+
+- 프라이빗 서브넷의 라우팅 테이블을 수정하여 NAT 게이트웨이를 통해 인터넷 트래픽을 라우팅하도록 설정합니다.
+
+- VPC Dashboard로 이동합니다.
+
+- Route Tables를 클릭합니다.
+
+- 프라이빗 서브넷과 연결된 라우팅 테이블을 선택합니다.
+
+- Routes 탭을 클릭합니다.
+
+- Edit routes를 클릭합니다.
+
+- Add route를 클릭합니다.
+
+- Destination에 `0.0.0.0/0`을 입력하고 Target에 NAT 게이트웨이를 선택합니다.
+
+- Save routes를 클릭합니다.
 
