@@ -2,7 +2,8 @@
 IDX: "NUM-204"
 tags:
   - Next.js
-update: "2024-09-03T03:44:00.000Z"
+description: "Install Tailwind CSS with Next.js"
+update: "2024-09-03T14:57:00.000Z"
 date: "2024-08-04"
 상태: "Ready"
 title: "Install Tailwind CSS with Next.js"
