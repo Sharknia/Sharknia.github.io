@@ -5,7 +5,7 @@ tags:
   - Spring
 description: "Kotlin/Spring 프로젝트 설치 및 실행"
 series: "Kotlin과 Spring을 활용한 프로젝트"
-update: "2024-09-03T14:57:00.000Z"
+update: "2024-09-03T15:40:00.000Z"
 date: "2024-09-03"
 상태: "Ready"
 title: "Kotlin/Spring 프로젝트 설치 및 실행"
