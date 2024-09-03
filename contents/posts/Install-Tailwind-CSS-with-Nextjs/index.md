@@ -2,8 +2,7 @@
 IDX: "NUM-204"
 tags:
   - Next.js
-series: "이름 모를 사이드 프로젝트"
-update: "2024-08-04T16:04:00.000Z"
+update: "2024-09-03T03:44:00.000Z"
 date: "2024-08-04"
 상태: "Ready"
 title: "Install Tailwind CSS with Next.js"

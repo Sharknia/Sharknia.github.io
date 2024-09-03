@@ -4,8 +4,7 @@ tags:
   - Supabase
   - Next.js
 description: "Next.js + Supabase를 활용해 회원가입 페이지를 만들자"
-series: "이름 모를 사이드 프로젝트"
-update: "2024-05-20T12:50:00.000Z"
+update: "2024-09-03T03:44:00.000Z"
 date: "2024-05-20"
 상태: "Ready"
 title: "Next.js + Supabase 회원가입 구현"
