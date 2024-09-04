@@ -1,14 +1,16 @@
 ---
 IDX: "NUM-213"
 tags:
-  - 
+  - Kotlin
+  - Spring
 description: "SDKMAN!으로 JDK 버전 관리하고, bootRun으로 실행해보기"
 series: "Kotlin과 Spring을 활용한 프로젝트"
-update: "2024-09-04T08:59:00.000Z"
+update: "2024-09-04T09:22:00.000Z"
 date: "2024-09-04"
 상태: "Ready"
 title: "SDKMAN!과 bootRun"
 ---
+![](image1.png)
 ## 서론
 
 JVM(Java Virtual Machine) 버전을 관리할 수 있는 도구로는 **SDKMAN!**이라는 것이 있습니다. SDKMAN!은 다양한 JVM 버전뿐만 아니라 여러 Java 관련 도구(예: Maven, Gradle, Scala 등)도 쉽게 설치하고 관리할 수 있게 도와줍니다.
@@ -55,7 +57,7 @@ sdk use java 11.0.11.hs-adpt
 
 ### `bootRun` 명령어 실행 방법
 
-![](image1.png)
+![](image2.png)
 Intellij에서 Gradle 메뉴를 선택 후 `bootRun`을 더블클릭 합니다. 
 
 ### 주의 사항
@@ -82,16 +84,50 @@ bootRun까지 마치면 [http://localhost:8080](http://localhost:8080/)에서 �
 
 설정에서 다음을 찾아 `프로젝트 자동 빌드` 를 체크합니다.
 
-![](image2.png)
+![](image3.png)
 이번안 다음을 찾아 `개발된 애플리케이션이 현재 실행 중인 경우에도 auto-make가 시작되도록 허용` 을 체크합니다. 
 
-![](image3.png)
+![](image4.png)
 ### 자동 서버 재실행: spring boot devtools
+
+### Spring Boot Devtools의 주요 기능
+
+#### **자동 재시작 (Automatic Restart)**
+
+애플리케이션의 클래스나 리소스 파일이 변경되면, Devtools가 이를 감지하고 애플리케이션을 자동으로 재시작합니다.
+
+Gradle 또는 Maven 프로젝트에 의존성을 추가하면 활성화되며, Spring Boot 프로젝트를 재실행하지 않아도 변경된 코드가 반영됩니다.
+
+#### **LiveReload 통합**
+
+LiveReload는 브라우저를 자동으로 새로 고침하는 기능을 제공하며, 코드를 수정하면 브라우저에서 변경 사항이 즉시 반영됩니다.
+
+이를 통해 프론트엔드 개발 시에도 수정한 내용을 즉시 확인할 수 있습니다.
+
+#### **캐싱 비활성화**
+
+Devtools는 개발 중 데이터 캐싱을 비활성화하여, 변경된 설정이나 데이터를 즉시 반영할 수 있도록 돕습니다. 프로덕션 환경에서는 캐싱을 사용하는 것이 일반적이지만, 개발 중에는 캐싱으로 인해 변경 사항이 제대로 반영되지 않는 상황을 방지합니다.
+
+#### **프로퍼티 파일 자동 로딩**
+
+`application.properties` 또는 `application.yml` 파일을 수정하면, Devtools가 이를 감지하고 다시 로딩해 변경된 설정을 반영합니다.
+
+### 설치
 
 자동으로 서버를 재실행 하기 위해서는 spring boot devtools가 필요합니다. 다음의 의존성을 추가하고 Gradle을 새로고침합니다. 
 
 ```bash
 developmentOnly("org.springframework.boot:spring-boot-devtools")
+```
+
+`developmentOnly` 를 사용해 **개발 환경에서만 사용**하도록 설계되었습니다. 배포 시 Devtools가 포함되지 않으며, 이를 위한 별도의 설정 없이도 프로덕션 빌드에서 Devtools가 자동으로 제외됩니다.
+
+### 환경 설정
+
+`application.properties` 에 다음의 설정을 추가해줬습니다. 이로써 이 프로젝트가 어느 환경인지를 명시할 수 있습니다. 
+
+```kotlin
+${enviroment:dev}
 ```
 
 ### 결과
@@ -108,11 +144,11 @@ IntelliJ IDEA에서 "잘못된 Gradle JDK 구성을 발견했습니다" 메시�
 
 왼쪽 메뉴에서 Build, Execution, Deployment > Build Tools > Gradle을 선택합니다.
 
-![](image4.png)
+![](image5.png)
 현재 사용하는 버전의 JVM이 올바르게 선택되어 있는지 확인합니다. 만약 필요한 버전이 목록에 없으면, 해당 버전을 설치 또는 추가 해줘야합니다.
 
 오류를 해결 한 후 
 
-![](image5.png)
+![](image6.png)
 Refresh를 실행합니다. 
 
