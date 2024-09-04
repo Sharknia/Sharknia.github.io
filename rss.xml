@@ -1,4 +1,133 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 03 Sep 2024 16:11:38 GMT</lastBuildDate><item><title><![CDATA[Kotlin/Spring 프로젝트 설치 및 실행]]></title><description><![CDATA[서론 한국에서 자바와 스프링은 대세중의 대세입니다.  구인풀도 넓고, 자료도 많고, 검증된 안정성으로 다른 언어로 시작한 회사들도 스프링 기반으로 백엔드 서버를 바꾸는 일도 많습니다.  처음에 자바는 뭔가 C…]]></description><link>https://sharknia.github.io/KotlinSpring-프로젝트-설치-및-실행/</link><guid isPermaLink="false">https://sharknia.github.io/KotlinSpring-프로젝트-설치-및-실행/</guid><pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 04 Sep 2024 10:10:06 GMT</lastBuildDate><item><title><![CDATA[SDKMAN!과 bootRun]]></title><description><![CDATA[서론 JVM(Java Virtual Machine) 버전을 관리할 수 있는 도구로는 SDKMAN!이라는 것이 있습니다. SDKMAN!은 다양한 JVM 버전뿐만 아니라 여러 Java 관련 도구(예: Maven, Gradle, Scala…]]></description><link>https://sharknia.github.io/SDKMAN과-bootRun/</link><guid isPermaLink="false">https://sharknia.github.io/SDKMAN과-bootRun/</guid><pubDate>Wed, 04 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/2798bdab70a90a9a9008fdd6f4ca00f0/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACi0lEQVR42iVS6U/TABzt/2T0g/IBokQFIVE8EsQjGo+YEP2AQUQ+GA14wDY2tnb31mNrux5bt65lR9nR3WtXYbBuiyAsxKD4P9ho8svLS96H9355DzB7w1Y/HmSSMCv4qSTGpT14zB4kIZSGMNaBGMg4YMqBUF6CQ2MpJCrCjLARJG1BEjC5URdGff/5p7Z3kKm3a+2+ICuVnX55uydruqx1lM5+eVuvtXspWcnVdyrf+vrgN4RSFh8GmDwhF0a3uj+YrZo1QD2Z+xiIZeO5OpWuoHw+ZJwoU5lqVCozaTnIpuO5hn70y3C2BnBgPUC4w2y9P+DzFbOPmluGkoXmwrL9wpXpsev3L03cOTM0fnHyAcyIK1bv5KPXT5dMin5gfGSHKcASoHxEnNd6lnCczzeYdGWz1HqzDJ4bnro8dnt04tb5kcmR8XuEWHj3CRybmX28uKp0Dpyh2AbKAiYf6QpFi5oO4glZ3ZNqra1G+9WS+ezw1Oi16fEbD4dGbw5fvRvPK2hMer64OmsJSb1jCGGsMG04E6Af17qHYDgBwjQvVUw4DxIClypDSMzixAlOAknBw2YtCCeVWxRmkxoqhHG2YARYR+i1SDrb0hec5MyLtx/M3s9M1sFmImIxIVWZzZJQ1kwwZ4FjS2vBVFHNOF5qzaoT5+0wCay5Q8/mvzT3T+i8CqJcTu2S2Tol1bdUPSIU0WjWSMvmVCZTJUVZ2T+ZX/Gka7vGFmwBEvjqRBbem9T+oLJ3GMsrhlxqHyaKWrl7XOoMaKkpVtvbR6fJosoXlN3BqcMXKqgdCGWsAcKoijRKcxNxLyW6yKQ7Irj/ESfBuyICRCRdJO8meed/ySAY4wpz635iA6H/Ahz9svYS2AAJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/2798bdab70a90a9a9008fdd6f4ca00f0/ca1dc/image1.png&apos; srcset=&apos;/static/2798bdab70a90a9a9008fdd6f4ca00f0/e7570/image1.png 170w,
+/static/2798bdab70a90a9a9008fdd6f4ca00f0/f46e7/image1.png 340w,
+/static/2798bdab70a90a9a9008fdd6f4ca00f0/ca1dc/image1.png 680w,
+/static/2798bdab70a90a9a9008fdd6f4ca00f0/02d09/image1.png 1020w,
+/static/2798bdab70a90a9a9008fdd6f4ca00f0/9d567/image1.png 1360w,
+/static/2798bdab70a90a9a9008fdd6f4ca00f0/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;JVM(Java Virtual Machine) 버전을 관리할 수 있는 도구로는 &lt;strong&gt;SDKMAN!&lt;/strong&gt;이라는 것이 있습니다. SDKMAN!은 다양한 JVM 버전뿐만 아니라 여러 Java 관련 도구(예: Maven, Gradle, Scala 등)도 쉽게 설치하고 관리할 수 있게 도와줍니다.&lt;/p&gt;
+&lt;h2&gt;설치&lt;/h2&gt;
+&lt;p&gt;터미널에서 다음 명령어를 실행하여 SDKMAN!을 설치합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://get.sdkman.io&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;설치가 완료되면, 새로운 쉘을 열거나 다음 명령어를 실행하여 SDKMAN!을 활성화합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$HOME&lt;/span&gt;/.sdkman/bin/sdkman-init.sh&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;JVM 버전을 설치하고 관리할 수 있습니다. 예를 들어, 특정 Java 버전을 설치하려면 다음과 같이 입력합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;sdk &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;java&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;11.0&lt;/span&gt;.11.hs-adpt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;설치된 JVM 버전을 전환할 때는 다음 명령어를 사용합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;sdk use &lt;span class=&quot;token function&quot;&gt;java&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;11.0&lt;/span&gt;.11.hs-adpt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;bootRun&lt;/h2&gt;
+&lt;h3&gt;booRun?&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt;은 Spring Boot 애플리케이션을 Gradle을 통해 직접 실행할 수 있도록 하는 Gradle task입니다. 이는 Gradle 빌드 도구를 사용하는 Spring Boot 프로젝트에서, 애플리케이션을 컴파일하고 즉시 실행할 수 있도록 해주는 편리한 명령어입니다.&lt;/p&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt;의 역할&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;코드를 컴파일: &lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt; 명령어는 프로젝트의 코드를 컴파일한 후, 애플리케이션을 실행합니다.&lt;/li&gt;
+&lt;li&gt;애플리케이션 실행: Spring Boot 애플리케이션을 직접 실행하여 &lt;code class=&quot;language-text&quot;&gt;localhost:8080&lt;/code&gt; 등에서 결과를 확인할 수 있습니다.&lt;/li&gt;
+&lt;li&gt;개발 단계에서 주로 사용: &lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt;은 애플리케이션을 개발할 때 빠르게 실행하고 테스트하기에 적합한 도구입니다. &lt;code class=&quot;language-text&quot;&gt;bootJar&lt;/code&gt;와 같이 패키징하는 과정 없이도 바로 실행이 가능하기 때문에, 코드를 수정하고 결과를 빠르게 확인할 수 있습니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt; 명령어 실행 방법&lt;/h3&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/c84fbd9110c6fea3b9ae04ee9e99dc62/1263b/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 76.47058823529412%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB1ElEQVR42p2T227TQBCG/TQljuNde23Hh/VpfUxDWq5akLhAIFQhcYUEz8Dr8IY/M1tipSC1CRe/7PXsfrP+Z8Ypa4Np9xobEcLzA6w30orfj2vPl8v30xjLl8qeDaMtsqKCI8PYLvgji9csfufNMkzoGUEE0RI7BfI+TiIVAXUDh2GBSijwmC1JNbaZtoBQxYjzDjIqoOIM8TZHmpd23ymUgaFS0LqAs6Fgpmu03QTTz6jqHmveyJl9zs6HHp9H8XqRiOCurpBcf8Pw5Rcc9od/ozY7DOMMGSg6JOCdKzrvrl5h271H8+4nAWUCL8igsg5md4dueoN2vEWcGaxlamMvyRUJkjhBW2v65fQGwjzAKz8g33/FfP+d9APR8IBN/RF+8+l5tZ/hFW/JX42WLHM8QQaL2HqRFQ2G+QAz7NCNe6pcSj4qG3tOLvmapAU6C7SVEoiSHO2wR9N2VMXwT1/Ks7Va+3A9cQRKAhZo+gNlmTBMe9ukfzfxS+JWW4CKgO1wsJXmFtJVu0zPOeLk3J9PgGa6gS4bXK08e/1LbvcPMIwyVIY97GkqUjuO/w30qdJ51aOfbzHO16Q9jV95kYdPgCKIUdQjqsaQd8bO8qUFOQJ/A94H38Fev4bsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/c84fbd9110c6fea3b9ae04ee9e99dc62/ca1dc/image2.png&apos; srcset=&apos;/static/c84fbd9110c6fea3b9ae04ee9e99dc62/e7570/image2.png 170w,
+/static/c84fbd9110c6fea3b9ae04ee9e99dc62/f46e7/image2.png 340w,
+/static/c84fbd9110c6fea3b9ae04ee9e99dc62/ca1dc/image2.png 680w,
+/static/c84fbd9110c6fea3b9ae04ee9e99dc62/1263b/image2.png 1000w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+Intellij에서 Gradle 메뉴를 선택 후 &lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt;을 더블클릭 합니다. &lt;/p&gt;
+&lt;h3&gt;주의 사항&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt;은 개발 환경에서 주로 사용되며, 배포용 빌드에는 적합하지 않습니다. 실제로 애플리케이션을 배포할 때는 &lt;code class=&quot;language-text&quot;&gt;bootJar&lt;/code&gt; 같은 태스크로 패키징된 JAR 파일을 만들어서 배포하는 것이 좋습니다.&lt;/li&gt;
+&lt;li&gt;환경 변수 및 프로파일 설정을 통해 개발과 배포 환경을 구분해서 사용할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;요약&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;bootRun&lt;/code&gt;은 Spring Boot 애플리케이션을 즉시 실행하는 Gradle의 편리한 태스크입니다.&lt;/li&gt;
+&lt;li&gt;개발 중에 빠르게 애플리케이션을 실행하고 테스트할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;결과&lt;/h3&gt;
+&lt;p&gt;bootRun까지 마치면 &lt;a href=&quot;http://localhost:8080/&quot;&gt;http://localhost:8080&lt;/a&gt;에서 서버를 테스트 해볼 수 있습니다.&lt;/p&gt;
+&lt;h2&gt;코드 수정 후 자동 컴파일-자동 재실행 설정하기&lt;/h2&gt;
+&lt;p&gt;코드를 수정할 때마다 bootRun을 할 생각을 하니 끔찍합니다. 이를 피하기 위해 코드 변경 시 서버가 자동으로 재시작되도록 설정하는 것이 훨씬 편리하게 개발할 수 있는 방법입니다.&lt;/p&gt;
+&lt;h3&gt;IntelliJ에서 자동 빌드 설정&lt;/h3&gt;
+&lt;p&gt;설정에서 다음을 찾아 &lt;code class=&quot;language-text&quot;&gt;프로젝트 자동 빌드&lt;/code&gt; 를 체크합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/a90584f086c433b8a52a039435b565ce/698bb/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 80.58823529411765%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAACmUlEQVR42p2Ty2rbQBRATaAlkEVqAnUJODQxrm1pNKPHjF4jW7Yc59WatKvuYkih+y76X4V+RbxofyIEUn1CI93eK9slSRNoKziMkDRH9zW1jzXviVbuu47k56bJzwzLmrW73SXGrIt4SlV0DWtmWPaMvllhcn7GGD/vMfbWMIyntebW1raU6toNIhC2KoWrIE6GEOm0WoMoAUu4IBwPGHeq+3sUNu5h3L3crm83a3jtyCD+McoO8KVX4KbSD6JSBXHph0mFpyJcdelHCT7XpfRjJKqeO15ww20JpmVfbTYauyRsxnqQD1HY6ZmlKRR44QgURhwuo0Qp0CbH83G9HamDIoFB2NAz+VVjJZQqzI9OpuAHIQoDCNI3kPQHkAwy6KdjXEeg+1SGwYIkxZ9osKUG7upCuBEKrYVwfb3etIKTfDydgRNPSxaewmj6AbIsg2xyXAn8QIMrgzs1pHuT0+oWWKrbwvUmEypPsyOQWB/maAiHp1WE1BjabDDxIJguwqnu94Rc5OPJIaTpuLTwrwprpvsjTHcfu9yvpFj0x/hTaDKRTw5fQxT3S6qLrw9A+SFgF5Fwkd6/CIUtMcIjGGaTkuFHOhlU84edA5qxxZw5j1EsynKry34Qo/CYxqIkCc5g1VXhyIrFnNFm9yGKO3NIEWKXchoNGmoSUprUXRJTdK4MUaweS70gsbGaw3q93uz22DWJsHM3CB2lAqUFngacMVlYtldwR1KtCox0ib26/8kYA8PoXaLwJQl38MO8Sk14JYJnWv5O18bI6IRUpwTfraCIOYFn2R28Bx6dXm1u1nZrGxsbz9vtzte91qtvyMVeqz3/G3qGNW93evNWq3XB9j9/N7NPX7AfDWrKGvIMebF88L+QY+0XENKk3OR8SNIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/a90584f086c433b8a52a039435b565ce/ca1dc/image3.png&apos; srcset=&apos;/static/a90584f086c433b8a52a039435b565ce/e7570/image3.png 170w,
+/static/a90584f086c433b8a52a039435b565ce/f46e7/image3.png 340w,
+/static/a90584f086c433b8a52a039435b565ce/ca1dc/image3.png 680w,
+/static/a90584f086c433b8a52a039435b565ce/02d09/image3.png 1020w,
+/static/a90584f086c433b8a52a039435b565ce/9d567/image3.png 1360w,
+/static/a90584f086c433b8a52a039435b565ce/698bb/image3.png 2068w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+이번안 다음을 찾아 &lt;code class=&quot;language-text&quot;&gt;개발된 애플리케이션이 현재 실행 중인 경우에도 auto-make가 시작되도록 허용&lt;/code&gt; 을 체크합니다. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/967ef4a35e696319e0e0e6f0060b362d/698bb/image4.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 80.58823529411765%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAACaklEQVR42p2TzWrbQBDHTaDFkIMbAnUwODQJriXtrlYfK621svXhjzjNoU0PpbcEcui99MUKfYrk0L5ECKR6hEaazipOHFNM0wr+rDTM/vTfmdnGp4b/LA68931hnxNin1qMnfUM40yv9/L9oJbBrJW4ZVlnhmGcmpSeo07w+3mju73dESK48WQE3Akq7gYQjzJwfQmMe2A7PjheUEu/P5YbjMCVeemKCChzrzqdTreBz66Q6mc+PkSAXxLmVKFUlR+qyqJORW1vrTC/EjK+VcMM0Mh1q9Xa08CuipMiG8+gb1JMdEEMRhCGApME6G/8yYp07D6Oa8nRLaH8utVuI7DZ7IowKo6O30I4iNEVB0+mcDRRMFDDR0f1tAt9CtA5WhqIa6nhJmHXbQ1sIhADxXg61xsqmzswzWOw3WXNHC98qKN2rWP37tcAnSLNp+CHUUWoDSI5gXR8BGk+gWGS1xrECUiVoOtR/a6GKXhCrgdOZgjIZhVjLnAxhFE2rUHZ5BAhCYhQLRzfOWRLl6WehhUgFrSYzY9BxWk9NvgDXU+ERBBIVUtGQ+CLI3PXX6wId0Wp4yaxl0DuuOhwDlk+qSh7KPaKcMMf3V5o9cjY5m6oJsX0zXsc0qyyeLhu49OAza2tri3nxWj2AZg8roiXYhL/R6C3PPIWAg3DvDEtApZFbi3K9G35q3R3tUzKfxFigWH0rxD4SgN39Rzyu7nDOcROPkE636nll17yEezoHV69xl5jc3PzZa/X/7Z/8Po76mL/oHf5FBkmvTQtdkkpvaDTLz/I+PNXbEhb3+UN1AvUziLwP9pZMDZ+A6zxoYkFrub5AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image4&apos; title=&apos;&apos; src=&apos;/static/967ef4a35e696319e0e0e6f0060b362d/ca1dc/image4.png&apos; srcset=&apos;/static/967ef4a35e696319e0e0e6f0060b362d/e7570/image4.png 170w,
+/static/967ef4a35e696319e0e0e6f0060b362d/f46e7/image4.png 340w,
+/static/967ef4a35e696319e0e0e6f0060b362d/ca1dc/image4.png 680w,
+/static/967ef4a35e696319e0e0e6f0060b362d/02d09/image4.png 1020w,
+/static/967ef4a35e696319e0e0e6f0060b362d/9d567/image4.png 1360w,
+/static/967ef4a35e696319e0e0e6f0060b362d/698bb/image4.png 2068w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;자동 서버 재실행: spring boot devtools&lt;/h3&gt;
+&lt;h3&gt;Spring Boot Devtools의 주요 기능&lt;/h3&gt;
+&lt;h4&gt;&lt;strong&gt;자동 재시작 (Automatic Restart)&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;애플리케이션의 클래스나 리소스 파일이 변경되면, Devtools가 이를 감지하고 애플리케이션을 자동으로 재시작합니다.&lt;/p&gt;
+&lt;p&gt;Gradle 또는 Maven 프로젝트에 의존성을 추가하면 활성화되며, Spring Boot 프로젝트를 재실행하지 않아도 변경된 코드가 반영됩니다.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;LiveReload 통합&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;LiveReload는 브라우저를 자동으로 새로 고침하는 기능을 제공하며, 코드를 수정하면 브라우저에서 변경 사항이 즉시 반영됩니다.&lt;/p&gt;
+&lt;p&gt;이를 통해 프론트엔드 개발 시에도 수정한 내용을 즉시 확인할 수 있습니다.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;캐싱 비활성화&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Devtools는 개발 중 데이터 캐싱을 비활성화하여, 변경된 설정이나 데이터를 즉시 반영할 수 있도록 돕습니다. 프로덕션 환경에서는 캐싱을 사용하는 것이 일반적이지만, 개발 중에는 캐싱으로 인해 변경 사항이 제대로 반영되지 않는 상황을 방지합니다.&lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;프로퍼티 파일 자동 로딩&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;application.properties&lt;/code&gt; 또는 &lt;code class=&quot;language-text&quot;&gt;application.yml&lt;/code&gt; 파일을 수정하면, Devtools가 이를 감지하고 다시 로딩해 변경된 설정을 반영합니다.&lt;/p&gt;
+&lt;h3&gt;설치&lt;/h3&gt;
+&lt;p&gt;자동으로 서버를 재실행 하기 위해서는 spring boot devtools가 필요합니다. 다음의 의존성을 추가하고 Gradle을 새로고침합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;developmentOnly&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;org.springframework.boot:spring-boot-devtools&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;developmentOnly&lt;/code&gt; 를 사용해 &lt;strong&gt;개발 환경에서만 사용&lt;/strong&gt;하도록 설계되었습니다. 배포 시 Devtools가 포함되지 않으며, 이를 위한 별도의 설정 없이도 프로덕션 빌드에서 Devtools가 자동으로 제외됩니다.&lt;/p&gt;
+&lt;h3&gt;환경 설정&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;application.properties&lt;/code&gt; 에 다음의 설정을 추가해줬습니다. 이로써 이 프로젝트가 어느 환경인지를 명시할 수 있습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;enviroment&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;dev&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;결과&lt;/h3&gt;
+&lt;p&gt;여기까지 마치면 클래스 파일을 수정을 하면 브라우저를 통해서 테스트를 해보면 변경사항이 별도의 작업 없이 반영되는 것을 확인할 수 있습니다. 다만 파이썬이나 Node.js처럼 즉각적으로 반영은 되지 않고 약간의 시간 소요가 필요합니다. &lt;/p&gt;
+&lt;h2&gt;오류&lt;/h2&gt;
+&lt;h3&gt;잘못된 Gradle JDK 구성을 발견했습니다.&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IntelliJ IDEA&lt;/strong&gt;에서 Gradle이 사용하고 있는 JDK 버전이 프로젝트에 필요한 JDK 버전과 일치하지 않기 때문에 발생할 수 있습니다. 이를 해결하려면 IntelliJ에서 Gradle이 사용하는 JDK를 올바르게 설정해 주어야 합니다.&lt;/p&gt;
+&lt;p&gt;IntelliJ IDEA에서 &quot;잘못된 Gradle JDK 구성을 발견했습니다&quot; 메시지 옆에 있는 &quot;Gradle 설정 열기&quot; 버튼을 클릭하거나, 상단 메뉴에서 File &gt; Settings (macOS의 경우 IntelliJ IDEA &gt; Preferences)로 이동합니다.&lt;/p&gt;
+&lt;p&gt;왼쪽 메뉴에서 Build, Execution, Deployment &gt; Build Tools &gt; Gradle을 선택합니다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/7f57651fe43d08157143caab3b3b083d/698bb/image5.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 80.58823529411765%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC1UlEQVR42m1T2WrbQBQ1hbaGPLgmEEPAIbbr2pZmRvtiSZYlbyEhdIG2jzGk0NdCv6zQr0ge2p8IhlSf0Ixu7x3bwUlqOIxmO3PPOdeVrxXneezZH3quuNR1caFxvuz2+wp9TUP0l9w0l6bjLTWuLWl/F7oQF4yJywFj7zVNe1Fp7u8fuq53awdDMEyvNGwPwjiFISKMRuAFkRpNXOeGDcJ0gCPEBrgm6Q4T1s1h/bBZwd+RG0R/8skCNx2JG2U8ykrXH5Z4uKQ5jRozFHRuPoJxh/dAY2JVazRaRNiM4rTIJnPoDRgRqOpG44mqjOCHCY4p2G4IlhM8hjQsDwmNVWNL6HpBcXp2Dn4wLDVdgOOFSDhVoIdGaQ45jlGM0i0XHDdA8jXQCknnmTBXtVqtVanW603dSop09g7scFbqZogXfIgT9DFK7r1EGyCOY0VIXpKSDSR5eS+5jkZqVl6ki08ggpOS2SnE+Tkks4/AvakKZQuXxjAG9G4Xkh4Y6HwtuVqtNrkwiulsDpbtkMnArQiwarCDHKJkjD75YGBllDSNO9WRVKnj+IAQN4psuoBkNCk5t6l80HSORK4iHKLkrXQln9ZwTns4l1Q9N6yNh0ioM0MRxklWmuvEFKgySpsQxWNMO1ZpU+q0R1KpD6lyVIaEmwrRh2K6OKUXqefuCSnFbfsQWTCkdsK0kwnKD9QZ8pDtSlZt44dFThViQ2/N3hKu/XOUdwIfI491tGQHkuH5B4SOF9zOT87I5LsBMyRaILEfqb8kJivD9FSms7fST+bS8jMFG2H6Y2l46V/LjbAA8wY9PMa2qR9RKObak1Lg34gqIRjYX+SP6Y4w8QwsDxP3CRk44UR1geVhKPMvIJLPq9rLSquyt7d30O32frY7b34hrtqd7vUTtDtPMBho16+7vetO+/iKTb//1ifffqDaBkl+hqhtJgcbPP7enf9vjb5fEdc/daKoROTY0AkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image5&apos; title=&apos;&apos; src=&apos;/static/7f57651fe43d08157143caab3b3b083d/ca1dc/image5.png&apos; srcset=&apos;/static/7f57651fe43d08157143caab3b3b083d/e7570/image5.png 170w,
+/static/7f57651fe43d08157143caab3b3b083d/f46e7/image5.png 340w,
+/static/7f57651fe43d08157143caab3b3b083d/ca1dc/image5.png 680w,
+/static/7f57651fe43d08157143caab3b3b083d/02d09/image5.png 1020w,
+/static/7f57651fe43d08157143caab3b3b083d/9d567/image5.png 1360w,
+/static/7f57651fe43d08157143caab3b3b083d/698bb/image5.png 2068w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+현재 사용하는 버전의 JVM이 올바르게 선택되어 있는지 확인합니다. 만약 필요한 버전이 목록에 없으면, 해당 버전을 설치 또는 추가 해줘야합니다.&lt;/p&gt;
+&lt;p&gt;오류를 해결 한 후 &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/5879f74e79fc540d95cfb0159f541efd/e0a8c/image6.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 77.05882352941177%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAABvklEQVR42p1U2XKbQBDkY1K2rANxLAss9ykhpMLYSWQ/2P//F52ZdVDJLtmO8tC1sDM0090LhooztNseS9PGfLk+YbGyaGWY7/bvFqauTVitHY21LRCoBIYMFBzhnxptV+r7pfnWaLkKpi1hOZJqPoQM9f45Kb+ICX0m5AYhld4wLQHPj+CHCWwitYWECHI4MqG6p1/2FWEYZTB4MhUXGB+fMYxHdP2I4eGI/fATW7ru+gFl02E2X12UzOAayx3uH2FMfnlhgaLa6Cl4AvZ0Rg8zwbR+htu7JVwvoOdbGJbjQXgh6adwdg/YH0b0BBXnmtyl2ndgf9n3rKhhsGdZ0RJBiarp8ev4gt9Pr9jtR6R5gySrvwT3hFGuJyzrzZtkLZskchhVs6U1puaSQnK1pPNjcwncw6ElWQVjMtalpIvmgCyvtNQpvY8BfAbuZS//Eq7hkBdZ1dPYLTbdgaRU/0w2gYM8I1REuENe1uRJqo/Bx/P23YS8nghtoZDXPSL6FH/czHEzW1w13QVCH1G+RU7RyyDSx+FaDzUhX3CaKm1Q0IR126HZ7Ig0/j/C6Y8h/BRxWoD/Pp6vriI7J/wD8nzgIXl60iAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image6&apos; title=&apos;&apos; src=&apos;/static/5879f74e79fc540d95cfb0159f541efd/ca1dc/image6.png&apos; srcset=&apos;/static/5879f74e79fc540d95cfb0159f541efd/e7570/image6.png 170w,
+/static/5879f74e79fc540d95cfb0159f541efd/f46e7/image6.png 340w,
+/static/5879f74e79fc540d95cfb0159f541efd/ca1dc/image6.png 680w,
+/static/5879f74e79fc540d95cfb0159f541efd/e0a8c/image6.png 998w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+Refresh를 실행합니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Kotlin/Spring 프로젝트 설치 및 실행]]></title><description><![CDATA[서론 한국에서 자바와 스프링은 대세중의 대세입니다.  구인풀도 넓고, 자료도 많고, 검증된 안정성으로 다른 언어로 시작한 회사들도 스프링 기반으로 백엔드 서버를 바꾸는 일도 많습니다.  처음에 자바는 뭔가 C…]]></description><link>https://sharknia.github.io/KotlinSpring-프로젝트-설치-및-실행/</link><guid isPermaLink="false">https://sharknia.github.io/KotlinSpring-프로젝트-설치-및-실행/</guid><pubDate>Tue, 03 Sep 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/5c5b1b8da91c59c04dadb0c5563deed4/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACZ0lEQVR42kWSW0/TYBjH+z38BMR75YILjQfwwhAQJSIkRFTkuJhN0BCm7sC6jq5ru7Gta7t1XY/v267HHRgYMV4QA6IhRj6O77wx+T/Jc/PLL/8nD7avwrz2P7RhFXQLb2jDRQW0bqUFmTUtRjPzKkiLCm3aec3K68NgQ1gFlAYKOmQMq2I5RdPe3K+UTCvFSYRkrCQoDtqMrOyJymqqULFdSocUgrUhDEjFzCuA0a1q2xP8sBn2Kk5XCA5rXl8MBlL3uOb16mG/YvtkC5RtrwjbCCZViOX+aZGNa3vNTtc5+ZIoC7E9cgsnn29/WNzanVhcjySItwTNKCYyC15QsT3GbJMawEgNlYScjcheNHdAqyCSJu8/XRqbmlvZ+bhLUjPLGw/ml2c33tMqXM+wguMjvggddBqsYNgl0Bb9EBekaJZN15pv9vJjUwujk3Nr8eQnpvR4LXp79uXUyhY87OuhX3fcetCptn0GOBhtOrzr5xotqqXbx0eXV2c7ZHHk7sz4wuuRO9PX7z26dmP85uTCrWdr57/Pf12dW5+P6kGXdwMWulgJurzjZ8VWUYNVYMUZjmo0s+UyyfMJphinGJKrJmk6VeayohLBi1LQ0QcD5CtZHoauxzm+0u0VWuZ8LDk6vaT4/o+ri9PL74zUiGXzXy9Oz/78DL6d4Lw88erdNlXVDwei3zlAMBrUQe31Mrz8JJqceBEjRJmHgG3UGYGPJIlMlVc7IRz0CUF5uLqziTPG0THnhkMzAz0WuLRuE7JJyCAjGSlRTVVFvNYgZYNsanGWS4tyAX2VauGSkWuBA9tHYS3vLyZYiOg8/cMkAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/5c5b1b8da91c59c04dadb0c5563deed4/ca1dc/image1.png&apos; srcset=&apos;/static/5c5b1b8da91c59c04dadb0c5563deed4/e7570/image1.png 170w,
@@ -5182,7 +5311,22 @@ _db_connection&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Eng
 &lt;h4&gt;FastAPI에서 모델 클래스가 정의되는 순간은?&lt;/h4&gt;
 &lt;p&gt;FastAPI 어플리케이션에서 “모델 클래스가 정의되는 순간”은 Python 스크립트가 실행되어 해당 모델 클래스가 메모리에 로드되는 시점을 의미합니다. &lt;/p&gt;
 &lt;p&gt;FastAPI 어플리케이션을 실행하면(예를 들어 &lt;code class=&quot;language-text&quot;&gt;uvicorn main:app&lt;/code&gt; 등의 명령어를 사용하여) Python 인터프리터는 main.py를 로드하고 실행합니다. 이 과정에서 main.py에서 직접적으로, 또는 임포트된 모듈 내에서 다시 임포트된 SqlAlchemy의ㅏ 모델 클래스들도 함께 로드되고 메모리에 생성됩니다. 바로 이 시점에 각 모델 클래스에 해당하는 &lt;code class=&quot;language-text&quot;&gt;Table&lt;/code&gt; 객체가 &lt;code class=&quot;language-text&quot;&gt;Metadata&lt;/code&gt; 객체에 등록됩니다. &lt;/p&gt;
-&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
+&lt;p&gt;다시 쉽게 이야기하자면, app.py 또는 main.py 같은 파일과 이 파일에 임포트 된 파일들, 다시 임포트 된 파일들 중에 모델 객체가 있어야만 합니다. 외딴섬처럼 덩그러니 model 파일을 생성해두고 아무곳에도 import 하지 않는다면(메인 py 파일과 연결되어 있지 않다면) 테이블은 생성되지 않습니다. 어떻게 생각하면 당연한 일인데, 이 당연한 부분을 놓쳐 길게 헤맸던 기억이 있습니다. 이 기억 때문에 해당 문서를 작성한 셈입니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
+&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
+&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
+&lt;h3&gt;Major Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
+&lt;h3&gt;Minor Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
+&lt;h3&gt;Patch Version&lt;/h3&gt;
+&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
+&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
+&lt;h2&gt;목적&lt;/h2&gt;
+&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
+&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Readme]]></title><description><![CDATA[nolog…]]></description><link>https://sharknia.github.io/Readme/</link><guid isPermaLink="false">https://sharknia.github.io/Readme/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;nolog&lt;/h2&gt;
 &lt;h3&gt;소개&lt;/h3&gt;
 &lt;p&gt;많은 개발자들이 한 번쯤은 &quot;나만의 블로그를 운영해야지&quot;라고 생각해본 적이 있을 겁니다. 하지만 실제로 블로그를 시작하고 유지하는 일은 상당한 도전과제입니다. 공부하고 개발하는 것만으로도 바쁜데, 여기에 글을 쓰고 관리하는 일은 때때로, 아니 항상 부담스러운 일입니다.&lt;/p&gt;
 &lt;p&gt;노션으로 공부를 하는 개발자가 있습니다. 일을 하면서일수도 있고, 따로 짬을 내어 공부를 하면서일수도 있습니다. 그러다가 한 번 쯤은 생각하게 됩니다. 노션으로 한 공부나 작업 기록이 블로그에 자동으로 업로드된다면 좋을텐데!&lt;/p&gt;
@@ -5310,22 +5454,7 @@ BLOG&lt;em&gt;REPO, BLOG&lt;/em&gt;URL, GIT&lt;em&gt;USER&lt;/em&gt;EMAIL, GIT&l
 &lt;h3&gt;개발과정&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;개발과정 몰아보기&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;문의&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[시맨틱 버전 관리]]></title><description><![CDATA[서론 개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (nolog…]]></description><link>https://sharknia.github.io/시맨틱-버전-관리/</link><guid isPermaLink="false">https://sharknia.github.io/시맨틱-버전-관리/</guid><pubDate>Thu, 08 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
-&lt;p&gt;개인적으로 이것저것 만들려고 시도한 적은 많았는데, 완성한 적은 이번이 처음입니다. (&lt;a href=&quot;https://sharknia.github.io/series/GitHub-Pages%EC%99%80-Notion-API-%EC%97%B0%EB%8F%99/&quot;&gt;nolog 프로젝트&lt;/a&gt;) 라이센스도 등록해보고 릴리즈도 처음 해봤는데, 릴리즈를 하려다 보니 다음과 같은 문구가 있었습니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    If you’re new to releasing software, we highly recommend to learn more about semantic versioning.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;“버전 관리” 에 대해서는 추상적으로 알고 있었지만, 시맨틱 버전 관리라는 개념의 이름에 대해서는 처음 알았습니다. 부끄러운 일이기도 하고, 또 이번 기회에 잘 알아둬야겠다고 생각이 들어서 한 번 정리해두려고 합니다. &lt;/p&gt;
-&lt;h2&gt;시맨틱 버전 관리란?&lt;/h2&gt;
-&lt;p&gt;시맨틱 버전 관리는 소프트웨어 버전 번호를 할당하고 증가시키는 규칙 시스템입니다. 이 시스템은 소프트웨어의 버전을 명확하게 해줘 개발자가 소프트웨어의 변경 사항을 쉽게 이해할 수 있게 돕습니다. 시맨틱 버전 관리는 주로 세 부분으로 구성된 버전 번호를 사용합니다. &lt;/p&gt;
-&lt;h3&gt;Major Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되지 않는 새로운 변경사항을 도입했을 때 증가합니다.&lt;/p&gt;
-&lt;h3&gt;Minor Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되면서 새로운 기능이 추가되었을 때 증가합니다. &lt;/p&gt;
-&lt;h3&gt;Patch Version&lt;/h3&gt;
-&lt;p&gt;이전 버전과 호환되는 버그 수정이 이루어졌을 때 증가합니다. &lt;/p&gt;
-&lt;p&gt;버전 번호는 &lt;code class=&quot;language-text&quot;&gt;Major.Minor.Patch&lt;/code&gt; 형식으로 표현됩니다. 예를 들어 &lt;code class=&quot;language-text&quot;&gt;2.3.1&lt;/code&gt; 과 같은 형태로 나타날 수 있습니다. &lt;/p&gt;
-&lt;h2&gt;목적&lt;/h2&gt;
-&lt;p&gt;소프트웨어 어떤 버전이 다른 버전과 어떻게 다른지를 명확하게 명시하여 소프트웨어를 사용하는 개발자들이 해당 변경사항을 쉽게 파악하고 대응할 수 있도록 합니다. &lt;/p&gt;
-&lt;p&gt;예를 들어 어떤 라이브러리의 Major 버전이 변경되었다면 이는 기존 코드와 호환되지 않을 수 있는 중대한 변경이 있었음을 의미합니다. 따라서 개발자는 코드를 업데이트 하기 전에 해당 변경 사항을 주의 깊게 검토할 필요가 있습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;mailto:zel@kakao.com&quot;&gt;zel@kakao.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript의 Testcode 맛보기]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/Typescript의-Testcode-맛보기/</link><guid isPermaLink="false">https://sharknia.github.io/Typescript의-Testcode-맛보기/</guid><pubDate>Tue, 06 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;서론&lt;/h2&gt;
 &lt;p&gt;파이썬에서 잠깐 테스트코드를 맛본적이 있습니다. 문법 자체는 조금 복잡했지만(익숙하지 않았지만) 설치 자체는 그다지 어렵지 않았던 것으로 기억합니다. &lt;/p&gt;
 &lt;p&gt;그래서 타입스크립트에서도 그럴 줄 알았습니다. &lt;/p&gt;
 &lt;h2&gt;설치&lt;/h2&gt;
@@ -6283,7 +6412,104 @@ Secrets는 로그에도 노출되지 않으며, variables는 로그에서 노출
     &lt;span class=&quot;token property&quot;&gt;&quot;strings&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;comments&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;token property&quot;&gt;&quot;other&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
+&lt;p&gt;가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.01초 미만의 간격으로 두 번씩 들어오는 경우가 있다. 사실상 요청이 동시에 들어오는 것과 같다. 대부분의 경우에는 문제가 되지 않지만, 쿠폰 구매 같은 민감한 요청에 대해서는 회사의 손해 또는 사용자의 불편과 예민하게 직결되므로 문제가 커질 수 있다. &lt;/p&gt;
+&lt;p&gt;따라서 해당 문제를 완벽히 해결하고자 한다. &lt;/p&gt;
+&lt;p&gt;현재 별다른 조치가 없는 상황에서 발생하는 문제 상황은 다음과 같다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;1번 요청과 2번 요청이 0.005초 차이이고(사실상 동시),
+
+1번 요청 - 트랜잭션 시작
+2번 요청 - 트랜잭션 시작
+1번 요청 - 트랜잭션 완료, 커밋. 새로운 구매 내역이 테이블에 추가됨.
+2번 요청 - 트랜잭션 완료, 커밋. 새로운 구매 내역이 테이블에 추가됨. 
+
+따라서 동일한 유저가 두 번 쿠폰을 구매한 것 처럼 처리되었다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;제약조건 확인&lt;/h3&gt;
+&lt;p&gt;현재 테이블의 키값이 user_id가 아니며, 난수 발생을 통해 생성된 값을 키 값으로 하고 있다. 또한 Redis와 같은 외부 라이브러리를 도입할 여유는 없다. 따라서 가능한 한 현재 시스템(Sqlalchemy, Postgresql)내에서 해결책을 찾고자 한다. &lt;/p&gt;
+&lt;h2&gt;해결방안 고민&lt;/h2&gt;
+&lt;h3&gt;최근 구매 내역 확인(기각)&lt;/h3&gt;
+&lt;p&gt;가장 쉽게 생각할 수 있는 방법은 쿠폰 구매 로직에서 이 유저의 최근 구매 로직을 확인하는 것이다. 하지만 현재 이 상황에서는 사실상 요청이 동시에 들어오고 있으므로, 2번 요청이 시작됐을 때에는 해당 유저의 구매 내역이 아직 DB에 없을 것이므로, 이 방법은 사용할 수 없다. &lt;/p&gt;
+&lt;h3&gt;Database-Level Optimistic Locking(기각)&lt;/h3&gt;
+&lt;p&gt;각 트랜잭션에 버전 번호를 추가하고 트랜잭션이 커밋되기 전에 해당 버전 번호가 여전히 유효한지 확인한다. 하지만 이 방법도 여전히 2번 요청이 1번 요청의 결과를 감지하지 못할 수 있다. &lt;/p&gt;
+&lt;h3&gt;Application-Level Locking(기각)&lt;/h3&gt;
+&lt;p&gt;코드 내에서 직접 잠금 로직을 구현하는 방법이다. 데이터베이스가 아닌 애플리케이션의 메모리 내에서 잠금을 관리한다. 주로 멀티스레드 환경에서 특정 자원에 대한 동시 접근을 제어하는데 사용된다. 현재 FastAPI를 사용하고 있고, FastAPI는 기본적으로 비동기 방식으로 단일 스레드 환경에서 실행된다는 점을 고려하면 전통적인 스레드 기반의 잠금 매커니즘보다 async 라이브러리에 들어있는 비동기 프로그래밍에 적합한 잠금 메커니즘인 asyncio.Lock을 사용하는 것이 이상적이다.&lt;/p&gt;
+&lt;h4&gt;FastAPI에서의 Application-Level Locking&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; asyncio
+
+locks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;purchase_coupon&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    lock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; locks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setdefault&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# 여기에 쿠폰 구매 로직을 구현합니다.&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# 이 블록 내의 코드는 동시에 하나의 요청만 처리합니다.&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;pass&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# FastAPI 엔드포인트에서 이 함수를 호출합니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 코드는 user_id에 대해 별도의 asyncio.Lock을 생성하고 관리한다. 해당 user_id에 대한 작업이 진행중인 경우 다른 요청들은 해당 블록이 해제될 때까지 대기한다. &lt;/p&gt;
+&lt;p&gt;예를 들어 다음 코드를 가정하자. 예를 들기 위해 아주 러프하게 작성했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;test_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    lock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; locks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setdefault&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 코드는 다음과 같이 호출된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;test_function(1, 2) 호출 -&gt; a 값이 1인 잠금 획득 -&gt; 처리 시작
+test_function(1, 2) 호출 -&gt; a 값이 1인 동일한 잠금으로 인해 대기
+test_function(2, 2) 호출 -&gt; a 값이 2인 새로운 잠금 획득 -&gt; 처리 시작
+test_function(2, 2) 처리 완료 -&gt; a 값이 2인 잠금 해제
+test_function(1, 2)의 첫 번째 호출 처리 완료 -&gt; a 값이 1인 잠금 해제
+test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처리 시작
+
+따라서 print는 1, 2, 1의 순서가 된다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다만, 비동기 프로그래밍, 특히 Python의 &lt;a href=&quot;https://sharknia.github.io/FastAPI%EC%99%80-asyncio&quot;&gt;asyncio&lt;/a&gt;를 사용할 때 코드의 실행순서는 이벤트 루프에 의해 관리된다. 작업의 일시 중단과 다른 작업의 실행이 이벤트 루프에 의해 어떻게 스케줄링 될지는 여러 요인에 따라 달라질 수 있다. &lt;/p&gt;
+&lt;h3&gt;PostgreSQL Advisory Locks(당장 채용)&lt;/h3&gt;
+&lt;p&gt;Advisory Locks는 애플리케이션에서 데이터베이스 레벨의 잠금을 관리할 수 있도록 해준다. 이를 통해 특정 user_id 에 대한 동시 요청을 제어할 수 있다. &lt;/p&gt;
+&lt;p&gt;Advisory Locks는 테이블이나 행에 대한 접근을 잠그는 개념이 아니다. 특정 값 (정수)에 대한 잠금을 제공한다. 즉, 작업 자체에 1번이라는 이름을 붙이고 1번을 잠근다면, 다시 요청되는 1번 작업은 잠금이 된다. &lt;/p&gt;
+&lt;h4&gt;&lt;strong&gt;Advisory Locks의 작동 방식&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;잠금 설정 : 애플리케이션이 pg_advisory_lock(key) 함수를 호출하여 특정 키에 대한 잠금을 요청한다.&lt;/li&gt;
+&lt;li&gt;동일 키 사용 시 대기 : 같은 키를 사용하는 다른 데이터베이스 작업이 잠금을 보유하고 있다면, 새로운 잠금 요청은 해당 잠금이 해제될 때까지 대기한다. &lt;/li&gt;
+&lt;li&gt;잠금 해제 : 원래의 작업이 완료되면 pg_advisory_unlock(key) 함수를 호출하여 잠금을 해제한다. 이후 대기 중이던 다른 작업이 잠금을 획득하고 진행될 수 있다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;strong&gt;Advisory Locks의 잠금 레벨&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Advisory Locks는 두 가지 레벨에서 사용할 수 있다. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;세션 레벨 : 이 잠금은 데이터베이스 세션과 연결되어있다. 세션이 종료되면 자동으로 해제된다. 세션 레벨 잠금은 장시간 유지되어야 하는 경우에 유용하다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;use_session_level_lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; AsyncSession&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock_key&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# 세션 레벨 잠금 획득&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_advisory_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock_key&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 데이터베이스 작업 수행&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 필요한 경우, 명시적으로 잠금 해제&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# await db.execute(f&quot;SELECT pg_advisory_unlock({lock_key})&quot;)&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 세션 종료 시 잠금이 자동으로 해제됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;트랜잭션 레벨 잠금 : 트랜잭션 레벨 잠금은 현재 트랜잭션과 연결되어 있으며 트랜잭션이 커밋되거나 롤백 될 때 자동으로 해제된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ext&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asyncio &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; AsyncSession
+
+&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;use_transaction_level_lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; AsyncSession&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock_key&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;begin&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# 트랜잭션 레벨 잠금 획득&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_advisory_xact_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock_key&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        
+        &lt;span class=&quot;token comment&quot;&gt;# 데이터베이스 작업 수행&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# 트랜잭션이 종료되면 잠금이 자동으로 해제됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;쿠폰 구매 서비스 로직에서 트랜잭션 시작 전에  user_id를 기반으로 Advisory Lock을 요청하면 1번 요청이 처리되는 동안 동일한 user_id 에 대한 다른 요청은 대기하게 된다. 쿠폰 구매 처리가 완료되면, Advisory Lock을 해제하면 된다. &lt;/p&gt;
+&lt;h2&gt;결론 - PostgreSQL Advisory Locks 채용&lt;/h2&gt;
+&lt;p&gt;이 방법을 사용하면 매우 짧은 간격의 요청도 효과적으로 처리할 수 있다. 특히 트랜잭션 레벨의 잠금은 각 트랜잭션이 커밋되거나 롤백될 때까지만 유지되므로 0.005초와 같은 짧은 간격의 요청을 동기화하는데 매우 적합하다. &lt;/p&gt;
+&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(7)]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅7/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;퇴근을 하고 고치다보니 시간이 부족하다.. 어쩔 수 없다. &lt;/p&gt;
 &lt;h2&gt;돌아보기&lt;/h2&gt;
 &lt;p&gt;어제 상당수의 디버깅을 진행하고 기존 블로그에서 새 블로그로 글을 이전했다. 깃허브 블로그에 업로드까지 마치고, 오늘 다시 보니 짜잘짜잘한 오류가 다시 또(!!) 발견되었다. &lt;/p&gt;
 &lt;h2&gt;유지보수&lt;/h2&gt;
@@ -6400,104 +6626,7 @@ query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span
 &lt;h3&gt;복잡한 표현식&lt;/h3&gt;
 &lt;p&gt;복잡한 SQL 표현식을 만드는 데도 사용할 수 있다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 조건부 SQL 함수 호출&lt;/span&gt;
-query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[동시성 제어문제 해결]]></title><description><![CDATA[문제 가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.0…]]></description><link>https://sharknia.github.io/동시성-제어문제-해결/</link><guid isPermaLink="false">https://sharknia.github.io/동시성-제어문제-해결/</guid><pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;문제&lt;/h2&gt;
-&lt;p&gt;가~끔 네트워크 문제 때문인지 클라이언트에서 같은 요청이 0.01초 미만의 간격으로 두 번씩 들어오는 경우가 있다. 사실상 요청이 동시에 들어오는 것과 같다. 대부분의 경우에는 문제가 되지 않지만, 쿠폰 구매 같은 민감한 요청에 대해서는 회사의 손해 또는 사용자의 불편과 예민하게 직결되므로 문제가 커질 수 있다. &lt;/p&gt;
-&lt;p&gt;따라서 해당 문제를 완벽히 해결하고자 한다. &lt;/p&gt;
-&lt;p&gt;현재 별다른 조치가 없는 상황에서 발생하는 문제 상황은 다음과 같다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;1번 요청과 2번 요청이 0.005초 차이이고(사실상 동시),
-
-1번 요청 - 트랜잭션 시작
-2번 요청 - 트랜잭션 시작
-1번 요청 - 트랜잭션 완료, 커밋. 새로운 구매 내역이 테이블에 추가됨.
-2번 요청 - 트랜잭션 완료, 커밋. 새로운 구매 내역이 테이블에 추가됨. 
-
-따라서 동일한 유저가 두 번 쿠폰을 구매한 것 처럼 처리되었다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;제약조건 확인&lt;/h3&gt;
-&lt;p&gt;현재 테이블의 키값이 user_id가 아니며, 난수 발생을 통해 생성된 값을 키 값으로 하고 있다. 또한 Redis와 같은 외부 라이브러리를 도입할 여유는 없다. 따라서 가능한 한 현재 시스템(Sqlalchemy, Postgresql)내에서 해결책을 찾고자 한다. &lt;/p&gt;
-&lt;h2&gt;해결방안 고민&lt;/h2&gt;
-&lt;h3&gt;최근 구매 내역 확인(기각)&lt;/h3&gt;
-&lt;p&gt;가장 쉽게 생각할 수 있는 방법은 쿠폰 구매 로직에서 이 유저의 최근 구매 로직을 확인하는 것이다. 하지만 현재 이 상황에서는 사실상 요청이 동시에 들어오고 있으므로, 2번 요청이 시작됐을 때에는 해당 유저의 구매 내역이 아직 DB에 없을 것이므로, 이 방법은 사용할 수 없다. &lt;/p&gt;
-&lt;h3&gt;Database-Level Optimistic Locking(기각)&lt;/h3&gt;
-&lt;p&gt;각 트랜잭션에 버전 번호를 추가하고 트랜잭션이 커밋되기 전에 해당 버전 번호가 여전히 유효한지 확인한다. 하지만 이 방법도 여전히 2번 요청이 1번 요청의 결과를 감지하지 못할 수 있다. &lt;/p&gt;
-&lt;h3&gt;Application-Level Locking(기각)&lt;/h3&gt;
-&lt;p&gt;코드 내에서 직접 잠금 로직을 구현하는 방법이다. 데이터베이스가 아닌 애플리케이션의 메모리 내에서 잠금을 관리한다. 주로 멀티스레드 환경에서 특정 자원에 대한 동시 접근을 제어하는데 사용된다. 현재 FastAPI를 사용하고 있고, FastAPI는 기본적으로 비동기 방식으로 단일 스레드 환경에서 실행된다는 점을 고려하면 전통적인 스레드 기반의 잠금 매커니즘보다 async 라이브러리에 들어있는 비동기 프로그래밍에 적합한 잠금 메커니즘인 asyncio.Lock을 사용하는 것이 이상적이다.&lt;/p&gt;
-&lt;h4&gt;FastAPI에서의 Application-Level Locking&lt;/h4&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; asyncio
-
-locks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;purchase_coupon&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    lock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; locks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setdefault&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;# 여기에 쿠폰 구매 로직을 구현합니다.&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;# 이 블록 내의 코드는 동시에 하나의 요청만 처리합니다.&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;pass&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;# FastAPI 엔드포인트에서 이 함수를 호출합니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 코드는 user_id에 대해 별도의 asyncio.Lock을 생성하고 관리한다. 해당 user_id에 대한 작업이 진행중인 경우 다른 요청들은 해당 블록이 해제될 때까지 대기한다. &lt;/p&gt;
-&lt;p&gt;예를 들어 다음 코드를 가정하자. 예를 들기 위해 아주 러프하게 작성했다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;test_function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    lock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; locks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;setdefault&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Lock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; lock&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; asyncio&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이 코드는 다음과 같이 호출된다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plaintext&quot;&gt;&lt;pre class=&quot;language-plaintext&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;test_function(1, 2) 호출 -&gt; a 값이 1인 잠금 획득 -&gt; 처리 시작
-test_function(1, 2) 호출 -&gt; a 값이 1인 동일한 잠금으로 인해 대기
-test_function(2, 2) 호출 -&gt; a 값이 2인 새로운 잠금 획득 -&gt; 처리 시작
-test_function(2, 2) 처리 완료 -&gt; a 값이 2인 잠금 해제
-test_function(1, 2)의 첫 번째 호출 처리 완료 -&gt; a 값이 1인 잠금 해제
-test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처리 시작
-
-따라서 print는 1, 2, 1의 순서가 된다. &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;다만, 비동기 프로그래밍, 특히 Python의 &lt;a href=&quot;https://sharknia.github.io/FastAPI%EC%99%80-asyncio&quot;&gt;asyncio&lt;/a&gt;를 사용할 때 코드의 실행순서는 이벤트 루프에 의해 관리된다. 작업의 일시 중단과 다른 작업의 실행이 이벤트 루프에 의해 어떻게 스케줄링 될지는 여러 요인에 따라 달라질 수 있다. &lt;/p&gt;
-&lt;h3&gt;PostgreSQL Advisory Locks(당장 채용)&lt;/h3&gt;
-&lt;p&gt;Advisory Locks는 애플리케이션에서 데이터베이스 레벨의 잠금을 관리할 수 있도록 해준다. 이를 통해 특정 user_id 에 대한 동시 요청을 제어할 수 있다. &lt;/p&gt;
-&lt;p&gt;Advisory Locks는 테이블이나 행에 대한 접근을 잠그는 개념이 아니다. 특정 값 (정수)에 대한 잠금을 제공한다. 즉, 작업 자체에 1번이라는 이름을 붙이고 1번을 잠근다면, 다시 요청되는 1번 작업은 잠금이 된다. &lt;/p&gt;
-&lt;h4&gt;&lt;strong&gt;Advisory Locks의 작동 방식&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;잠금 설정 : 애플리케이션이 pg_advisory_lock(key) 함수를 호출하여 특정 키에 대한 잠금을 요청한다.&lt;/li&gt;
-&lt;li&gt;동일 키 사용 시 대기 : 같은 키를 사용하는 다른 데이터베이스 작업이 잠금을 보유하고 있다면, 새로운 잠금 요청은 해당 잠금이 해제될 때까지 대기한다. &lt;/li&gt;
-&lt;li&gt;잠금 해제 : 원래의 작업이 완료되면 pg_advisory_unlock(key) 함수를 호출하여 잠금을 해제한다. 이후 대기 중이던 다른 작업이 잠금을 획득하고 진행될 수 있다. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;&lt;strong&gt;Advisory Locks의 잠금 레벨&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;Advisory Locks는 두 가지 레벨에서 사용할 수 있다. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;세션 레벨 : 이 잠금은 데이터베이스 세션과 연결되어있다. 세션이 종료되면 자동으로 해제된다. 세션 레벨 잠금은 장시간 유지되어야 하는 경우에 유용하다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;use_session_level_lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; AsyncSession&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock_key&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# 세션 레벨 잠금 획득&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_advisory_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock_key&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;# 데이터베이스 작업 수행&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;# 필요한 경우, 명시적으로 잠금 해제&lt;/span&gt;
-    &lt;span class=&quot;token comment&quot;&gt;# await db.execute(f&quot;SELECT pg_advisory_unlock({lock_key})&quot;)&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;# 세션 종료 시 잠금이 자동으로 해제됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;트랜잭션 레벨 잠금 : 트랜잭션 레벨 잠금은 현재 트랜잭션과 연결되어 있으며 트랜잭션이 커밋되거나 롤백 될 때 자동으로 해제된다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ext&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;asyncio &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; AsyncSession
-
-&lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;use_transaction_level_lock&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; AsyncSession&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lock_key&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;begin&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;# 트랜잭션 레벨 잠금 획득&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;SELECT pg_advisory_xact_lock(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;lock_key&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-        
-        &lt;span class=&quot;token comment&quot;&gt;# 데이터베이스 작업 수행&lt;/span&gt;
-        &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
-
-    &lt;span class=&quot;token comment&quot;&gt;# 트랜잭션이 종료되면 잠금이 자동으로 해제됩니다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;쿠폰 구매 서비스 로직에서 트랜잭션 시작 전에  user_id를 기반으로 Advisory Lock을 요청하면 1번 요청이 처리되는 동안 동일한 user_id 에 대한 다른 요청은 대기하게 된다. 쿠폰 구매 처리가 완료되면, Advisory Lock을 해제하면 된다. &lt;/p&gt;
-&lt;h2&gt;결론 - PostgreSQL Advisory Locks 채용&lt;/h2&gt;
-&lt;p&gt;이 방법을 사용하면 매우 짧은 간격의 요청도 효과적으로 처리할 수 있다. 특히 트랜잭션 레벨의 잠금은 각 트랜잭션이 커밋되거나 롤백될 때까지만 유지되므로 0.005초와 같은 짧은 간격의 요청을 동기화하는데 매우 적합하다. &lt;/p&gt;
-&lt;p&gt;백엔드 팀에서 협의를 거쳐 해당 방법을 사용해 구현하기로 최종 결정하였다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
+query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; select&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;func&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;coalesce&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;my_table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;column&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;default value&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(6)]]></title><description><![CDATA[기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다.  유지보수 내역 Front Matter-프로퍼티 연계 수정 프로퍼티가 Front Matter…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅6/</guid><pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기능 구현이 거의 다 되었기 때문에, 오늘은 일단 짜잘짜잘한 오류 수정을 진행했다. &lt;/p&gt;
 &lt;h2&gt;유지보수 내역&lt;/h2&gt;
 &lt;h3&gt;Front Matter-프로퍼티 연계 수정&lt;/h3&gt;
 &lt;p&gt;프로퍼티가 Front Matter에 추가되는데, 값이 빈 것도 추가되어서 제대로 필터링 되지 않는 문제가 있었다. 값이 존재하는 프로퍼티만 Front Matter에 추가되도록 수정해주었다. &lt;/p&gt;
@@ -6699,7 +6828,40 @@ test_function(1, 2)의 두 번째 호출이 대기 상태에서 해제 -&gt; 처
 &lt;li&gt;데이터 무결성이 중요한 경우에 적합하지만 성능상의 영향을 고려해야 한다. &lt;/li&gt;
 &lt;li&gt;데드락을 방지하기 위해 트랜잭션 설계 시 주의가 필요하다. &lt;/li&gt;
 &lt;li&gt;읽기만 수행하는 트랜잭션의 경우 더 낮은 격리 수준을 고려하는 것이 성능상 이점이 있을 수 있다. &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[우분투 용량 관리]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/우분투-용량-관리/</link><guid isPermaLink="false">https://sharknia.github.io/우분투-용량-관리/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 나스를 하나 운영하고 있다. &lt;/p&gt;
+&lt;p&gt;이것저것 설정해서 쓰고 있는데, 어느 날 갑자기 토렌트 다운로드가 용량이 없다고 작동하지 않았다. &lt;/p&gt;
+&lt;p&gt;용량은 다음의 명령어를 통해 확인할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/HDD2/myHomePage$ &lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt;
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           200M   29M  171M  &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;% /run
+/dev/mmcblk1p2   15G   15G     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;% /
+tmpfs           996M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  996M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /dev/shm
+tmpfs           &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/lock
+/dev/mmcblk1p1  128M   14M  114M  &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;% /media/boot
+/dev/sdb1       &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.7T  656G  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.0T  &lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt;% /HDD2
+/dev/sda1        11T  &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.3T  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.1T  &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;% /HDD
+tmpfs           200M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  200M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/user/1000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;외장하든 왕 큰 놈을 달아서 사용하고 있는데, 오드로이드다보니 메인 OS가 깔리는 드라이브는 15gb짜리 작은 용량이다.. 그 드라이브가 100퍼센트 꽉 차 있었다. &lt;/p&gt;
+&lt;p&gt;다음의 명령어를 사용해 용량이 큰 디렉토리를 검색했다. 외장하드 경로는 제외하고 검색했다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/$ &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt; / &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD2 &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-hr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
+du: cannot &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt; directory &lt;span class=&quot;token string&quot;&gt;&apos;/proc/sys/fs/binfmt_misc&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such device
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fd/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fdinfo/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fd/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fdinfo/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
+15G     /
+11G     /home/furychick
+11G     /home
+&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.7G    /home/furychick/.forever
+&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.2G    /var
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.7G    /usr
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.6G    /var/log
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal/dc87f36fc06c441a85ff7269ba4d50fb
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal
+&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.3G    /usr/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아~ 개인 홈페이지를 돌리는 로그가.. 몇 년 째 사이트를 그냥 켜둔채로 방치하다 보니 9기가에 달하게 크게 자라 내 서버를 억누르고 있었다. &lt;/p&gt;
+&lt;p&gt;당장 로그를 삭제해주었다. &lt;/p&gt;
+&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(5)]]></title><description><![CDATA[열정 추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다.  구현 내용 콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다.  콜아웃, 디바이더 html…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅5/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;열정&lt;/h2&gt;
 &lt;p&gt;추가로 더 진행해버렸다. 정말로 여기까지만 하려고 한다. 오랜만에 탄력 받으니 계속 하게 되어버렸다. &lt;/p&gt;
 &lt;h2&gt;구현 내용&lt;/h2&gt;
 &lt;p&gt;콜아웃, 디바이더, 인용문, 코드, 번호 매기기 , 글머리 기호 목록 컨버터를 추가했다. &lt;/p&gt;
@@ -6864,40 +7026,7 @@ value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class
 &lt;p&gt;C로 개발을 시작했어서 그런지 처음에 자바스크립트를 접하고 아주 재미있고 자유도가 높다고 생각했는데, 갈 수록 나 자신에게 쇠사슬이 묶여있는게 오히려 편하다고 느낀다. &lt;/p&gt;
 &lt;p&gt;프로젝트 크기가 커질수록 더 그렇게 느끼는 것 같다. &lt;/p&gt;
 &lt;p&gt;물론 이런 기능을 잘 활용하면 더 편할때도 많긴 하다. 코드가 짧아지는 것도 맞고..&lt;/p&gt;
-&lt;p&gt;결국 내 자신이 잘하면 아무일도 안생길거라는 생각도 든다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[우분투 용량 관리]]></title><description><![CDATA[…]]></description><link>https://sharknia.github.io/우분투-용량-관리/</link><guid isPermaLink="false">https://sharknia.github.io/우분투-용량-관리/</guid><pubDate>Sun, 28 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;개인적으로 나스를 하나 운영하고 있다. &lt;/p&gt;
-&lt;p&gt;이것저것 설정해서 쓰고 있는데, 어느 날 갑자기 토렌트 다운로드가 용량이 없다고 작동하지 않았다. &lt;/p&gt;
-&lt;p&gt;용량은 다음의 명령어를 통해 확인할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/HDD2/myHomePage$ &lt;span class=&quot;token function&quot;&gt;df&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt;
-Filesystem      Size  Used Avail Use% Mounted on
-tmpfs           200M   29M  171M  &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;% /run
-/dev/mmcblk1p2   15G   15G     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;% /
-tmpfs           996M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  996M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /dev/shm
-tmpfs           &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;.0M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/lock
-/dev/mmcblk1p1  128M   14M  114M  &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;% /media/boot
-/dev/sdb1       &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.7T  656G  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.0T  &lt;span class=&quot;token number&quot;&gt;26&lt;/span&gt;% /HDD2
-/dev/sda1        11T  &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.3T  &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.1T  &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;% /HDD
-tmpfs           200M     &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;  200M   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;% /run/user/1000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;외장하든 왕 큰 놈을 달아서 사용하고 있는데, 오드로이드다보니 메인 OS가 깔리는 드라이브는 15gb짜리 작은 용량이다.. 그 드라이브가 100퍼센트 꽉 차 있었다. &lt;/p&gt;
-&lt;p&gt;다음의 명령어를 사용해 용량이 큰 디렉토리를 검색했다. 외장하드 경로는 제외하고 검색했다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;furychick@odroid:/$ &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;du&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-h&lt;/span&gt; / &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD2 &lt;span class=&quot;token parameter variable&quot;&gt;--exclude&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;/HDD &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-hr&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
-du: cannot &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt; directory &lt;span class=&quot;token string&quot;&gt;&apos;/proc/sys/fs/binfmt_misc&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such device
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fd/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/task/19035/fdinfo/3&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fd/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-du: cannot access &lt;span class=&quot;token string&quot;&gt;&apos;/proc/19035/fdinfo/4&apos;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; No such &lt;span class=&quot;token function&quot;&gt;file&lt;/span&gt; or directory
-15G     /
-11G     /home/furychick
-11G     /home
-&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.7G    /home/furychick/.forever
-&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.2G    /var
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.7G    /usr
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.6G    /var/log
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal/dc87f36fc06c441a85ff7269ba4d50fb
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.5G    /var/log/journal
-&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.3G    /usr/lib&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;아~ 개인 홈페이지를 돌리는 로그가.. 몇 년 째 사이트를 그냥 켜둔채로 방치하다 보니 9기가에 달하게 크게 자라 내 서버를 억누르고 있었다. &lt;/p&gt;
-&lt;p&gt;당장 로그를 삭제해주었다. &lt;/p&gt;
-&lt;p&gt;해피엔딩~&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3) 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
+&lt;p&gt;결국 내 자신이 잘하면 아무일도 안생길거라는 생각도 든다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[NotionAPI를 활용한 자동 포스팅(4)]]></title><description><![CDATA[지난 이야기 NotionAPI를 활용한 자동 포스팅(3) 간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다.  오늘의 작업 block.ts 나머지 작업 지난번에 block.ts…]]></description><link>https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</link><guid isPermaLink="false">https://sharknia.github.io/NotionAPI를-활용한-자동-포스팅4/</guid><pubDate>Sat, 27 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;지난 이야기&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/NotionAPI%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99-%ED%8F%AC%EC%8A%A4%ED%8C%853&quot;&gt;NotionAPI를 활용한 자동 포스팅(3)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;간만에 복귀를 했다. 별건 아니고.. 그냥 복습을 했다. &lt;/p&gt;
 &lt;h2&gt;오늘의 작업&lt;/h2&gt;
@@ -11375,14 +11504,7 @@ pprint&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pprint&lt;sp
 &lt;p&gt;&lt;strong&gt;CDN 사용&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;이미지나 정적 파일과 같은 컨텐츠를 전세계적으로 빠르게 제공하기 위해 CDN 사용을 고려할 수 있다.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Nuget 패키지 dll 추출]]></title><description><![CDATA[파일의 확장자를 으로 변경합니다. 예를 들어, 을 으로 변경합니다. ZIP 압축 해제 도구 (예: WinRAR, 7-Zip…]]></description><link>https://sharknia.github.io/Nuget-패키지-dll-추출/</link><guid isPermaLink="false">https://sharknia.github.io/Nuget-패키지-dll-추출/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt; 파일의 확장자를 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt;으로 변경합니다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.nupkg&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.zip&lt;/code&gt;으로 변경합니다.&lt;/li&gt;
-&lt;li&gt;ZIP 압축 해제 도구 (예: WinRAR, 7-Zip 등)를 사용하여 변경된 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일을 엽니다.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일 내에서 &lt;code class=&quot;language-text&quot;&gt;lib&lt;/code&gt; 폴더나 해당하는 폴더를 찾아 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 찾습니다.&lt;/li&gt;
-&lt;li&gt;해당 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 추출합니다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;이렇게 하면 &lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt;에서 원하는 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 얻을 수 있습니다.&lt;/p&gt;
-&lt;p&gt;이렇게 하면 의존성, 버전 호환성 등의 문제가 발생할 수 있고 NuGet 패키지 관리 기능도 사용할 수 없기 때문에 권장하지 않는 방법입니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[무료 웹 호스팅 비교]]></title><description><![CDATA[gh-pages (GitHub Pages) 설명: GitHub Pages는 GitHub…]]></description><link>https://sharknia.github.io/무료-웹-호스팅-비교/</link><guid isPermaLink="false">https://sharknia.github.io/무료-웹-호스팅-비교/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[무료 웹 호스팅 비교]]></title><description><![CDATA[gh-pages (GitHub Pages) 설명: GitHub Pages는 GitHub…]]></description><link>https://sharknia.github.io/무료-웹-호스팅-비교/</link><guid isPermaLink="false">https://sharknia.github.io/무료-웹-호스팅-비교/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;gh-pages (GitHub Pages)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -11446,7 +11568,14 @@ pprint&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pprint&lt;sp
 &lt;li&gt;Netlify는 다양한 정적 사이트 생성 도구와의 호환성과 다양한 추가 기능을 통해 풍부한 개발 경험을 제공합니다.&lt;/li&gt;
 &lt;li&gt;Surge는 정적 웹사이트를 빠르고 간단하게 배포하는데 초점을 맞춘 서비스입니다.
 각 프로젝트의 요구 사항에 따라 적합한 플랫폼을 선택할 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[웹 사이트 프로젝트 vs 웹 응용 프로그램 프로젝트]]></title><description><![CDATA[웹 사이트 프로젝트 특징 웹 사이트 프로젝트는 파일 시스템을 기반으로 하는 프로젝트 유형입니다. 웹 애플리케이션의 파일들이 프로젝트 디렉토리 내에 그대로 위치하며, ASP.NET…]]></description><link>https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</link><guid isPermaLink="false">https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</guid><pubDate>Mon, 21 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;웹 사이트 프로젝트&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Nuget 패키지 dll 추출]]></title><description><![CDATA[파일의 확장자를 으로 변경합니다. 예를 들어, 을 으로 변경합니다. ZIP 압축 해제 도구 (예: WinRAR, 7-Zip…]]></description><link>https://sharknia.github.io/Nuget-패키지-dll-추출/</link><guid isPermaLink="false">https://sharknia.github.io/Nuget-패키지-dll-추출/</guid><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt; 파일의 확장자를 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt;으로 변경합니다. 예를 들어, &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.nupkg&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;tiktokensharp.1.0.6.zip&lt;/code&gt;으로 변경합니다.&lt;/li&gt;
+&lt;li&gt;ZIP 압축 해제 도구 (예: WinRAR, 7-Zip 등)를 사용하여 변경된 &lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일을 엽니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.zip&lt;/code&gt; 파일 내에서 &lt;code class=&quot;language-text&quot;&gt;lib&lt;/code&gt; 폴더나 해당하는 폴더를 찾아 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 찾습니다.&lt;/li&gt;
+&lt;li&gt;해당 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 추출합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이렇게 하면 &lt;code class=&quot;language-text&quot;&gt;.nupkg&lt;/code&gt;에서 원하는 &lt;code class=&quot;language-text&quot;&gt;.dll&lt;/code&gt; 파일을 얻을 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이렇게 하면 의존성, 버전 호환성 등의 문제가 발생할 수 있고 NuGet 패키지 관리 기능도 사용할 수 없기 때문에 권장하지 않는 방법입니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[웹 사이트 프로젝트 vs 웹 응용 프로그램 프로젝트]]></title><description><![CDATA[웹 사이트 프로젝트 특징 웹 사이트 프로젝트는 파일 시스템을 기반으로 하는 프로젝트 유형입니다. 웹 애플리케이션의 파일들이 프로젝트 디렉토리 내에 그대로 위치하며, ASP.NET…]]></description><link>https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</link><guid isPermaLink="false">https://sharknia.github.io/웹-사이트-프로젝트-vs-웹-응용-프로그램-프로젝트/</guid><pubDate>Mon, 21 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;웹 사이트 프로젝트&lt;/h2&gt;
 &lt;h3&gt;특징&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;웹 사이트 프로젝트는 파일 시스템을 기반으로 하는 프로젝트 유형입니다. 웹 애플리케이션의 파일들이 프로젝트 디렉토리 내에 그대로 위치하며, &lt;a href=&quot;http://asp.net/&quot;&gt;ASP.NET&lt;/a&gt; 컴파일러에 의해 실시간으로 컴파일됩니다.&lt;/li&gt;
