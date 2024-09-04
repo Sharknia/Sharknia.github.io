@@ -5,7 +5,7 @@ tags:
   - Spring
 description: "SDKMAN!으로 JDK 버전 관리하고, bootRun으로 실행해보기"
 series: "Kotlin과 Spring을 활용한 프로젝트"
-update: "2024-09-04T09:22:00.000Z"
+update: "2024-09-04T13:45:00.000Z"
 date: "2024-09-04"
 상태: "Ready"
 title: "SDKMAN!과 bootRun"
@@ -133,6 +133,70 @@ ${enviroment:dev}
 ### 결과
 
 여기까지 마치면 클래스 파일을 수정을 하면 브라우저를 통해서 테스트를 해보면 변경사항이 별도의 작업 없이 반영되는 것을 확인할 수 있습니다. 다만 파이썬이나 Node.js처럼 즉각적으로 반영은 되지 않고 약간의 시간 소요가 필요합니다. 
+
+## 윈도우에선: jabba
+
+윈도우에서도 SDKMAN!을 사용할 수 있는지 찾아보면 WSL을 통해 설치할 수 있다는 글이 꽤 나옵니다. 물론 이렇게 해서 설치를 할 수는 있지만, WSL은 윈도우 환경과 분리되어 있어 WSL에 설치된 프로그램은 기본적으로 WSL 내부에서만 동작합니다. 
+
+단적으로 이야기해서 인텔리제이에서는 이렇게 설치된 SDKMAN!을 통한 JDK는 사용할 수 없습니다. 따라서 윈도우에서 JDK 버전 관리를 위해서는 다른 프로그램을 사용해야 합니다. 바로 Jabba입니다. 
+
+### Jabba 설치
+
+PowerShell을 관리자 권한으로 실행해 다음의 명령어를 실행합니다. 
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/shyiko/jabba/master/install.ps1 | iex
+```
+
+### 설치 오류
+
+관리자 권한으로 실행을 했는데도 다음과 같은 오류가 난다면
+
+```powershell
+. : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\Users\ID\.jabba\jabba.ps1 파일을 로드할 수 없습니다. 자세한
+내용은 about_Execution_Policies(https://go.microsoft.com/fwlink/?LinkID=135170)를 참조하십시오.
+위치 줄:80 문자:3
++ . $jabbaHome\jabba.ps1
++   ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 보안 오류: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+
+PowerShell의 실행 정책이 기본적으로 제한되어 있어 발생합니다. 이를 허용하려면 실행 정책을 변경하면 됩니다. PowerShell을 관리자 권한으로 실행해 다음의 명령어를 입력합니다.
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+이 명령어는 로컬에서 생성된 스크립트는 실행을 허용하고, 원격에서 다운로드된 스크립트는 서명이 있을 때만 실행하도록 합니다.
+
+다시 시도를 하면 설치가 정상적으로 된 것을 확인할 수 있습니다. 
+
+### JDK 설치
+
+다음의 명령어를 사용해 설치 가능한 리스트를 확인할 수 있습니다. 
+
+```powershell
+jabba ls-remote
+```
+
+원하는 버전을 선택해 다음의 명령어로 설치합니다. 
+
+```powershell
+jabba install {선택한버전}
+```
+
+아래의 명령어로 설치된 JDK 리스트를 확인하고
+
+```powershell
+jabba ls
+```
+
+다음의 명령어로 사용할 자바를 선택할 수 있습니다. 
+
+```powershell
+jabba use {선택한버전}
+```
 
 ## 오류
 
