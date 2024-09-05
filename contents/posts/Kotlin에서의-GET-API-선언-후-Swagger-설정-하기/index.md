@@ -5,7 +5,7 @@ tags:
   - Spring
 description: "Kotlin에서의 GET API 선언 후 Swagger 설정 하기"
 series: "Kotlin과 Spring을 활용한 프로젝트"
-update: "2024-09-04T15:44:00.000Z"
+update: "2024-09-05T02:23:00.000Z"
 date: "2024-09-05"
 상태: "Ready"
 title: "Kotlin에서의 GET API 선언 후 Swagger 설정 하기"
@@ -61,6 +61,8 @@ import org.springframework.web.bind.annotation.RestController
 - `import` 구문: 스프링 웹 어노테이션인 `@GetMapping`, `@RequestMapping`, `@RestController`를 가져옵니다. 이는 HTTP 요청을 처리하기 위한 스프링 웹의 주요 어노테이션입니다.
 
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
+
+
 ```kotlin
 data class HelloResponse(val result: String)
 ```
@@ -68,6 +70,8 @@ data class HelloResponse(val result: String)
 - `data class HelloResponse`: JSON 응답으로 반환될 데이터를 담는 간단한 코틀린 데이터 클래스입니다. `result`라는 이름의 문자열 필드 하나를 가집니다. 스프링 부트는 이 `data class`를 자동으로 JSON 형식으로 변환하여 클라이언트에게 반환합니다.
 
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
+
+
 ```kotlin
 @RestController
 @RequestMapping("/user")  // 공통 경로 설정
@@ -79,6 +83,8 @@ class HelloController {
 - `@RequestMapping("/user")`: `/user` 경로로 들어오는 HTTP 요청을 이 컨트롤러가 처리하게 합니다. 즉, 이 컨트롤러 내의 모든 메소드가 기본적으로 `/user` 경로를 가집니다.
 
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
+
+
 ```kotlin
     // /user 경로를 처리
     @GetMapping
@@ -94,6 +100,8 @@ class HelloController {
 - `return HelloResponse(result = "Welcome to the user page!")`: `"Welcome to the user page!"`라는 값을 담은 `HelloResponse` 객체를 반환하여, 이를 JSON 응답으로 반환합니다.
 
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
+
+
 ```kotlin
     // /user/hello 경로를 처리
     @GetMapping("/hello")
