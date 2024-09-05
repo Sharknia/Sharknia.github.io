@@ -285,43 +285,35 @@ data-styled.g45[id="Footer__HiddenWrapper-sc-zqxmks-9"]{content:"yzdKT,ivqWaF,"}
 <li><code class="language-text">import</code> 구문: 스프링 웹 어노테이션인 <code class="language-text">@GetMapping</code>, <code class="language-text">@RequestMapping</code>, <code class="language-text">@RestController</code>를 가져옵니다. 이는 HTTP 요청을 처리하기 위한 스프링 웹의 주요 어노테이션입니다.</li>
 </ul>
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
-```kotlin
-data class HelloResponse(val result: String)
-```
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">HelloResponse</span><span class="token punctuation">(</span><span class="token keyword">val</span> result<span class="token operator">:</span> String<span class="token punctuation">)</span></code></pre></div>
 <ul>
 <li><code class="language-text">data class HelloResponse</code>: JSON 응답으로 반환될 데이터를 담는 간단한 코틀린 데이터 클래스입니다. <code class="language-text">result</code>라는 이름의 문자열 필드 하나를 가집니다. 스프링 부트는 이 <code class="language-text">data class</code>를 자동으로 JSON 형식으로 변환하여 클라이언트에게 반환합니다.</li>
 </ul>
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
-```kotlin
-@RestController
-@RequestMapping("/user")  // 공통 경로 설정
-class HelloController {
-```
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin"><span class="token annotation builtin">@RestController</span>
+<span class="token annotation builtin">@RequestMapping</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/user"</span></span><span class="token punctuation">)</span>  <span class="token comment">// 공통 경로 설정</span>
+<span class="token keyword">class</span> HelloController <span class="token punctuation">{</span></code></pre></div>
 <ul>
 <li><code class="language-text">@RestController</code>: 이 클래스가 스프링의 RESTful 웹 API를 처리하는 컨트롤러임을 명시합니다.</li>
 <li><code class="language-text">@RequestMapping("/user")</code>: <code class="language-text">/user</code> 경로로 들어오는 HTTP 요청을 이 컨트롤러가 처리하게 합니다. 즉, 이 컨트롤러 내의 모든 메소드가 기본적으로 <code class="language-text">/user</code> 경로를 가집니다.</li>
 </ul>
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
-```kotlin
-    // /user 경로를 처리
-    @GetMapping
-    fun userRoot(): HelloResponse {
-        return HelloResponse(result = "Welcome to the user page!")
-    }
-```
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">    <span class="token comment">// /user 경로를 처리</span>
+    <span class="token annotation builtin">@GetMapping</span>
+    <span class="token keyword">fun</span> <span class="token function">userRoot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> HelloResponse <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">HelloResponse</span><span class="token punctuation">(</span>result <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"Welcome to the user page!"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre></div>
 <ul>
 <li><code class="language-text">@GetMapping</code>: 경로를 명시하지 않으면 기본 경로인 <code class="language-text">/user</code>로 들어오는 GET 요청을 처리합니다.</li>
 <li><code class="language-text">userRoot</code>: 함수 이름은 임의로 지정된 이름입니다. 이 함수가 <code class="language-text">/user</code> 경로로 들어오는 요청을 처리하며, <code class="language-text">HelloResponse</code> 객체를 반환합니다.</li>
 <li><code class="language-text">return HelloResponse(result = "Welcome to the user page!")</code>: <code class="language-text">"Welcome to the user page!"</code>라는 값을 담은 <code class="language-text">HelloResponse</code> 객체를 반환하여, 이를 JSON 응답으로 반환합니다.</li>
 </ul>
 <hr style="border: none; height: 1px; background-color: #e0e0e0; margin: 16px 0;" />
-```kotlin
-    // /user/hello 경로를 처리
-    @GetMapping("/hello")
-    fun hello(): HelloResponse {
-        return HelloResponse(result = "hello world")
-    }
-```
+<div class="gatsby-highlight" data-language="kotlin"><pre class="language-kotlin"><code class="language-kotlin">    <span class="token comment">// /user/hello 경로를 처리</span>
+    <span class="token annotation builtin">@GetMapping</span><span class="token punctuation">(</span><span class="token string-literal singleline"><span class="token string">"/hello"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">fun</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> HelloResponse <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">HelloResponse</span><span class="token punctuation">(</span>result <span class="token operator">=</span> <span class="token string-literal singleline"><span class="token string">"hello world"</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre></div>
 <ul>
 <li><code class="language-text">@GetMapping("/hello")</code>: <code class="language-text">/user/hello</code> 경로로 들어오는 GET 요청을 처리합니다.</li>
 <li><code class="language-text">hello</code>: 마찬가지로 함수 이름은 임의로 지정되었습니다. 이 함수가 <code class="language-text">/user/hello</code> 경로로 들어오는 요청을 처리하며, <code class="language-text">HelloResponse</code> 객체를 반환합니다.</li>
