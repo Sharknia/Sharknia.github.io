@@ -1,4 +1,523 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Jan 2025 01:37:51 GMT</lastBuildDate><item><title><![CDATA[GraphQL과 Django]]></title><description><![CDATA[GraphQL의 특징 클라이언트 주도형 데이터 요청 REST API는 백엔드가 정해준 엔드포인트를 그대로 사용해야 하지만, GraphQL은 클라이언트가 원하는 데이터만 요청할 수 있습니다.  REST API…]]></description><link>https://sharknia.github.io/GraphQL과-Django/</link><guid isPermaLink="false">https://sharknia.github.io/GraphQL과-Django/</guid><pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 4살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Jan 2025 08:13:19 GMT</lastBuildDate><item><title><![CDATA[우리 팀에 맞는 API Gateway 선택하기]]></title><description><![CDATA[서론 현재 회사에서 MSA 형태의 백엔드 서비스를 운용중입니다. 다만 지금은 프론트에서 API Gateway…]]></description><link>https://sharknia.github.io/우리-팀에-맞는-API-Gateway-선택하기/</link><guid isPermaLink="false">https://sharknia.github.io/우리-팀에-맞는-API-Gateway-선택하기/</guid><pubDate>Thu, 23 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/029e25f51d632b2f65d94847aa8ae648/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVR42g3PWU/aAAAA4P6RPex9M8vmFp2bGV4oMkCUQlWOcrW0lKNAkVJKOcqhXGJR8UBQPMAD3TBsMXFvEqfJNpe4vzPfv5cPeP/quUTcr9JIhycG52FwSqtS22CYxIyUC2EXLCHKFCD1LhRC9DpMPz2nGBYPqJQj8vG+Dz3PAJGoF7ZpEcqpffKxABkNBiOBRGWdKZfSB9WzH53loz1fIePLpJhCmkqwMGFW61WKmfGhjy+BScWYfFapddqsNEUXsziJOM1g8bBSv+r8evzz9+Hu4d+DcHbMreWpTIKMh2ASz5bSuTwnnvwETGtnqChdax0F1lZxyk2HfdntfPHyC82HWBIOEmovCrlp9/LpYTzLW3GTKxVnF8N02CMDpYAEUmJBKlDMk8UVWNYfTzLlq29b7fPUfs3Js/4k40lH+I1S7Xs7luKMk714NOSL0SGeAWEIkGnVJr/Hm1kkEjHCoSu3DoVGHTeodi9PG/c3J/fdzuPvEEOGIgubX5sEMY+Eg6mdTaG2gfkIQE860Chnwq0M48nvrJbaF3wpi4ED2Waj+bN7cndTvr72+qxODMo1doWq4MBNtgjrjHF6uxkw0guw32MY63m6ZSpCrnkQ59mskKjedrfOjoXK5t5td73disTZfKMeKy6h0jdms9rDhy0OE6DBrXJIrhp54Y9Q/PZ6OJswS97mVlL7nWYkYENVoq3zg8K2YJa8o8L+ZH2PdMzpzaDeiUIwCOhQg8WNaewIEgqyK8uWgA9RvGaEQrJ1EeDcTtNE4viUq+44tCIDbmRLgofnvGGfxjg7pZEDg0N9owqxFFLKdWoVAs+RdhCF7TznyqSwGAtTLk9+yZGKQwQ6S1jVmEmhAz+rZaPSIdFw339wgDc2zs6lBwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/029e25f51d632b2f65d94847aa8ae648/ca1dc/image1.png&apos; srcset=&apos;/static/029e25f51d632b2f65d94847aa8ae648/e7570/image1.png 170w,
+/static/029e25f51d632b2f65d94847aa8ae648/f46e7/image1.png 340w,
+/static/029e25f51d632b2f65d94847aa8ae648/ca1dc/image1.png 680w,
+/static/029e25f51d632b2f65d94847aa8ae648/02d09/image1.png 1020w,
+/static/029e25f51d632b2f65d94847aa8ae648/9d567/image1.png 1360w,
+/static/029e25f51d632b2f65d94847aa8ae648/445c6/image1.png 1792w&apos; sizes=&apos;(max-width: 680px) 100vw, 680px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;서론&lt;/h2&gt;
+&lt;p&gt;현재 회사에서 MSA 형태의 백엔드 서비스를 운용중입니다. 다만 지금은 프론트에서 API Gateway 없이 각 마이크로서비스를 직접 호출하고 있습니다. &lt;/p&gt;
+&lt;p&gt;엔드포인트 통합 작업을 위해 인프라를 고민중입니다. 유지보수가 편해야 하며, 작업공수가 가장 적게 들어가는 방법을 선택하려고 합니다. &lt;/p&gt;
+&lt;p&gt;또한 비용의 추가는 가능한 한 줄이려고 합니다. &lt;/p&gt;
+&lt;h2&gt;AWS API Gateway&lt;/h2&gt;
+&lt;h3&gt;소개&lt;/h3&gt;
+&lt;p&gt;AWS API Gateway는 RESTful API, WebSocket API 및 HTTP API를 생성, 배포 및 관리할 수 있도록 지원하는 완전 관리형 서비스입니다.&lt;/p&gt;
+&lt;h4&gt;API 라우팅 및 관리&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트 요청을 AWS Lambda, EC2, ECS, EKS, DynamoDB, 다른 API 등으로 라우팅&lt;/li&gt;
+&lt;li&gt;요청 검증, 요청 변환, 응답 변환 등의 기능 제공.&lt;/li&gt;
+&lt;li&gt;REST API, HTTP API, WebSocket API 지원.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;보안 및 인증&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS IAM, Cognito, Lambda Authorizer를 통한 인증 및 권한 관리 가능.&lt;/li&gt;
+&lt;li&gt;JWT, OAuth 2.0 지원.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;트래픽 관리 및 스케일링&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;자동 스케일링 지원 (트래픽 증가 시 자동 확장).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;로깅 및 모니터링&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS CloudWatch, AWS X-Ray, OpenTelemetry 등을 활용한 API 성능 모니터링 가능.&lt;/li&gt;
+&lt;li&gt;API 호출량, 응답 시간, 오류율 분석 가능.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;비용&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/ko/api-gateway/pricing/&quot;&gt;https://aws.amazon.com/ko/api-gateway/pricing/&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;비용 비교 (아시아 태평양 리전 기준)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;REST API&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;백만 건당 $3.50&lt;/li&gt;
+&lt;li&gt;캐싱(0.5GB 기준) 사용 시 월 $14.40 추가 비용 발생&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HTTP API&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;백만 건당 $1.23 (REST API 대비 65% 저렴)&lt;/li&gt;
+&lt;li&gt;캐싱 미지원 (CloudFront 활용 필요)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;REST API와 HTTP API&lt;/h4&gt;
+&lt;p&gt;HTTP API는 저렴하지만 (백만 건당 $1) 캐싱 기능을 지원하지 않고 VPC 연결이 불가능합니다. 또 JWT 기반 인증이 가능하지만 Cognito, Lambda Authorizer를 활용한 고급 인증기능은 불가능합니다. &lt;/p&gt;
+&lt;p&gt;VPC 연결이 불가능하다는 점이 치명적으로, 보안을 위해 이상적인 아키텍쳐는 AWS API Gateway만 Public으로 유지한 채 다른 마이크로 서비스는 private 으로 설정하는 것인데, 이렇게 아키텍쳐를 꾸밀 경우 AWS PrivateLink 또는 VPC 링크를 지원하지 않는 HTTP API로는 대응이 불가능합니다. &lt;/p&gt;
+&lt;p&gt;REST API는 VPC 링크(VPC Link)를 지원하므로, Private 네트워크 내의 ECS/EKS/EC2와 연결할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;그럼에도 현재 아키텍쳐를 변경할 계획이 없어 Private 네트워크 접근이 필요 없거나, 인증 서버를 따로 구현해 단순히 API Gateway에서는 JWT 인증만 필요한 경우에는 훨씬 저렴한 HTTP API를 이용하는 것도 좋은 선택이 될 수 있습니다. &lt;/p&gt;
+&lt;p&gt;다만 HTTP API에서 REST API로 변환하는 것은 자동 변환 기능이 없어 번거로운 작업이 될 수 있습니다. &lt;/p&gt;
+&lt;h4&gt;REST API vs HTTP API 선택 기준 정리&lt;/h4&gt;
+&lt;p&gt;✅ REST API를 선택해야 하는 경우&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Private 네트워크(VPC)에 배포된 ECS/EKS/EC2와 연결해야 한다면&lt;/li&gt;
+&lt;li&gt;Cognito, Lambda Authorizer 등 고급 인증 기능이 필요하다면&lt;/li&gt;
+&lt;li&gt;API Gateway의 캐싱 기능을 사용해야 한다면&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;✅ HTTP API를 선택할 수 있는 경우&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;기존 아키텍처를 변경할 계획이 없고, Private 네트워크 접근이 필요 없다면&lt;/li&gt;
+&lt;li&gt;JWT 기반 인증만 필요하고, Cognito 등 추가 인증이 필요 없다면&lt;/li&gt;
+&lt;li&gt;비용을 최대한 절감해야 한다면 (REST API 대비 65% 저렴)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;❗ 주의: HTTP API에서 REST API로 변경하는 자동 변환 기능이 없으므로, 추후 변경이 필요할 경우 번거로운 작업이 될 수 있음.&lt;/p&gt;
+&lt;h3&gt;Response 응답 꼴의 가공&lt;/h3&gt;
+&lt;p&gt;REST API에서 제공하는 Mapping Templates 기능을 사용하지 않으면 백엔드에서 내보내는 응답 꼴 그대로 리턴합니다. &lt;/p&gt;
+&lt;p&gt;✔ HTTP API 사용 시 → 추가 설정 없이 기존 요청/응답 그대로 전달됨
+✔ REST API 사용 시 → Mapping Templates 사용 금지
+✔ API Gateway 오류 응답을 기존 백엔드 응답과 동일하게 설정&lt;/p&gt;
+&lt;p&gt;이 조건을 만족하면 프론트에서 엔드포인트만 바꾸면 문제없이 작동합니다. &lt;/p&gt;
+&lt;h4&gt;Mapping Templates&lt;/h4&gt;
+&lt;p&gt;Mapping Templates은 API Gateway에서 요청과 응답을 변환하는 기능으로, REST API에서만 지원하며, HTTP API에서는 사용할 수 없습니다. 기존 API의 응답 구조를 변경하지 않고 통일된 형식으로 응답을 제공할 수 있는 고급 기능으로, 현재 저희 상황에서는 오히려 필요하지 않은 기능입니다. &lt;/p&gt;
+&lt;h3&gt;Swagger&lt;/h3&gt;
+&lt;p&gt;API Gateway의 OpenAPI Export 기능을 사용하면 Swagger 적용이 가능합니다. API Gateway에서 OpenAPI 3.0 형식으로 API 명세를 내보낼 수 있으며, 이를 Swagger UI에서 그대로 활용할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;AWS S3 + CloudFront를 이용하여 Swagger UI를 정적 웹사이트로 배포할 수 있습니다. API Gateway 수정 이벤트를 감지해 CI/CD 파이프라인을 활용하면 API 변경 시 자동으로 Swagger 문서를 업데이트할 수 있습니다.&lt;/p&gt;
+&lt;h3&gt;로깅&lt;/h3&gt;
+&lt;p&gt;Elastic APM 적용은 쉽지 않습니다. Elastic APM 에이전트를 API Gateway 자체에 직접 설치하는 것은 불가능하므로, 만약 적용을 하려면 Lambda, OpenTelemetry, X-Amzn-Trace-Id 등을 활용해 우회적으로 API Gateway 트레이싱이 가능하긴 합니다. &lt;/p&gt;
+&lt;p&gt;다만 API Gateway는 기본적으로 요청을 Lambda, ECS, EC2 등으로 라우팅하는 역할만 하며, 애플리케이션 로직을 처리하지 않고 성능 병목이나 오류는 보통 API Gateway 이후의 서비스에서 발생하기 때문에 APM을 적용할 필요성이 낮습니다.&lt;/p&gt;
+&lt;p&gt;그럼에도 API Gateway의 로그는 활용성이 높을 수 있지만 CloudWatch를 활용하면 API Gateway 호출량 및 응답 시간 분석이 가능하기 때문에 결국 API Gateway에 직접 APM을 적용할 필요는 거의 없다고 생각됩니다. &lt;/p&gt;
+&lt;h3&gt;구현 및 배포&lt;/h3&gt;
+&lt;p&gt;terraform 또는 AWS CloudFormation을 사용하면 API Gateway 설정을 코드로 정의 가능하고, YAML 파일을 수정할 때에 CI/CD를 통해 자동으로 배포 가능합니다. &lt;/p&gt;
+&lt;p&gt;추후 api가 수정된다면 yaml 파일만 수정해서 푸시하면 자동 배포 되도록 CI/CD 구성이 가능합니다. &lt;/p&gt;
+&lt;h4&gt;예시 yaml&lt;/h4&gt;
+&lt;details&gt;
+&lt;summary&gt;예제&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;openapi&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;3.0.1&quot;&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;API Gateway&quot;&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.0&quot;&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;/api/users/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Create a new user&quot;&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;requestBody&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+              &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+                &lt;span class=&quot;token key atrule&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;responses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;User created successfully&quot;&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+                &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; boolean
+                  &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;x-amazon-apigateway-integration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http_proxy&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;httpMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/users/&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;passthroughBehavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;when_no_match&quot;&lt;/span&gt;
+
+  /api/users/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;user_id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Update user information&quot;&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; user_id
+          &lt;span class=&quot;token key atrule&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; path
+          &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; integer
+      &lt;span class=&quot;token key atrule&quot;&gt;requestBody&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+              &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+                &lt;span class=&quot;token key atrule&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;responses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;User updated successfully&quot;&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+                &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; boolean
+                  &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;x-amazon-apigateway-integration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http_proxy&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;httpMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PUT&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/users/{user_id}/&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;passthroughBehavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;when_no_match&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;token key atrule&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Delete user&quot;&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; user_id
+          &lt;span class=&quot;token key atrule&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; path
+          &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; integer
+      &lt;span class=&quot;token key atrule&quot;&gt;responses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;User deleted successfully&quot;&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+                &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; boolean
+                  &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;x-amazon-apigateway-integration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http_proxy&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;httpMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DELETE&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/users/{user_id}/&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;passthroughBehavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;when_no_match&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;token key atrule&quot;&gt;/api/orders/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Create a new order&quot;&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;requestBody&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+              &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;user_id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; integer
+                &lt;span class=&quot;token key atrule&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+                &lt;span class=&quot;token key atrule&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; number
+      &lt;span class=&quot;token key atrule&quot;&gt;responses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Order created successfully&quot;&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+                &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; boolean
+                  &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;x-amazon-apigateway-integration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http_proxy&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;httpMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/orders/&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;passthroughBehavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;when_no_match&quot;&lt;/span&gt;
+
+  /api/orders/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;order_id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Update order information&quot;&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; order_id
+          &lt;span class=&quot;token key atrule&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; path
+          &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; integer
+      &lt;span class=&quot;token key atrule&quot;&gt;requestBody&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+              &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;product&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+                &lt;span class=&quot;token key atrule&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; number
+      &lt;span class=&quot;token key atrule&quot;&gt;responses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Order updated successfully&quot;&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+                &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; boolean
+                  &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;x-amazon-apigateway-integration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http_proxy&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;httpMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;PUT&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/orders/{order_id}/&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;passthroughBehavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;when_no_match&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;token key atrule&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;summary&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Delete order&quot;&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; order_id
+          &lt;span class=&quot;token key atrule&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; path
+          &lt;span class=&quot;token key atrule&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; integer
+      &lt;span class=&quot;token key atrule&quot;&gt;responses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Order deleted successfully&quot;&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token key atrule&quot;&gt;application/json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;token key atrule&quot;&gt;schema&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; object
+                &lt;span class=&quot;token key atrule&quot;&gt;properties&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                  &lt;span class=&quot;token key atrule&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; boolean
+                  &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; string
+      &lt;span class=&quot;token key atrule&quot;&gt;x-amazon-apigateway-integration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;http_proxy&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;httpMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;DELETE&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;uri&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/orders/{order_id}/&quot;&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;passthroughBehavior&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;when_no_match&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;h3&gt;AWS CDK(파이썬)를 사용한  API Gateway 관리&lt;/h3&gt;
+&lt;p&gt;AWS CDK는 인프라(AWS 리소스)를 코드로 정의하고 배포할 수 있는 Infrastructure as Code(IaC) 도구입니다. AWS 리소스를 YAML/JSON 같은 설정 파일이 아니라, Python, TypeScript, Java 등 프로그래밍 언어로 정의 가능하게 해줍니다. AWS CloudFormation을 기반으로 동작하며, 코드만 작성하면 자동으로 AWS 리소스를 생성하고 관리가 가능합니다. &lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;REST API 생성 예시 코드 (요청 모델, 응답 모델 포함)&lt;/summary&gt;
+&lt;p&gt;이 예시 코드는 문서화를 위해 요청/응답 모델을 완벽하게 포함한 것입니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; aws_cdk &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; core
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; aws_cdk&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;aws_apigateway &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; apigateway
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ApiGatewayStack&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Stack&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; scope&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Construct&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token builtin&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__init__&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scope&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# API Gateway 생성&lt;/span&gt;
+        api &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;RestApi&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MyApi&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            rest_api_name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;My API&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            description&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;API Gateway with Request &amp;amp; Response Models&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# 요청 모델 (Request Model)&lt;/span&gt;
+        user_request_model &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_model&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;UserRequestModel&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            content_type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            schema&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                schema&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaVersion&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DRAFT4&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                title&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;UserRequest&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;OBJECT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                properties&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;STRING&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token string&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;STRING&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                required&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# 응답 모델 (Response Model)&lt;/span&gt;
+        user_response_model &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_model&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;UserResponseModel&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            content_type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            schema&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                schema&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaVersion&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DRAFT4&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                title&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;UserResponse&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;OBJECT&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                properties&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token string&quot;&gt;&quot;success&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;BOOLEAN&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token string&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchema&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;JsonSchemaType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;STRING&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# 요청 검증기 (Request Validator)&lt;/span&gt;
+        request_validator &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_request_validator&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;RequestValidator&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            validate_request_body&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            validate_request_parameters&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# Users 리소스 생성&lt;/span&gt;
+        users_resource &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;root&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_resource&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;api&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_resource&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;users&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# POST 요청 (Create User) + 요청/응답 스키마 추가&lt;/span&gt;
+        users_resource&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_method&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Integration&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;IntegrationType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HTTP_PROXY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                integration_http_method&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                uri&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/users/&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            request_validator&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;request_validator&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 요청 검증기 추가&lt;/span&gt;
+            request_models&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; user_request_model&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;# 요청 모델 추가&lt;/span&gt;
+            method_responses&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;MethodResponse&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                    status_code&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    response_models&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; user_response_model&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# API Gateway 엔드포인트 출력&lt;/span&gt;
+        core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;CfnOutput&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ApiEndpoint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;REST API 생성 예시 코드 (모델 정의 제외하고 단순화)&lt;/summary&gt;
+&lt;p&gt;요청 모델, 응답 모델을 문서화를 위해 명확히 정의하면 유지보수 부담이 커질 수 있습니다. 아래처럼 정의하면 문서화를 조금 포기하고 대신 효율적인 유지보수가 가능합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; aws_cdk &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; core
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; aws_cdk&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;aws_apigateway &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; apigateway
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ApiGatewayStack&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Stack&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; scope&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Construct&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token builtin&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__init__&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scope&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# API Gateway 생성 (간단한 설정)&lt;/span&gt;
+        api &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;RestApi&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MyApi&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            rest_api_name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Simple API&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            description&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Minimal API Gateway Configuration&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# ======================&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# Users API&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# ======================&lt;/span&gt;
+        users_resource &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;root&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_resource&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;api&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_resource&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;users&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# /api/users/ - POST (Create User)&lt;/span&gt;
+        users_resource&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_method&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Integration&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;IntegrationType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HTTP_PROXY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                integration_http_method&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                uri&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/users/&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# ======================&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# Orders API &lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;# ======================&lt;/span&gt;
+        orders_resource &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;root&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_resource&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;api&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_resource&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;orders&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# /api/orders/ - POST (Create Order)&lt;/span&gt;
+        orders_resource&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_method&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Integration&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;token builtin&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;apigateway&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;IntegrationType&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HTTP_PROXY&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                integration_http_method&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;POST&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                uri&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/orders/&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# API Gateway 엔드포인트 출력&lt;/span&gt;
+        core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;CfnOutput&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ApiEndpoint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;외부에 제공해야 하는 api의 경우라면 요청 모델, 응답 모델까지 명확하게 정의해야 합니다. 그런 경우가 아니라면 선택의 여지가 있습니다. &lt;/p&gt;
+&lt;p&gt;현재 예시 코드는 REST API 배포를 위한 것으로 HTTP API의 경우에는 코드가 달라집니다. &lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;HTTP API 생성 예시 코드&lt;/summary&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; aws_cdk&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;aws_apigatewayv2 &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; apigatewayv2
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; aws_cdk&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;aws_apigatewayv2_integrations &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; integrations
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ApiGatewayStack&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Stack&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; scope&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; core&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Construct&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token builtin&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__init__&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scope&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;kwargs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# HTTP API 생성&lt;/span&gt;
+        api &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; apigatewayv2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HttpApi&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;MyHttpApi&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; api_name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Simple HTTP API&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;token comment&quot;&gt;# Users 엔드포인트 추가&lt;/span&gt;
+        api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;add_routes&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            path&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/api/users&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            methods&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;apigatewayv2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HttpMethod&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;POST&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            integration&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;integrations&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;HttpUrlIntegration&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;token string&quot;&gt;&quot;UsersService&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                integration_url&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://api.example.com/users/&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;h4&gt;AWS CDK의 배포&lt;/h4&gt;
+&lt;p&gt;AWS CLI를 활용해 수동으로 배포할 수 있습니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;cdk deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;를 사용해 배포합니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;cdk synth&lt;/code&gt; 명령어를 사용해 CloudFormation 템플릿을 미리 확인할 수 있습니다. &lt;/p&gt;
+&lt;h4&gt;예상되는 어려움&lt;/h4&gt;
+&lt;p&gt;위의 예시 코드를 래핑을 해서 최대한 유지보수가 쉽게 코드는 작성하겠지만, 결국 각 마이크로 서비스를 수정한 이후에 이 프로젝트를 수정하는 별도의 작업을 추가로 해줘야 합니다. &lt;/p&gt;
+&lt;h3&gt;Django DRF + &lt;code class=&quot;language-text&quot;&gt;drf-spectacular&lt;/code&gt; + CI/CD를 활용한 API Gateway 관리&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;drf-spectacular&lt;/code&gt;는 Django DRF에서 OpenAPI 3.0 문서를 자동 생성해주는 라이브러리입니다. Swagger UI, Redoc, Postman 등에서 활용할 수 있는 API 문서를 제공하는데, 이 OpenAPI YAML 파일을 AWS API Gateway가 OpenAPI Import 기능을 지원하기 때문에 활용할 수 있습니다. &lt;/p&gt;
+&lt;h4&gt;S3를 활용한 OpenAPI 문서의 관리&lt;/h4&gt;
+&lt;p&gt;각 마이크로서비스에서 &lt;code class=&quot;language-text&quot;&gt;drf-spectacular&lt;/code&gt; 를 사용해 YAML 파일을 생성합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;python service1/manage.py spectacular &lt;span class=&quot;token parameter variable&quot;&gt;--file&lt;/span&gt; service1_openapi.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;예를 들어 service1에서 api의 수정/삭제 등등이 일어나면 service1_openapi.yaml을 생성합니다. &lt;/p&gt;
+&lt;p&gt;S3 버킷(&lt;code class=&quot;language-text&quot;&gt;my-api-docs&lt;/code&gt;)에 각 서비스의 OpenAPI 문서를 저장합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;aws s3 &lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; service1_openapi.yaml s3://my-api-docs/service1_openapi.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;각 마이크로서비스의 문서를 병합해 최종 문서를 완성합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;openapi-merge-cli &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; s3://my-api-docs/service1_openapi.yaml s3://my-api-docs/service2_openapi.yaml &lt;span class=&quot;token parameter variable&quot;&gt;-o&lt;/span&gt; merged_openapi.yaml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;병합된 문서로 API Gateway를 업데이트 합니다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;aws apigateway import-rest-api &lt;span class=&quot;token parameter variable&quot;&gt;--body&lt;/span&gt; file://merged_openapi.yaml --rest-api-id &lt;span class=&quot;token variable&quot;&gt;${{ secrets.API_GATEWAY_ID }&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;예상되는 어려움&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;문서 병합의 까다로움&lt;/p&gt;
+&lt;p&gt;엔드포인트가 같을 경우 병합에서 반드시 문제가 발생하여 특별히 신경써야 합니다. 또 각 API의 인증 방법이 다를 경우 해당 방법은 적용이 불가능하며, 이 외에도 응답 스키마, 공통 컴포넌트 등에서도 병합시 문제가 발생할 가능성이 있습니다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;각 서비스에서 추가 작업이 필요할 수 있음&lt;/p&gt;
+&lt;p&gt;혹시 swagger 생성을 위한 밑작업이 잘 안되어있다면 해당 작업을 위해 추가 작업이 필요할 수 있습니다. 또 엔드포인트가 현재 것을 유지하면서 추가 또는 수정 되는 것이 아니라 AWS API Gateway로 결국 엔드포인트가 변경이 되는 것으로 이로 인한 추가 공수가 다시 발생할 수 있습니다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위의 문제로 인해 실제 작업시에는 AWS CDK를 사용하는 것보다 예상하지 못한 문제가 발생할 가능성이 커보입니다. &lt;/p&gt;
+&lt;h2&gt;AWS API Gateway 구현 및 배포 결론&lt;/h2&gt;
+&lt;p&gt;마이크로 서비스 수정 후 추가적으로 코드 작업이 필요하다는 단점이 있지만, 그럼에도 불구하고 &lt;code class=&quot;language-text&quot;&gt;drf-spectacular&lt;/code&gt;을 활용한 OpenAPI 병합 방식은 가능하지만, 유지보수성과 API 변경 관리를 고려할 때 AWS CDK가 더 적합한 선택이라고 생각합니다. &lt;/p&gt;
+&lt;h2&gt;직접 구현과의 비교&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;비교 항목&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;직접 구현 (Django + DRF)&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;AWS API Gateway&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;트래픽 처리&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;uWSGI/Gunicorn 조정 필요&lt;/td&gt;
+&lt;td&gt;자동 확장(Auto Scaling)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;성능 최적화&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Keep-Alive, Connection Pooling 직접 설정 필요&lt;/td&gt;
+&lt;td&gt;AWS에서 자동 최적화&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;로깅 &amp;#x26; 모니터링&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Elastic APM 활용&lt;/td&gt;
+&lt;td&gt;CloudWatch, X-Ray&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Kong API Gateway과의 비교&lt;/h2&gt;
+&lt;h3&gt;Kong API Gateway 소개&lt;/h3&gt;
+&lt;p&gt;Kong은 오픈소스로 제공되는 고성능 API Gateway 및 마이크로서비스 관리 플랫폼입니다. 분산된 API 트래픽을 제어하고, 로드 밸런싱, 인증, 모니터링, 캐싱 등의 기능을 제공합니다.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Kong을 사용하면 좋은 경우&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;온프레미스 환경에서 API Gateway가 필요할 때&lt;/li&gt;
+&lt;li&gt;AWS 이외의 멀티 클라우드 환경을 고려할 때&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[GraphQL과 Django]]></title><description><![CDATA[GraphQL의 특징 클라이언트 주도형 데이터 요청 REST API는 백엔드가 정해준 엔드포인트를 그대로 사용해야 하지만, GraphQL은 클라이언트가 원하는 데이터만 요청할 수 있습니다.  REST API…]]></description><link>https://sharknia.github.io/GraphQL과-Django/</link><guid isPermaLink="false">https://sharknia.github.io/GraphQL과-Django/</guid><pubDate>Mon, 20 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/cd12a1c17378c61251b7eea7205e379a/445c6/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACqklEQVR42gGfAmD9ADcMETgcIzcoLzcxOTg8Qz1LT1FnaG+Hg4Sak4idkoqfk4Sbk3GHg0xfYD9LTzo+QzkzOTkoLzYcJDcOFAA5EBQ+KjA4LDQ1Mzs3PkVDU1hKZm94l5i3xrV6lJJykJG3x7aJnJRKYWtATFFBSk5BQEU2KDA3HyY2ERcANxIYPTE3SEFEOjtCOEVMXW9ycY2Sgqeqrci/l7Ovory2ob2zb4qKZYCGP1JbU2NkS01QNCcvNyEoNRMYADkZIEg6QEdMU0NSWUleZnCEg4yhm36kpluOnpO3uK7V0lCElmF8gXmSkUhjbmF5fU1WWjowNzYeJjYSGQA8HiNKQERSX2lYb3Rof4NdeX56kZBaipcvdZN0rrxZobZRgJKquqyUp59wjpR3kJFZZ2pMT1Y9N0A2ExkAORwiRT1DUGJraImQbo+WcpWbkqedlrGsTJu0ZcHVO5+9hrW7Wnh9jZaJqbWlbomNVm53SFNcTUlQPSAmADggKUVLV1l0f22MkoeprHukqERndmeBhajT0a7s8qrf4HylqzBJXlRiZH2SjXaUm2GAjFBkcz85RTgZIABAMjpbb3lyjJB9j4uVraZQeYc6WW5khpF3oqmZxstrprU7X3JRZ3FJY3FjhI6Kq66Eo6dpgotWW2NCIyoAUkRGYmlsUGJtP1FeSlpiWG10WXF6jKWmaJGcX5KjVIGVOk5eV2BnR1BbPE9eU2dyaHyBdYKAgYeDWklKAFBGS15RUUZHUUtHTmJyeGmSnnSEhGN5gE92iF+WrXaltF93fEtRVWFdV2BpaU1faklYZk9FSmxzdWZtcAA9SFxHJCQ9JSxROz1lY2VLdIlcZGZBU1s7aoJnnrZxm6ScrJxzem5kaWBqamBMYGo/VGo7HSRBLjRmanDhkwzuelVbHwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/cd12a1c17378c61251b7eea7205e379a/ca1dc/image1.png&apos; srcset=&apos;/static/cd12a1c17378c61251b7eea7205e379a/e7570/image1.png 170w,
