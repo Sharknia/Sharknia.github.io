@@ -1,13 +1,15 @@
 ---
 IDX: "NUM-237"
 tags:
-  - 
+  - BackEnd
+  - DevOps
 description: "Elastic APM"
-update: "2025-01-23T09:17:00.000Z"
+update: "2025-01-23T23:58:00.000Z"
 date: "2025-01-23"
 상태: "Ready"
 title: "Elastic APM"
 ---
+![](image1.png)
 ## Elastic APM
 
 Elastic APM (Application Performance Monitoring)은 Elastic Stack(ELK 스택)의 일부로, 애플리케이션의 성능을 모니터링하고 성능 병목 현상과 오류를 추적하는 도구입니다. 주로 백엔드 서비스, 데이터베이스 쿼리, HTTP 요청, 비동기 작업 등의 성능을 분석하는 데 사용됩니다.
