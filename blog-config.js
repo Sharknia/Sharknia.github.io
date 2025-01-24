@@ -1,6 +1,6 @@
 module.exports = {
   title: "SharkniA",
-  description: "만 4살 백엔드 개발자",
+  description: "만 6살 백엔드 개발자",
   author: "SharkniA",
   siteUrl: "https://sharknia.github.io/",
   links: {
