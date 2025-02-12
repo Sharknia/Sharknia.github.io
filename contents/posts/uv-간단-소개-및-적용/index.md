@@ -4,7 +4,7 @@ tags:
   - Python
   - BackEnd
 description: "uv 간단 소개 및 적용"
-update: "2025-02-12T06:17:00.000Z"
+update: "2025-02-12T07:12:00.000Z"
 date: "2025-02-10"
 상태: "Ready"
 title: "uv 간단 소개 및 적용"
@@ -148,6 +148,4 @@ uv pip sync --system requirements.txt
 [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)
 
 
-
- 및 적용
 
