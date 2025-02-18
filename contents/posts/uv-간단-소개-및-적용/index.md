@@ -4,7 +4,7 @@ tags:
   - Python
   - BackEnd
 description: "uv 간단 소개 및 적용"
-update: "2025-02-12T07:12:00.000Z"
+update: "2025-02-18T07:44:00.000Z"
 date: "2025-02-10"
 상태: "Ready"
 title: "uv 간단 소개 및 적용"
@@ -142,6 +142,18 @@ uv export -o requirements-dev.txt
 ```bash
 uv pip sync --system requirements.txt
 ```
+
+## (2025-02-18) 추가
+
+uv sync를 활용하면 바로 알맞은 가상환경이 설치되고, uv pip list를 통해 가상환경에 설치된 라이브러리를 살펴볼수도 있지만 정작 터미널에서 직접 가상환경을 활성화 해 pip list를 날리면 전역의 pip list만 보여집니다. 
+
+이는 uv를 통해 설치되는 가상환경에 pip가 설치되지 않아 발생하는 문제로, 가상환경을 실행한 뒤 다음의 명령어로 pip를 강제 설치해줍니다. 
+
+```bash
+python -m ensurepip
+```
+
+이 뒤에 가상환경을 재실행 하고 pip list를 날리면 가상환경에 설치된 pip 라이브러리 리스트를 확인할 수 있습니다. 
 
 ## 참조
 
