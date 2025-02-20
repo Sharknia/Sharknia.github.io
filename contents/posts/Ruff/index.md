@@ -3,7 +3,7 @@ IDX: "NUM-246"
 tags:
   - Python
 description: "Ruff에 대해 알아보고 사용해보자"
-update: "2025-02-20T03:10:00.000Z"
+update: "2025-02-20T05:34:00.000Z"
 date: "2025-02-20"
 상태: "Ready"
 title: "Ruff"
@@ -11,7 +11,7 @@ title: "Ruff"
 ![](image1.png)
 ## 서론
 
-uv를 조사하고 알고 하다가 Ruff의 존재도 알게 되었습니다.
+[uv](https://sharknia.github.io/uv-간단-소개-및-적용)를 조사하고 알고 하다가 Ruff의 존재도 알게 되었습니다.
 
 현재 회사의 팀에서는 나머지 백엔드 개발자는 파이참을 주력으로, 저는 Cursor를 사용하고 있고 포맷팅이나 린팅에 대한 팀의 컨벤션 통일이 안되어있어 Ruff를 제안하면 좋겠다고 생각이 들어 알아보게 됐습니다. 
 
@@ -123,6 +123,16 @@ PyCharm의 File Watcher 기능을 활용하면, 파일이 저장될 때마다 �
 1. Output Paths: 빈 칸으로 두거나, 필요에 따라 지정합니다.
 
 이렇게 설정하면, 파일 저장 시 자동으로 Ruff가 실행되어 코드 컨벤션 위반 사항을 즉시 수정할 수 있습니다.
+
+## Ruff의 기본 설정 파일 위치 
+
+macOS와 Linux에서 Ruff는 설정 파일을 `~/.config/ruff/ruff.toml` 경로에서 찾으며, 이는 XDG\_CONFIG\_HOME 사양을 따릅니다. XDG\_CONFIG\_HOME 환경 변수가 설정되어 있지 않더라도, ruff는 기본적으로 ~/.config/ruff/ruff.toml 경로에서 전역 설정 파일을 찾습니다. 이는 XDG Base Directory 사양에 따라, XDG\_CONFIG\_HOME이 설정되지 않은 경우 기본값으로 $HOME/.config를 사용하기 때문입니다. 
+
+따라서, XDG\_CONFIG\_HOME을 별도로 설정하지 않아도 ruff는 ~/.config/ruff/ruff.toml 파일을 자동으로 인식합니다.
+
+Windows에서는 ~\AppData\Roaming\ruff\ruff.toml 경로를 사용합니다. 
+
+프로젝트별 설정 파일이 없을 경우, Ruff는 최후의 수단으로 이 사용자별 설정 파일을 참조합니다.
 
 ## **팀 단위 코드 컨벤션 통일**
 
