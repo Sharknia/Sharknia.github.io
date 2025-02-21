@@ -4,7 +4,7 @@ tags:
   - Python
   - BackEnd
 description: "poetry를 활용해 안정적으로 package 업데이트하기"
-update: "2025-02-20T02:14:00.000Z"
+update: "2025-02-21T05:27:00.000Z"
 date: "2025-02-18"
 상태: "Ready"
 title: "poetry를 활용해 안정적으로 package 업데이트하기"
@@ -27,7 +27,7 @@ uv init
 uv add -r requirements.txt
 ```
 
-위 명령어로 uv 초기화를 하고 `pyproject.toml` 생성이 가능합니다. 
+위 명령어로 uv 초기화를 하고 `pyproject.toml` 생성이 가능합니다. 가상 환경 생성을 위해서라도 오류가 나더라도 반드시 `uv add -r requirements.txt`까지 실행해야 합니다. 
 
 ### 레거시 프로젝트의 `pyproject.toml` 생성이 안되는 경우
 
@@ -44,7 +44,7 @@ dependencies = [
 또는 아래의 명령어를 활용합니다. 
 
 ```bash
-sed 's/^\(.*\)$/"\1",/' requirements.txt > requirements_temp.txt
+sed 's/==/>=/g; s/^\(.*\)$/"\1",/' requirements.txt > requirements_temp.txt
 ```
 
 requirements\_temp.txt에 toml 파일에 적절한 꼴의 리스트가 완성되므로 해당 내용을 붙여넣어 줍니다. 
