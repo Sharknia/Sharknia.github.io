@@ -243,7 +243,7 @@ data-styled.g45[id="Footer__HiddenWrapper-sc-zqxmks-9"]{content:"yzdKT,ivqWaF,"}
 <p>이미 uv로 관리되고 있거나 생성된 프로젝트라면 당연히 <code class="language-text">pyproject.toml</code> 파일이 존재하겠지만, 그렇지 않은 경우라면 우선 <code class="language-text">pyproject.toml</code> 파일을 생성해줍니다. </p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">uv init
 uv <span class="token function">add</span> <span class="token parameter variable">-r</span> requirements.txt</code></pre></div>
-<p>위 명령어로 uv 초기화를 하고 <code class="language-text">pyproject.toml</code> 생성이 가능합니다. </p>
+<p>위 명령어로 uv 초기화를 하고 <code class="language-text">pyproject.toml</code> 생성이 가능합니다. 가상 환경 생성을 위해서라도 오류가 나더라도 반드시 <code class="language-text">uv add -r requirements.txt</code>까지 실행해야 합니다. </p>
 <h3>레거시 프로젝트의 <code class="language-text">pyproject.toml</code> 생성이 안되는 경우</h3>
 <p>너무 오래된 레거시로 apple silicon과의 호환성 문제등으로 uv add 명령어에서 오류가 발생해 설치가 되지 않는 경우, requirements.txt의 내용을 수기로 <code class="language-text">pyproject.toml</code> 에 붙여넣어서도 가능합니다. </p>
 <div class="gatsby-highlight" data-language="toml"><pre class="language-toml"><code class="language-toml"><span class="token key property">dependencies</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span>
@@ -251,7 +251,7 @@ uv <span class="token function">add</span> <span class="token parameter variable
 <span class="token punctuation">]</span></code></pre></div>
 <p>코파일럿이나 커서 등 ai의 도움을 받으면 조금 더 수월하게 작업할 수 있습니다.</p>
 <p>또는 아래의 명령어를 활용합니다. </p>
-<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sed</span> <span class="token string">'s/^\(.*\)$/"\1",/'</span> requirements.txt <span class="token operator">></span> requirements_temp.txt</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sed</span> <span class="token string">'s/==/>=/g; s/^\(.*\)$/"\1",/'</span> requirements.txt <span class="token operator">></span> requirements_temp.txt</code></pre></div>
 <p>requirements_temp.txt에 toml 파일에 적절한 꼴의 리스트가 완성되므로 해당 내용을 붙여넣어 줍니다. </p>
 <h3>업데이트 할 라이브러리 명시</h3>
 <p><code class="language-text">pyproject.toml</code> 에 작성된 라이브러리==버전은 uv나 poetry가 설치할 라이브러리의 버전을 의미합니다. 업데이트를 할 예정이므로,<code class="language-text">==</code> 를 <code class="language-text">>=</code>로 수정해줍니다. </p>

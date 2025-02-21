@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 6살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 20 Feb 2025 10:11:43 GMT</lastBuildDate><item><title><![CDATA[LDAP]]></title><description><![CDATA[서론 LDAP에 대해 알아보겠습니다. 개념적인 부분들에 대해 정리하고 넘어가려고 합니다.  디렉터리 서비스 LDAP은 디렉터리 서비스에 저장된 데이터를 검색하고 관리하기 위한 프로토콜입니다. LDAP…]]></description><link>https://sharknia.github.io/LDAP/</link><guid isPermaLink="false">https://sharknia.github.io/LDAP/</guid><pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of SharkniA]]></title><description><![CDATA[만 6살 백엔드 개발자]]></description><link>https://sharknia.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 21 Feb 2025 06:13:11 GMT</lastBuildDate><item><title><![CDATA[LDAP]]></title><description><![CDATA[서론 LDAP에 대해 알아보겠습니다. 개념적인 부분들에 대해 정리하고 넘어가려고 합니다.  디렉터리 서비스 LDAP은 디렉터리 서비스에 저장된 데이터를 검색하고 관리하기 위한 프로토콜입니다. LDAP…]]></description><link>https://sharknia.github.io/LDAP/</link><guid isPermaLink="false">https://sharknia.github.io/LDAP/</guid><pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: 16px;&apos;&gt;
       &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/237d9b85e6e519e6b311d0a9cb12225b/3643c/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
     &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 57.05882352941176%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsTAAALEwEAmpwYAAACkklEQVR42hWR21MScRiGF0FgEVSGVRSF3f3tgdMGiAcQwQARgQGEBYmDqwIShBgMiQdQS82asnGmgxd5UY1100UXddd03f/VdvF9V98zz/fOCwGM1OvNuGIIlSlwmRxMamnX/Zli2/vsY/L738zXP/7dE1t0jTBbMBWCI2oaBbh8kL/E4AEIaDEjjhH9YiCFcbmCAoQjkgg3DrLn1+UPdxvXt+unL7yFIslYaIImJ3R6jYaQSDAIwoRCCJvQ6lEUiCUYLCNH1FabfSHGpvd6uePL/NkVd/Y68bizWm96ItEp6xTNw9pJHJbqIAgViiCgHqd1KBgaBkoEjGocHl8wm0/uNOOtw3i7x+9QuRbhtpZWE45ZB0DUBq2OUiFgQIHDMkgn6EOhPj4G0AEUUPZAOFhupPePE72LyOlV8uJdsLKbanVWtnfuuf0ERvDfYWIpylOCPogfUiGncYyxW31b9VB1l+1eZE6eFy7fVO9+bn/5tXZ8ntzrxVod78P2fK7K2O2UapiQSHEepgYVzOzifGozmFlbbfXipTJbrxfPzguHvZ3bb+0fv9lmK9M5COWy4fVNf7GxwBZmXC7z5BgtgyHTxLjBGXLVXkWbzxZjif9weTNVKeWe7JWvbx68fJvdPwpzXHxrg63WAlnOVz6ciRUZChgRJWRUKc0AM1mmnf7AcmzZ7fWwXH7/5v1298gdWGY3uGK7VTrpsdWKwzHnXFqZDqbNtjnerOfNtFhsVA4xWvW0hfb4FvyRkD/g5hr1Qq1SbDeffvrMPSrlO91QJsVQOitjtBpJ85jKIJdRfM98blIkomDYjChNmhGLESwG3VYTiKai1W47GF1Jcmmna9ZiADarwTQ+ygspUT8pEJIC4T+mNKPmB1PtYwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
   &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/237d9b85e6e519e6b311d0a9cb12225b/ca1dc/image1.png&apos; srcset=&apos;/static/237d9b85e6e519e6b311d0a9cb12225b/e7570/image1.png 170w,
@@ -409,7 +409,7 @@ EOF&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이미 uv로 관리되고 있거나 생성된 프로젝트라면 당연히 &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 파일이 존재하겠지만, 그렇지 않은 경우라면 우선 &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 파일을 생성해줍니다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;uv init
 uv &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-r&lt;/span&gt; requirements.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;위 명령어로 uv 초기화를 하고 &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 생성이 가능합니다. &lt;/p&gt;
+&lt;p&gt;위 명령어로 uv 초기화를 하고 &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 생성이 가능합니다. 가상 환경 생성을 위해서라도 오류가 나더라도 반드시 &lt;code class=&quot;language-text&quot;&gt;uv add -r requirements.txt&lt;/code&gt;까지 실행해야 합니다. &lt;/p&gt;
 &lt;h3&gt;레거시 프로젝트의 &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 생성이 안되는 경우&lt;/h3&gt;
 &lt;p&gt;너무 오래된 레거시로 apple silicon과의 호환성 문제등으로 uv add 명령어에서 오류가 발생해 설치가 되지 않는 경우, requirements.txt의 내용을 수기로 &lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 에 붙여넣어서도 가능합니다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;toml&quot;&gt;&lt;pre class=&quot;language-toml&quot;&gt;&lt;code class=&quot;language-toml&quot;&gt;&lt;span class=&quot;token key property&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
@@ -417,7 +417,7 @@ uv &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=
 &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;코파일럿이나 커서 등 ai의 도움을 받으면 조금 더 수월하게 작업할 수 있습니다.&lt;/p&gt;
 &lt;p&gt;또는 아래의 명령어를 활용합니다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;s/^\(.*\)$/&quot;\1&quot;,/&apos;&lt;/span&gt; requirements.txt &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; requirements_temp.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;s/==/&gt;=/g; s/^\(.*\)$/&quot;\1&quot;,/&apos;&lt;/span&gt; requirements.txt &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; requirements_temp.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;requirements_temp.txt에 toml 파일에 적절한 꼴의 리스트가 완성되므로 해당 내용을 붙여넣어 줍니다. &lt;/p&gt;
 &lt;h3&gt;업데이트 할 라이브러리 명시&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;pyproject.toml&lt;/code&gt; 에 작성된 라이브러리==버전은 uv나 poetry가 설치할 라이브러리의 버전을 의미합니다. 업데이트를 할 예정이므로,&lt;code class=&quot;language-text&quot;&gt;==&lt;/code&gt; 를 &lt;code class=&quot;language-text&quot;&gt;&gt;=&lt;/code&gt;로 수정해줍니다. &lt;/p&gt;
@@ -9720,43 +9720,7 @@ describe&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span c
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/details&gt;
 &lt;p&gt;테스트코드를 작성하면서 느낀점은, 역시 테스트코드는 사전에 짜는게 의미가 있는 것 같습니다. 또 역시 문법이 상당히 어색합니다. 추가적인 노력이 많이 필요하다고 느끼고, 가능하면 다음에는 프로젝트 처음부터 테스트 코드를 먼저 짜보려고 합니다. &lt;/p&gt;
-&lt;p&gt;오히려 좀 더 필요성을 느끼게 되었습니다. 살짝 고생했지만 좋은 시간이었습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Action Output]]></title><description><![CDATA[목적 깃허브 액션에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job…]]></description><link>https://sharknia.github.io/Github-Action-Output/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Action-Output/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;목적&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/Github-Actions&quot;&gt;깃허브 액션&lt;/a&gt;에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job끼리 변수를 공유해야 하는 상황이 있을 수 있습니다. &lt;/p&gt;
-&lt;p&gt;이때 사용하는 것이 Output 입니다. &lt;/p&gt;
-&lt;h2&gt;선언하기&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;token key atrule&quot;&gt;job1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
-    &lt;span class=&quot;token key atrule&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 다른 job에서 사용하기 위해 선언&lt;/span&gt;
-      &lt;span class=&quot;token key atrule&quot;&gt;output1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps.step1.outputs.test &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;token key atrule&quot;&gt;output2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps.step2.outputs.test &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; step1 &lt;span class=&quot;token comment&quot;&gt;# 해당 output을 특정하기 위한 id 선언&lt;/span&gt;
-        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;test=hello&quot; &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; &quot;$GITHUB_OUTPUT&quot;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; step2
-        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;test=world&quot; &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; &quot;$GITHUB_OUTPUT&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;기본적인 선언 방법은 &lt;code class=&quot;language-text&quot;&gt;echo &quot;변수=값&quot; &gt;&gt; &quot;$GITHUB_OUTPUT”&lt;/code&gt; 의 꼴입니다. 예전에는 set_output을 사용했던 것 같은데, 이 방법도 지금 작동은 제대로 하지만 해당 코드로 실행을 해보면 보안상의 문제로 곧 depacreted 될 거라는 warning이 발생합니다. &lt;/p&gt;
-&lt;p&gt;반드시 id를 지정해줘야 합니다. 해당 id를 사용해 나중에 원하는 변수를 참조할 수 있습니다. &lt;/p&gt;
-&lt;p&gt;output은 동일한 job이 아니라 job2에서 사용을 하고 싶을 경우에 선언해야 합니다. &lt;/p&gt;
-&lt;h2&gt;사용하기 - 동일한 job&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; use output same job
-        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
-          echo ${{ steps.step1.outputs.test}}
-          echo ${{ steps.step2.outputs.test}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;같은 job 안에서 사용할때에는 &lt;code class=&quot;language-text&quot;&gt;${{ steps.”id”.outputs.”변수명”}}&lt;/code&gt; 의 꼴로 사용하면 됩니다. &lt;/p&gt;
-&lt;h2&gt;사용하기 - 다른 job&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;job2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
-    &lt;span class=&quot;token key atrule&quot;&gt;needs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; job1
-    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-          &lt;span class=&quot;token key atrule&quot;&gt;OUTPUT1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;needs.job1.outputs.output1&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;token key atrule&quot;&gt;OUTPUT2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;needs.job1.outputs.output2&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;$OUTPUT1 $OUTPUT2&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;다른 job에서 해당 변수를 사용할 경우에도 &lt;a href=&quot;https://sharknia.github.io/Github-Actions-Job---needs&quot;&gt;needs&lt;/a&gt; 종속성 선언을 해줘야 합니다. job1에서 선언한 output을 사용할 것이므로 needs 설정을 해주고 &lt;code class=&quot;language-text&quot;&gt;${{ needs.”job-이름”.outputs.”output변수명”}}&lt;/code&gt; 의 꼴로 참조할 수 있습니다. &lt;/p&gt;
-&lt;p&gt;또한, 변수 명의 경우 대소문자는 구분하지 않습니다. &lt;/p&gt;
-&lt;h2&gt;참조&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/actions/using-jobs/defining-outputs-for-jobs#%EC%98%88-%EC%9E%91%EC%97%85-%EC%B6%9C%EB%A0%A5-%EC%A0%95%EC%9D%98&quot;&gt;https://docs.github.com/ko/actions/using-jobs/defining-outputs-for-jobs#예-작업-출력-정의&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Actions]]></title><description><![CDATA[소개 Github Actions…]]></description><link>https://sharknia.github.io/Github-Actions/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Actions/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;소개&lt;/h2&gt;
+&lt;p&gt;오히려 좀 더 필요성을 느끼게 되었습니다. 살짝 고생했지만 좋은 시간이었습니다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Actions]]></title><description><![CDATA[소개 Github Actions…]]></description><link>https://sharknia.github.io/Github-Actions/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Actions/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;소개&lt;/h2&gt;
 &lt;p&gt;Github Actions는 깃허브에서 직접 소프트웨어 개발 워크플로우를 자동화할 수 있는 기능입니다. 개발자는 이를 사용해서 소프트웨어 빌드, 테스트, 배포와 같은 과정을 자동화하여 특정 트리거가 발생했을 경우 자동으로 실행되는 워크플로우를 작성할 수 있습니다. &lt;/p&gt;
 &lt;h2&gt;강점 및 특징&lt;/h2&gt;
 &lt;h3&gt;깃허브와의 통합&lt;/h3&gt;
@@ -9819,7 +9783,43 @@ describe&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span c
 &lt;p&gt;Job은 Step들의 집합입니다. Step은 실행될 셀 스크립트 또는 실행될 action들이이며, Step들은 정의된 순서대로 실행됩니다.&lt;/p&gt;
 &lt;p&gt;각 Step은 동일한 runner에서 실행되므로(Job이 가진 환경을 공유하므로) step 마다 데이터를 공유할 수 있다. 즉 한 job 안에서 빌드하는 step, 이를 테스트 하는 step을 한 번에 가질 수 있습니다.&lt;/p&gt;
 &lt;h2&gt;참조&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions&quot;&gt;https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Actions Job - needs]]></title><description><![CDATA[개요 기본적으로 아무 설정이 없다면 각 Job들은 병렬적으로 실행됩니다.  예를 들어 job1과 job2를 선언한 경우, 이 두 job은 워크플로우 실행 시 동시에 시작이 됩니다.  이 때,  를 사용해 Job들 사이에 종속성을 주어 Job…]]></description><link>https://sharknia.github.io/Github-Actions-Job---needs/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Actions-Job---needs/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;개요&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions&quot;&gt;https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Action Output]]></title><description><![CDATA[목적 깃허브 액션에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job…]]></description><link>https://sharknia.github.io/Github-Action-Output/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Action-Output/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;목적&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://sharknia.github.io/Github-Actions&quot;&gt;깃허브 액션&lt;/a&gt;에서 Job들은 서로 다른 독립된 환경을 가집니다. 각 작업은 독립적으로 실행되며, 각기 다른 러너 환경에서 다른 버전의 도구를 사용할 수 있습니다. 이것은 아주 강점이지만, 때로 다른 Job끼리 변수를 공유해야 하는 상황이 있을 수 있습니다. &lt;/p&gt;
+&lt;p&gt;이때 사용하는 것이 Output 입니다. &lt;/p&gt;
+&lt;h2&gt;선언하기&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;job1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+    &lt;span class=&quot;token key atrule&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# 다른 job에서 사용하기 위해 선언&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;output1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps.step1.outputs.test &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;output2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; steps.step2.outputs.test &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; step1 &lt;span class=&quot;token comment&quot;&gt;# 해당 output을 특정하기 위한 id 선언&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;test=hello&quot; &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; &quot;$GITHUB_OUTPUT&quot;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; step2
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;test=world&quot; &lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt; &quot;$GITHUB_OUTPUT&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;기본적인 선언 방법은 &lt;code class=&quot;language-text&quot;&gt;echo &quot;변수=값&quot; &gt;&gt; &quot;$GITHUB_OUTPUT”&lt;/code&gt; 의 꼴입니다. 예전에는 set_output을 사용했던 것 같은데, 이 방법도 지금 작동은 제대로 하지만 해당 코드로 실행을 해보면 보안상의 문제로 곧 depacreted 될 거라는 warning이 발생합니다. &lt;/p&gt;
+&lt;p&gt;반드시 id를 지정해줘야 합니다. 해당 id를 사용해 나중에 원하는 변수를 참조할 수 있습니다. &lt;/p&gt;
+&lt;p&gt;output은 동일한 job이 아니라 job2에서 사용을 하고 싶을 경우에 선언해야 합니다. &lt;/p&gt;
+&lt;h2&gt;사용하기 - 동일한 job&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; use output same job
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+          echo ${{ steps.step1.outputs.test}}
+          echo ${{ steps.step2.outputs.test}}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;같은 job 안에서 사용할때에는 &lt;code class=&quot;language-text&quot;&gt;${{ steps.”id”.outputs.”변수명”}}&lt;/code&gt; 의 꼴로 사용하면 됩니다. &lt;/p&gt;
+&lt;h2&gt;사용하기 - 다른 job&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;  &lt;span class=&quot;token key atrule&quot;&gt;job2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+    &lt;span class=&quot;token key atrule&quot;&gt;needs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; job1
+    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;OUTPUT1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;needs.job1.outputs.output1&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token key atrule&quot;&gt;OUTPUT2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;needs.job1.outputs.output2&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;$OUTPUT1 $OUTPUT2&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다른 job에서 해당 변수를 사용할 경우에도 &lt;a href=&quot;https://sharknia.github.io/Github-Actions-Job---needs&quot;&gt;needs&lt;/a&gt; 종속성 선언을 해줘야 합니다. job1에서 선언한 output을 사용할 것이므로 needs 설정을 해주고 &lt;code class=&quot;language-text&quot;&gt;${{ needs.”job-이름”.outputs.”output변수명”}}&lt;/code&gt; 의 꼴로 참조할 수 있습니다. &lt;/p&gt;
+&lt;p&gt;또한, 변수 명의 경우 대소문자는 구분하지 않습니다. &lt;/p&gt;
+&lt;h2&gt;참조&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/ko/actions/using-jobs/defining-outputs-for-jobs#%EC%98%88-%EC%9E%91%EC%97%85-%EC%B6%9C%EB%A0%A5-%EC%A0%95%EC%9D%98&quot;&gt;https://docs.github.com/ko/actions/using-jobs/defining-outputs-for-jobs#예-작업-출력-정의&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Github Actions Job - needs]]></title><description><![CDATA[개요 기본적으로 아무 설정이 없다면 각 Job들은 병렬적으로 실행됩니다.  예를 들어 job1과 job2를 선언한 경우, 이 두 job은 워크플로우 실행 시 동시에 시작이 됩니다.  이 때,  를 사용해 Job들 사이에 종속성을 주어 Job…]]></description><link>https://sharknia.github.io/Github-Actions-Job---needs/</link><guid isPermaLink="false">https://sharknia.github.io/Github-Actions-Job---needs/</guid><pubDate>Sun, 04 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;개요&lt;/h2&gt;
 &lt;p&gt;기본적으로 아무 설정이 없다면 각 Job들은 병렬적으로 실행됩니다.  예를 들어 job1과 job2를 선언한 경우, 이 두 job은 워크플로우 실행 시 동시에 시작이 됩니다. &lt;/p&gt;
 &lt;p&gt;이 때, &lt;code class=&quot;language-text&quot;&gt;needs&lt;/code&gt; 를 사용해 Job들 사이에 종속성을 주어 Job 하나가 끝나야 다음 Job이 실행되도록 설정할 수 있습니다.&lt;/p&gt;
 &lt;h2&gt;예제&lt;/h2&gt;
@@ -14185,48 +14185,7 @@ user &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; User&lt;span cl
 &lt;li&gt;모바일 애플리케이션 : 빠른 액세스와 확장성이 필요한 데이터를 저장&lt;/li&gt;
 &lt;li&gt;IoT 애플리케이션 : 대량의 장치 데이터를 실시간으로 수집 및 분석&lt;/li&gt;
 &lt;li&gt;게임 : 게임 상태, 플레이어 프로필, 리더보드 등을 저장&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NoSQL]]></title><description><![CDATA[1. 등장 배경 RDBMS는 정해진 스키마와 트랜잭션의 ACID 속성을 기반으로 설계되었다. 하지만 웹 2.0 시대가 도래하면서 대용량 데이터와 급격한 트래픽 증가, 다양한 데이터 구조의 요구가 생기면서 RDBMS의 한계가 드러나 NoSQL…]]></description><link>https://sharknia.github.io/NoSQL/</link><guid isPermaLink="false">https://sharknia.github.io/NoSQL/</guid><pubDate>Wed, 20 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;1. 등장 배경&lt;/h2&gt;
-&lt;p&gt;RDBMS는 정해진 스키마와 트랜잭션의 ACID 속성을 기반으로 설계되었다. 하지만 웹 2.0 시대가 도래하면서 대용량 데이터와 급격한 트래픽 증가, 다양한 데이터 구조의 요구가 생기면서 RDBMS의 한계가 드러나 NoSQL이 등장하게 되었다.&lt;/p&gt;
-&lt;h2&gt;2. RDBMS와의 주요 차이점&lt;/h2&gt;
-&lt;h3&gt;스키마&lt;/h3&gt;
-&lt;p&gt;RDBMS는 고정된 스키마를 가지고 있으나, NoSQL은 동적 스키마를 가진다.&lt;/p&gt;
-&lt;h3&gt;확장성&lt;/h3&gt;
-&lt;p&gt;RDBMS는 수직 확장을 위해 설계 되었지만 NoSQL은 수평 확장이 가능하다.&lt;/p&gt;
-&lt;h3&gt;데이터 모델&lt;/h3&gt;
-&lt;p&gt;RDBMS는 테이블 기반의 데이터 모델을 사용하지만 NoSQL은 키-값, 문서, 컬럼, 그래프 등 다양한 데이터 모델을 사용한다.&lt;/p&gt;
-&lt;h3&gt;트랜잭션&lt;/h3&gt;
-&lt;p&gt;RDMBS는 ACID 트랜잭션을 지원하지만 NoSQL은 일반적으로 이를 지원하지 않거나 부분적으로 지원한다.&lt;/p&gt;
-&lt;h2&gt;3. NoSQL의 일관성과 무결성&lt;/h2&gt;
-&lt;h3&gt;일관성(Consistency)&lt;/h3&gt;
-&lt;p&gt;RDBMS에서는 ACID 트랜잭션 속성을 지원하여 강력한 일관성을 보장한다.
-반면, 많은 NoSQL 데이터베이스는 BASE 모델을 채용한다. 이는 즉각적인 일관성보다는 가용성과 복원력을 우선시하며 일시적인 불일관성을 허용하지만 결국 일관된 상태로 수렴한다는 의미이다.
-일부 NoSQL 시스템은 일관성 수준을 조정할 수 있도록 설정할 수 있다.&lt;/p&gt;
-&lt;h3&gt;무결성(Intergirty)&lt;/h3&gt;
-&lt;p&gt;RDBMS는 외래 키 제약 조건, 유니크 제약 조건 등을 통해 데이터 무결성을 보장한다.
-NoSQL 데이터베이스는 스키마가 유연하므로 같은 강도의 무결성 제약 조건을 갖지 않을 수 있다. 그러나 일부 NoSQL 시스템은 도큐먼트의 유효성 검사나 스키마 유효성 검사를 지원하여 무결성을 일정 수준 보장하기도 한다.&lt;/p&gt;
-&lt;h3&gt;정리&lt;/h3&gt;
-&lt;p&gt;NoSQL 데이터베이스는 일관성과 무결성을 &quot;없애는&quot; 것이 아니라 다양한 요구 사항과 환경에 맞게 그 특성과 규칙을 조정하고 최적화 한 것이다. 따라서 특정 응용 프로그램의 요구 사항에 따라 적절한 데이터베이스와 설정을 선택하는 것이 중요하다.&lt;/p&gt;
-&lt;h2&gt;4. 주요 특징 및 장점&lt;/h2&gt;
-&lt;h3&gt;유연성&lt;/h3&gt;
-&lt;p&gt;다양한 데이터 및 동적 스키마를 지원함으로써 다양한 데이터 구조에 유연하게 대응할 수 있다.&lt;/p&gt;
-&lt;h3&gt;확장성&lt;/h3&gt;
-&lt;p&gt;수평 확장을 통해 대량의 데이터와 트래픽을 처리할 수 있다. NoSQL은 데이터를 여러 노드에 복제하거나 분할하는 매커니즘을 내장하고 있다. 이는 고가용성과 분산 처리를 위한 핵심 요소로 수평 확장을 자연스럽게 지원한다.&lt;/p&gt;
-&lt;h3&gt;빠른 성능&lt;/h3&gt;
-&lt;p&gt;간단한 쿼리와 특정 작업에 최적화된 데이터베이스 설계로 빠른 성능을 제공한다.&lt;/p&gt;
-&lt;h3&gt;다양한 데이터 처리&lt;/h3&gt;
-&lt;p&gt;구조화, 반구조화, 비구조화 데이터를 모두 처리할 수 있다.&lt;/p&gt;
-&lt;h2&gt;5. 단점&lt;/h2&gt;
-&lt;h3&gt;표준 부재&lt;/h3&gt;
-&lt;p&gt;다양한 NoSQL 데이터베이스 중 특정 표준이 없어 학습 곡선이 높을 수 있다.&lt;/p&gt;
-&lt;h3&gt;일관성&lt;/h3&gt;
-&lt;p&gt;ACID 트랜잭션의 일부를 희생하므로 데이터 일관성 문제가 발생할 수 있다.&lt;/p&gt;
-&lt;h2&gt;6. NoSQL이 필요한 경우&lt;/h2&gt;
-&lt;h3&gt;빠른 개발&lt;/h3&gt;
-&lt;p&gt;동적 스키마로 개발과 변화에 빠르게 대응할 수 있다.&lt;/p&gt;
-&lt;h3&gt;대량의 데이터 처리&lt;/h3&gt;
-&lt;p&gt;수평 확장을 통해 대량의 데이터를 처리하는데 적합하다.&lt;/p&gt;
-&lt;h3&gt;다양한 데이터 구조&lt;/h3&gt;
-&lt;p&gt;구조화 된 데이터 뿐 아니라 로그, 소셜 미디어 포스트 등 다양한 데이터를 저장하고 처리할 때 유용하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[REST]]></title><description><![CDATA[1. 정의 REST는 웹서비스를 설계하기 위한 아키텍쳐 스타일이다. 웹의 기본 프로토콜인 HTTP를 최대한 활용하기 위한 일련의 제약사항 및 원칙을 포함한다. 2. 기본 원칙 Stateless…]]></description><link>https://sharknia.github.io/REST/</link><guid isPermaLink="false">https://sharknia.github.io/REST/</guid><pubDate>Wed, 20 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;1. 정의&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[REST]]></title><description><![CDATA[1. 정의 REST는 웹서비스를 설계하기 위한 아키텍쳐 스타일이다. 웹의 기본 프로토콜인 HTTP를 최대한 활용하기 위한 일련의 제약사항 및 원칙을 포함한다. 2. 기본 원칙 Stateless…]]></description><link>https://sharknia.github.io/REST/</link><guid isPermaLink="false">https://sharknia.github.io/REST/</guid><pubDate>Wed, 20 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;1. 정의&lt;/h2&gt;
 &lt;p&gt;REST는 웹서비스를 설계하기 위한 아키텍쳐 스타일이다. 웹의 기본 프로토콜인 HTTP를 최대한 활용하기 위한 일련의 제약사항 및 원칙을 포함한다.&lt;/p&gt;
 &lt;h2&gt;2. 기본 원칙&lt;/h2&gt;
 &lt;h3&gt;Stateless&lt;/h3&gt;
@@ -14276,7 +14235,48 @@ NoSQL 데이터베이스는 스키마가 유연하므로 같은 강도의 무결
 &lt;ul&gt;
 &lt;li&gt;JSON, XML등 다양한 미디어 타입을 사용하여 데이터를 표현한다.&lt;/li&gt;
 &lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Accept&lt;/code&gt; 헤더를 통해 클라이언트가 원하는 미디어 타입을 서버에게 알릴 수 있다.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[AWS API Gateway]]></title><description><![CDATA[AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.…]]></description><link>https://sharknia.github.io/AWS-API-Gateway/</link><guid isPermaLink="false">https://sharknia.github.io/AWS-API-Gateway/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[NoSQL]]></title><description><![CDATA[1. 등장 배경 RDBMS는 정해진 스키마와 트랜잭션의 ACID 속성을 기반으로 설계되었다. 하지만 웹 2.0 시대가 도래하면서 대용량 데이터와 급격한 트래픽 증가, 다양한 데이터 구조의 요구가 생기면서 RDBMS의 한계가 드러나 NoSQL…]]></description><link>https://sharknia.github.io/NoSQL/</link><guid isPermaLink="false">https://sharknia.github.io/NoSQL/</guid><pubDate>Wed, 20 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;1. 등장 배경&lt;/h2&gt;
+&lt;p&gt;RDBMS는 정해진 스키마와 트랜잭션의 ACID 속성을 기반으로 설계되었다. 하지만 웹 2.0 시대가 도래하면서 대용량 데이터와 급격한 트래픽 증가, 다양한 데이터 구조의 요구가 생기면서 RDBMS의 한계가 드러나 NoSQL이 등장하게 되었다.&lt;/p&gt;
+&lt;h2&gt;2. RDBMS와의 주요 차이점&lt;/h2&gt;
+&lt;h3&gt;스키마&lt;/h3&gt;
+&lt;p&gt;RDBMS는 고정된 스키마를 가지고 있으나, NoSQL은 동적 스키마를 가진다.&lt;/p&gt;
+&lt;h3&gt;확장성&lt;/h3&gt;
+&lt;p&gt;RDBMS는 수직 확장을 위해 설계 되었지만 NoSQL은 수평 확장이 가능하다.&lt;/p&gt;
+&lt;h3&gt;데이터 모델&lt;/h3&gt;
+&lt;p&gt;RDBMS는 테이블 기반의 데이터 모델을 사용하지만 NoSQL은 키-값, 문서, 컬럼, 그래프 등 다양한 데이터 모델을 사용한다.&lt;/p&gt;
+&lt;h3&gt;트랜잭션&lt;/h3&gt;
+&lt;p&gt;RDMBS는 ACID 트랜잭션을 지원하지만 NoSQL은 일반적으로 이를 지원하지 않거나 부분적으로 지원한다.&lt;/p&gt;
+&lt;h2&gt;3. NoSQL의 일관성과 무결성&lt;/h2&gt;
+&lt;h3&gt;일관성(Consistency)&lt;/h3&gt;
+&lt;p&gt;RDBMS에서는 ACID 트랜잭션 속성을 지원하여 강력한 일관성을 보장한다.
+반면, 많은 NoSQL 데이터베이스는 BASE 모델을 채용한다. 이는 즉각적인 일관성보다는 가용성과 복원력을 우선시하며 일시적인 불일관성을 허용하지만 결국 일관된 상태로 수렴한다는 의미이다.
+일부 NoSQL 시스템은 일관성 수준을 조정할 수 있도록 설정할 수 있다.&lt;/p&gt;
+&lt;h3&gt;무결성(Intergirty)&lt;/h3&gt;
+&lt;p&gt;RDBMS는 외래 키 제약 조건, 유니크 제약 조건 등을 통해 데이터 무결성을 보장한다.
+NoSQL 데이터베이스는 스키마가 유연하므로 같은 강도의 무결성 제약 조건을 갖지 않을 수 있다. 그러나 일부 NoSQL 시스템은 도큐먼트의 유효성 검사나 스키마 유효성 검사를 지원하여 무결성을 일정 수준 보장하기도 한다.&lt;/p&gt;
+&lt;h3&gt;정리&lt;/h3&gt;
+&lt;p&gt;NoSQL 데이터베이스는 일관성과 무결성을 &quot;없애는&quot; 것이 아니라 다양한 요구 사항과 환경에 맞게 그 특성과 규칙을 조정하고 최적화 한 것이다. 따라서 특정 응용 프로그램의 요구 사항에 따라 적절한 데이터베이스와 설정을 선택하는 것이 중요하다.&lt;/p&gt;
+&lt;h2&gt;4. 주요 특징 및 장점&lt;/h2&gt;
+&lt;h3&gt;유연성&lt;/h3&gt;
+&lt;p&gt;다양한 데이터 및 동적 스키마를 지원함으로써 다양한 데이터 구조에 유연하게 대응할 수 있다.&lt;/p&gt;
+&lt;h3&gt;확장성&lt;/h3&gt;
+&lt;p&gt;수평 확장을 통해 대량의 데이터와 트래픽을 처리할 수 있다. NoSQL은 데이터를 여러 노드에 복제하거나 분할하는 매커니즘을 내장하고 있다. 이는 고가용성과 분산 처리를 위한 핵심 요소로 수평 확장을 자연스럽게 지원한다.&lt;/p&gt;
+&lt;h3&gt;빠른 성능&lt;/h3&gt;
+&lt;p&gt;간단한 쿼리와 특정 작업에 최적화된 데이터베이스 설계로 빠른 성능을 제공한다.&lt;/p&gt;
+&lt;h3&gt;다양한 데이터 처리&lt;/h3&gt;
+&lt;p&gt;구조화, 반구조화, 비구조화 데이터를 모두 처리할 수 있다.&lt;/p&gt;
+&lt;h2&gt;5. 단점&lt;/h2&gt;
+&lt;h3&gt;표준 부재&lt;/h3&gt;
+&lt;p&gt;다양한 NoSQL 데이터베이스 중 특정 표준이 없어 학습 곡선이 높을 수 있다.&lt;/p&gt;
+&lt;h3&gt;일관성&lt;/h3&gt;
+&lt;p&gt;ACID 트랜잭션의 일부를 희생하므로 데이터 일관성 문제가 발생할 수 있다.&lt;/p&gt;
+&lt;h2&gt;6. NoSQL이 필요한 경우&lt;/h2&gt;
+&lt;h3&gt;빠른 개발&lt;/h3&gt;
+&lt;p&gt;동적 스키마로 개발과 변화에 빠르게 대응할 수 있다.&lt;/p&gt;
+&lt;h3&gt;대량의 데이터 처리&lt;/h3&gt;
+&lt;p&gt;수평 확장을 통해 대량의 데이터를 처리하는데 적합하다.&lt;/p&gt;
+&lt;h3&gt;다양한 데이터 구조&lt;/h3&gt;
+&lt;p&gt;구조화 된 데이터 뿐 아니라 로그, 소셜 미디어 포스트 등 다양한 데이터를 저장하고 처리할 때 유용하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AWS API Gateway]]></title><description><![CDATA[AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.…]]></description><link>https://sharknia.github.io/AWS-API-Gateway/</link><guid isPermaLink="false">https://sharknia.github.io/AWS-API-Gateway/</guid><pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;AWS API Gateway는 개발자가 간편하게 RESTful API와 WebSocket API를 생성, 배포, 유지 관리 할 수 있도록 지원하는 AWS의 완전 관리형 서비스이다. 클라이언트와 백엔드 서비스 간의 호출을 중개한다.&lt;/p&gt;
 &lt;h2&gt;1. 주요 기능&lt;/h2&gt;
 &lt;h3&gt;API 생성 및 배포&lt;/h3&gt;
 &lt;p&gt;빠르게 API를 생성하고 배포할 수 있다.&lt;/p&gt;
@@ -15408,50 +15408,7 @@ jobs:
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;를 실행하면, &lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;/public&lt;/code&gt; 에 빌드 결과물이 생성되고 해당 폴더만 배포하면 될 것 같긴하다. 또는 &lt;code class=&quot;language-text&quot;&gt;github action&lt;/code&gt; 을 이용할 수도 있겠다. &lt;/p&gt;
-&lt;p&gt;조금 더 편하게 블로그를 하려는 길은 아직 멀고 험하다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notion API(1)]]></title><description><![CDATA[Notion API를 사용해보려고 한다.  이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다.  간단한 소개 https://developers…]]></description><link>https://sharknia.github.io/Notion-API1/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-API1/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Notion API를 사용해보려고 한다. &lt;/p&gt;
-&lt;p&gt;이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다. &lt;/p&gt;
-&lt;h4&gt;간단한 소개&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&quot;https://developers.notion.com/&quot;&gt;https://developers.notion.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Notion의 공개 Rest API를 이용하여 Notion Workspace와 상호 작용 할 수 있다.&lt;/p&gt;
-&lt;p&gt;페이지, 데이터베이스, 사용자, 페이지 및 인라인 주석, Workspace의 포스팅에 대한 검색 등등.. &lt;/p&gt;
-&lt;p&gt;점점 지원 영역이 늘어나는 것 같다. change-log가 꽤 활발해보인다. &lt;/p&gt;
-&lt;h4&gt;API 생성 및 권한 부여&lt;/h4&gt;
-&lt;p&gt;일단 우선, API를 생성하고 권한 부여 작업을 해야 한다. &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.notion.so/my-integrations&quot;&gt;https://www.notion.so/my-integrations&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;올라와 있는 한글 블로그들과 현재의 API 권한 부여 방식이 달라지는 바람에  여기서 은근 헤맸다… 역시 공식 가이드를 우선적으로 봐야한다. &lt;/p&gt;
-&lt;p&gt;위 페이지에서 새 &lt;code class=&quot;language-text&quot;&gt;API 통합 만들기&lt;/code&gt; 를 선택한다. &lt;/p&gt;
-&lt;p&gt;API의 권한은 워크스페이스별로 관리되므로, &lt;code class=&quot;language-text&quot;&gt;연결된 워크스페이스&lt;/code&gt; 를 정확히 선택해준다. &lt;/p&gt;
-&lt;p&gt;필수 항목을 입력해주고 &lt;code class=&quot;language-text&quot;&gt;제출&lt;/code&gt; 을 눌러주자. &lt;/p&gt;
-&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 37.64705882352941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAz0lEQVR42qWRywrCMBBF+/9f5EJciKALF4JbQbSKbaNR82yaxzWpBa248DFwuTCTOTNksuAdgrcIIbkDwn/Klos5ZrMpRsMBJpMxUqQBPwNPpEC+3WC3XWO/zxPuPyB6EdJ69yL8R4DwCrSmRqvGoDE6eg1nTeveNV/BWiA9EpwpBT1WKMtDK8YuoCcCrUS39Xugi0e01vUOminFISV7oy4v2MM7iSitOVYFw7riIFcBcuHwto7A1Pj0uNf8POClrrRAcZYwRoEriauQ8YsMbpcEcK3ihZd7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png&apos; srcset=&apos;/static/b4786f442a67ccd65a59902b3261a38c/e7570/image1.png 170w,
-/static/b4786f442a67ccd65a59902b3261a38c/f46e7/image1.png 340w,
-/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png 476w&apos; sizes=&apos;(max-width: 476px) 100vw, 476px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
-그럼 바로 위와 같은 화면으로 넘어온다. 표시를 눌러서 시크릿 키를 복사해서 보관해주자. &lt;/p&gt;
-&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 509px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 112.94117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACWElEQVR42pWU2bLTMBBE8/9/xRu88wbcJN73fZWXoXvsa8glgOOqKcmy1ZrlaC7LNErftyKyPNr6YXy2vs6Pc9hlhmBV5jLPRiYzyoT3yQyyTPs7zIwDvm/rZuzVOOfeCd8mvK/LtAny5yyJpa4KKYtM4iiQKPQlS2OJw1DHFMZvbVNJU5dqXdfIMHS6RqO4Ci44eey3U43p9WOPnzl2LTb1nYzY+Cst625PwqcgF1qeCg97bDx+5vgxj/umf9mFsX/63opl2xL4roS+o14xpwvsPTdnDYKzBKWROImQr0hzlueJGkM/PD0vOMnnW68eeq4t1v0q99ubFoF5HfpGK/qSh05uIFBsHmaxNE25VRRGpLq2Fv53WvALPLxZlrgO7Q7xXLHYcDCnC7JVeaedYRGNcejVow2b+uDrvCDEqrJQWBeGdXC2/sHYKUGikcSBeAjVdWzJs1RRoWe856+io1VmuHEYSIJrV+SpdAi3LFLMM72ShlU+CzY9SMGgY9/Etu8SBp7MaAgD8kkbATnxebkoxIPe0Jq6UE+5Rh5fwoZiZgAidYXQUFF9fiuKLK9j89Xt4FWl91hbWByiOLGsL1T3QTCsJwXZ92yJUJgAwlHoHSHXdXGE/r/OA0EgIZMWgIXJs0R8dp3Axd2GMIrEA/QQHKZ9ERv/hpJ6yNDYBHzPAZOhjnHk65zdnPMYXTyK/O2+gwpehGeiyuEyI+SmluvbN0mSUBzrqt4SdL778M5DOhzrhk70Qw8kBU8F3yeEu1R0Sil3ZLTj4F3XmMsKOS0x7og9a2s/ASLGAUHcd7NBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png&apos; srcset=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/e7570/image2.png 170w,
-/static/ea5eeced68059fd25375b5fbb8290f34/f46e7/image2.png 340w,
-/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png 509w&apos; sizes=&apos;(max-width: 509px) 100vw, 509px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
-기능도 커스텀 할 수 있는데, 일단 기본적인 기능을 넣어주었다. &lt;/p&gt;
-&lt;p&gt;배포는 당연히 공개로 해두지 않았다. &lt;/p&gt;
-&lt;p&gt;이후, 노션으로 돌아와 API와 연결된 워크스페이스를 선택하고 &lt;/p&gt;
-&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 264px; margin-bottom: 16px;&apos;&gt;
-      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
-    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 231.1764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/image3.png 170w,
-/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
-오른쪽 상단의 … 를 눌러서 연결추가 를 선택한 다음, 아까 만들어준 API의 이름을 검색해 해당 API와 연결을 해주면 된다.&lt;/p&gt;
-&lt;p&gt;이 부분이 UI가 달라진 부분이어서 공식 가이드를 보기 전까지 한참 헤맸던 부분이었다.&lt;/p&gt;
-&lt;p&gt;이제, API와 Notion Workspace가 연결되었다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[PRG 패턴 (Post/Redirect/Get)]]></title><description><![CDATA[정의 PRG 패턴은 웹 어플리케이션에서 폼 제출 후의 중복 제출 문제를 해결하기 위한 웹 디자인 패턴입니다. 사용자가 웹 폼을 제출한 후 (Post), 서버가 해당 요청을 처리하고 사용자를 새로운 위치로 리다이렉트 (Redirect…]]></description><link>https://sharknia.github.io/PRG-패턴-PostRedirectGet/</link><guid isPermaLink="false">https://sharknia.github.io/PRG-패턴-PostRedirectGet/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;정의&lt;/h4&gt;
+&lt;p&gt;조금 더 편하게 블로그를 하려는 길은 아직 멀고 험하다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[PRG 패턴 (Post/Redirect/Get)]]></title><description><![CDATA[정의 PRG 패턴은 웹 어플리케이션에서 폼 제출 후의 중복 제출 문제를 해결하기 위한 웹 디자인 패턴입니다. 사용자가 웹 폼을 제출한 후 (Post), 서버가 해당 요청을 처리하고 사용자를 새로운 위치로 리다이렉트 (Redirect…]]></description><link>https://sharknia.github.io/PRG-패턴-PostRedirectGet/</link><guid isPermaLink="false">https://sharknia.github.io/PRG-패턴-PostRedirectGet/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;정의&lt;/h4&gt;
 &lt;p&gt;PRG 패턴은 웹 어플리케이션에서 폼 제출 후의 중복 제출 문제를 해결하기 위한 웹 디자인 패턴입니다. 사용자가 웹 폼을 제출한 후 (Post), 서버가 해당 요청을 처리하고 사용자를 새로운 위치로 리다이렉트 (Redirect) 시킵니다. 이후 사용자는 리다이렉트된 위치의 정보를 (Get) 요청하여 표시합니다.&lt;/p&gt;
 &lt;h4&gt;특징&lt;/h4&gt;
 &lt;ul&gt;
@@ -15502,7 +15459,50 @@ jobs:
 &lt;p&gt;가상환경이 활성화된 상태에서 &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;deactivate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[print와 pprint]]></title><description><![CDATA[print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다.  print 값을 터미널에 간단히 출력할 때 사용한다.  pprint pprint는 pretty print…]]></description><link>https://sharknia.github.io/print와-pprint/</link><guid isPermaLink="false">https://sharknia.github.io/print와-pprint/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다. &lt;/p&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Notion API(1)]]></title><description><![CDATA[Notion API를 사용해보려고 한다.  이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다.  간단한 소개 https://developers…]]></description><link>https://sharknia.github.io/Notion-API1/</link><guid isPermaLink="false">https://sharknia.github.io/Notion-API1/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Notion API를 사용해보려고 한다. &lt;/p&gt;
+&lt;p&gt;이것으로 무엇을 할 것인가? 는 생각해둔게 있지만, 가능하다고 생각된 시점에서 본격적으로 해보려고 하고, 일단 오늘은 Notion API를 살펴보려고 한다. &lt;/p&gt;
+&lt;h4&gt;간단한 소개&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.notion.com/&quot;&gt;https://developers.notion.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Notion의 공개 Rest API를 이용하여 Notion Workspace와 상호 작용 할 수 있다.&lt;/p&gt;
+&lt;p&gt;페이지, 데이터베이스, 사용자, 페이지 및 인라인 주석, Workspace의 포스팅에 대한 검색 등등.. &lt;/p&gt;
+&lt;p&gt;점점 지원 영역이 늘어나는 것 같다. change-log가 꽤 활발해보인다. &lt;/p&gt;
+&lt;h4&gt;API 생성 및 권한 부여&lt;/h4&gt;
+&lt;p&gt;일단 우선, API를 생성하고 권한 부여 작업을 해야 한다. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.notion.so/my-integrations&quot;&gt;https://www.notion.so/my-integrations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;올라와 있는 한글 블로그들과 현재의 API 권한 부여 방식이 달라지는 바람에  여기서 은근 헤맸다… 역시 공식 가이드를 우선적으로 봐야한다. &lt;/p&gt;
+&lt;p&gt;위 페이지에서 새 &lt;code class=&quot;language-text&quot;&gt;API 통합 만들기&lt;/code&gt; 를 선택한다. &lt;/p&gt;
+&lt;p&gt;API의 권한은 워크스페이스별로 관리되므로, &lt;code class=&quot;language-text&quot;&gt;연결된 워크스페이스&lt;/code&gt; 를 정확히 선택해준다. &lt;/p&gt;
+&lt;p&gt;필수 항목을 입력해주고 &lt;code class=&quot;language-text&quot;&gt;제출&lt;/code&gt; 을 눌러주자. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 37.64705882352941%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAz0lEQVR42qWRywrCMBBF+/9f5EJciKALF4JbQbSKbaNR82yaxzWpBa248DFwuTCTOTNksuAdgrcIIbkDwn/Klos5ZrMpRsMBJpMxUqQBPwNPpEC+3WC3XWO/zxPuPyB6EdJ69yL8R4DwCrSmRqvGoDE6eg1nTeveNV/BWiA9EpwpBT1WKMtDK8YuoCcCrUS39Xugi0e01vUOminFISV7oy4v2MM7iSitOVYFw7riIFcBcuHwto7A1Pj0uNf8POClrrRAcZYwRoEriauQ8YsMbpcEcK3ihZd7AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image1&apos; title=&apos;&apos; src=&apos;/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png&apos; srcset=&apos;/static/b4786f442a67ccd65a59902b3261a38c/e7570/image1.png 170w,
+/static/b4786f442a67ccd65a59902b3261a38c/f46e7/image1.png 340w,
+/static/b4786f442a67ccd65a59902b3261a38c/09261/image1.png 476w&apos; sizes=&apos;(max-width: 476px) 100vw, 476px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+그럼 바로 위와 같은 화면으로 넘어온다. 표시를 눌러서 시크릿 키를 복사해서 보관해주자. &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 509px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 112.94117647058823%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACWElEQVR42pWU2bLTMBBE8/9/xRu88wbcJN73fZWXoXvsa8glgOOqKcmy1ZrlaC7LNErftyKyPNr6YXy2vs6Pc9hlhmBV5jLPRiYzyoT3yQyyTPs7zIwDvm/rZuzVOOfeCd8mvK/LtAny5yyJpa4KKYtM4iiQKPQlS2OJw1DHFMZvbVNJU5dqXdfIMHS6RqO4Ci44eey3U43p9WOPnzl2LTb1nYzY+Cst625PwqcgF1qeCg97bDx+5vgxj/umf9mFsX/63opl2xL4roS+o14xpwvsPTdnDYKzBKWROImQr0hzlueJGkM/PD0vOMnnW68eeq4t1v0q99ubFoF5HfpGK/qSh05uIFBsHmaxNE25VRRGpLq2Fv53WvALPLxZlrgO7Q7xXLHYcDCnC7JVeaedYRGNcejVow2b+uDrvCDEqrJQWBeGdXC2/sHYKUGikcSBeAjVdWzJs1RRoWe856+io1VmuHEYSIJrV+SpdAi3LFLMM72ShlU+CzY9SMGgY9/Etu8SBp7MaAgD8kkbATnxebkoxIPe0Jq6UE+5Rh5fwoZiZgAidYXQUFF9fiuKLK9j89Xt4FWl91hbWByiOLGsL1T3QTCsJwXZ92yJUJgAwlHoHSHXdXGE/r/OA0EgIZMWgIXJs0R8dp3Axd2GMIrEA/QQHKZ9ERv/hpJ6yNDYBHzPAZOhjnHk65zdnPMYXTyK/O2+gwpehGeiyuEyI+SmluvbN0mSUBzrqt4SdL778M5DOhzrhk70Qw8kBU8F3yeEu1R0Sil3ZLTj4F3XmMsKOS0x7og9a2s/ASLGAUHcd7NBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image2&apos; title=&apos;&apos; src=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png&apos; srcset=&apos;/static/ea5eeced68059fd25375b5fbb8290f34/e7570/image2.png 170w,
+/static/ea5eeced68059fd25375b5fbb8290f34/f46e7/image2.png 340w,
+/static/ea5eeced68059fd25375b5fbb8290f34/98235/image2.png 509w&apos; sizes=&apos;(max-width: 509px) 100vw, 509px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+기능도 커스텀 할 수 있는데, 일단 기본적인 기능을 넣어주었다. &lt;/p&gt;
+&lt;p&gt;배포는 당연히 공개로 해두지 않았다. &lt;/p&gt;
+&lt;p&gt;이후, 노션으로 돌아와 API와 연결된 워크스페이스를 선택하고 &lt;/p&gt;
+&lt;p&gt;&lt;span class=&apos;gatsby-resp-image-wrapper&apos; style=&apos;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 264px; margin-bottom: 16px;&apos;&gt;
+      &lt;a class=&apos;gatsby-resp-image-link&apos; href=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png&apos; style=&apos;display: block&apos; target=&apos;_blank&apos; rel=&apos;noopener&apos;&gt;
+    &lt;span class=&apos;gatsby-resp-image-background-image&apos; style=&quot;padding-bottom: 231.1764705882353%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,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&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&apos;gatsby-resp-image-image&apos; alt=&apos;image3&apos; title=&apos;&apos; src=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png&apos; srcset=&apos;/static/ebf883758d0060d2c1bb5cb519b74d8b/e7570/image3.png 170w,
+/static/ebf883758d0060d2c1bb5cb519b74d8b/df2dd/image3.png 264w&apos; sizes=&apos;(max-width: 264px) 100vw, 264px&apos; style=&apos;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&apos; loading=&apos;lazy&apos; decoding=&apos;async&apos;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+오른쪽 상단의 … 를 눌러서 연결추가 를 선택한 다음, 아까 만들어준 API의 이름을 검색해 해당 API와 연결을 해주면 된다.&lt;/p&gt;
+&lt;p&gt;이 부분이 UI가 달라진 부분이어서 공식 가이드를 보기 전까지 한참 헤맸던 부분이었다.&lt;/p&gt;
+&lt;p&gt;이제, API와 Notion Workspace가 연결되었다!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[print와 pprint]]></title><description><![CDATA[print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다.  print 값을 터미널에 간단히 출력할 때 사용한다.  pprint pprint는 pretty print…]]></description><link>https://sharknia.github.io/print와-pprint/</link><guid isPermaLink="false">https://sharknia.github.io/print와-pprint/</guid><pubDate>Wed, 23 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;print와 pprint는 모두 Python에서 사용되는 출력 관련 함수이다. &lt;/p&gt;
 &lt;h3&gt;print&lt;/h3&gt;
 &lt;p&gt;값을 터미널에 간단히 출력할 때 사용한다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
