@@ -4,7 +4,7 @@ tags:
   - Python
   - BackEnd
 description: "poetry를 활용해 안정적으로 package 업데이트하기"
-update: "2025-02-21T05:27:00.000Z"
+update: "2025-02-21T06:25:00.000Z"
 date: "2025-02-18"
 상태: "Ready"
 title: "poetry를 활용해 안정적으로 package 업데이트하기"
