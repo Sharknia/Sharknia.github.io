@@ -3,7 +3,7 @@ IDX: "NUM-246"
 tags:
   - Python
 description: "Ruff에 대해 알아보고 사용해보자"
-update: "2025-02-20T05:34:00.000Z"
+update: "2025-02-21T07:18:00.000Z"
 date: "2025-02-20"
 상태: "Ready"
 title: "Ruff"
@@ -62,6 +62,18 @@ ruff format .
 ```
 
 속도가 정말 빠릅니다. 
+
+### `ruff check` vs `ruff format` 차이점
+
+- `ruff check`: 코드의 문법 오류, 스타일 문제, import 순서 등을 검사하는 린터 역할을 합니다. `-fix` 옵션을 사용하면 자동으로 일부 문제를 수정합니다.
+
+- `ruff format`: 코드 스타일을 통일시키는 포매터 역할을 합니다. `black` 스타일을 기반으로 코드의 줄바꿈, 공백, 따옴표 스타일 등을 정리합니다.
+
+#### 옵션에 따른 코드 변경 위험성
+
+- `ruff check --fix`: 실행 시 import 정리(`I`), 사용되지 않는 코드 제거(`F401`, `F841`), 불필요한 중복 코드 수정(`SIM`),  최신 Python 문법으로 변환(`UP`) 등의 옵션값을 사용한 경우에는 코드의 의미가 일부 변경될 수도 있으므로 주의가 필요합니다.
+
+- `ruff format`: 코드의 의미에는 영향을 주지 않으며, 단순한 스타일 정리만 수행합니다. 따라서 상대적으로 안전한 명령어입니다.
 
 ## VSCode에서 사용하기
 
@@ -142,11 +154,37 @@ Windows에서는 ~\AppData\Roaming\ruff\ruff.toml 경로를 사용합니다.
 
 ```toml
 [lint]
-select = ["E", "F", "W", "I"]  # E: 스타일, F: 오류, W: 경고, I: import 정리
+select = [
+    "E",  # 코드 스타일 검사 (PEP 8)
+    "F",  # 실행 오류 가능성 감지 (Pyflakes)
+    "UP", # 최신 Python 문법으로 변환 (pyupgrade)
+    "B",  # 잠재적 버그 감지 (flake8-bugbear)
+    "SIM", # 불필요한 복잡한 코드 감지 (flake8-simplify)
+    "I",  # Import 정리 (isort)
+    "W", # 경고
+]
 
 [format]
 line-length = 88  # 줄 길이 설정 (Black과 동일)
 indent-style = "space"  # 들여쓰기 스타일 (space / tab)
+```
+
+`pyproject.toml`이라면 다음과 같이 작성합니다. 
+
+```toml
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",  # 코드 스타일 검사 (PEP 8)
+    "F",  # 실행 오류 가능성 감지 (Pyflakes)
+    "UP", # 최신 Python 문법으로 변환 (pyupgrade)
+    "B",  # 잠재적 버그 감지 (flake8-bugbear)
+    "SIM", # 불필요한 복잡한 코드 감지 (flake8-simplify)
+    "I",  # Import 정리 (isort)
+    "W", # 경고
+]
 ```
 
 팀 전체가 동일한 기준으로 코드를 검사하고 포맷팅 할 수 있으며, CI/CD 파이프라인에 해당 설정 파일을 반영하여 머지 전 코드 품질 검증을 수행할 수도 있습니다. 
