@@ -7,7 +7,8 @@ tags:
   - Python
   - Postgresql
 description: "Supabase+SQLAlchemy2.x 비동기 엔진에서의 오류"
-update: "2025-04-27T14:58:00.000Z"
+series: "취미생활 - FastAPI 서버 구성"
+update: "2025-05-02T13:40:00.000Z"
 date: "2025-04-27"
 상태: "Ready"
 title: "prepared statement does not exist  오류"

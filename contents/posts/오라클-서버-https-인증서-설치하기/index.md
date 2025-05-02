@@ -5,7 +5,8 @@ tags:
   - BackEnd
   - DevOps
 description: "Certbot을 사용하여 Nginx에 Let's Encrypt 무료 인증서를 설치하기"
-update: "2025-04-25T18:09:00.000Z"
+series: "취미생활 - FastAPI 서버 구성"
+update: "2025-05-02T13:40:00.000Z"
 date: "2025-04-24"
 상태: "Ready"
 title: "오라클 서버 https 인증서 설치하기"
