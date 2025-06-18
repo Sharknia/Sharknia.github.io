@@ -6,7 +6,7 @@ tags:
   - BackEnd
   - DataBase
 description: "GraphQL N+1 문제 해결 여정: 내 아이디어에서 DataLoader까지"
-update: "2025-06-18T09:07:00.000Z"
+update: "2025-06-18T09:30:00.000Z"
 date: "2025-06-12"
 상태: "Ready"
 title: "DataLoader의 적용"

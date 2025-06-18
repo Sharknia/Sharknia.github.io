@@ -7,7 +7,7 @@ tags:
   - Django
   - MySQL
 description: "DB 커넥션 관리 방식 최적화를 통한 서버 안정성 확보 방안"
-update: "2025-06-18T07:24:00.000Z"
+update: "2025-06-18T09:30:00.000Z"
 date: "2025-06-18"
 상태: "Ready"
 title: "Django와 MySQL에서 DB Sleep으로 인한 Hang 문제 해결 방안"
