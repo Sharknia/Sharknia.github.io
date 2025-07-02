@@ -8,7 +8,7 @@ tags:
   - Postgresql
 description: "Supabase+SQLAlchemy2.x 비동기 엔진에서의 오류"
 series: "취미생활 - FastAPI 서버 구성"
-update: "2025-05-02T13:40:00.000Z"
+update: "2025-07-02T01:38:00.000Z"
 date: "2025-04-27"
 상태: "Ready"
 title: "prepared statement does not exist  오류"
@@ -104,7 +104,7 @@ asyncpg.exceptions._base.InterfaceError: prepared statement "s_1_select_item" do
 
 ## **해결 방법**
 
-### 1. ~~statement\_cache\_size 비활성화~~
+### 1. statement\_cache\_size 비활성화
 
 가장 간단한 해결책은 asyncpg의 prepared statement 캐시를 사용하지 않도록 설정하는 것입니다.
 
